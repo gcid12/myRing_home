@@ -103,27 +103,49 @@ def solexp():
     			}
     return render_template('solutions.html', dic=dic)         
 
-@app.route('/details')
-def detai():
+@app.route('/tools/schema_modeler')
+def toca():
     dic = {	'r1': 'on', 
     			'a1': 'Legacy Data',
     			'a2': 'TEMOLIN 0.1.2', 
     			'a3': 'Bring your legacy Data back to life.',
-    			'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'a5': 'Capture Solution', 
+    			'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
+    			'a5': 'cap', 
     			'a6': 'r-worm.png', 
-    			'a7': 'Ipsum Lorem',
-    			'a8': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+    			'a7': '1Ipsum Lorem',
+    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
     			'a9': 'phiw/ph03.png',
-    			'a10': 'Ipsum Lorem',
-    			'a11': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+    			'a10': '2Ipsum Lorem',
+    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
     			'a12': 'phiw/ph06.png', 
-    			'a13': 'Ipsum Lorem ',
-    			'a14': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+    			'a13': '3Ipsum Lorem ',
+    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
     			'a15': 'phiw/ph07.png',
-    			
     			}
     return render_template('details.html', dic=dic)  
+
+@app.route('/tools/semantic_labeler')
+def chiq():
+    dic = {	'r1': 'on', 
+    			'a1': 'Legacy Data',
+    			'a2': 'CHIQUIL 0.1.2', 
+    			'a3': 'Create Rich Semantic Data.',
+    			'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
+    			'a5': 'Modeling tool', 
+    			'a6': 'r-cicada.png', 
+    			'a7': '1Ipsum Lorem',
+    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+    			'a9': 'phiw/ph03.png',
+    			'a10': '2Ipsum Lorem',
+    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+    			'a12': 'phiw/ph06.png', 
+    			'a13': '3Ipsum Lorem ',
+    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+    			'a15': 'phiw/ph07.png',
+    			}
+    return render_template('details.html', dic=dic)  
+
+
 
 @app.route('/pricing')
 def prici():
