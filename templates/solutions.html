@@ -59,6 +59,8 @@
 			  <div class="tab-pane fade in active tab-section" id="model">
 
 			  <!-- A -->
+
+			 {% if dic['a1'] %}
 		    	<div class="row bg-white sol-box">
 		        	<div class="col-sm-offset-1 col-sm-2 text-center">
 			        	<a href="/tools/{{ dic['a8'] }}">
@@ -83,8 +85,10 @@
 						</a>	
 		        	</div>
 		    	</div>
+		    {% endif %}	
 
 		    	<!-- B -->
+		    {% if dic['b1'] %}	
 		    	<div class="row bg-03 sol-box">
 		        	<div class="col-sm-offset-1 col-sm-2 text-center">
 			        	<a href="/tools/{{ dic['b8'] }}">
@@ -109,8 +113,10 @@
 						</a>	
 		        	</div>
 		    	</div>
+		    {% endif %}		
 
 		    	<!-- B -->
+		    {% if dic['c1'] %}	
 		    	<div class="row bg-white sol-box">
 		        	<div class="col-sm-offset-1 col-sm-2 text-center">
 			        	<a href="/tools/{{ dic['c8'] }}">
@@ -135,7 +141,7 @@
 						</a>	
 		        	</div>
 		    	</div>
-
+		    {% endif %}
 
 
 
