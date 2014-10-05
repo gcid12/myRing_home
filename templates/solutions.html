@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	My Ring - {{ title }}
+{% endblock %}
+
+{% block content %}
+
+
+<section>
+	<div class="row tab-margin">
+    <div class="col-sm-12 text-center">
+    	<div class="spa30"></div>
+    	
+    	<h1>Our Solutions</h1>
+    </div>
+  </div> 
+  <div class="row tab-margin">
+    <div class="col-sm-offset-3 col-sm-6 text-center">
+    	<p class="text-white text-1em ">Our solutions are separated in 3 main categories: Modeling, Capture and Expose, each module it's a standalone solution that can be combined to tackle different Data problems and with other tech. </p>
+    	<div class="spa30"></div>
+    </div>
+  </div>  
+
+
+	<div class="row tab-margin">
+    <div class="col-xs-12 text-center">
+    		<div style="width:93%;">
+				  <a href="/solutions/expose" >
+				  	<div class="tab-box-a tab-{{ dic['r3'] }}">
+				  		<h2 class="hidden-xs">Expose</h2>
+				  		<h3 class="visible-xs">EXP</h3>
+				  		<div class="rhr2 bg-c"></div>
+				  		<p class="text-7 tab-box-b hidden-xs">Modelsidhid iusdiu sdius tduysg issh iusd ius dius isudisud ng different schemas.</p>
+				  	</div>
+				  </a> 
+				  <a href="/solutions/capture" >
+				  	<div class="tab-box-a tab-{{ dic['r2'] }}">
+				  		<h2 class="hidden-xs">Capture</h2>
+				  		<h3 class="visible-xs">CAP</h3>
+				  		<div class="rhr2 bg-b"></div>
+				  		<p class="text-7 tab-box-b hidden-xs">Modelsidhid iusdiu sdius tduysg issh iusd ius dius isudisud ng different schemas.</p>
+				  	</div>
+				  </a> 
+				  <a href="/solutions/model" >
+				  	<div class="tab-box-a tab-{{ dic['r1'] }}">
+				  		<h2 class="hidden-xs">Modeling</h2>
+				  		<h3 class="visible-xs">MOD</h3>
+				  		<div class="rhr2 bg-a"></div>
+				  		<p class="text-7 tab-box-b hidden-xs">Modelsidhid iusdiu sdius tduysg issh iusd ius dius isudisud ng different schemas.</p>
+				  	</div>
+				  </a>
+				</div>   
+		</div>  
+	</div>
+	<div class="row tab-margin">
+    <div class="col-xs-12 text-center">	
+			<div class="tab-content">
+			  <div class="tab-pane fade in active tab-section" id="model">
+
+			  <!-- A -->
+		    	<div class="row bg-white sol-box">
+		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['a6'] }}"/>
+		        	</div>
+		        	<div class="col-sm-8 text-left">
+		        		<span class="label label-mod" style="float:right;">{{ dic['a5'] }}</span><br/>
+		        		<div style="float:left;">
+				        	<a href="/details"><h3 class="text-3em">{{ dic['a1'] }}</h3></a>
+				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
+				        	<hr/>
+			        	</div>
+			        	<div class="spa5 clearboth"></div>
+			        	<p class="text-2em">{{ dic['a3'] }}
+				          	<div class="spa20"></div>
+				        </p>
+			        	<div class="row">
+			        		<!-- <div class="col-sm-4">
+				        		<img class="img-responsive right-block " src="/static/images/{{ dic['a7'] }}" style="width:150px;" />
+				        	</div> -->
+				        	<div class="col-sm-8">	
+				        		<p>{{ dic['a4'] }}</p>
+				          		<a href="/details"><h3>More Info <i class="fa fa-arrow-right"></i></h3></a>
+							</div>
+						</div>	
+		        	</div>
+		    	</div>
+		    	<!-- B -->
+		    	<div class="row bg-03 sol-box">
+		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['b6'] }}"/>
+		        	</div>
+		        	<div class="col-sm-8 text-left">
+		        		<span class="label label-mod" style="float:right;">{{ dic['b5'] }}</span><br/>
+		        		<div style="float:left;">
+				        	<h3 class="text-3em">{{ dic['b1'] }}</h3>
+				        	<h4 class="text-lgray">{{ dic['b2'] }}</h4>
+				        	<hr/>
+			        	</div>
+			        	<div class="spa5 clearboth"></div>
+			        	<p class="text-2em">{{ dic['b3'] }}
+				          	<div class="spa20"></div>
+				        </p>
+			        	<div class="row">
+			        		<!-- <div class="col-sm-4">
+				        		<img class="img-responsive right-block" src="/static/images/{{ dic['b7'] }}" style="width:150px;" />
+				        	</div> -->
+				        	<div class="col-sm-8">	
+				        		<p>{{ dic['b4'] }}</p>
+				          		<a href=""><h3>More Info <i class="fa fa-arrow-right"></i></h3></a>
+							</div>
+						</div>	
+		        	</div>
+		    	</div>
+		    	<!-- C -->
+		    	<div class="row bg-white sol-box">
+		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['c6'] }}"/>
+		        	</div>
+		        	<div class="col-sm-8 text-left">
+		        		<span class="label label-mod" style="float:right;">{{ dic['c5'] }}</span><br/>
+		        		<div style="float:left;">
+				        	<h3 class="text-3em">{{ dic['c1'] }}</h3>
+				        	<h4 class="text-lgray">{{ dic['c2'] }}</h4>
+				        	<hr/>
+			        	</div>
+			        	<div class="spa5 clearboth"></div>
+			        	<p class="text-2em">{{ dic['c3'] }}
+				          	<div class="spa20"></div>
+				        </p>
+			        	<div class="row">
+			        		<!-- <div class="col-sm-4">
+				        		<img class="img-responsive right-block" src="/static/images/{{ dic['c7'] }}" style="width:150px;" />
+				        	</div> -->
+				        	<div class="col-sm-8">	
+				        		<p>{{ dic['c4'] }}</p>
+				          		<a href=""><h3>More Info <i class="fa fa-arrow-right"></i></h3></a>
+							</div>
+						</div>	
+		        	</div>
+		    	</div>
+
+			  </div>
+
+			</div> <!-- close tab content -->
+
+		</div>
+	</div>	
+</section>
+
+
+
+    
+	
+{% endblock %}
+

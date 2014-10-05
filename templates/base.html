@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>{% block title %}{% endblock%}</title>
+{% include 'includes/headscripts.html' %}
+</head>
+<body id="top">
+  
+  <div class="wrapper">
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img style="float:right;" src="/static/images/myring02.png" class="logomenu" /></a>
+        </div>
+        <div class="navbar-collapse collapse text-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/details">Details</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/docs">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+
+
+    {% block content %}
+
+	{% endblock %}
+
+  </div> <!-- close wrapper -->
+<footer>
+	{% include 'includes/footscripts.html' %}
+</footer>
+</body>
+</html>
