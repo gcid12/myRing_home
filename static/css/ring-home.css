@@ -12,6 +12,9 @@ h5{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 .r-font{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 
+.text-s1{ font-family: 'Raleway', sans-serif; font-weight: 300;}
+.text-s2{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
+
 .fw500{font-weight: 500;}
 
 .text-navbar{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
@@ -44,12 +47,23 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 .text-3-5em{font-size:3.5em;}
 .text-4em{font-size:4em;}
 
-/*Remove Mozilla Firefox Border – Remove Dotted Line Around Link */
-a { outline: 0; } 
-/*Remove Mozilla Firefox Border – Remove Dotted Line Around Link */
-a:active { outline: none; }  
-a:focus{ -moz-outline-style: none; }
-a:focus { outline: none; }
+
+
+/*link to black*/
+a.toblack {
+color: #969696;
+transition: color 0.2s linear;
+-o-transition: color 0.2s linear;
+-moz-transition: color 0.2s linear;
+-webkit-transition: color 0.2s linear;
+text-decoration: none;
+}
+ 
+a.toblack:hover {
+color: #000;
+text-decoration: none;
+}
+
 
 /*BACKGROUNDS*/
 
@@ -170,8 +184,21 @@ filter: gray; /* IE6-9 */
     border-radius: 5px 30px 0px 0px;
     margin:0 1px;
     padding:0 5px 40px 5px; 
-    width:30%; 
+    width:28%; 
     float:right;
+    background-color: #CCC;
+}
+.tab-box-a-mini{
+
+    margin-right: 2px;
+    line-height: 1.42857;
+    border: 1px solid transparent;
+    border-radius: 5px 30px 0px 0px;
+    margin:0 1px;
+    padding:0 5px 40px 5px; 
+    width:6%; 
+    float:right;
+    margin-top:52px; 
     background-color: #CCC;
 }
 .tab-box-b{
