@@ -4,6 +4,14 @@
 	My Ring - {{ title }}
 {% endblock %}
 
+{% macro show_insect(insect) %}
+	<div style="width:200px; background-color:#CCC;">
+		<img class="img-responsive center-block" src="/static/images/{{ insect.icon }}"/>
+	    <h3>{{ insect.name }}</h3>
+	    <p class="date">{{ insect.desc }}</p>
+    </div>
+{% endmacro %}
+
 {% block content %}
 
 
@@ -40,6 +48,9 @@
 	</div>
 	<div class="col-xs-5 text-center hidden-xs">
 		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Solutions/ Modeling</h2>
+
+		{{ show_insect(insect) }}
+
 	</div>
 
 		  
