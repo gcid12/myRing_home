@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	My Ring - {{ title }}
+{% endblock %}
+
+
+
+
+{% macro iconbig(title,icon,slug,size) %}
+	<a id="pop" 
+	        href="/tools/{{ slug }}" 
+	        data-toggle="popover" 
+	        data-content="{{ title }}"
+	    >
+	    <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+	</a>
+
+{% endmacro %}
+
+{% macro icon(title,subtitle,label,icon,slug,size,float) %}
+
+<div style="float:{{ float }}; padding:0 5px;">
+	<a href="#" data-toggle="tooltip" title="{{ title }}">
+	    <img class="img-responsive center-block" src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+	</a>
+</div>
+
+{% endmacro %}
+
+
+
+
+{% block content %}
+
+<section>
+	<div class="row tab-margin">
+    
+    <div class="col-xs-7 text-center">
+		  <a class="toblack" href="/solutions/model" >
+            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+	          <i class="fa fa-cog fa-1x"></i>
+	          <span class="text-s2 text-1em hidden-xs">How it Works</span>
+            </div>
+		  </a>
+
+		  <a href="/solutions/share" >
+		  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+		  		<h5 class="hidden-xs">Share</h5>
+		  		<h5 class="visible-xs">SH</h5>
+		  		<div class="rhr2 bg-c"></div>
+		  		<div class="spa5"></div>
+		  	</div>
+		  </a> 
+		  <a href="/solutions/capture" >
+		  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+		  		<h5 class="hidden-xs">Capture</h5>
+		  		<h5 class="visible-xs">CA</h5>
+		  		<div class="rhr2 bg-b"></div>
+		  		<div class="spa5"></div>
+		  	</div>
+		  </a> 
+		  <a href="/solutions/model" >
+		  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+		  		<h5 class="hidden-xs">Modeling</h5>
+		  		<h5 class="visible-xs">MO</h5>
+		  		<div class="rhr2 bg-a"></div>
+		  		<div class="spa5"></div>
+		  	</div>
+		  </a>
+		  
+	</div>
+	<div class="col-xs-5 text-right hidden-xs">
+		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Data Suite / Solutions </h2>
+		
+ 
+	</div>
+	<div class="row tab-margin">
+    <div class="col-xs-12">	
+			<div class="tab-content">
+			  <div class="tab-pane fade in active tab-section" id="model">
+			  <!-- A -->
+		    	<div class="row bg-white">
+		    		<div class="spa20"></div>
+		    	</div>
+		    	<div class="row bg-white det-box">
+		      
+		        	<div class="col-sm-offset-1 col-sm-8 text-left">
+		        		<div style="float:left;">
+				        	<h3 class="text-3em"><i class="fa fa-cog fa-1x"></i> How it works </h3>
+				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
+				        	<hr/>	
+
+                  <img src="/static/images/diag1.svg" style="width: 100%; height: auto; background-color:#CCC;">
+
+
+			        	</div>
+		        	</div>
+		        	<div class="col-sm-2 text-right">
+		        		
+		        		<span class="label label-mod">Go to Full Documentation <i class="fa fa-arrow-right"></i></span><br/>
+		        		<h5 class="text-lgray">Data Tools:<h5/>
+
+		        		{{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'30') }}
+                {{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'30') }}
+                {{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'30') }}
+                {{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'30') }}
+                {{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'30') }}
+                {{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'30') }}
+                {{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'30') }}
+                {{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'30') }}
+                {{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'30') }}
+
+		        	</div>
+		      </div> <!-- close row -->
+		        
+		    	<div class="row bg-white">
+		    		<div class="spa80"></div>
+		    	</div>
+		    	
+		    	
+
+			  </div>
+
+			</div> <!-- close tab content -->
+
+		</div>
+	</div>	
+</section>
+
+
+
+    
+	
+{% endblock %}
+

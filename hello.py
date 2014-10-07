@@ -536,6 +536,30 @@ def prici():
 
     return render_template('pricing.html', insects=il) 
 
+
+@app.route('/hiw')
+def hiw():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('hiw.html', insects=il, dic=dic) 
+
+
+
 @app.route('/combos')
 def combo():
     title = 'My Combos'
