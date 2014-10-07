@@ -7,26 +7,20 @@
 
 
 
-{% macro iconbig(title,icon,slug,size) %}
-	<a id="pop" 
-	        href="/tools/{{ slug }}" 
-	        data-toggle="popover" 
-	        data-content="{{ title }}"
-	    >
-	    <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
-	</a>
+{% macro icontabs(title,icon,slug,size) %}
+<table>
+  <tr>
+    <td>
+	   <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+    </td>
+    <td>
+      <p class="text-s1 hidden-xs text-1em" style="line-height:1em; padding-left:10px;">{{ title }}</p> 
+    </td>
+  </tr>
+</table>
 
 {% endmacro %}
 
-{% macro icon(title,subtitle,label,icon,slug,size,float) %}
-
-<div style="float:{{ float }}; padding:0 5px;">
-	<a href="#" data-toggle="tooltip" title="{{ title }}">
-	    <img class="img-responsive center-block" src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
-	</a>
-</div>
-
-{% endmacro %}
 
 
 
@@ -86,33 +80,86 @@
 		    	<div class="row bg-white det-box">
 		      
 		        	<div class="col-sm-offset-1 col-sm-8 text-left">
-		        		<div style="float:left;">
+		        		
 				        	<h3 class="text-3em"><i class="fa fa-cog fa-1x"></i> How it works </h3>
 				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
 				        	<hr/>	
-
-                  <img src="/static/images/diag1.svg" style="width: 100%; height: auto; background-color:#CCC;">
-
-
-			        	</div>
+			        	
 		        	</div>
 		        	<div class="col-sm-2 text-right">
 		        		
-		        		<span class="label label-mod">Go to Full Documentation <i class="fa fa-arrow-right"></i></span><br/>
-		        		<h5 class="text-lgray">Data Tools:<h5/>
-
-		        		{{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'30') }}
-                {{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'30') }}
-                {{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'30') }}
-                {{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'30') }}
-                {{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'30') }}
-                {{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'30') }}
-                {{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'30') }}
-                {{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'30') }}
-                {{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'30') }}
+		        		<span class="label label-mod">Go to Full Documentation <i class="fa fa-book"></i></span>
 
 		        	</div>
 		      </div> <!-- close row -->
+
+          <div class="row bg-white">
+                  
+
+                  <div class="col-xs-3"> <!-- required for floating -->
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs-hiw tabs-left">
+                      <li>
+                        <a class="nostroke" href="#spid" data-toggle="tab">
+                          <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+                          {{ icontabs(insects.spid.title, insects.spid.icon, insects.spid.slug,'40') }}
+                        </a>
+                      </li>
+                      <li class="active">
+                        <a class="nostroke" href="#cica" data-toggle="tab">
+                          {{ icontabs(insects.cica.title, insects.cica.icon, insects.cica.slug,'40') }}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nostroke" href="#dfly" data-toggle="tab">
+                          {{ icontabs(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'40') }}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nostroke" href="#mosq" data-toggle="tab">
+                          {{ icontabs(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'40') }}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nostroke" href="#ants" data-toggle="tab">
+                          {{ icontabs(insects.ants.title, insects.ants.icon, insects.ants.slug,'40') }}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nostroke" href="#bees" data-toggle="tab">
+                          {{ icontabs(insects.bees.title, insects.bees.icon, insects.bees.slug,'40') }}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nostroke" href="#lbug" data-toggle="tab">
+                          {{ icontabs(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'40') }}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nostroke" href="#bfly" data-toggle="tab">
+                          {{ icontabs(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'40') }}
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="col-xs-9">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane fade in active" id="spid">uno</div>
+                      <div class="tab-pane fade" id="cica">dos</div>
+                      <div class="tab-pane fade" id="dfly">tres</div>
+                      <div class="tab-pane fade" id="mosq">cuatro</div>
+                      <div class="tab-pane fade" id="worm">cuatro</div>
+                      <div class="tab-pane fade" id="ants">cuatro</div>
+                      <div class="tab-pane fade" id="bees">cuatro</div>
+                      <div class="tab-pane fade" id="lbug">cuatro</div>
+                      <div class="tab-pane fade" id="bfly">cuatro</div>
+                    </div>
+                  </div>
+
+            </div>
+
 		        
 		    	<div class="row bg-white">
 		    		<div class="spa80"></div>

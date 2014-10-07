@@ -64,7 +64,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
-
+a.nostroke{
+  text-decoration: none;
+  outline: none;}
 
 /*link to black*/
 a.toblack {
@@ -205,6 +207,16 @@ filter: gray; /* IE6-9 */
     background-color:#CCC;
     padding: 0 90px;
 }
+
+.nav-tabs-hiw > li > a {
+    background-color: #E2E2E2;
+    padding:10px 0 10px 10px;
+    width: 100%;
+    border: 1px solid white;
+    border-width: 1px 1px 0px 3px;
+    border-radius: 10px 0px 0px 40px;
+}
+
 
 .tab-box-a{
     margin-right: 2px;
