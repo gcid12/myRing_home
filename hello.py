@@ -159,25 +159,31 @@ def spid():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
     il['bees'] = insect.bees()
 
-    dic = { 'a1': il['bees']['title'],
-            'a2': il['bees']['name'], 
-            'a3': il['bees']['subtitle'],
-            'a4': il['bees']['desc'], 
-            'a5': il['bees']['label'], 
-            'a6': il['bees']['icon'],
-            'a7': il['bees']['preview'],
-            'a8': il['bees']['slug'],
-            'a9': il['bees']['step1'],
-            'a10': il['bees']['diag1'], 
-            'a11': il['bees']['step2'],
-            'a12': il['bees']['diag2'], 
-            'a13': il['bees']['step3'], 
-            'a14': il['bees']['diag3'],
+    dic = { 'a1': il['spid']['title'],
+            'a2': il['spid']['name'], 
+            'a3': il['spid']['subtitle'],
+            'a4': il['spid']['desc'], 
+            'a5': il['spid']['label'], 
+            'a6': il['spid']['icon'],
+            'a7': il['spid']['preview'],
+            'a8': il['spid']['slug'],
+            'a9': il['spid']['step1'],
+            'a10': il['spid']['diag1'], 
+            'a11': il['spid']['step2'],
+            'a12': il['spid']['diag2'], 
+            'a13': il['spid']['step3'], 
+            'a14': il['spid']['diag3'],
+            #
+            'b1': il['cica']['title'], 
+            'b2': il['cica']['icon'],
+            'b3': il['cica']['slug'],
                 }
 
-    return render_template('details.html', dic=dic)  
+    return render_template('details.html', insects=il, dic=dic)  
 
 #m-cicada  /  CHIQ
 @app.route('/tools/semantic_labeler')

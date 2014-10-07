@@ -48,6 +48,23 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 .text-4em{font-size:4em;}
 
 
+.rotate90 {
+-webkit-transform: rotate(-90deg);
+-moz-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+-o-transform: rotate(-90deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.rotate45 {
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+
 
 /*link to black*/
 a.toblack {
@@ -169,7 +186,7 @@ filter: gray; /* IE6-9 */
 .tab-margin{margin:0 1px;}
 .tab-section{margin:0 8px;}
 .sol-box{padding:40px 50px 50px 100px;}
-.det-box{padding:40px 50px 100px 100px;}
+.det-box{padding:0;}
 
 .label-mod{background-color: #CCC;}
 .label-cap{background-color: #CCC;}
@@ -249,5 +266,11 @@ filter: gray; /* IE6-9 */
   border-left:75px solid #fff;
 }
 
+/*BOX*/
+.square{
+    margin-top:10px;
+    padding:50px;
+    border: 1px solid lightgrey;
+}
 
 
