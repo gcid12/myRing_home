@@ -37,35 +37,41 @@
 	<div class="row tab-margin">
     
     <div class="col-xs-7 text-center">
-		<div>
-			  <a href="/solutions/share" >
-			  	<div class="tab-box-a {% if dic['a5']=='sha' %}tab-on{% endif %}">
-			  		<h5 class="hidden-xs">Share</h5>
-			  		<h5 class="visible-xs">SH</h5>
-			  		<div class="rhr2 bg-c"></div>
-			  		<div class="spa5"></div>
-			  	</div>
-			  </a> 
-			  <a href="/solutions/capture" >
-			  	<div class="tab-box-a {% if dic['a5']=='cap' %}tab-on{% endif %}">
-			  		<h5 class="hidden-xs">Capture</h5>
-			  		<h5 class="visible-xs">CA</h5>
-			  		<div class="rhr2 bg-b"></div>
-			  		<div class="spa5"></div>
-			  	</div>
-			  </a> 
-			  <a href="/solutions/model" >
-			  	<div class="tab-box-a {% if dic['a5']=='mod' %}tab-on{% endif %}">
-			  		<h5 class="hidden-xs">Modeling</h5>
-			  		<h5 class="visible-xs">MO</h5>
-			  		<div class="rhr2 bg-a"></div>
-			  		<div class="spa5"></div>
-			  	</div>
-			  </a>
-		</div>   
+		  <a class="toblack" href="/solutions/model" >
+            <div class="tab-box-a-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+	          <i class="fa fa-cog fa-2x"></i>
+	          <div class="text-s2 text-1em hidden-xs">How it Works</div>
+            </div>
+		  </a>
+
+		  <a href="/solutions/share" >
+		  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+		  		<h5 class="hidden-xs">Share</h5>
+		  		<h5 class="visible-xs">SH</h5>
+		  		<div class="rhr2 bg-c"></div>
+		  		<div class="spa5"></div>
+		  	</div>
+		  </a> 
+		  <a href="/solutions/capture" >
+		  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+		  		<h5 class="hidden-xs">Capture</h5>
+		  		<h5 class="visible-xs">CA</h5>
+		  		<div class="rhr2 bg-b"></div>
+		  		<div class="spa5"></div>
+		  	</div>
+		  </a> 
+		  <a href="/solutions/model" >
+		  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+		  		<h5 class="hidden-xs">Modeling</h5>
+		  		<h5 class="visible-xs">MO</h5>
+		  		<div class="rhr2 bg-a"></div>
+		  		<div class="spa5"></div>
+		  	</div>
+		  </a>
+		  
 	</div>
 	<div class="col-xs-5 text-right hidden-xs">
-		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Solutions/ Modeling</h2>
+		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Data Suite / Solutions </h2>
 		
  
 	</div>
@@ -75,7 +81,7 @@
 			  <div class="tab-pane fade in active tab-section" id="model">
 			  <!-- A -->
 		    	<div class="row bg-white">
-		    		<div class="spa30"></div>
+		    		<div class="spa40"></div>
 		    	</div>
 		    	<div class="row bg-white det-box">
 		        	<div class="col-sm-offset-1 col-sm-2">
@@ -95,6 +101,12 @@
 
 		        		{% if dic['b1'] %}
 		        			{{ iconbig(dic['b1'], dic['b2'], dic['b3'],'30') }}
+		        		{% endif %}
+		        		{% if dic['c1'] %}
+		        			{{ iconbig(dic['c1'], dic['c2'], dic['c3'],'30') }}
+		        		{% endif %}
+		        		{% if dic['d1'] %}
+		        			{{ iconbig(dic['d1'], dic['d2'], dic['d3'],'30') }}
 		        		{% endif %}
 		        		
 		        	</div>
@@ -137,6 +149,9 @@
 
 		        	</div>
 
+		    	</div>
+		    	<div class="row bg-white">
+		    		<div class="spa80"></div>
 		    	</div>
 		    	
 		    	

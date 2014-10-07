@@ -4,6 +4,18 @@
 	My Ring - {{ title }}
 {% endblock %}
 
+{% macro iconbig(title,icon,slug,size) %}
+	<a id="pop" 
+	        href="/tools/{{ slug }}" 
+	        data-toggle="popover" 
+	        data-html="true" 
+	        data-content="<span class='text-s2'>{{ title }}</span>"
+	    >
+	    <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+	</a>
+
+{% endmacro %}
+
 {% block content %}
 
 
@@ -14,7 +26,7 @@
         <!--Brand-->
         <div class="row margin-100">
           <div class="col-sm-12">
-            
+          	<div class="spa20"></div>
           </div>
         </div>
         
@@ -23,11 +35,18 @@
           	<h1 class="text-gray">My Ring Data Suite</h1>
             <h2 class="text-gray">Everything you need to fulfill your Data Needs</h2>
 
-            
+            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'50') }}
+          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'50') }}
+          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'50') }}
+          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'50') }}
+          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'50') }}
+          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'50') }}
+          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'50') }}
+          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'50') }}
 
             <br/>
 
-            <img class="img-responsive center-block" src="/static/images/alllogos.png"/>
+            
           </div>
         </div>
         

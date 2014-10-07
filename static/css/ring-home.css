@@ -74,11 +74,19 @@ transition: color 0.2s linear;
 -moz-transition: color 0.2s linear;
 -webkit-transition: color 0.2s linear;
 text-decoration: none;
+outline: none;
 }
  
 a.toblack:hover {
 color: #000;
 text-decoration: none;
+
+}
+
+a.toblack:hover {
+color: #000;
+text-decoration: none;
+
 }
 
 
@@ -235,6 +243,7 @@ filter: gray; /* IE6-9 */
 
 .tab-on{background-color: white;}
 
+.tb-mini{padding:0 5px 20px 5px;}
 
 
 /*RIBBON*/
