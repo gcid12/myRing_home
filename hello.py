@@ -1,9 +1,9 @@
 from flask import Flask
 from flask import render_template
+from InsectData import InsectData
 
 app = Flask(__name__)
 app.config.from_object('config')
-
 
 
 @app.route('/')
@@ -13,291 +13,325 @@ def hello():
 
 @app.route('/solutions')
 def sol():
-    dic = {	'r1': 'on', 
-    			'a1': 'Schema Modeler',
-    			'a2': 'TOCATL v.0.2.3', 
-    			'a3': 'Model and edit your schemas .',
-    			'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'a5': 'Modeling Solution', 
-    			'a6': 'r-spid.png', 
-    			'a7': 'phiw/ph01.png',
-    			'a8': 'schema_modeler',
-    			# ---
-    			'b1': 'Semantic labeler',
-    			'b2': 'CHIQUILICHTLI v.0.1.1', 
-    			'b3': 'Create rich semantic Data',
-    			'b4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'b5': 'Modeling Solution', 
-    			'b6': 'r-cica.png', 
-    			'b7': 'phiw/ph02.png',
-    			'b8': 'semantic_labeler', 
-    			}
-    return render_template('solutions.html', dic=dic) 
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+
+    dic = { 'r1': 'on', 
+                'a1': il['spid']['title'],
+                'a2': il['spid']['name'], 
+                'a3': il['spid']['subtitle'],
+                'a4': il['spid']['desc'], 
+                'a5': il['spid']['label'], 
+                'a6': il['spid']['icon'],
+                'a7': il['spid']['preview'],
+                'a8': il['spid']['slug'],
+                # ---
+                'b1': il['cica']['title'],
+                'b2': il['cica']['name'], 
+                'b3': il['cica']['subtitle'],
+                'b4': il['cica']['desc'], 
+                'b5': il['cica']['label'], 
+                'b6': il['cica']['icon'],
+                'b7': il['cica']['preview'],
+                'b8': il['cica']['slug'],
+                }
+
+    return render_template('solutions.html', insects=il, dic=dic) 
 
 @app.route('/solutions/model')
 def solmod():
-    dic = {	'r1': 'on', 
-    			'a1': 'Schema Modeler',
-    			'a2': 'TOCATL v.0.2.3', 
-    			'a3': 'Model and edit your schemas .',
-    			'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'a5': 'Modeling Solution', 
-    			'a6': 'r-spid.png', 
-    			'a7': 'phiw/ph01.png', 
-    			'a8': 'schema_modeler',
-    			# --- 
-    			'b1': 'Semantic labeler',
-    			'b2': 'CHIQUILICHTLI v.0.1.1', 
-    			'b3': 'Create rich semantic Data',
-    			'b4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'b5': 'Modeling Solution', 
-    			'b6': 'r-cica.png', 
-    			'b7': 'phiw/ph02.png',
-    			'b8': 'semantic_labeler', 
-    			}
-    return render_template('solutions.html', dic=dic) 
+
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+
+    dic = { 'r1': 'on', 
+                'a1': il['spid']['title'],
+                'a2': il['spid']['name'], 
+                'a3': il['spid']['subtitle'],
+                'a4': il['spid']['desc'], 
+                'a5': il['spid']['label'], 
+                'a6': il['spid']['icon'],
+                'a7': il['spid']['preview'],
+                'a8': il['spid']['slug'],
+                # ---
+                'b1': il['cica']['title'],
+                'b2': il['cica']['name'], 
+                'b3': il['cica']['subtitle'],
+                'b4': il['cica']['desc'], 
+                'b5': il['cica']['label'], 
+                'b6': il['cica']['icon'],
+                'b7': il['cica']['preview'],
+                'b8': il['cica']['slug'],
+                }
+
+    return render_template('solutions.html', insects=il, dic=dic) 
+    
 
 @app.route('/solutions/capture')
 def solcap():
-    dic = {	'r2': 'on', 
-    			'a1': 'Manual Capture',
-    			'a2': 'ETZATL v.0.1.2', 
-    			'a3': 'Capture all kind of Data manually',
-    			'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'a5': 'Modeling Solution', 
-    			'a6': 'r-wasp.png', 
-    			'a7': 'phiw/ph05.png',
-    			'a8': 'manual_capture', 
-    			# ---
-    			'b1': 'Automatic Capture',
-    			'b2': 'APIPILO v.0.1.2', 
-    			'b3': 'Capture your Data via sensors and devices.',
-    			'b4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'b5': 'Modeling Solution', 
-    			'b6': 'r-mosq.png', 
-    			'b7': 'phiw/ph11.png',
-    			'b8': 'automatic_capture',  
-    			# ---
-    			'c1': 'Legacy Data',
-    			'c2': 'TEMOLIN 0.1.2', 
-    			'c3': "Bring your legacy Data back to life",
-    			'c4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'c5': 'Modeling Solution', 
-    			'c6': 'r-worm.png', 
-    			'c7': 'phiw/ph03.png', 
-    			'c8': 'legacy_data', 
-    			}
-    return render_template('solutions.html', dic=dic) 
+
+    insect = InsectData()
+    il = {}
+
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+
+    dic = { 'r1': 'on', 
+                'a1': il['dfly']['title'],
+                'a2': il['dfly']['name'], 
+                'a3': il['dfly']['subtitle'],
+                'a4': il['dfly']['desc'], 
+                'a5': il['dfly']['label'], 
+                'a6': il['dfly']['icon'],
+                'a7': il['dfly']['preview'],
+                'a8': il['dfly']['slug'],
+                # ---
+                'b1': il['mosq']['title'],
+                'b2': il['mosq']['name'], 
+                'b3': il['mosq']['subtitle'],
+                'b4': il['mosq']['desc'], 
+                'b5': il['mosq']['label'], 
+                'b6': il['mosq']['icon'],
+                'b7': il['mosq']['preview'],
+                'b8': il['mosq']['slug'],
+                # ---
+                'c1': il['worm']['title'],
+                'c2': il['worm']['name'], 
+                'c3': il['worm']['subtitle'],
+                'c4': il['worm']['desc'], 
+                'c5': il['worm']['label'], 
+                'c6': il['worm']['icon'],
+                'c7': il['worm']['preview'],
+                'c8': il['worm']['slug'],
+                }
+
+    return render_template('solutions.html', insects=il, dic=dic) 
+
 
 @app.route('/solutions/expose')
 def solexp():
-    dic = {	'r3': 'on', 
-    			'a1': 'Data Expose',
-    			'a2': 'TLALPIPIOLLI v.1.2.0', 
-    			'a3': 'Serve your Data in REST and multiple formats',
-    			'a4': 'Design a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'a5': 'Modeling Solution', 
-    			'a6': 'r-bees.png', 
-    			'a7': 'diagram.png',
-    			'a8': 'data_expose', 
-    			# ---
-    			'b1': 'Data combinator',
-    			'b2': 'MICAZOYOLIN 0.1.2', 
-    			'b3': 'Modeling schemas have never been easier, modelo its about being happy.',
-    			'b4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'b5': 'Modeling Solution', 
-    			'b6': 'r-lbug.png', 
-    			'b7': 'diagram.png',
-    			'b8': 'data_combinator', 
-    			# ---
-    			'c1': 'Data Merger',
-    			'c2': 'PAPALOTL v.0.1.2', 
-    			'c3': 'Modeling schemas have never been easier, modelo its about being happy.',
-    			'c4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-    			'c5': 'Modeling Solution', 
-    			'c6': 'r-bfly.png', 
-    			'c7': 'diagram.png', 
-    			'c8': 'data_merger',  
-    			}
-    return render_template('solutions.html', dic=dic)         
+    insect = InsectData()
+    il = {}
+
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+
+    dic = { 'r1': 'on', 
+                'a1': il['bees']['title'],
+                'a2': il['bees']['name'], 
+                'a3': il['bees']['subtitle'],
+                'a4': il['bees']['desc'], 
+                'a5': il['bees']['label'], 
+                'a6': il['bees']['icon'],
+                'a7': il['bees']['preview'],
+                'a8': il['bees']['slug'],
+                # ---
+                'b1': il['lbug']['title'],
+                'b2': il['lbug']['name'], 
+                'b3': il['lbug']['subtitle'],
+                'b4': il['lbug']['desc'], 
+                'b5': il['lbug']['label'], 
+                'b6': il['lbug']['icon'],
+                'b7': il['lbug']['preview'],
+                'b8': il['lbug']['slug'],
+                # ---
+                'c1': il['bfly']['title'],
+                'c2': il['bfly']['name'], 
+                'c3': il['bfly']['subtitle'],
+                'c4': il['bfly']['desc'], 
+                'c5': il['bfly']['label'], 
+                'c6': il['bfly']['icon'],
+                'c7': il['bfly']['preview'],
+                'c8': il['bfly']['slug'],
+                }
+
+    return render_template('solutions.html', insects=il, dic=dic)        
 
 # TOOOOOOLLLLLLSSSSSSSSTOOOOOOLLLLLLSSSSSSSS 
 
 #m-arana / TOCA
 @app.route('/tools/schema_modeler') 
 def spid():
-    dic = {	'r1': 'on',
-    			'a1': 'Schema Modeler',
+    dic = { 'r1': 'on',
+                'a1': 'Schema Modeler',
                 'a2': 'TOCATL v.0.2.3', 
                 'a3': 'Model and edit your schemas .',
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-spid.png',
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic)  
 
 #m-cicada  /  CHIQ
 @app.route('/tools/semantic_labeler')
 def cica():
-    dic = {	'r1': 'on', 
-    			'a1': 'Semantic labeler',
+    dic = { 'r1': 'on', 
+                'a1': 'Semantic labeler',
                 'a2': 'CHIQUILICHTLI v.0.1.1', 
                 'a3': 'Create rich semantic Data',
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-cica.png',  
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic) 
 
 #c-avispa  /  ETZA
 @app.route('/tools/manual_capture')
 def wasp():
-    dic = {	'r1': 'on', 
-    			'a1': 'Manual Capture',
+    dic = { 'r1': 'on', 
+                'a1': 'Manual Capture',
                 'a2': 'ETZATL v.0.1.2', 
                 'a3': 'Capture all kind of Data manually',
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-wasp.png', 
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic) 
 
 #c-mosquitoe   /  APIP
 @app.route('/tools/automatic_capture')
 def mosq():
-    dic = {	'r1': 'on', 
-    			'a1': 'Automatic Capture',
+    dic = { 'r1': 'on', 
+                'a1': 'Automatic Capture',
                 'a2': 'APIPILO v.0.1.2', 
                 'a3': 'Capture your Data via sensors and devices.',
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-mosq.png',  
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic)  
 
 
 #c-worm   /  TEMO
 @app.route('/tools/legacy_data')
 def worm():
-    dic = {	'r1': 'on', 
-    			'a1': 'Legacy Data',
+    dic = { 'r1': 'on', 
+                'a1': 'Legacy Data',
                 'a2': 'TEMOLIN 0.1.2', 
                 'a3': "Bring your legacy Data back to life",
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-worm.png', 
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic)   
 
 #e-bee  /  TLAL
 @app.route('/tools/data_expose')
 def bees():
-    dic = {	'r1': 'on', 
-    			'a1': 'Data Expose',
+    dic = { 'r1': 'on', 
+                'a1': 'Data Expose',
                 'a2': 'TLALPIPIOLLI v.1.2.0', 
                 'a3': 'Serve your Data in REST and multiple formats',
                 'a4': 'Design a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-bee.png', 
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic)  
 
 #e-ladybug  /  MICA
 @app.route('/tools/data_combinator')
 def lbug():
-    dic = {	'r1': 'on', 
-    			'a1': 'Data combinator',
+    dic = { 'r1': 'on', 
+                'a1': 'Data combinator',
                 'a2': 'MICAZOYOLIN 0.1.2', 
                 'a3': 'Modeling schemas have never been easier, modelo its about being happy.',
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-lbug.png', 
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic)  
 
 #e-Butterfly   /   PAPA
 @app.route('/tools/data_merger')
 def bfly():
-    dic = {	'r1': 'on', 
-    			'a1': 'Data Merger',
+    dic = { 'r1': 'on', 
+                'a1': 'Data Merger',
                 'a2': 'PAPALOTL v.0.1.2', 
                 'a3': 'Modeling schemas have never been easier, modelo its about being happy.',
                 'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
                 'a5': 'Modeling Solution', 
                 'a6': 'r-bfly.png', 
-    			'a7': '1Ipsum Lorem',
-    			'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a9': 'phiw/ph03.png',
-    			'a10': '2Ipsum Lorem',
-    			'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a12': 'phiw/ph06.png', 
-    			'a13': '3Ipsum Lorem ',
-    			'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-    			'a15': 'phiw/ph07.png',
-    			}
+                'a7': '1Ipsum Lorem',
+                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a9': 'phiw/ph03.png',
+                'a10': '2Ipsum Lorem',
+                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a12': 'phiw/ph06.png', 
+                'a13': '3Ipsum Lorem ',
+                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
+                'a15': 'phiw/ph07.png',
+                }
     return render_template('details.html', dic=dic)      
 
 
