@@ -27,13 +27,13 @@
     <div class="col-xs-12 text-center">
     		<div style="width:91%;">
     			  <a class="toblack" href="/solutions/model" >
-				  	<div class="tab-box-a-mini tab-{{ dic['r4'] }}">
+				  	<div class="tab-box-a-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
 				  		<i class="fa fa-cog fa-2x"></i>
 				  		<div class="text-s2 text-1em hidden-xs">How it Works</div>
 				  	</div>
 				  </a>
-				  <a class="toblack" href="/solutions/expose" >
-				  	<div class="tab-box-a tab-{{ dic['r3'] }}">
+				  <a class="toblack" href="/solutions/share" >
+				  	<div class="tab-box-a {% if dic['a5']=='sha' %}tab-on{% endif %}">
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-exp.png" class="img-responsive center-block" style="width:100px;">
 				  		
@@ -46,7 +46,7 @@
 				  	</div>
 				  </a> 
 				  <a class="toblack" href="/solutions/capture" >
-				  	<div class="tab-box-a tab-{{ dic['r2'] }}">
+				  	<div class="tab-box-a {% if dic['a5']=='cap' %}tab-on{% endif %}">
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-cap.png" class="img-responsive center-block" style="width:100px;">
 				  		<h2 class="hidden-xs">2. Capturing</h2>
@@ -58,7 +58,7 @@
 				  	</div>
 				  </a> 
 				  <a class="toblack" href="/solutions/model" >
-				  	<div class="tab-box-a tab-{{ dic['r1'] }}">
+				  	<div class="tab-box-a {% if dic['a5']=='mod' %}tab-on{% endif %}">
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-mod.png" class="img-responsive center-block" style="width:100px;">
 				  		<h2 class="hidden-xs"> 1. Modeling</h2>
