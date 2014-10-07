@@ -19,24 +19,23 @@ def sol():
     il['spid'] = insect.spid()
     il['cica'] = insect.cica()
 
-    dic = { 'r1': 'on', 
-                'a1': il['spid']['title'],
-                'a2': il['spid']['name'], 
-                'a3': il['spid']['subtitle'],
-                'a4': il['spid']['desc'], 
-                'a5': il['spid']['label'], 
-                'a6': il['spid']['icon'],
-                'a7': il['spid']['preview'],
-                'a8': il['spid']['slug'],
-                # ---
-                'b1': il['cica']['title'],
-                'b2': il['cica']['name'], 
-                'b3': il['cica']['subtitle'],
-                'b4': il['cica']['desc'], 
-                'b5': il['cica']['label'], 
-                'b6': il['cica']['icon'],
-                'b7': il['cica']['preview'],
-                'b8': il['cica']['slug'],
+    dic = { 'a1': il['spid']['title'],
+            'a2': il['spid']['name'], 
+            'a3': il['spid']['subtitle'],
+            'a4': il['spid']['desc'], 
+            'a5': il['spid']['label'], 
+            'a6': il['spid']['icon'],
+            'a7': il['spid']['preview'],
+            'a8': il['spid']['slug'],
+            # ---
+            'b1': il['cica']['title'],
+            'b2': il['cica']['name'], 
+            'b3': il['cica']['subtitle'],
+            'b4': il['cica']['desc'], 
+            'b5': il['cica']['label'], 
+            'b6': il['cica']['icon'],
+            'b7': il['cica']['preview'],
+            'b8': il['cica']['slug'],
                 }
 
     return render_template('solutions.html', insects=il, dic=dic) 
@@ -50,24 +49,23 @@ def solmod():
     il['spid'] = insect.spid()
     il['cica'] = insect.cica()
 
-    dic = { 'r1': 'on', 
-                'a1': il['spid']['title'],
-                'a2': il['spid']['name'], 
-                'a3': il['spid']['subtitle'],
-                'a4': il['spid']['desc'], 
-                'a5': il['spid']['label'], 
-                'a6': il['spid']['icon'],
-                'a7': il['spid']['preview'],
-                'a8': il['spid']['slug'],
-                # ---
-                'b1': il['cica']['title'],
-                'b2': il['cica']['name'], 
-                'b3': il['cica']['subtitle'],
-                'b4': il['cica']['desc'], 
-                'b5': il['cica']['label'], 
-                'b6': il['cica']['icon'],
-                'b7': il['cica']['preview'],
-                'b8': il['cica']['slug'],
+    dic = { 'a1': il['spid']['title'],
+            'a2': il['spid']['name'], 
+            'a3': il['spid']['subtitle'],
+            'a4': il['spid']['desc'], 
+            'a5': il['spid']['label'], 
+            'a6': il['spid']['icon'],
+            'a7': il['spid']['preview'],
+            'a8': il['spid']['slug'],
+            # ---
+            'b1': il['cica']['title'],
+            'b2': il['cica']['name'], 
+            'b3': il['cica']['subtitle'],
+            'b4': il['cica']['desc'], 
+            'b5': il['cica']['label'], 
+            'b6': il['cica']['icon'],
+            'b7': il['cica']['preview'],
+            'b8': il['cica']['slug'],
                 }
 
     return render_template('solutions.html', insects=il, dic=dic) 
@@ -83,40 +81,39 @@ def solcap():
     il['mosq'] = insect.mosq()
     il['worm'] = insect.worm()
 
-    dic = { 'r1': 'on', 
-                'a1': il['dfly']['title'],
-                'a2': il['dfly']['name'], 
-                'a3': il['dfly']['subtitle'],
-                'a4': il['dfly']['desc'], 
-                'a5': il['dfly']['label'], 
-                'a6': il['dfly']['icon'],
-                'a7': il['dfly']['preview'],
-                'a8': il['dfly']['slug'],
-                # ---
-                'b1': il['mosq']['title'],
-                'b2': il['mosq']['name'], 
-                'b3': il['mosq']['subtitle'],
-                'b4': il['mosq']['desc'], 
-                'b5': il['mosq']['label'], 
-                'b6': il['mosq']['icon'],
-                'b7': il['mosq']['preview'],
-                'b8': il['mosq']['slug'],
-                # ---
-                'c1': il['worm']['title'],
-                'c2': il['worm']['name'], 
-                'c3': il['worm']['subtitle'],
-                'c4': il['worm']['desc'], 
-                'c5': il['worm']['label'], 
-                'c6': il['worm']['icon'],
-                'c7': il['worm']['preview'],
-                'c8': il['worm']['slug'],
+    dic = { 'a1': il['dfly']['title'],
+            'a2': il['dfly']['name'], 
+            'a3': il['dfly']['subtitle'],
+            'a4': il['dfly']['desc'], 
+            'a5': il['dfly']['label'], 
+            'a6': il['dfly']['icon'],
+            'a7': il['dfly']['preview'],
+            'a8': il['dfly']['slug'],
+            # ---
+            'b1': il['mosq']['title'],
+            'b2': il['mosq']['name'], 
+            'b3': il['mosq']['subtitle'],
+            'b4': il['mosq']['desc'], 
+            'b5': il['mosq']['label'], 
+            'b6': il['mosq']['icon'],
+            'b7': il['mosq']['preview'],
+            'b8': il['mosq']['slug'],
+            # ---
+            'c1': il['worm']['title'],
+            'c2': il['worm']['name'], 
+            'c3': il['worm']['subtitle'],
+            'c4': il['worm']['desc'], 
+            'c5': il['worm']['label'], 
+            'c6': il['worm']['icon'],
+            'c7': il['worm']['preview'],
+            'c8': il['worm']['slug'],
                 }
 
     return render_template('solutions.html', insects=il, dic=dic) 
 
 
-@app.route('/solutions/expose')
-def solexp():
+@app.route('/solutions/share')
+def solsha():
     insect = InsectData()
     il = {}
 
@@ -124,33 +121,32 @@ def solexp():
     il['lbug'] = insect.lbug()
     il['bfly'] = insect.bfly()
 
-    dic = { 'r1': 'on', 
-                'a1': il['bees']['title'],
-                'a2': il['bees']['name'], 
-                'a3': il['bees']['subtitle'],
-                'a4': il['bees']['desc'], 
-                'a5': il['bees']['label'], 
-                'a6': il['bees']['icon'],
-                'a7': il['bees']['preview'],
-                'a8': il['bees']['slug'],
-                # ---
-                'b1': il['lbug']['title'],
-                'b2': il['lbug']['name'], 
-                'b3': il['lbug']['subtitle'],
-                'b4': il['lbug']['desc'], 
-                'b5': il['lbug']['label'], 
-                'b6': il['lbug']['icon'],
-                'b7': il['lbug']['preview'],
-                'b8': il['lbug']['slug'],
-                # ---
-                'c1': il['bfly']['title'],
-                'c2': il['bfly']['name'], 
-                'c3': il['bfly']['subtitle'],
-                'c4': il['bfly']['desc'], 
-                'c5': il['bfly']['label'], 
-                'c6': il['bfly']['icon'],
-                'c7': il['bfly']['preview'],
-                'c8': il['bfly']['slug'],
+    dic = { 'a1': il['bees']['title'],
+            'a2': il['bees']['name'], 
+            'a3': il['bees']['subtitle'],
+            'a4': il['bees']['desc'], 
+            'a5': il['bees']['label'], 
+            'a6': il['bees']['icon'],
+            'a7': il['bees']['preview'],
+            'a8': il['bees']['slug'],
+            # ---
+            'b1': il['lbug']['title'],
+            'b2': il['lbug']['name'], 
+            'b3': il['lbug']['subtitle'],
+            'b4': il['lbug']['desc'], 
+            'b5': il['lbug']['label'], 
+            'b6': il['lbug']['icon'],
+            'b7': il['lbug']['preview'],
+            'b8': il['lbug']['slug'],
+            # ---
+            'c1': il['bfly']['title'],
+            'c2': il['bfly']['name'], 
+            'c3': il['bfly']['subtitle'],
+            'c4': il['bfly']['desc'], 
+            'c5': il['bfly']['label'], 
+            'c6': il['bfly']['icon'],
+            'c7': il['bfly']['preview'],
+            'c8': il['bfly']['slug'],
                 }
 
     return render_template('solutions.html', insects=il, dic=dic)        
@@ -160,24 +156,34 @@ def solexp():
 #m-arana / TOCA
 @app.route('/tools/schema_modeler') 
 def spid():
-    dic = { 'r1': 'on',
-                'a1': 'Schema Modeler',
-                'a2': 'TOCATL v.0.2.3', 
-                'a3': 'Model and edit your schemas .',
-                'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-                'a5': 'Modeling Solution', 
-                'a6': 'r-spid.png',
-                'a7': '1Ipsum Lorem',
-                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-                'a9': 'phiw/ph03.png',
-                'a10': '2Ipsum Lorem',
-                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-                'a12': 'phiw/ph06.png', 
-                'a13': '3Ipsum Lorem ',
-                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-                'a15': 'phiw/ph07.png',
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['bees'] = insect.bees()
+
+    dic = { 'a1': il['spid']['title'],
+            'a2': il['spid']['name'], 
+            'a3': il['spid']['subtitle'],
+            'a4': il['spid']['desc'], 
+            'a5': il['spid']['label'], 
+            'a6': il['spid']['icon'],
+            'a7': il['spid']['preview'],
+            'a8': il['spid']['slug'],
+            'a9': il['spid']['step1'],
+            'a10': il['spid']['diag1'], 
+            'a11': il['spid']['step2'],
+            'a12': il['spid']['diag2'], 
+            'a13': il['spid']['step3'], 
+            'a14': il['spid']['diag3'],
+            #
+            'b1': il['cica']['title'], 
+            'b2': il['cica']['icon'],
+            'b3': il['cica']['slug'],
                 }
-    return render_template('details.html', dic=dic)  
+
+    return render_template('details.html', insects=il, dic=dic)  
 
 #m-cicada  /  CHIQ
 @app.route('/tools/semantic_labeler')

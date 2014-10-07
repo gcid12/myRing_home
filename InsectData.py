@@ -51,7 +51,7 @@ class InsectData:
         result['name'] =  'ETZATL v.0.1.2'
         result['title'] = 'Manual Capture'
         result['subtitle'] = 'Capture all kind of Data manually'
-        result['icon'] = 'r-spid.png'
+        result['icon'] = 'r-dfly.png'
         result['desc'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. '
         result['slug'] = 'schema_modeler'
         result['label'] = 'cap'

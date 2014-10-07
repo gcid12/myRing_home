@@ -4,32 +4,50 @@
 	My Ring - {{ title }}
 {% endblock %}
 
-{% macro show_insect(insect) %}
-	<div style="width:200px; background-color:#CCC;">
-		<img class="img-responsive center-block" src="/static/images/{{ insect.icon }}"/>
-	    <h3>{{ insect.name }}</h3>
-	    <p class="date">{{ insect.desc }}</p>
-    </div>
+
+
+
+{% macro iconbig(title,icon,slug,size) %}
+	<a id="pop" 
+	        href="/tools/{{ slug }}" 
+	        data-toggle="popover" 
+	        data-content="{{ title }}"
+	    >
+	    <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+	</a>
+
 {% endmacro %}
 
-{% block content %}
+{% macro icon(title,subtitle,label,icon,slug,size,float) %}
 
+<div style="float:{{ float }}; padding:0 5px;">
+	<a href="#" data-toggle="tooltip" title="{{ title }}">
+	    <img class="img-responsive center-block" src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+	</a>
+</div>
+
+{% endmacro %}
+
+
+
+
+{% block content %}
 
 <section>
 	<div class="row tab-margin">
     
     <div class="col-xs-7 text-center">
 		<div>
-			  <a href="/solutions/expose" >
-			  	<div class="tab-box-a tab-{{ dic['r3'] }}">
-			  		<h5 class="hidden-xs">Expose</h5>
-			  		<h5 class="visible-xs">EX</h5>
+			  <a href="/solutions/share" >
+			  	<div class="tab-box-a {% if dic['a5']=='sha' %}tab-on{% endif %}">
+			  		<h5 class="hidden-xs">Share</h5>
+			  		<h5 class="visible-xs">SH</h5>
 			  		<div class="rhr2 bg-c"></div>
 			  		<div class="spa5"></div>
 			  	</div>
 			  </a> 
 			  <a href="/solutions/capture" >
-			  	<div class="tab-box-a tab-{{ dic['r2'] }}">
+			  	<div class="tab-box-a {% if dic['a5']=='cap' %}tab-on{% endif %}">
 			  		<h5 class="hidden-xs">Capture</h5>
 			  		<h5 class="visible-xs">CA</h5>
 			  		<div class="rhr2 bg-b"></div>
@@ -37,7 +55,7 @@
 			  	</div>
 			  </a> 
 			  <a href="/solutions/model" >
-			  	<div class="tab-box-a tab-{{ dic['r1'] }}">
+			  	<div class="tab-box-a {% if dic['a5']=='mod' %}tab-on{% endif %}">
 			  		<h5 class="hidden-xs">Modeling</h5>
 			  		<h5 class="visible-xs">MO</h5>
 			  		<div class="rhr2 bg-a"></div>
@@ -46,52 +64,54 @@
 			  </a>
 		</div>   
 	</div>
-	<div class="col-xs-5 text-center hidden-xs">
+	<div class="col-xs-5 text-right hidden-xs">
 		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Solutions/ Modeling</h2>
-
-		{{ show_insect(insect) }}
-
-	</div>
-
-		  
+		
+ 
 	</div>
 	<div class="row tab-margin">
-    <div class="col-xs-12 text-center">	
+    <div class="col-xs-12">	
 			<div class="tab-content">
 			  <div class="tab-pane fade in active tab-section" id="model">
 			  <!-- A -->
+		    	<div class="row bg-white">
+		    		<div class="spa30"></div>
+		    	</div>
 		    	<div class="row bg-white det-box">
-		        	<div class="col-sm-2 text-center">
+		        	<div class="col-sm-offset-1 col-sm-2">
 			        	<img class="img-responsive center-block" src="/static/images/{{ dic['a6'] }}"/>
 		        	</div>
-		        	<div class="col-sm-9 text-left">
-
-		        		<span class="label bg-b" style="float:right;">{{ dic['a5'] }}</span><br/>
-		        		<span class="label label-mod" style="float:right;">Go to Documentation <i class="fa fa-arrow-right"></i></span><br/>
-		        		<h5 class="labelx label-modx text-lgray" style="float:right;">Related:<h5/>
-		        		<div class="clearboth"></div>
-		        		<img class="img-responsive center-block" src="/static/images/r-bfly.png" style="width:30px; float:right;" />
-		        		<img class="img-responsive center-block" src="/static/images/spider.png" style="width:30px; float:right;"/>
-
+		        	<div class="col-sm-6 text-left">
 		        		<div style="float:left;">
 				        	<h3 class="text-3em">{{ dic['a1'] }}</h3>
 				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
-				        	<hr/>
-				        	
+				        	<hr/>	
 			        	</div>
+		        	</div>
+		        	<div class="col-sm-2 text-right">
+		        		<span class="label bg-b">{{ dic['a5'] }}</span><br/>
+		        		<span class="label label-mod">Go to Documentation <i class="fa fa-arrow-right"></i></span><br/>
+		        		<h5 class="text-lgray">Related:<h5/>
 
-			        	<div class="spa5 clearboth"></div>
+		        		{% if dic['b1'] %}
+		        			{{ iconbig(dic['b1'], dic['b2'], dic['b3'],'30') }}
+		        		{% endif %}
+		        		
+		        	</div>
+		        </div> <!-- close row -->
+		        <div class="row bg-white text-left">
+		        	<div class="col-sm-offset-3 col-sm-8">
 			        	<p class="text-2em text-dgray">{{ dic['a3'] }}</p>
 				        <p class="text-dgray">{{ dic['a4'] }}</p>
 				        <div class="spa20"></div>
 
 			        	<div class="row">
 				        	<div class="col-sm-6">
-				        		<h2 class="text-lgray">{{ dic['a7'] }}</h2>	
-				        		<p>{{ dic['a8'] }}</p>
+				        		<h2 class="text-lgray">{{ dic['a9'] }}</h2>	
+				        		
 							</div>
 							<div class="col-sm-6">
-				        		<img class="img-responsive right-block" src="/static/images/{{ dic['a9'] }}" style="width:300px;" />
+				        		<img class="img-responsive right-block" src="/static/images/{{ dic['a10'] }}" style="width:300px;" />
 				        	</div>
 						</div>	
 						
@@ -101,18 +121,17 @@
 				        		<img class="img-responsive right-block" src="/static/images/{{ dic['a12'] }}" style="width:300px;" />
 				        	</div>
 				        	<div class="col-sm-6">
-				        		<h2 class="text-lgray">{{ dic['a10'] }} </h2>
-				        		<p>{{ dic['a11'] }}</p>
+				        		<h2 class="text-lgray">{{ dic['a11'] }} </h2>
+				        		
 							</div>
 						</div>	
 
 						<div class="row">
 				        	<div class="col-sm-6">
 				        		<h2 class="text-lgray">{{ dic['a13'] }}</h2>	
-				        		<p>{{ dic['a14'] }}</p>
 							</div>
 							<div class="col-sm-6">
-				        		<img class="img-responsivex right-block" src="/static/images/{{ dic['a15'] }}" style="width:300px;" />
+				        		<img class="img-responsivex right-block" src="/static/images/{{ dic['a14'] }}" style="width:300px;" />
 				        	</div>
 						</div>	
 
