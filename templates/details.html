@@ -4,13 +4,12 @@
 	My Ring - {{ title }}
 {% endblock %}
 
-{% macro show_insect(insect) %}
-	<div style="width:200px; background-color:#CCC;">
-		<img class="img-responsive center-block" src="/static/images/{{ insect.icon }}"/>
-	    <h3>{{ insect.name }}</h3>
-	    <p class="date">{{ insect.desc }}</p>
-    </div>
-{% endmacro %}
+{% macro show_insect(title, subtitle, slug, size, float) %}
+	
+		<img class="img-responsive center-block" src="/static/images/{{ slug }}" style="width:{{ size }}px; float: {{ float }} ;"/>
+	    
+    
+{% endmacro %}}
 
 {% block content %}
 
@@ -48,9 +47,6 @@
 	</div>
 	<div class="col-xs-5 text-center hidden-xs">
 		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Solutions/ Modeling</h2>
-
-		{{ show_insect(insect) }}
-
 	</div>
 
 		  
@@ -70,6 +66,9 @@
 		        		<span class="label label-mod" style="float:right;">Go to Documentation <i class="fa fa-arrow-right"></i></span><br/>
 		        		<h5 class="labelx label-modx text-lgray" style="float:right;">Related:<h5/>
 		        		<div class="clearboth"></div>
+		        		{{ show_insect(dic['a1'], dic['a2'], dic['a6'],'30','right') }}
+
+
 		        		<img class="img-responsive center-block" src="/static/images/r-bfly.png" style="width:30px; float:right;" />
 		        		<img class="img-responsive center-block" src="/static/images/spider.png" style="width:30px; float:right;"/>
 

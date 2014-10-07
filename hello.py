@@ -160,23 +160,28 @@ def solexp():
 #m-arana / TOCA
 @app.route('/tools/schema_modeler') 
 def spid():
+    insect = InsectData()
+    il = {}
+
+    il['bees'] = insect.bees()
+
     dic = { 'r1': 'on',
-                'a1': 'Schema Modeler',
-                'a2': 'TOCATL v.0.2.3', 
-                'a3': 'Model and edit your schemas .',
-                'a4': 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ', 
-                'a5': 'Modeling Solution', 
-                'a6': 'r-spid.png',
-                'a7': '1Ipsum Lorem',
-                'a8': '1Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-                'a9': 'phiw/ph03.png',
-                'a10': '2Ipsum Lorem',
-                'a11': '2Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-                'a12': 'phiw/ph06.png', 
-                'a13': '3Ipsum Lorem ',
-                'a14': '3Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. ',
-                'a15': 'phiw/ph07.png',
+                'a1': il['bees']['title'],
+                'a2': il['bees']['name'], 
+                'a3': il['bees']['subtitle'],
+                'a4': il['bees']['desc'], 
+                'a5': il['bees']['label'], 
+                'a6': il['bees']['icon'],
+                'a7': il['bees']['preview'],
+                'a8': il['bees']['slug'],
+                'a9': il['bees']['step1'],
+                'a10': il['bees']['diag1'], 
+                'a11': il['bees']['step2'],
+                'a12': il['bees']['diag2'], 
+                'a13': il['bees']['step3'], 
+                'a14': il['bees']['diag3'],
                 }
+
     return render_template('details.html', dic=dic)  
 
 #m-cicada  /  CHIQ
