@@ -537,8 +537,8 @@ def prici():
     return render_template('pricing.html', insects=il) 
 
 
-@app.route('/hiw')
-def hiw():
+@app.route('/how')
+def how():
     insect = InsectData()
     il = {}
 

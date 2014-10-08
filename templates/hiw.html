@@ -14,7 +14,7 @@
 	   <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
     </td>
     <td>
-      <p class="text-s1 hidden-xs text-1em" style="line-height:1em; padding-left:10px;">{{ title }}</p> 
+      <p class="text-s1 hidden-xs text-1em" style="line-height:1em; padding:0 20px 0 10px;">{{ title }}</p> 
     </td>
   </tr>
 </table>
@@ -27,11 +27,13 @@
 
 {% block content %}
 
+
+
 <section>
 	<div class="row tab-margin">
     
     <div class="col-xs-7 text-center">
-		  <a class="toblack" href="/solutions/model" >
+		  <a class="toblack" href="/how" >
             <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
 	          <i class="fa fa-cog fa-1x"></i>
 	          <span class="text-s2 text-1em hidden-xs">How it Works</span>
@@ -81,8 +83,8 @@
 		      
 		        	<div class="col-sm-offset-1 col-sm-8 text-left">
 		        		
-				        	<h3 class="text-3em"><i class="fa fa-cog fa-1x"></i> How it works </h3>
-				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
+				        	<h3 class="text-3em text-gray"><span class="text-black"><i class="fa fa-cog fa-1x"></i></span> How the <span class="text-black">Data Suite</span> works </h3>
+				        	<h4 class="text-lgray">MyRing Data Suite was created to tackle multiple Data escenarios. All the Modules are standalone and can be used together or separadetely, they can also be connected to existent systems to complete missing functionalities.</h4>
 				        	<hr/>	
 			        	
 		        	</div>
@@ -94,9 +96,13 @@
 		      </div> <!-- close row -->
 
           <div class="row bg-white">
-                  
+            <div class="col-xs-3"> <!-- required for floating -->
+                    
 
-                  <div class="col-xs-3"> <!-- required for floating -->
+              <div class="scro_container entry">
+                <div class="scro_anchor"></div>
+                <div class="scro" style="height:300px;"><!-- START SCRO -->
+
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs-hiw tabs-left">
                       <li>
@@ -142,23 +148,44 @@
                       </li>
                       
                     </ul>
-                  </div>
-                  <div class="col-xs-9">
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                      <div class="tab-pane fade in active" id="spid">uno</div>
-                      <div class="tab-pane fade" id="cica">dos</div>
-                      <div class="tab-pane fade" id="dfly">tres</div>
-                      <div class="tab-pane fade" id="mosq">cuatro</div>
-                      <div class="tab-pane fade" id="worm">cuatro</div>
-                      <div class="tab-pane fade" id="ants">cuatro</div>
-                      <div class="tab-pane fade" id="bees">cuatro</div>
-                      <div class="tab-pane fade" id="lbug">cuatro</div>
-                      <div class="tab-pane fade" id="bfly">cuatro</div>
-                    </div>
-                  </div>
 
-            </div>
+                </div> <!-- CLOSE SCRO -->
+              </div><!-- CLOSE SCRO CONTAINER -->
+            </div> <!-- CLOSE COLUMN -->
+            <div class="col-xs-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane fade in active" id="spid">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="cica">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="dfly">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="mosq">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="worm">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="ants">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="bees">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="lbug">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                  <div class="tab-pane fade" id="bfly">
+                    <img class="img-responsive" src="/static/images/diag1.png" >
+                  </div>
+                </div>
+              </div>
+
+          </div>
 
 		        
 		    	<div class="row bg-white">

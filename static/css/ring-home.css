@@ -209,7 +209,7 @@ filter: gray; /* IE6-9 */
 }
 
 .nav-tabs-hiw > li > a {
-    background-color: #E2E2E2;
+    background-color: #F7F7F7;
     padding:10px 0 10px 10px;
     width: 100%;
     border: 1px solid white;
@@ -313,4 +313,11 @@ filter: gray; /* IE6-9 */
     border: 1px solid lightgrey;
 }
 
+
+/*SCROLLER STOP*/
+
+
+.scro_container{/*margin:0 auto;*/}
+  .scro_anchor{height:0px; margin:0; padding:0;}
+  .scro{ /*z-index:300;*/ height:auto;}
 
