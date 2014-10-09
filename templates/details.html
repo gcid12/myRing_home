@@ -7,7 +7,7 @@
 
 
 
-{% macro iconbig(title,icon,slug,size) %}
+{% macro iconbig(title,icon,slug,size) %} <!-- repeated please fix -->
 	<a id="pop" 
 	        href="/tools/{{ slug }}" 
 	        data-toggle="popover" 
@@ -28,6 +28,17 @@
 
 {% endmacro %}
 
+{% macro ringtab(tab) %}  <!-- repeated please fix -->
+	{% if tab=='mod' %}
+		<span class="label bg-a">Data Modeling tool</span>
+	{% elif tab=='cap' %}
+		<span class="label bg-b">Data Capture tool</span>
+	{% elif tab=='sha' %}
+		<span class="label bg-c">Data Sharing tool</span>
+	{% else %}
+		<span class="label bg-default">{{ tab }}</span>
+	{% endif %}
+{% endmacro %}
 
 
 
@@ -95,7 +106,8 @@
 			        	</div>
 		        	</div>
 		        	<div class="col-sm-2 text-right">
-		        		<span class="label bg-b">{{ dic['a5'] }}</span><br/>
+		        		{{ ringtab(dic['a5']) }}
+		        		<br/>
 		        		<span class="label label-mod">Go to Documentation <i class="fa fa-arrow-right"></i></span><br/>
 		        		<h5 class="text-lgray">Related:<h5/>
 
