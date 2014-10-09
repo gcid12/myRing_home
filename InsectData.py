@@ -53,7 +53,7 @@ class InsectData:
         result['subtitle'] = 'Capture all kind of Data manually'
         result['icon'] = 'r-dfly.png'
         result['desc'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. '
-        result['slug'] = 'schema_modeler'
+        result['slug'] = 'manual_capture'
         result['label'] = 'cap'
         result['preview'] = 'phiw/ph02.png'
         result['step1'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys.'
@@ -107,7 +107,28 @@ class InsectData:
         result['step3'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys.'
         result['diag3'] = 'phiw/ph07.png'
 
-        return result  
+        return result 
+
+    def ants(self):
+
+        result = {}
+
+        result['name'] =  'AZCATL 0.1.2'
+        result['title'] = 'Data Scrapper'
+        result['subtitle'] = 'Use Data from other sources'
+        result['icon'] = 'r-ants.png'
+        result['desc'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys. '
+        result['slug'] = 'data_scrapper'
+        result['label'] = 'cap'
+        result['preview'] = 'phiw/ph02.png'
+        result['step1'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys.'
+        result['diag1'] = 'phiw/ph03.png'
+        result['step2'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys.'
+        result['diag2'] = 'phiw/ph06.png'
+        result['step3'] = 'Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning, analisys.'
+        result['diag3'] = 'phiw/ph07.png'
+
+        return result      
 
 
     def bees(self):

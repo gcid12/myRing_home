@@ -4,6 +4,19 @@
 	My Ring - {{ title }}
 {% endblock %}
 
+{% macro ringtab(tab) %}  <!-- repeated please fix -->
+	{% if tab=='mod' %}
+		<span class="label bg-a">Data Modeling tool</span>
+	{% elif tab=='cap' %}
+		<span class="label bg-b">Data Capture tool</span>
+	{% elif tab=='sha' %}
+		<span class="label bg-c">Data Sharing tool</span>
+	{% else %}
+		<span class="label bg-default">{{ tab }}</span>
+	{% endif %}
+{% endmacro %}
+
+
 {% block content %}
 
 
@@ -17,7 +30,7 @@
   </div> 
   <div class="row tab-margin">
     <div class="col-sm-offset-3 col-sm-6 text-center">
-    	<p class="text-white text-1em ">Our solutions are separated in 3 main categories: Modeling, Capture and Expose, each module it's a standalone solution that can be combined to tackle different Data problems and with other tech. </p>
+    	<p class="text-white text-1em ">Our solutions are separated in 3 main categories: Modeling, Capture and Sharing, each module it's a standalone solution that can be combined in different ways to tackle different Data scenarios. </p>
     	<div class="spa30"></div>
     </div>
   </div>  
@@ -26,7 +39,7 @@
 	<div class="row tab-margin">
     <div class="col-xs-12 text-center">
     		<div style="width:91%;">
-    			  <a class="toblack" href="/solutions/model" >
+    			  <a class="toblack" href="/how" >
 				  	<div class="tab-box-a-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
 				  		<i class="fa fa-cog fa-2x"></i>
 				  		<div class="text-s2 text-1em hidden-xs">How it Works</div>
@@ -81,15 +94,19 @@
 
 			  <!-- A -->
 			{% if dic['a1'] %}	
-		    	<div class="row bg-white sol-box">
+		    	<div class="row bg-white">
 		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+		        		<div class="spa30"></div>
 			        	<a href="/tools/{{ dic['a8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['a6'] }}"/>
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['a6'] }}" style="width:100px;" />
 			        	</a>
 		        	</div>
-		        	<div class="col-sm-8 text-left">
+		        	<div class="col-sm-9 text-left">
+		        		<div class="spa20"></div>
 
-		        		<span class="label label-mod" style="float:right;">{{ dic['a5'] }}</span><br/>
+		        		<span style="float:right;">
+		        			{{ ringtab(dic['a5']) }}
+		        		</span><br/>
 		        		
 			        	<a class="toblack" href="/tools/{{ dic['a8'] }}">
 				        	<h3 class="text-3em">{{ dic['a1'] }}</h3>
@@ -102,23 +119,26 @@
 					        </div>
 			        		<div class="text-s2" style="width:70%;">{{ dic['a4'] }}</div>
 			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
+			          		<div class="spa30"></div>
 						</a>	
 		        	</div>
 		    	</div>
 		    {% endif %}
-			 
 
-		    	<!-- B -->
-		    {% if dic['b1'] %}	
-		    	<div class="row bg-03 sol-box">
+		      <!-- B -->
+			{% if dic['b1'] %}	
+		    	<div class="row bg-03">
 		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+		        		<div class="spa30"></div>
 			        	<a href="/tools/{{ dic['b8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['b6'] }}"/>
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['b6'] }}" style="width:100px;" />
 			        	</a>
 		        	</div>
-		        	<div class="col-sm-8 text-left">
-
-		        		<span class="label label-mod" style="float:right;">{{ dic['b5'] }}</span><br/>
+		        	<div class="col-sm-9 text-left">
+		        		<div class="spa20"></div>
+		        		<span style="float:right;">
+		        			{{ ringtab(dic['a5']) }}
+		        		</span><br/>
 		        		
 			        	<a class="toblack" href="/tools/{{ dic['b8'] }}">
 				        	<h3 class="text-3em">{{ dic['b1'] }}</h3>
@@ -131,22 +151,26 @@
 					        </div>
 			        		<div class="text-s2" style="width:70%;">{{ dic['b4'] }}</div>
 			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
+			          		<div class="spa30"></div>
 						</a>	
 		        	</div>
 		    	</div>
-		    {% endif %}		
+		    {% endif %}
 
-		    	<!-- B -->
-		    {% if dic['c1'] %}	
-		    	<div class="row bg-white sol-box">
+		      <!-- C -->
+			{% if dic['c1'] %}	
+		    	<div class="row bg-white">
 		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+		        		<div class="spa30"></div>
 			        	<a href="/tools/{{ dic['c8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['c6'] }}"/>
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['c6'] }}" style="width:100px;" />
 			        	</a>
 		        	</div>
-		        	<div class="col-sm-8 text-left">
-
-		        		<span class="label label-mod" style="float:right;">{{ dic['c5'] }}</span><br/>
+		        	<div class="col-sm-9 text-left">
+		        		<div class="spa20"></div>
+		        		<span style="float:right;">
+		        			{{ ringtab(dic['a5']) }}
+		        		</span><br/>
 		        		
 			        	<a class="toblack" href="/tools/{{ dic['c8'] }}">
 				        	<h3 class="text-3em">{{ dic['c1'] }}</h3>
@@ -159,13 +183,44 @@
 					        </div>
 			        		<div class="text-s2" style="width:70%;">{{ dic['c4'] }}</div>
 			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
+			          		<div class="spa30"></div>
 						</a>	
 		        	</div>
 		    	</div>
 		    {% endif %}
 
-
-
+		      <!-- D -->
+			{% if dic['d1'] %}	
+		    	<div class="row bg-03">
+		        	<div class="col-sm-offset-1 col-sm-2 text-center">
+		        		<div class="spa30"></div>
+			        	<a href="/tools/{{ dic['d8'] }}">
+			        	<img class="img-responsive center-block" src="/static/images/{{ dic['d6'] }}" style="width:100px;" />
+			        	</a>
+		        	</div>
+		        	<div class="col-sm-9 text-left">
+		        		<div class="spa20"></div>
+		        		<span style="float:right;">
+		        			{{ ringtab(dic['a5']) }}
+		        		</span><br/>
+		        		
+			        	<a class="toblack" href="/tools/{{ dic['d8'] }}">
+				        	<h3 class="text-3em">{{ dic['d1'] }}</h3>
+				        	<h4 class="text-lgray">{{ dic['d2'] }}</h4>
+				        	<hr/>
+				        	
+				        	<div class="spa5 clearboth"></div>
+				        	<div class="text-s2 text-2em">{{ dic['d3'] }}
+					          	<div class="spa20"></div>
+					        </div>
+			        		<div class="text-s2" style="width:70%;">{{ dic['d4'] }}</div>
+			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
+			          		<div class="spa30"></div>
+						</a>	
+		        	</div>
+		    	</div>
+		    {% endif %}
+			 
 			  </div>
 
 			</div> <!-- close tab content -->

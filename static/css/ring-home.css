@@ -5,7 +5,7 @@
 
 h1{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 h2{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
-h3{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
+h3{ font-family: 'Raleway', sans-serif; font-weight: 300; line-height:0.7em; text-transform: none;}
 h4{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 h5{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 
@@ -64,7 +64,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
-
+a.nostroke{
+  text-decoration: none;
+  outline: none;}
 
 /*link to black*/
 a.toblack {
@@ -74,11 +76,19 @@ transition: color 0.2s linear;
 -moz-transition: color 0.2s linear;
 -webkit-transition: color 0.2s linear;
 text-decoration: none;
+outline: none;
 }
  
 a.toblack:hover {
 color: #000;
 text-decoration: none;
+
+}
+
+a.toblack:hover {
+color: #000;
+text-decoration: none;
+
 }
 
 
@@ -198,6 +208,16 @@ filter: gray; /* IE6-9 */
     padding: 0 90px;
 }
 
+.nav-tabs-hiw > li > a {
+    background-color: #F7F7F7;
+    padding:10px 0 10px 10px;
+    width: 100%;
+    border: 1px solid white;
+    border-width: 1px 1px 0px 3px;
+    border-radius: 10px 0px 0px 40px;
+}
+
+
 .tab-box-a{
     margin-right: 2px;
     line-height: 1.42857;
@@ -226,6 +246,7 @@ filter: gray; /* IE6-9 */
     background-color: #d8d8d8;
     box-shadow: -3px 0px 5px #AAAAAA;
 }
+
 .tab-box-b{
     padding:10px 40px ;
     height:50px;
@@ -233,8 +254,27 @@ filter: gray; /* IE6-9 */
     line-height: 1.3em;
 }
 
+.tab-box-c-mini{
+
+    margin-right: 200px;
+    line-height: 1.42857;
+    border: 1px solid white;
+    border-width: 1px 1px 0px 1px;
+    border-radius: 5px 5px 0px 0px;
+    margin:0 1px;
+    padding:1px 5px 1px 5px; 
+    width:25%; 
+    position:absolute;
+    bottom:0;
+    right:-100px; 
+    background-color: #d8d8d8;
+    box-shadow: -2px 0px 2px #666;
+}
+
+
 .tab-on{background-color: white;}
 
+.tb-mini{padding:0 5px 20px 5px;}
 
 
 /*RIBBON*/
@@ -273,4 +313,11 @@ filter: gray; /* IE6-9 */
     border: 1px solid lightgrey;
 }
 
+
+/*SCROLLER STOP*/
+
+
+.scro_container{/*margin:0 auto;*/}
+  .scro_anchor{height:0px; margin:0; padding:0;}
+  .scro{ /*z-index:300;*/ height:auto;}
 
