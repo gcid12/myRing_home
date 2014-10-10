@@ -7,85 +7,50 @@
 
 
 
-{% macro iconbig(title,icon,slug,size) %} <!-- repeated please fix -->
-	<a id="pop" 
-	        href="/tools/{{ slug }}" 
-	        data-toggle="popover" 
-	        data-content="{{ title }}"
-	    >
-	    <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
-	</a>
-
-{% endmacro %}
-
-{% macro icon(title,subtitle,label,icon,slug,size,float) %}
-
-<div style="float:{{ float }}; padding:0 5px;">
-	<a href="#" data-toggle="tooltip" title="{{ title }}">
-	    <img class="img-responsive center-block" src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
-	</a>
-</div>
-
-{% endmacro %}
-
-{% macro ringtab(tab) %}  <!-- repeated please fix -->
-	{% if tab=='mod' %}
-		<span class="label bg-a">Data Modeling tool</span>
-	{% elif tab=='cap' %}
-		<span class="label bg-b">Data Capture tool</span>
-	{% elif tab=='sha' %}
-		<span class="label bg-c">Data Sharing tool</span>
-	{% else %}
-		<span class="label bg-default">{{ tab }}</span>
-	{% endif %}
-{% endmacro %}
-
-
-
 {% block content %}
 
-<section>
+<section class="bg-06">
 	<div class="row tab-margin">
-    
-    <div class="col-xs-7 text-center">
-		  <a class="toblack" href="/how" >
-            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
-	          <i class="fa fa-cog fa-1x"></i>
-	          <span class="text-s2 text-1em hidden-xs">How it Works</span>
-            </div>
-		  </a>
+	    <div class="col-xs-7 text-center">
+			  <a class="toblack" href="/how" >
+	            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+		          <i class="fa fa-cog fa-1x"></i>
+		          <span class="text-s2 text-1em hidden-xs">How it Works</span>
+	            </div>
+			  </a>
 
-		  <a href="/solutions/share" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Share</h5>
-		  		<h5 class="visible-xs">SH</h5>
-		  		<div class="rhr2 bg-c"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a> 
-		  <a href="/solutions/capture" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Capture</h5>
-		  		<h5 class="visible-xs">CA</h5>
-		  		<div class="rhr2 bg-b"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a> 
-		  <a href="/solutions/model" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Modeling</h5>
-		  		<h5 class="visible-xs">MO</h5>
-		  		<div class="rhr2 bg-a"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a>
-		  
+			  <a href="/solutions/share" >
+			  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+			  		
+			  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Sharing </h3>
+			  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+			  		<div class="rhr2 bg-c"></div>
+			  		<div class="spa5"></div>
+			  	</div>
+			  </a> 
+			  <a href="/solutions/capture" >
+			  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+			  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Capture </h3>
+			  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+			  		
+			  		<div class="rhr2 bg-b"></div>
+			  		<div class="spa5"></div>
+			  	</div>
+			  </a> 
+			  <a href="/solutions/model" >
+			  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+			  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Modeling </h3>
+			  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+			  		<div class="rhr2 bg-a"></div>
+			  		<div class="spa5"></div>
+			  	</div>
+			  </a>
+		</div>
+		<div class="col-xs-5 text-right hidden-xs">
+			<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Data Suite / Solutions </h2>
+		</div>	
 	</div>
-	<div class="col-xs-5 text-right hidden-xs">
-		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Data Suite / Solutions </h2>
-		
- 
-	</div>
+
 	<div class="row tab-margin">
     <div class="col-xs-12">	
 			<div class="tab-content">
@@ -100,7 +65,7 @@
 		        	</div>
 		        	<div class="col-sm-6 text-left">
 		        		<div style="float:left;">
-				        	<h3 class="text-3em">{{ dic['a1'] }}</h3>
+				        	<h3 class="text-solut text-2-5em">{{ dic['a1'] }}</h3>
 				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
 				        	<hr/>	
 			        	</div>

@@ -5,8 +5,6 @@
 {% endblock %}
 
 
-
-
 {% macro icontabs(title,icon,slug,size) %}
 <table>
   <tr>
@@ -40,34 +38,36 @@
             </div>
 		  </a>
 
-		  <a href="/solutions/share" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Share</h5>
-		  		<h5 class="visible-xs">SH</h5>
-		  		<div class="rhr2 bg-c"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a> 
+	      <a href="/solutions/share" >
+            <div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+                <h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Sharing </h3>
+                <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+                <div class="rhr2 bg-c"></div>
+                <div class="spa5"></div>
+            </div>
+          </a> 
 		  <a href="/solutions/capture" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Capture</h5>
-		  		<h5 class="visible-xs">CA</h5>
-		  		<div class="rhr2 bg-b"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a> 
-		  <a href="/solutions/model" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Modeling</h5>
-		  		<h5 class="visible-xs">MO</h5>
-		  		<div class="rhr2 bg-a"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a>
+                <div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Capture </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+                    
+                    <div class="rhr2 bg-b"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a> 
+              <a href="/solutions/model" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Modeling </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+                    <div class="rhr2 bg-a"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a>
 		  
 	</div>
 	<div class="col-xs-5 text-right hidden-xs">
 		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Data Suite / Solutions </h2>
+    </div>
 		
  
 	</div>
@@ -83,7 +83,7 @@
 		      
 		        	<div class="col-sm-offset-1 col-sm-8 text-left">
 		        		
-				        	<h3 class="text-3em text-gray"><span class="text-black"><i class="fa fa-cog fa-1x"></i></span> How the <span class="text-black">Data Suite</span> works </h3>
+				        	<h3 class="text-2em text-gray fw900"><span class="text-lgray"><i class="fa fa-cog fa-1x"></i></span> How the <span class="text-black">Data Suite</span> works </h3>
 				        	<h4 class="text-lgray">MyRing Data Suite was created to tackle multiple Data escenarios. All the Modules are standalone and can be used together or separadetely, they can also be connected to existent systems to complete missing functionalities.</h4>
 				        	<hr/>	
 			        	

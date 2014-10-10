@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300);
-@import url(http://fonts.googleapis.com/css?family=Raleway:300,500);
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,900);
 
 /*TEXT */
 
@@ -10,14 +10,32 @@ h4{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 h5{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 
 p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
+
+.lw--5em{line-height:0.5em;}
+.lw-1em{line-height:1em;}
+.lw-1-5em{line-height:1.5em;}
+.lw-2em{line-height:2em;}
+.lw-3em{line-height:3em;}
+
+.ls-1{letter-spacing: 1px;}
+.ls-1-5{letter-spacing: 1.5px;}
+.ls-2{letter-spacing: 2px;}
+
+
 .r-font{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 
 .text-s1{ font-family: 'Raleway', sans-serif; font-weight: 300;}
 .text-s2{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 
-.fw500{font-weight: 500;}
+.fw300{font-weight:300;}
+.fw500{font-weight:500;}
+.fw900{font-weight:900;}
+
+.fs900{font-weight:900;}
 
 .text-navbar{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
+.text-solut{color:#515151; font-weight:900; font-size:1.5em;}
+.text-solut2{font-size:1.5em; font-family: 'Roboto Slab', sans-serif;}
 
 .text-small {font-size: 1em;}
 .text-smaller {font-size: 0.9em;}
@@ -31,22 +49,26 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 .text-dgray {color:#515151;}
 
 .text-bold{font-weight:bold;}
-.text-dark{font-weight:400; color:black;}
-.text-sky{font-weight:400; color:#66BCEB;}
-.text-white{font-weight:300; color:#FFF;}
+.text-dark{color:black;}
+.text-sky{color:#66BCEB;}
+.text-white{color:#FFF;}
 
 .text-detail{font-size:0.8em;}
 .text-9{font-size:0.9em;}
 .text-8{font-size:0.8em; line-height:1.5em;}
 .text-7{font-size:0.7em;}
+.text-6{font-size:0.6em;}
+.text-5{font-size:0.5em;}
 .text-read{font-size:0.88em;}
 
 .text-1em{font-size:1em;}
 .text-2em{font-size:2em;}
+.text-2-5em{font-size:2.5em;}
 .text-3em{font-size:3em;}
 .text-3-5em{font-size:3.5em;}
 .text-4em{font-size:4em;}
 
+.text-shadow1{text-shadow: -1px 0px 2px #444;}
 
 .rotate90 {
 -webkit-transform: rotate(-90deg);
@@ -91,6 +113,7 @@ text-decoration: none;
 
 }
 
+.btn-ring{font-family: 'Roboto Slab', sans-serif; font-weight: 300; padding:10px;}
 
 /*BACKGROUNDS*/
 
@@ -102,14 +125,14 @@ body{
 }
 
 
-.bg-01{  
-  
-  background-image:url(../images/bg-cloud.png);
-  background-image:url(../images/bg-cloud.png), -webkit-linear-gradient(0deg, #48B1E8, #0096E5);
-  background-image:url(../images/bg-cloud.png), -o-linear-gradient(0deg, #48B1E8, #0096E5);
-  background-image:url(../images/bg-cloud.png), -moz-linear-gradient(0deg, #48B1E8, #0096E5);
-  background-image:url(../images/bg-cloud.png), linear-gradient(0deg, #48B1E8, #0096E5);
-  background-repeat:no-repeat;
+
+.bg-01{   
+  background-image:url(../images/tile1.png);
+  background-image:url(../images/tile1.png), -webkit-linear-gradient(0deg, #48B1E8, #0096E5);
+  background-image:url(../images/tile1.png), -o-linear-gradient(0deg, #48B1E8, #0096E5);
+  background-image:url(../images/tile1.png), -moz-linear-gradient(0deg, #48B1E8, #0096E5);
+  background-image:url(../images/tile1.png), linear-gradient(0deg, #48B1E8, #0096E5);
+  background-repeat:repeat;
   background-size:cover;
 }
 .bg-02{  
@@ -120,13 +143,53 @@ body{
 }
 
 .bg-03{  
-  background: -webkit-linear-gradient(45deg, #f0f1f1, #dedbde);
-  background: -o-linear-gradient(45deg, #f0f1f1, #dedbde);
-  background: -moz-linear-gradient(45deg, #f0f1f1, #dedbde);
-  background:linear-gradient(45deg, #f0f1f1, #dedbde);
+  background: -webkit-linear-gradient(45deg, #fffcf8, #f0edd9);
+  background: -o-linear-gradient(45deg, #fffcf8, #f0edd9);
+  background: -moz-linear-gradient(45deg, #fffcf8, #f0edd9);
+  background:linear-gradient(45deg, #fffcf8, #f0edd9);
 }
 
+
+  .bg-04{  
+  background: -webkit-linear-gradient(60deg, #e8dbbf, #cca7a1);
+  background: -o-linear-gradient(60deg, #e8dbbf, #cca7a1);
+  background: -moz-linear-gradient(60deg, #e8dbbf, #cca7a1);
+  background:linear-gradient(60deg, #e8dbbf, #cca7a1);
+}
+
+  .bg-05{  
+  background: url(../images/grass4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+  .bg-05b{  
+  background: url(../images/phantom.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+
+  .bg-06{  
+  background: -webkit-linear-gradient(60deg, #eae5df, #d8cfc7);
+  background: -o-linear-gradient(60deg, #eae5df, #d8cfc7);
+  background: -moz-linear-gradient(60deg, #eae5df, #d8cfc7);
+  background:linear-gradient(60deg, #eae5df, #d8cfc7);
+}
+
+  .bg-07{  
+  background: -webkit-linear-gradient(60deg, #FFF, #eae5df);
+  background: -o-linear-gradient(60deg, #FFF, #eae5df);
+  background: -moz-linear-gradient(60deg, #FFF, #eae5df);
+  background:linear-gradient(60deg, #FFF, #eae5df);
+}
+
+
+
 .bg-white{background-color: #FFF;}
+.bg-black{background-color: #000;}
+.bg-gray{background-color: #CCC;}
 .bg-a{background-color: #d40044; }
 .bg-b{background-color: #298fff; }
 .bg-c{background-color: #ffd033; }
@@ -138,6 +201,12 @@ body{
 /*HR*/
 .rhr{padding:1px 5px; width:30%; margin: 0 0 0 -10px;}
 .rhr2{padding:1px 5px; width:30%; margin: 0 0 0 -6px;}
+.rhr3{height:0.5px; width:20%;}
+.rhr4{height:0.5px; width:100%;}
+
+/*BUTTONS*/
+
+
 
 
 /*SPACING*/
@@ -228,7 +297,7 @@ filter: gray; /* IE6-9 */
     padding:0 5px 40px 5px; 
     width:32%; 
     float:right;
-    background-color: #CCC;
+    background-color: #f0edeb;
 }
 .tab-box-a-mini{
 
@@ -311,6 +380,12 @@ filter: gray; /* IE6-9 */
     margin-top:10px;
     padding:50px;
     border: 1px solid lightgrey;
+}
+
+.pricebox{
+    border: 1px solid #FFF;
+    border-radius: 6px;
+    padding:10px;
 }
 
 

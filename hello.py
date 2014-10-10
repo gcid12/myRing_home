@@ -8,8 +8,21 @@ app.config.from_object('config')
 
 @app.route('/')
 def hello():
-    title = 'MyRing'
-    return render_template('home.html', title=title )
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    return render_template('home.html', insects=il) 
+
 
 @app.route('/solutions')
 def sol():
@@ -213,11 +226,11 @@ def cica():
             'a7': il['cica']['preview'],
             'a8': il['cica']['slug'],
             'a9': il['cica']['step1'],
-            'a10': il['spid']['diag1'], 
-            'a11': il['spid']['step2'],
-            'a12': il['spid']['diag2'], 
-            'a13': il['spid']['step3'], 
-            'a14': il['spid']['diag3'],
+            'a10': il['cica']['diag1'], 
+            'a11': il['cica']['step2'],
+            'a12': il['cica']['diag2'], 
+            'a13': il['cica']['step3'], 
+            'a14': il['cica']['diag3'],
             #
             'b1': il['spid']['title'], 
             'b2': il['spid']['icon'],

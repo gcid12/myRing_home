@@ -20,22 +20,14 @@
 {% block content %}
 
 
-<section>
+<section class="bg-06">
 	<div class="row tab-margin">
     <div class="col-sm-12 text-center">
-    	<div class="spa30"></div>
-    	
-    	<h1>Our Solutions</h1>
+    	<div class="spa10"></div>
+    	<h2 class="text-white fw900">OUR SOLUTIONS</h2>
+    	<div class="spa10"></div>
     </div>
   </div> 
-  <div class="row tab-margin">
-    <div class="col-sm-offset-3 col-sm-6 text-center">
-    	<p class="text-white text-1em ">Our solutions are separated in 3 main categories: Modeling, Capture and Sharing, each module it's a standalone solution that can be combined in different ways to tackle different Data scenarios. </p>
-    	<div class="spa30"></div>
-    </div>
-  </div>  
-  
-
 	<div class="row tab-margin">
     <div class="col-xs-12 text-center">
     		<div style="width:91%;">
@@ -50,20 +42,20 @@
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-exp.png" class="img-responsive center-block" style="width:100px;">
 				  		
-				  		<h2 class="hidden-xs">3. Sharing</h2>
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Sharing </h3>
 				  		<div class="rhr2 bg-c"></div>
-				  		<h3 class="visible-xs">SHA</h3>
+				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
 				  		
 				  		<div class="text-8 tab-box-b hidden-xs text-s2">
-				  		Once you have your data ready, it's time to share it with the world. Combine it with other's people data, merge it, fork it, have fun!</div>
+				  		Once you have your data ready, it's time to share it with the world. Combine it with other's people data, merge it, fork it.</div>
 				  	</div>
 				  </a> 
 				  <a class="toblack" href="/solutions/capture" >
 				  	<div class="tab-box-a {% if dic['a5']=='cap' %}tab-on{% endif %}">
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-cap.png" class="img-responsive center-block" style="width:100px;">
-				  		<h2 class="hidden-xs">2. Capturing</h2>
-				  		<h3 class="visible-xs">CAP</h3>
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Capture </h3>
+				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
 				  		<div class="rhr2 bg-b"></div>
 				  		<div class="text-8 tab-box-b hidden-xs text-s2">
 				  		The second step is to Capture your data, this can be text, photos, videos, weather and anything you can imagine.
@@ -74,8 +66,9 @@
 				  	<div class="tab-box-a {% if dic['a5']=='mod' %}tab-on{% endif %}">
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-mod.png" class="img-responsive center-block" style="width:100px;">
-				  		<h2 class="hidden-xs"> 1. Modeling</h2>
-				  		<h3 class="visible-xs">MOD</h3>
+				  		<!-- <h2 class="hidden-xs"> 1. Modeling</h2> -->
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Modeling </h3>
+				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
 				  		<div class="rhr2 bg-a"></div>
 				  		<div class="text-8 tab-box-b text-s2 hidden-xs">
 				  		The first step is to design the recipent where the Data will be stored, Create your schema and explain what it will be containing.
@@ -93,145 +86,29 @@
 			  <div class="tab-pane fade in active tab-section" id="model">
 
 			  <!-- A -->
-			{% if dic['a1'] %}	
-		    	<div class="row bg-white">
-		        	<div class="col-sm-offset-1 col-sm-2 text-center">
-		        		<div class="spa30"></div>
-			        	<a href="/tools/{{ dic['a8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['a6'] }}" style="width:100px;" />
-			        	</a>
-		        	</div>
-		        	<div class="col-sm-9 text-left">
-		        		<div class="spa20"></div>
+			{% if dic['a1'] %}
 
-		        		<span style="float:right;">
-		        			{{ ringtab(dic['a5']) }}
-		        		</span><br/>
-		        		
-			        	<a class="toblack" href="/tools/{{ dic['a8'] }}">
-				        	<h3 class="text-3em">{{ dic['a1'] }}</h3>
-				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
-				        	<hr/>
-				        	
-				        	<div class="spa5 clearboth"></div>
-				        	<div class="text-s2 text-2em">{{ dic['a3'] }}
-					          	<div class="spa20"></div>
-					        </div>
-			        		<div class="text-s2" style="width:70%;">{{ dic['a4'] }}</div>
-			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
-			          		<div class="spa30"></div>
-						</a>	
-		        	</div>
-		    	</div>
+			{{ soluredux(dic['a1'],dic['a2'],dic['a3'],dic['a4'],dic['a5'],dic['a6'],dic['a7'],dic['a8'],"bg-white") }}	
+		    	
 		    {% endif %}
 
 		      <!-- B -->
 			{% if dic['b1'] %}	
-		    	<div class="row bg-03">
-		        	<div class="col-sm-offset-1 col-sm-2 text-center">
-		        		<div class="spa30"></div>
-			        	<a href="/tools/{{ dic['b8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['b6'] }}" style="width:100px;" />
-			        	</a>
-		        	</div>
-		        	<div class="col-sm-9 text-left">
-		        		<div class="spa20"></div>
-		        		<span style="float:right;">
-		        			{{ ringtab(dic['a5']) }}
-		        		</span><br/>
-		        		
-			        	<a class="toblack" href="/tools/{{ dic['b8'] }}">
-				        	<h3 class="text-3em">{{ dic['b1'] }}</h3>
-				        	<h4 class="text-lgray">{{ dic['b2'] }}</h4>
-				        	<hr/>
-				        	
-				        	<div class="spa5 clearboth"></div>
-				        	<div class="text-s2 text-2em">{{ dic['b3'] }}
-					          	<div class="spa20"></div>
-					        </div>
-			        		<div class="text-s2" style="width:70%;">{{ dic['b4'] }}</div>
-			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
-			          		<div class="spa30"></div>
-						</a>	
-		        	</div>
-		    	</div>
+		    	{{ soluredux(dic['b1'],dic['b2'],dic['b3'],dic['b4'],dic['b5'],dic['b6'],dic['b7'],dic['b8'],"bg-07") }}
 		    {% endif %}
 
 		      <!-- C -->
 			{% if dic['c1'] %}	
-		    	<div class="row bg-white">
-		        	<div class="col-sm-offset-1 col-sm-2 text-center">
-		        		<div class="spa30"></div>
-			        	<a href="/tools/{{ dic['c8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['c6'] }}" style="width:100px;" />
-			        	</a>
-		        	</div>
-		        	<div class="col-sm-9 text-left">
-		        		<div class="spa20"></div>
-		        		<span style="float:right;">
-		        			{{ ringtab(dic['a5']) }}
-		        		</span><br/>
-		        		
-			        	<a class="toblack" href="/tools/{{ dic['c8'] }}">
-				        	<h3 class="text-3em">{{ dic['c1'] }}</h3>
-				        	<h4 class="text-lgray">{{ dic['c2'] }}</h4>
-				        	<hr/>
-				        	
-				        	<div class="spa5 clearboth"></div>
-				        	<div class="text-s2 text-2em">{{ dic['c3'] }}
-					          	<div class="spa20"></div>
-					        </div>
-			        		<div class="text-s2" style="width:70%;">{{ dic['c4'] }}</div>
-			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
-			          		<div class="spa30"></div>
-						</a>	
-		        	</div>
-		    	</div>
+		    	{{ soluredux(dic['c1'],dic['c2'],dic['c3'],dic['c4'],dic['c5'],dic['c6'],dic['c7'],dic['c8'],"bg-white") }}
 		    {% endif %}
 
 		      <!-- D -->
 			{% if dic['d1'] %}	
-		    	<div class="row bg-03">
-		        	<div class="col-sm-offset-1 col-sm-2 text-center">
-		        		<div class="spa30"></div>
-			        	<a href="/tools/{{ dic['d8'] }}">
-			        	<img class="img-responsive center-block" src="/static/images/{{ dic['d6'] }}" style="width:100px;" />
-			        	</a>
-		        	</div>
-		        	<div class="col-sm-9 text-left">
-		        		<div class="spa20"></div>
-		        		<span style="float:right;">
-		        			{{ ringtab(dic['a5']) }}
-		        		</span><br/>
-		        		
-			        	<a class="toblack" href="/tools/{{ dic['d8'] }}">
-				        	<h3 class="text-3em">{{ dic['d1'] }}</h3>
-				        	<h4 class="text-lgray">{{ dic['d2'] }}</h4>
-				        	<hr/>
-				        	
-				        	<div class="spa5 clearboth"></div>
-				        	<div class="text-s2 text-2em">{{ dic['d3'] }}
-					          	<div class="spa20"></div>
-					        </div>
-			        		<div class="text-s2" style="width:70%;">{{ dic['d4'] }}</div>
-			          		<h3>More Info <i class="fa fa-arrow-right"></i></h3>
-			          		<div class="spa30"></div>
-						</a>	
-		        	</div>
-		    	</div>
+		    	{{ soluredux(dic['d1'],dic['d2'],dic['d3'],dic['d4'],dic['d5'],dic['d6'],dic['d7'],dic['d8'],"bg-07") }}
 		    {% endif %}
-			 
 			  </div>
-
 			</div> <!-- close tab content -->
-
 		</div>
 	</div>	
 </section>
-
-
-
-    
-	
 {% endblock %}
-
