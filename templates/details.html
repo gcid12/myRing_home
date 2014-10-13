@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<section class="bg-06">
+<section class="bg-04">
 	<div class="row tab-margin">
 	    <div class="col-xs-7 text-center">
 			  <a class="toblack" href="/how" >
@@ -22,7 +22,7 @@
 			  <a href="/solutions/share" >
 			  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
 			  		
-			  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Sharing </h3>
+			  		<h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Sharing </h3>
 			  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
 			  		<div class="rhr2 bg-c"></div>
 			  		<div class="spa5"></div>
@@ -30,7 +30,7 @@
 			  </a> 
 			  <a href="/solutions/capture" >
 			  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
-			  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Capture </h3>
+			  		<h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Capture </h3>
 			  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
 			  		
 			  		<div class="rhr2 bg-b"></div>
@@ -39,7 +39,7 @@
 			  </a> 
 			  <a href="/solutions/model" >
 			  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
-			  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Modeling </h3>
+			  		<h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Modeling </h3>
 			  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
 			  		<div class="rhr2 bg-a"></div>
 			  		<div class="spa5"></div>
@@ -65,7 +65,7 @@
 		        	</div>
 		        	<div class="col-sm-6 text-left">
 		        		<div style="float:left;">
-				        	<h3 class="text-solut text-2-5em">{{ dic['a1'] }}</h3>
+				        	<h3 class="text-solut" style="font-size:2em;">{{ dic['a1'] }}</h3>
 				        	<h4 class="text-lgray">{{ dic['a2'] }}</h4>
 				        	<hr/>	
 			        	</div>
@@ -91,50 +91,69 @@
 		        <div class="row bg-white text-left">
 		        	<div class="col-sm-offset-3 col-sm-8">
 			        	<p class="text-2em text-dgray">{{ dic['a3'] }}</p>
-				        <p class="text-dgray">{{ dic['a4'] }}</p>
+				        <p class="text-dgray" style="width:70%;">{{ dic['a4'] }}</p>
 				        <div class="spa20"></div>
 
 			        	<div class="row">
-				        	<div class="col-sm-6">
-				        		<h2 class="text-lgray">{{ dic['a9'] }}</h2>	
+				        	<div class="col-xs-6">
+				        		<div class="valign-out">
+					        		<div class="valign-in">
+						        		<h2 class="text-gray text-right" style="vertical-align:middle;">{{ dic['a9'] }}</h2>
+						        	</div>
+						        </div>		
 				        		
 							</div>
-							<div class="col-sm-6">
-				        		<img class="img-responsive right-block" src="/static/images/{{ dic['a10'] }}" style="width:300px;" />
+							<div class="col-xs-6">
+								
+				        		<img class="img-responsive center-block" src="/static/images/{{ dic['a10'] }}" style="width:200px;" />
+						        	
 				        	</div>
 						</div>	
 						
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-xs-6">
 								<div class="spa10"></div>
-				        		<img class="img-responsive right-block" src="/static/images/{{ dic['a12'] }}" style="width:300px;" />
+				        		<img class="img-responsive center-block" src="/static/images/{{ dic['a12'] }}" style="width:200px;" />
 				        	</div>
-				        	<div class="col-sm-6">
-				        		<h2 class="text-lgray">{{ dic['a11'] }} </h2>
+				        	<div class="col-xs-6">
+				        		
+				        		<div class="valign-out">
+				        			<div class="valign-in">
+				        				<h2 class="text-gray" >{{ dic['a11'] }} </h2>
+				        			</div>	
+				        		</div>
 				        		
 							</div>
 						</div>	
 
 						<div class="row">
-				        	<div class="col-sm-6">
-				        		<h2 class="text-lgray">{{ dic['a13'] }}</h2>	
+				        	<div class="col-xs-6">
+				        		<div class="valign-out">
+					        		<div class="valign-in">
+				        				<h2 class="text-gray text-right">{{ dic['a13'] }}</h2>	
+				        			</div>
+				        		</div>		
 							</div>
-							<div class="col-sm-6">
-				        		<img class="img-responsivex right-block" src="/static/images/{{ dic['a14'] }}" style="width:300px;" />
+							<div class="col-xs-6">
+				        		<img class="img-responsivex center-block" src="/static/images/{{ dic['a14'] }}" style="width:200px;" />
 				        	</div>
-						</div>	
+						</div>
+						{% if dic['a15'] %}
+						<div class="row tab-margin">
+					    	<div class="col-xs-10 text-left">	
+					    		<h3>Details</h3>
+					    		<hr/>
+					    		<p>{{ dic['a15'] }}</p>
+					    	</div>
+					    </div>	
+					    {% endif %}
 
 		        	</div>
-
 		    	</div>
 		    	<div class="row bg-white">
 		    		<div class="spa80"></div>
 		    	</div>
-		    	
-		    	
-
 			  </div>
-
 			</div> <!-- close tab content -->
 
 		</div>

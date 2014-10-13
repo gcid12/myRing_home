@@ -20,15 +20,16 @@
 {% block content %}
 
 
-<section class="bg-06">
+<section class="bg-04">
 	<div class="row tab-margin">
     <div class="col-sm-12 text-center">
     	<div class="spa10"></div>
-    	<h2 class="text-white fw900">OUR SOLUTIONS</h2>
+    	
+    	<h2 class="text-white" style="font-size:3em;">My Ring <span class="fw500">Data Suite</span></h2>
     	<div class="spa10"></div>
     </div>
   </div> 
-	<div class="row tab-margin">
+<div class="row tab-margin">
     <div class="col-xs-12 text-center">
     		<div style="width:91%;">
     			  <a class="toblack" href="/how" >
@@ -80,7 +81,7 @@
 		</div>  
 	</div>
 	<div class="row tab-margin">
-    <div class="col-xs-12 text-center">	
+    	<div class="col-xs-12 text-center">	
 
 			<div class="tab-content">
 			  <div class="tab-pane fade in active tab-section" id="model">
@@ -106,9 +107,12 @@
 			{% if dic['d1'] %}	
 		    	{{ soluredux(dic['d1'],dic['d2'],dic['d3'],dic['d4'],dic['d5'],dic['d6'],dic['d7'],dic['d8'],"bg-07") }}
 		    {% endif %}
+		     
 			  </div>
 			</div> <!-- close tab content -->
 		</div>
-	</div>	
+	</div>
+
+
 </section>
 {% endblock %}

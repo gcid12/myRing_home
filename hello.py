@@ -200,6 +200,7 @@ def spid():
             'a12': il['spid']['diag2'], 
             'a13': il['spid']['step3'], 
             'a14': il['spid']['diag3'],
+            'a15': il['spid']['details'],
             #
             'b1': il['cica']['title'], 
             'b2': il['cica']['icon'],
@@ -231,6 +232,7 @@ def cica():
             'a12': il['cica']['diag2'], 
             'a13': il['cica']['step3'], 
             'a14': il['cica']['diag3'],
+            'a15': il['cica']['details'],
             #
             'b1': il['spid']['title'], 
             'b2': il['spid']['icon'],
@@ -264,6 +266,7 @@ def dfly():
             'a12': il['dfly']['diag2'], 
             'a13': il['dfly']['step3'], 
             'a14': il['dfly']['diag3'],
+            'a15': il['dfly']['details'],
             #
             'b1': il['mosq']['title'], 
             'b2': il['mosq']['icon'],
@@ -309,6 +312,7 @@ def mosq():
             'a12': il['mosq']['diag2'], 
             'a13': il['mosq']['step3'], 
             'a14': il['mosq']['diag3'],
+            'a15': il['mosq']['details'],
             #
             'b1': il['dfly']['title'], 
             'b2': il['dfly']['icon'],
@@ -354,6 +358,7 @@ def worm():
             'a12': il['worm']['diag2'], 
             'a13': il['worm']['step3'], 
             'a14': il['worm']['diag3'],
+            'a15': il['worm']['details'],
             #
             'b1': il['mosq']['title'], 
             'b2': il['mosq']['icon'],
@@ -398,6 +403,7 @@ def ants():
             'a12': il['ants']['diag2'], 
             'a13': il['ants']['step3'], 
             'a14': il['ants']['diag3'],
+            'a15': il['ants']['details'],
             #
             'b1': il['mosq']['title'], 
             'b2': il['mosq']['icon'],
@@ -442,6 +448,7 @@ def bees():
             'a12': il['bees']['diag2'], 
             'a13': il['bees']['step3'], 
             'a14': il['bees']['diag3'],
+            'a15': il['bees']['details'],
             #
             'b1': il['lbug']['title'], 
             'b2': il['lbug']['icon'],
@@ -480,6 +487,7 @@ def lbug():
             'a12': il['lbug']['diag2'], 
             'a13': il['lbug']['step3'], 
             'a14': il['lbug']['diag3'],
+            'a15': il['lbug']['details'],
             #
             'b1': il['bees']['title'], 
             'b2': il['bees']['icon'],
@@ -516,6 +524,7 @@ def bfly():
             'a12': il['bfly']['diag2'], 
             'a13': il['bfly']['step3'], 
             'a14': il['bfly']['diag3'],
+            'a15': il['bfly']['details'],
             #
             'b1': il['lbug']['title'], 
             'b2': il['lbug']['icon'],
