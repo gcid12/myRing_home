@@ -5,8 +5,6 @@
 {% endblock %}
 
 
-
-
 {% macro icontabs(title,icon,slug,size) %}
 <table>
   <tr>
@@ -29,7 +27,7 @@
 
 
 
-<section>
+<section class="bg-04">
 	<div class="row tab-margin">
     
     <div class="col-xs-7 text-center">
@@ -40,34 +38,36 @@
             </div>
 		  </a>
 
-		  <a href="/solutions/share" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Share</h5>
-		  		<h5 class="visible-xs">SH</h5>
-		  		<div class="rhr2 bg-c"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a> 
+	      <a href="/solutions/share" >
+            <div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+                <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Sharing </h3>
+                <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+                <div class="rhr2 bg-c"></div>
+                <div class="spa5"></div>
+            </div>
+          </a> 
 		  <a href="/solutions/capture" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Capture</h5>
-		  		<h5 class="visible-xs">CA</h5>
-		  		<div class="rhr2 bg-b"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a> 
-		  <a href="/solutions/model" >
-		  	<div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
-		  		<h5 class="hidden-xs">Modeling</h5>
-		  		<h5 class="visible-xs">MO</h5>
-		  		<div class="rhr2 bg-a"></div>
-		  		<div class="spa5"></div>
-		  	</div>
-		  </a>
+                <div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Capture </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+                    
+                    <div class="rhr2 bg-b"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a> 
+              <a href="/solutions/model" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Modeling </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+                    <div class="rhr2 bg-a"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a>
 		  
 	</div>
 	<div class="col-xs-5 text-right hidden-xs">
 		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Data Suite / Solutions </h2>
+    </div>
 		
  
 	</div>
@@ -83,7 +83,7 @@
 		      
 		        	<div class="col-sm-offset-1 col-sm-8 text-left">
 		        		
-				        	<h3 class="text-3em text-gray"><span class="text-black"><i class="fa fa-cog fa-1x"></i></span> How the <span class="text-black">Data Suite</span> works </h3>
+				        	<h3 class="text-2-5em text-gray"><span class="text-lgray"><i class="fa fa-cog fa-1x"></i></span> How the <span class="text-black">Data Suite</span> works </h3>
 				        	<h4 class="text-lgray">MyRing Data Suite was created to tackle multiple Data escenarios. All the Modules are standalone and can be used together or separadetely, they can also be connected to existent systems to complete missing functionalities.</h4>
 				        	<hr/>	
 			        	
@@ -96,7 +96,7 @@
 		      </div> <!-- close row -->
 
           <div class="row bg-white">
-            <div class="col-xs-3"> <!-- required for floating -->
+            <div class="col-xs-2"> <!-- required for floating -->
                     
 
               <div class="scro_container entry">
@@ -106,43 +106,43 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs-hiw tabs-left">
                       <li>
-                        <a class="nostroke" href="#spid" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.spid.slug }}">
                           <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
                           {{ icontabs(insects.spid.title, insects.spid.icon, insects.spid.slug,'40') }}
                         </a>
                       </li>
                       <li class="active">
-                        <a class="nostroke" href="#cica" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.cica.slug }}">
                           {{ icontabs(insects.cica.title, insects.cica.icon, insects.cica.slug,'40') }}
                         </a>
                       </li>
                       <li>
-                        <a class="nostroke" href="#dfly" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.dfly.slug }}">
                           {{ icontabs(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'40') }}
                         </a>
                       </li>
                       <li>
-                        <a class="nostroke" href="#mosq" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.mosq.slug }}">
                           {{ icontabs(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'40') }}
                         </a>
                       </li>
                       <li>
-                        <a class="nostroke" href="#ants" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.ants.slug }}">
                           {{ icontabs(insects.ants.title, insects.ants.icon, insects.ants.slug,'40') }}
                         </a>
                       </li>
                       <li>
-                        <a class="nostroke" href="#bees" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.bees.slug }}">
                           {{ icontabs(insects.bees.title, insects.bees.icon, insects.bees.slug,'40') }}
                         </a>
                       </li>
                       <li>
-                        <a class="nostroke" href="#lbug" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.lbug.slug }}">
                           {{ icontabs(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'40') }}
                         </a>
                       </li>
                       <li>
-                        <a class="nostroke" href="#bfly" data-toggle="tab">
+                        <a class="nostroke" href="/tools/{{ insects.bfly.slug }}">
                           {{ icontabs(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'40') }}
                         </a>
                       </li>
@@ -152,7 +152,7 @@
                 </div> <!-- CLOSE SCRO -->
               </div><!-- CLOSE SCRO CONTAINER -->
             </div> <!-- CLOSE COLUMN -->
-            <div class="col-xs-9">
+            <div class="col-xs-10">
                 <!-- Tab panes -->
                 <div class="tab-content">
                   <div class="tab-pane fade in active" id="spid">

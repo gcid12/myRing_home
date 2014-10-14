@@ -5,71 +5,130 @@
 {% endblock %}
 
 {% block content %}
-<style>.navbar {top: -63px;}</style>
-<section id="header">
-      
-    <div class="row margin-50">
-        <div class="col-sm-12 text-center">
-        	<div class="spa50"></div>
-        	<img class="center-block" src="/static/images/anillo01.png"  />
-      		<h1>{{ title }}</h1>
-      		<h2 class="text-white">"The Data Suite"</h2>
 
 
-      		<div class="spa10"></div>
-      	</div>
-    </div>  	
-      
 
-</section>
+	<section class="bg-grass" style="padding-bottom:10px;">
+      <div class="bg-05b">	
+	    <div class="row margin-50">
+	        <div class="col-sm-12 text-center">
+	        	<div class="spa5"></div>
+	        	<div class="rhr3 bg-white" style="float:left;"></div>
+	        	<div class="rhr3 bg-white" style="float:right;"></div>
+	        	
+	        	<h3 class="text-white text-" style="font-size:2em;"> <i class="fa fa-unlock fa-1x"></i></h3>
+	      		<h1 style="font-size:5em; font-weight: 900;" class="text-shadow1">UNLEASH YOUR DATA </h1>
+	      		<h3 class="text-white text-shadow1" style="font-size:2em;"> MAKE IT AVAILABLE TO THE WORLD</h3>
+	      		<img class="img-responsive center-block" src="/static/images/flecha.png" style="width:65%;" />
+	      	</div>
+	    </div> 
+	    <div class="row ">
+          <!--Section-->
+          <div class="col-sm-offset-2 col-sm-2  text-center">
+          	<img class="img-responsive center-block" src="/static/images/case-30b.png" style="width:90px;"/>
+            <h2 class="text-white fw900"><br/>Raw Data</h2>
+          	<h4 class="text-white lw-1em">Unprocessed Primary data from sensors or devices.</h4>
+
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+            <img class="img-responsive center-block" src="/static/images/case-28b.png" style="width:90px;"/>
+            <h2 class="text-white fw900">Product<br/>Specs</h2>
+          	<h4 class="text-white lw-1em">Detailed information about your product or service.</h4>
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	<img class="img-responsive center-block" src="/static/images/case-29b.png" style="width:90px;" />
+            <h2 class="text-white fw900"><br/>Content</h2>
+           	<h4 class="text-white lw-1em">Broadcast your content: Photos, Articles, documentaries, etc. </h4>
+          </div>
+        </div><!--end Row-->	
+      </div>    
+	</section>
 
     <section class="bg-white top">
       <div class="container">
+      	<div class="row">
+      		<div class="col-sm-12 text-center">
+      			<div class="spa20"></div>
+      			<h2 class="text-gray" style="font-size:3em;">My Ring <span class="fw500">Data Suite</span></h2>
+
+
+      			<h2 class="text-lgray">The complete solution for</h2>
+
+				<img class="img-responsive center-block" src="/static/images/blue.png" style="width:300px;"/>
+				<h2 class="text-lgray">creating your own Data distribution channel</h2>
+      			<div class="spa20"></div>
+      			
+      		</div>
+      		
+      	</div>
+      	<div class="row margin-40">
+          <!--Section-->
+          <div class="col-sm-offset-2 col-sm-2 margin-20 text-center">
+            <div class="rhr4 bg-gray"></div>
+            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
+            
+            <img class="img-responsive center-block" src="/static/images/ico-mod.png" style="width:90px;" />
+            <div class="spa10"></div>
+            <p class="text-lgray lw-1-5em text-9"><em>Are you sitting in a Mountain of Data? Start by defining what kind of data you have</em></p>
+            <div class="spa10"></div>
+
+            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'50') }}
+          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'50') }}
+
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	
+          	<div class="rhr4 bg-gray"></div>
+          	<h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
+            <img class="img-responsive center-block" src="/static/images/ico-cap.png" style="width:90px;"/>
+            
+            <div class="spa10"></div>
+          	<p class="text-lgray lw-1-5em text-9"><em>Capture your data from legacy sources, third parties, manually, or via sensors (IoT ready baby!). </em></p>
+          	<div class="spa10"></div>
+
+          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'50') }}
+          	{{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'50') }}
+          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'50') }}
+          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'50') }}
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	
+          	<div class="rhr4 bg-gray"></div>
+          	<h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
+            <img class="img-responsive center-block" src="/static/images/ico-exp.png" style="width:90px;"/>
+            
+            <div class="spa10"></div>
+          	<p class="text-lgray lw-1-5em text-9"><em>Share your data easily with any mobile, device or platform via REST or any API flavor you prefer.</em></p>
+          	<div class="spa10"></div>
+
+          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'50') }}
+          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'50') }}
+          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'50') }}
+
+          </div>
+        </div>  
+
         <div class="row margin-60">
-          <div class="col-sm-offset-2 col-sm-8 text-center">
-          	<div class="spa20"></div>
-            <h2 class="text-black">DATA IS THE BLOOD OF EVERY SYSTEM, WITHOUT IT EVERY GREAT IDEA OR FANCY DEVICE IS WORTHLESS</h2>
+          <div class="col-sm-12 text-center">
+
+            <a href="/how" class="btn btn-default btn-xs btn-ring">
+            See in detail how the Suite works <i class="fa fa-cog fa-1x"></i>
+            </a>
+
+			<br/>
+
           </div>
         </div>
       </div>
     </section>  
-    <section class="bg-03">
-      <div class="container">        
-        <div class="row margin-60" >
-          <!--Section-->
-          <div class="col-sm-6 margin-20 text-right">
-          	<h2>The Problem</h2>
-          	<p>Designing a system that deal with data is not an easy task, it involves putting up with different data formats, modeling flexible schemas, data versioning,  analisys , update , availability, and global  distribution. Designing and Mantaining a system that does all that it’s at the same time expensive and extremely specialized. The result of all this is that only government and companies with deep pockets can afford being in the Data Business.
-			</p>
-			<a class="more" href="#">LEARN MORE</a>
-          </div>
-          <div class="col-sm-6 margin-20">
-            <img class="img-responsive center-block" src="/static/images/anillo02.png"/>
-          </div>
-        </div><!--end Row-->
-      </div>
-    </section>
-    <section class="white-bg">
-      <div class="container">   
-        <div class="row margin-60">
-          <!--Section-->
-          <div class="col-sm-6 margin-20">
-            <img class="img-responsive center-block" src="/static/images/anillo02.png"/>
-          </div>
-          <div class="col-sm-6 margin-20 text-left">
-          	<h2>The solution</h2>
-          	<p>MyRing Data Suite it’s an enterprise solution for companies that need to assemble their Data solution. We take over all the complexity and allow low-tech personnel to implement complex Data solutions for their companies. We also help developers and small IT teams to ship faster and to never loose time again in redundant tasks so they can focus in improving their own systems.
-			</p>
-          </div>
 
-        </div><!--end Row-->
-      </div>
-    </section>    
-    <section class="bg-03">
+    <section class="bg-07">
       <div class="container">
         <div class="row margin-60">
           <div class="col-sm-offset-2 col-sm-8 text-center">
-           	<h1 class="text-black">GREAT FOR DEVELOPERS, EASY WITH BUSINESS OWNERS.</h1>
+          	
+          <img class="center-block" src="/static/images/myring02.png" style="width:150px" />
+           	<h2 class="text-gray ls-1 lw--5em" style="font-size:3em; font-weight: 300; " >Fast for <span class="fw500">developers</span>,<br/> <span class="text-dgray text-8"> Easy with <span class="fw500">business owners</span>.</span></h2>
           </div>
         </div><!--end Row-->
 
@@ -78,45 +137,122 @@
         <div class="row">  
           
           <!--Section-->
-          <div class="col-sm-offset-1 col-sm-4 margin-20 text-right">
-          <img class="center-block" src="/static/images/monito01.png"/>
-          	<h2 class="text-black">Great for Development</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <div class="col-sm-offset-1 col-sm-4 text-right">
+          <img class="center-block" src="/static/images/monitodev.png" />
+          	<h2 class="text-dblack" >Lean Dev</h2>
+            <p>
+            <img style="float:right; width:80px;" src="/static/images/h01.png"/>
+            Creating an API from scratch can be a repetitive task, MyRing Data Suite allows you to have an API serving data in REST or XML in no time so you can focus in improving your project.</p>
 
-			<h2 class="text-black">Start Small, <br/>Scale huge</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			<h2 class="text-black">Start Small, Scale huge</h2>
+            <p>
+            <img style="float:right; width:80px;" src="/static/images/h02.png"/>
+            There's no need to develop a big API infraestructure with beta test projects. You can start small in MyRing cloud and whenever it's time to scale, our tools will help you to transition to any cloud provider.</p>
 
 			<h2 class="text-black">Familiar Ground</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <p>
+            <img style="float:right; width:80px;" src="/static/images/h03.png"/>
+            My Ring Data Suite is compatible with widely used technologies and formats, we strictly observe Best practices so when you use any of our tools you'll feel like home.</p>
 
 
           </div>
           
           <!--Section-->
           <div class="col-sm-offset-2 col-sm-4 margin-20 text-left">
-          <img class="center-block" src="/static/images/monito01.png"/>
+          <img class="center-block" src="/static/images/monitobiz.png"/>
             <h2 class="text-black">Play like a pro</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>
+            <img style="float:left; width:80px;" src="/static/images/h04.png"/>
+            You don't need an IT department to start delivering your products or content via an API, start competing in the big leagues and make your product start kicking their butts.</p>
 
 			<h2 class="text-black">Test your ideas</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <p>
+            <img style="float:left; width:80px;" src="/static/images/h05.png"/>
+            Do you have a crazy idea for an API but don't have the expertise to make it nor the budget to hire developers. With MyRing you can create your own APIs, share them and invite people to collaborate. </p>
 
 			<h2 class="text-black">Own your Data</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <p>
+            <img style="float:left; width:80px;" src="/static/images/h06.png"/>
+            MyRing Data Suite is a tool that help you with all the logistic behind capturing and delivering your data, however Data is and always be yours.</p>
           </div>
           
         </div><!--End Row-->
         
-        <div class="row margin-60">
-          <div class="col-sm-6 text-center">
-            <a href="" class="btn btn-default"><h3>Go to Dev Solutions</h3></a>
-          </div>
-          <div class="col-sm-6 text-center">
-            <a href="" class="btn btn-warning"><h3>Go to Dev Solutions</h3></a>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+          	<div class="spa20"></div>
+            <a href="/solutions" class="btn btn-default"><h3>See all our Solutions <i class="fa fa-arrow-right fa-1x"></i> </h3></a>
+        
+          
           </div>
         </div>
         
       </div>
     </section>
+
+    <section id="header" class="bg-03">
+	    <div class="row margin-50">
+	        <div class="col-sm-12 text-center">
+	        	<div class="spa40"></div>
+	      		<h1 class="text-gray" style="font-size:3em; font-weight: 800; letter-spacing: 1px;">WE ALSO <i class="fa fa-heart" style="color:#775119;"></i> LOGISTICS</h1>
+	      		<h3 class="text-lgray" style="font-size:2em;"> Our mission is to <span class="text-black">handle and deliver your data</span> in the most efficient way.</h3>
+	      		<div class="spa30"></div>
+	      	</div>	
+	</section>
+	 <!-- <section id="header" class="bg-03">
+	    <div class="row margin-50">
+	        <div class="col-sm-12 text-center">
+	        	<div class="spa40"></div>
+	      		<h1 class="text-gray" style="font-size:3em; font-weight: 800; letter-spacing: 1px;">IF YOU THINK ST<i class="fa fa-dropbox" style="color:#2a72db;"></i>RING IS COOL</h1>
+	      		<h3 class="text-lgray" style="font-size:2em;"> Wait to see what you can do when you put <span class="text-black">your </span> stuff on a <span class="text-black">Ring</span></h3>
+	      		<div class="spa30"></div>
+	      	</div>	
+	</section> -->
+
+
+    <section>
+	<div class="row tab-margin">
+    	<div class="col-xs-offset-1 col-xs-1 text-center" style="padding:10px;">
+			<!-- <img class="center-block img-responsive" src="/static/images/anillo01.png" style="width:100px;"  /> -->
+		   <div class="pricebox bg-white">
+			{{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'40') }}
+          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'40') }}
+          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'40') }}
+          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'40') }}
+          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'40') }}
+          	{{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'40') }}
+          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'40') }}
+          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'40') }}
+          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'40') }}
+          </div>	
+    	</div>
+    	<div class="col-xs-4 text-center ">
+			<div class="pricebox text-white">
+				<div class="spa20"></div>
+				<p class="text-white">Start working with your Data</p>
+				<h2 class="text-white text-3em lw-1em">Model + <br/>Capture </h2>
+				<p class="text-white" style="padding:0 20px;">Includes all Model <br/>and Capture tools </p>
+				<br/>
+
+				<h1 class="text-s2">$0.00 <span class="text-5">/mo.</span></h1>
+				<a class="btn btn-primary" href="">Join now</a>
+			</div>
+    	</div>
+    	<div class="col-xs-4 text-center ">
+			<div class="pricebox text-white">
+				<div class="spa20"></div>
+
+				<p class="text-white">Complete Data Solution</p>
+				<h2 class="text-white text-3em lw-1em">Complete Data Suite </h2>
+				<p class="text-white" style="padding:0 20px;">Includes all Model, <br/>Capture and Sharing tools. </p>
+				<br/>
+
+				<h1 class="text-s2">$19.99 <span class="text-5">/mo.</span></h1>
+				<a class="btn btn-primary" href="">Join now</a>
+			</div>
+    	</div>
+    </div>
+</section>  
+
 {% endblock %}
 

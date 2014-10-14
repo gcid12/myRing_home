@@ -8,8 +8,21 @@ app.config.from_object('config')
 
 @app.route('/')
 def hello():
-    title = 'MyRing'
-    return render_template('home.html', title=title )
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    return render_template('home.html', insects=il) 
+
 
 @app.route('/solutions')
 def sol():
@@ -18,6 +31,13 @@ def sol():
 
     il['spid'] = insect.spid()
     il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['spid']['title'],
             'a2': il['spid']['name'], 
@@ -48,6 +68,13 @@ def solmod():
 
     il['spid'] = insect.spid()
     il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['spid']['title'],
             'a2': il['spid']['name'], 
@@ -77,9 +104,14 @@ def solcap():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
     il['dfly'] = insect.dfly()
     il['mosq'] = insect.mosq()
     il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
     dic = { 'a1': il['dfly']['title'],
@@ -127,9 +159,15 @@ def solsha():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
     il['bees'] = insect.bees()
     il['lbug'] = insect.lbug()
     il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['bees']['title'],
             'a2': il['bees']['name'], 
@@ -171,6 +209,13 @@ def spid():
 
     il['spid'] = insect.spid()
     il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
 
     dic = { 'a1': il['spid']['title'],
@@ -187,6 +232,7 @@ def spid():
             'a12': il['spid']['diag2'], 
             'a13': il['spid']['step3'], 
             'a14': il['spid']['diag3'],
+            'a15': il['spid']['details'],
             #
             'b1': il['cica']['title'], 
             'b2': il['cica']['icon'],
@@ -203,6 +249,13 @@ def cica():
 
     il['spid'] = insect.spid()
     il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['cica']['title'],
             'a2': il['cica']['name'], 
@@ -213,11 +266,12 @@ def cica():
             'a7': il['cica']['preview'],
             'a8': il['cica']['slug'],
             'a9': il['cica']['step1'],
-            'a10': il['spid']['diag1'], 
-            'a11': il['spid']['step2'],
-            'a12': il['spid']['diag2'], 
-            'a13': il['spid']['step3'], 
-            'a14': il['spid']['diag3'],
+            'a10': il['cica']['diag1'], 
+            'a11': il['cica']['step2'],
+            'a12': il['cica']['diag2'], 
+            'a13': il['cica']['step3'], 
+            'a14': il['cica']['diag3'],
+            'a15': il['cica']['details'],
             #
             'b1': il['spid']['title'], 
             'b2': il['spid']['icon'],
@@ -232,9 +286,14 @@ def dfly():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
     il['dfly'] = insect.dfly()
     il['mosq'] = insect.mosq()
     il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
     dic = { 'a1': il['dfly']['title'],
@@ -251,6 +310,7 @@ def dfly():
             'a12': il['dfly']['diag2'], 
             'a13': il['dfly']['step3'], 
             'a14': il['dfly']['diag3'],
+            'a15': il['dfly']['details'],
             #
             'b1': il['mosq']['title'], 
             'b2': il['mosq']['icon'],
@@ -277,9 +337,14 @@ def mosq():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
     il['dfly'] = insect.dfly()
     il['mosq'] = insect.mosq()
     il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
     dic = { 'a1': il['mosq']['title'],
@@ -296,6 +361,7 @@ def mosq():
             'a12': il['mosq']['diag2'], 
             'a13': il['mosq']['step3'], 
             'a14': il['mosq']['diag3'],
+            'a15': il['mosq']['details'],
             #
             'b1': il['dfly']['title'], 
             'b2': il['dfly']['icon'],
@@ -322,9 +388,14 @@ def worm():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
     il['dfly'] = insect.dfly()
     il['mosq'] = insect.mosq()
     il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
     dic = { 'a1': il['worm']['title'],
@@ -341,6 +412,7 @@ def worm():
             'a12': il['worm']['diag2'], 
             'a13': il['worm']['step3'], 
             'a14': il['worm']['diag3'],
+            'a15': il['worm']['details'],
             #
             'b1': il['mosq']['title'], 
             'b2': il['mosq']['icon'],
@@ -366,10 +438,15 @@ def ants():
     insect = InsectData()
     il = {}
 
-    il['ants'] = insect.ants()
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
     il['dfly'] = insect.dfly()
     il['mosq'] = insect.mosq()
     il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['ants']['title'],
             'a2': il['ants']['name'], 
@@ -385,6 +462,7 @@ def ants():
             'a12': il['ants']['diag2'], 
             'a13': il['ants']['step3'], 
             'a14': il['ants']['diag3'],
+            'a15': il['ants']['details'],
             #
             'b1': il['mosq']['title'], 
             'b2': il['mosq']['icon'],
@@ -411,9 +489,15 @@ def bees():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
     il['bees'] = insect.bees()
     il['lbug'] = insect.lbug()
     il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['bees']['title'],
             'a2': il['bees']['name'], 
@@ -429,6 +513,7 @@ def bees():
             'a12': il['bees']['diag2'], 
             'a13': il['bees']['step3'], 
             'a14': il['bees']['diag3'],
+            'a15': il['bees']['details'],
             #
             'b1': il['lbug']['title'], 
             'b2': il['lbug']['icon'],
@@ -449,9 +534,15 @@ def lbug():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
     il['bees'] = insect.bees()
     il['lbug'] = insect.lbug()
     il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['lbug']['title'],
             'a2': il['lbug']['name'], 
@@ -467,6 +558,7 @@ def lbug():
             'a12': il['lbug']['diag2'], 
             'a13': il['lbug']['step3'], 
             'a14': il['lbug']['diag3'],
+            'a15': il['lbug']['details'],
             #
             'b1': il['bees']['title'], 
             'b2': il['bees']['icon'],
@@ -485,9 +577,15 @@ def bfly():
     insect = InsectData()
     il = {}
 
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
     il['bees'] = insect.bees()
     il['lbug'] = insect.lbug()
     il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     dic = { 'a1': il['bfly']['title'],
             'a2': il['bfly']['name'], 
@@ -503,6 +601,7 @@ def bfly():
             'a12': il['bfly']['diag2'], 
             'a13': il['bfly']['step3'], 
             'a14': il['bfly']['diag3'],
+            'a15': il['bfly']['details'],
             #
             'b1': il['lbug']['title'], 
             'b2': il['lbug']['icon'],
@@ -533,6 +632,7 @@ def prici():
     il['bees'] = insect.bees()
     il['lbug'] = insect.lbug()
     il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
 
     return render_template('pricing.html', insects=il) 
 
