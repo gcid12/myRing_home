@@ -36,11 +36,11 @@ class InsectData:
         result['label'] = 'mod'
         result['preview'] = 'phiw/ph02.png'
         result['step1'] = "This tool helps the data Modeler determine whether there is a vocabulary for what it's been modeled."
-        result['diag1'] = 'phiw/ph03.png'
+        result['diag1'] = "f/cica1.png"
         result['step2'] = 'It leaves under the hood all the complexity of RFD, Triples, Linked Data, schemas,etc.'
-        result['diag2'] = 'phiw/ph06.png'
+        result['diag2'] = "f/cica2.png"
         result['step3'] = 'It also helps to determine what is the proper datatype to use and even the widget that is going to be displayed in the GUI.'
-        result['diag3'] = 'phiw/ph07.png'
+        result['diag3'] = "f/cica3.png"
         result['details'] = ""
 
         return result
@@ -58,13 +58,13 @@ class InsectData:
         result['slug'] = 'manual_capture'
         result['label'] = 'cap'
         result['preview'] = 'phiw/ph02.png'
-        result['step1'] = "Capture any kind of Data such as Strings, long texts,  Numeric Values, Boleans, Geolocations, Dates or any custom format."
-        result['diag1'] = 'phiw/ph03.png'
-        result['step2'] = "Capture Content such as photographs, sound, video, files and anything that can be uploaded via a desktop or mobile device."
-        result['diag2'] = 'phiw/ph06.png'
+        result['step1'] = "Capture Content such as photographs, sound, video, files, geolocation and anything that can be uploaded via a desktop or mobile device."
+        result['diag1'] = "f/dfly1.png"
+        result['step2'] = "Invite other people to collaborate with Data via email or social media."
+        result['diag2'] = "f/dfly2.png"
         result['step3'] = "Register qualitative Data in familiar instruments such as questionnaires and surveys."
-        result['diag3'] = 'phiw/ph07.png'
-        result['details'] = ""
+        result['diag3'] = "f/dfly3.png"
+        result['details'] = "1. Etzatl Tool widgets generate a ready to use Capture application compatible with any device and computer. 2. The creator of the schema can invite collaborators and assign them levels of access. 3. The Manual capture can be set up as free capture or restricted in case it need some approval before publishing to the Global ring."
 
         return result
 
@@ -81,12 +81,12 @@ class InsectData:
         result['slug'] = 'automatic_capture'
         result['label'] = 'cap'
         result['preview'] = 'phiw/ph02.png'
-        result['step1'] = 'Register Quantitative Data without human manipulation or interference. '
-        result['diag1'] = 'phiw/ph03.png'
+        result['step1'] = 'Register Data automatically without manipulation or interference. '
+        result['diag1'] = "f/mosq1.png"
         result['step2'] = 'IoT Ready: This tool help Data Device makers and/ or users to use Rings as a neutral way to share Raw Data across devices and systems.'
-        result['diag2'] = 'phiw/ph06.png'
+        result['diag2'] = "f/mosq2.png"
         result['step3'] = 'Compatible with any device or system sharing system via an API'
-        result['diag3'] = 'phiw/ph07.png'
+        result['diag3'] = "f/mosq3.png"
         result['details'] = ""
 
         return result  
@@ -105,11 +105,11 @@ class InsectData:
         result['label'] = 'cap'
         result['preview'] = 'phiw/ph02.png'
         result['step1'] = "Cleanup and uniform Legacy Data under a modern Data Schema."
-        result['diag1'] = 'phiw/ph03.png'
+        result['diag1'] = 'f/worm1.png'
         result['step2'] = "Keep track on how the legacy data was converted in order to convert it back and forth easily."
-        result['diag2'] = 'phiw/ph06.png'
+        result['diag2'] = 'f/worm2.png'
         result['step3'] = "In case a total data export is not the best option,  Rings can be used exclusively as a dynamic mask to convert Data to a new format"
-        result['diag3'] = 'phiw/ph07.png'
+        result['diag3'] = 'f/worm3.png'
         result['details'] = ""
 
         return result 
@@ -126,12 +126,12 @@ class InsectData:
         result['slug'] = 'data_scrapper'
         result['label'] = 'cap'
         result['preview'] = ''
-        result['step1'] = "Machine Learning techniques will improve your search algorithm over the time making your scrapping more effective."
-        result['diag1'] = 'phiw/ph03.png'
-        result['step2'] = "Selective scrapping will allow you to get only the information that you need without overwhelming the source."
-        result['diag2'] = 'phiw/ph06.png'
-        result['step3'] = "Make sense of scrapped data with the highly customizable pattern editor"
-        result['diag3'] = 'phiw/ph07.png'
+        result['step1'] = "Selective scrapping will allow you to get only the information that you need without overwhelming the source."
+        result['diag1'] = "f/ants1.png"
+        result['step2'] = "Make sense of scrapped data with the highly customizable pattern editor"
+        result['diag2'] = "f/ants2.png"
+        result['step3'] = "Machine Learning techniques will improve your search algorithm over the time making your scrapping more effective."
+        result['diag3'] = "f/ants3.png"
         result['details'] = ""
 
         return result      
@@ -145,16 +145,16 @@ class InsectData:
         result['title'] = 'Data Share'
         result['subtitle'] = "Serve your Data in multiple API flavors"
         result['icon'] = 'r-bees.png'
-        result['desc'] = "This tool prepares your Data to be shared across multiple systems and platforms via an API "
+        result['desc'] = "This tool prepares your Data to be compatible across multiple systems and platforms and any device connected to internet. "
         result['slug'] = 'data_share'
         result['label'] = 'sha'
         result['preview'] = 'phiw/ph02.png'
-        result['step1'] = 'Control Panel for all APIs that expose/retrieve data from/for the rings'
-        result['diag1'] = 'phiw/ph03.png'
-        result['step2'] = "Publish your data from a menu of different API flavors (JSON-REST, XML-REST, SOAP, SPARQL, CSV, etc)"
-        result['diag2'] = 'phiw/ph06.png'
-        result['step3'] = "Understand your Data usage with an intuitive Panel Control"
-        result['diag3'] = 'phiw/ph03.png'
+        result['step1'] = "Publish your data from a menu of different API flavors (JSON-REST, XML-REST, SOAP, SPARQL, CSV, etc)"
+        result['diag1'] = "f/bees1.png"
+        result['step2'] = "Control Panel for all APIs that expose/retrieve data from/for the rings"
+        result['diag2'] = "f/bees2.png"
+        result['step3'] = "Future Proof your Data with a system that can render to any format."
+        result['diag3'] = "f/bees3.png"
         result['details'] = ""
 
         return result
@@ -168,16 +168,16 @@ class InsectData:
         result['title'] = 'Data Website'
         result['subtitle'] = "Share your data in a rich web application"
         result['icon'] = 'r-lbug.png'
-        result['desc'] = "This tool Autogenerate a friendly  HTML website with search and pagination so you can browse your data as a simple webpage in any desktop or mobile device."
+        result['desc'] = "Raw Data is not legible at plain sight. This tool create friendly optimized Data websites."
         result['slug'] = 'data_website'
         result['label'] = 'sha'
-        result['preview'] = 'phiw/ph06.png'
-        result['step1'] = "Define how you want to see your Data and who you want to see it with privacy controls."
-        result['diag1'] = 'phiw/ph01.png'
-        result['step2'] = "Create a Single page Data Ticker to display all your data ala Wall Street. In Real Time as it's collected."
-        result['diag2'] = 'phiw/ph11.png'
-        result['step3'] = "MyRing love Data Visualizators. My Ring encourage any developer and designer to use Shared  public Data to create amazing infographic, charts and visualizations."
-        result['diag3'] = 'phiw/ph06.png'
+        result['preview'] = "f/cata1.png"
+        result['step1'] = "Automatically Create rich HTML websites to browse your Data in any desktop or mobile device."
+        result['diag1'] = "f/cata1.png"
+        result['step2'] = "Search Engine Optimized to rank organically in Google, Bing and the main search websites."
+        result['diag2'] = "f/cata3.png"
+        result['step3'] = "Create dynamic skins with libraries such as D3.js, Vega, Processing, Gephi and similars."
+        result['diag3'] = "f/cata2.png"
         result['details'] = ""
 
         return result
@@ -196,11 +196,11 @@ class InsectData:
         result['label'] = 'sha'
         result['preview'] = 'phiw/ph02.png'
         result['step1'] = "With Rings you have access to any public Data generated in any ring around the world, create rich results by combining Data of different Nature."
-        result['diag1'] = 'phiw/ph03.png'
+        result['diag1'] = "f/bfly1.png"
         result['step2'] = " Papalotl optimize respond times by caching results and by the use of an algorithm that separates volatile Data from static Data  that don't change often."
-        result['diag2'] = 'phiw/ph06.png'
+        result['diag2'] = "f/bfly2.png"
         result['step3'] = " Papalotl assumes that each ring contains different kind of data. It also discard a onesize-fit all approach and favors the use of smart filters that allows complex querying to multiple Data sources. "
-        result['diag3'] = 'phiw/ph07.png'
+        result['diag3'] = "f/bfly3.png"
         result['details'] = ""
 
         return result    

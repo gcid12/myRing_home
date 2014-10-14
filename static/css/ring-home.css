@@ -114,6 +114,14 @@ text-decoration: none;
 }
 
 .btn-ring{font-family: 'Roboto Slab', sans-serif; font-weight: 300; padding:10px;}
+.btn-ring2{
+  font-family: 'Raleway', sans-serif;
+   font-weight: 300; 
+   padding:15px; 
+   font-size:1.2em; 
+   text-transform:none;
+   border-radius: 20px;
+ }
 
 /*BACKGROUNDS*/
 
@@ -171,7 +179,10 @@ body{
 
 
   .bg-05{  
-  background: url(../images/grass4.jpg);
+  background: url(../images/grass4.jpg), -webkit-linear-gradient(60deg, #FFF, #eae5df);
+  background: url(../images/grass4.jpg), -o-linear-gradient(60deg, #FFF, #eae5df);
+  background: url(../images/grass4.jpg), -moz-linear-gradient(60deg, #FFF, #eae5df);
+  background: url(../images/grass4.jpg), linear-gradient(60deg, #FFF, #eae5df);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -400,6 +411,7 @@ filter: gray; /* IE6-9 */
     border-radius: 6px;
     padding:10px;
 }
+
 
 
 /*SCROLLER STOP*/

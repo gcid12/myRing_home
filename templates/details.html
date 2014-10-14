@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<section class="bg-04">
+<section class="bg-04" style="padding-bottom:0;">
 	<div class="row tab-margin">
 	    <div class="col-xs-7 text-center">
 			  <a class="toblack" href="/how" >
@@ -76,6 +76,9 @@
 		        		<span class="label label-mod">Go to Documentation <i class="fa fa-arrow-right"></i></span><br/>
 		        		<h5 class="text-lgray">Related:<h5/>
 
+		        		{% if dic['a1'] %}
+		        			{{ iconbig(dic['a1'], dic['a6'], dic['a8'],'30') }}
+		        		{% endif %}
 		        		{% if dic['b1'] %}
 		        			{{ iconbig(dic['b1'], dic['b2'], dic['b3'],'30') }}
 		        		{% endif %}
@@ -151,7 +154,7 @@
 		        	</div>
 		    	</div>
 		    	<div class="row bg-white">
-		    		<div class="spa80"></div>
+		    		<div class="spa20"></div>
 		    	</div>
 			  </div>
 			</div> <!-- close tab content -->
@@ -159,6 +162,74 @@
 		</div>
 	</div>	
 </section>
+
+	<section class="bg-07">
+      <div class="container">
+      	<div class="row">
+      		<div class="col-sm-12 text-center">
+      			<p class="text-2em text-dgray"> Explore the complete Data Suite</p>
+      			<div class="spa30"></div>
+      		</div>
+      	</div>
+      	<div class="row margin-20">
+          <!--Section-->
+          <div class="col-sm-offset-2 col-sm-2 margin-20 text-center">
+            <a href="/solutions/model">
+            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
+            </a>
+          	<div class="rhr4 bg-gray"></div>
+          	<div class="spa10"></div>
+            
+
+            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'50') }}
+          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'50') }}
+
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	
+          	
+          	<a href="/solutions/capture">
+            <h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
+            </a>
+          	<div class="rhr4 bg-gray"></div>
+          	<div class="spa10"></div>
+            
+
+          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'50') }}
+          	{{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'50') }}
+          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'50') }}
+          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'50') }}
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	
+          	<a href="/solutions/share">
+            <h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
+            </a>
+          	<div class="rhr4 bg-gray"></div>
+          	<div class="spa10"></div>
+            
+
+          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'50') }}
+          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'50') }}
+          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'50') }}
+
+          </div>
+        </div>  
+
+        <div class="row margin-60">
+          <div class="col-sm-12 text-center">
+
+            <a href="/how" class="btn btn-default btn-lg btn-ring2">
+            See in detail how the Data Suite works 
+            <i class="fa fa-arrow-right text-gray"></i>
+            </a>
+
+			<br/>
+
+          </div>
+        </div>
+      </div>
+    </section>  
 
 
 
