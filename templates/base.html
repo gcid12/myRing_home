@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>{% block title %}{% endblock%}</title>
+<title>:{% block title %}{% endblock%}</title>
 {% include 'includes/headscripts.html' %}
 </head>
 <body id="top">
@@ -32,9 +32,23 @@
   {% endif %}
 {% endmacro %}
 
+{% macro ringborder(tab) %}  <!-- repeated please fix -->
+  {% if tab=='mod' %}
+    fatleft-a
+  {% elif tab=='cap' %}
+    fatleft-b
+  {% elif tab=='sha' %}
+    fatleft-c
+  {% else %}
+  {% endif %}
+{% endmacro %}
+
+
+
+
 {% macro soluredux(x1,x2,x3,x4,x5,x6,x7,x8,bg) %}
 
-<div class="row {{ bg }}">
+<div class="row {{ bg }} {{ ringborder(x5) }}">
               <div class="col-sm-offset-1 col-sm-2 text-center">
                 <div class="spa30"></div>
                 <a href="/tools/{{ x8 }}">
@@ -68,6 +82,18 @@
           </div>
 
 {% endmacro %}
+
+{% macro gotodoc(color) %}  <!-- repeated please fix -->
+   <!-- <a href="/doc" class="label label-mod">Go to Full Documentation <i class="fa fa-book"></i></a> -->
+{% endmacro %}
+
+{% macro gotofaq(color) %}  <!-- repeated please fix -->
+    <a href="/faq" class="label label-warning bg-{{color}}">Frequent Asked Questions <i class="fa fa-arrow-right"></i></a>
+{% endmacro %}
+{% macro gotohiw(color) %}  <!-- repeated please fix -->
+    <a href="/faq" class="label label-success bg-{{color}}">How it works <i class="fa fa-arrow-right"></i></a>
+{% endmacro %}
+
   
   <div class="wrapper">
 
@@ -87,7 +113,8 @@
             <li><a href="/">Home</a></li>
             <li><a href="/solutions">Solutions</a></li>
             <li><a href="/how">How</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <!-- <li><a href="/pricing">Pricing</a></li> -->
             <!-- <li><a href="/docs">Docs</a></li> -->
           </ul>
         </div>

@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<section class="bg-04" style="padding-bottom:0;">
+<section class="bg-04" style="padding-bottom:3px;">
 	<div class="row tab-margin">
 	    <div class="col-xs-7 text-center">
 			  <a class="toblack" href="/how" >
@@ -53,7 +53,7 @@
 
 	<div class="row tab-margin">
     <div class="col-xs-12">	
-			<div class="tab-content">
+			<div class="tab-content {{ ringborder(dic['a5']) }}">
 			  <div class="tab-pane fade in active tab-section" id="model">
 			  <!-- A -->
 		    	<div class="row bg-white">
@@ -72,8 +72,9 @@
 		        	</div>
 		        	<div class="col-sm-2 text-right">
 		        		{{ ringtab(dic['a5']) }}
+		        	
+		      
 		        		<br/>
-		        		<span class="label label-mod">Go to Documentation <i class="fa fa-arrow-right"></i></span><br/>
 		        		<h5 class="text-lgray">Related:<h5/>
 
 		        		{% if dic['a1'] %}
@@ -88,6 +89,10 @@
 		        		{% if dic['d1'] %}
 		        			{{ iconbig(dic['d1'], dic['d2'], dic['d3'],'30') }}
 		        		{% endif %}
+
+		        		<br/><br/>
+
+
 		        		
 		        	</div>
 		        </div> <!-- close row -->
@@ -98,7 +103,7 @@
 				        <div class="spa20"></div>
 
 			        	<div class="row">
-				        	<div class="col-xs-6">
+				        	<div class="col-sm-6">
 				        		<div class="valign-out">
 					        		<div class="valign-in">
 						        		<h2 class="text-gray text-right" style="vertical-align:middle;">{{ dic['a9'] }}</h2>
@@ -106,7 +111,7 @@
 						        </div>		
 				        		
 							</div>
-							<div class="col-xs-6">
+							<div class="col-sm-6">
 								
 				        		<img class="img-responsive center-block" src="/static/images/{{ dic['a10'] }}" style="width:200px;" />
 						        	
@@ -114,11 +119,11 @@
 						</div>	
 						
 						<div class="row">
-							<div class="col-xs-6">
+							<div class="col-sm-6">
 								<div class="spa10"></div>
 				        		<img class="img-responsive center-block" src="/static/images/{{ dic['a12'] }}" style="width:200px;" />
 				        	</div>
-				        	<div class="col-xs-6">
+				        	<div class="col-sm-6">
 				        		
 				        		<div class="valign-out">
 				        			<div class="valign-in">
@@ -130,14 +135,14 @@
 						</div>	
 
 						<div class="row">
-				        	<div class="col-xs-6">
+				        	<div class="col-sm-6">
 				        		<div class="valign-out">
 					        		<div class="valign-in">
 				        				<h2 class="text-gray text-right">{{ dic['a13'] }}</h2>	
 				        			</div>
 				        		</div>		
 							</div>
-							<div class="col-xs-6">
+							<div class="col-sm-6">
 				        		<img class="img-responsivex center-block" src="/static/images/{{ dic['a14'] }}" style="width:200px;" />
 				        	</div>
 						</div>
@@ -161,6 +166,8 @@
 
 		</div>
 	</div>	
+</section>
+
 </section>
 
 	<section class="bg-07">
@@ -219,8 +226,14 @@
         <div class="row margin-60">
           <div class="col-sm-12 text-center">
 
+          <div class="spa30"></div>
             <a href="/how" class="btn btn-default btn-lg btn-ring2">
             See in detail how the Data Suite works 
+            <i class="fa fa-cog text-gray"></i>
+            </a>
+            <br/>
+            <a href="/faq" class="btn btn-default btn-lg btn-ring3">
+            Frequent Asked Questions
             <i class="fa fa-arrow-right text-gray"></i>
             </a>
 
@@ -229,7 +242,7 @@
           </div>
         </div>
       </div>
-    </section>  
+    </section> 
 
 
 
