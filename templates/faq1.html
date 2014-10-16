@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	My Ring - {{ title }}
+{% endblock %}
+
+
+{% macro icontabs(title,icon,slug,size) %}
+<table>
+  <tr>
+    <td>
+	   <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+    </td>
+    <td>
+      <p class="text-s1 hidden-xs text-1em" style="line-height:1em; padding:0 20px 0 10px;">{{ title }}</p> 
+    </td>
+  </tr>
+</table>
+
+{% endmacro %}
+
+
+
+
+
+{% block content %}
+
+
+
+<section class="bg-04" style="padding-bottom:6px;">
+	<div class="row tab-margin">
+    
+    <div class="col-xs-7 text-center">
+		  <a class="toblack" href="/how" >
+            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+	          <i class="fa fa-cog fa-1x"></i>
+	          <span class="text-s2 text-1em hidden-xs">How it Works</span>
+            </div>
+		  </a>
+
+	      <a href="/solutions/share" >
+            <div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+                <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Sharing </h3>
+                <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+                <div class="rhr2 bg-c"></div>
+                <div class="spa5"></div>
+            </div>
+          </a> 
+		  <a href="/solutions/capture" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Capture </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+                    
+                    <div class="rhr2 bg-b"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a> 
+              <a href="/solutions/model" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Modeling </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+                    <div class="rhr2 bg-a"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a>
+		  
+	</div>
+	<div class="col-xs-5 text-right hidden-xs">
+		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">FAQ </h2>
+    </div>
+		
+ 
+	</div>
+	<div class="row tab-margin">
+    <div class="col-xs-12">	
+			<div class="tab-content">
+			  <div class="tab-pane fade in active tab-section" id="model">
+			  <!-- A -->
+		    	<div class="row bg-white">
+		    		<div class="spa20"></div>
+		    	</div>
+		    	<div class="row bg-white det-box">
+		      
+		        	<div class="col-sm-offset-1 col-sm-8 text-left">
+		        		
+				        	<h3 class="text-2-5em text-gray">
+                  Frequent Asked Questions. </h3>
+				        	
+				        	<hr/>	
+			        	
+		        	</div> 
+		        	<div class="col-sm-2 text-right">
+		        		
+		        		{{ gotodoc() }}<br/>
+		        		{{ gotohiw() }}
+
+		        	</div>
+		      </div> <!-- close row -->
+
+          <div class="row bg-white">
+            <div class="col-xs-2"> <!-- required for floating -->
+                    
+
+            
+            </div> <!-- CLOSE COLUMN -->
+            <div class="col-xs-7">
+                <!-- Tab panes -->
+              <h2>What is a Ring?</h2>
+A Ring is crowd aggregated Data Set. It’s a pool of information gathered by one or more individual. A ring can be combined with other rings to create rich results.
+
+<h2>What is Data?</h2>
+Data is any bit of unprocessed information. Normally it becomes processed information or “content” when is assembled, combined and merged with more Data.
+
+
+<h2>What is the Data Suite?</h2>
+The Data Suite is a solution that helps you through each of the Data cycle: Modeling, Capturing and Exposing (Sharing).
+
+<h2>What is Modeling?</h2>
+Is the action of creating the Data schema that will organize the Data. A data schema is the equivalent of the DNA of organized (Semantic) data, it’s the blueprint that have detailed information on how the Data will be structured. There’s as many data schemas as areas to be captured for example there can be a data schema of “Birds” detailing: color, region, family, etc.. But also there can be another schema detailing info about baseball players: name, position, team, records, etc. MyRing provide tools to model Data schemas and to tag data semantically.
+
+<h2>What is a Ring schema?</h2>
+A Ring schema it’s a Data Schema created and improved by one or more individuals. A Ring schema lives in Github as an Open source project and it’s popularity depends on the amount of people capturing and sharing Data based on it.
+
+<h2>What is Capturing?</h2>
+Is the action of collecting new Data as opposition to scrapping which only reprocess existing Data. Capturing is one of the most important action of the Data cycle and doing it correctly will define it’s usability and relevance. MyRing provides tools for capturing Data manually (by humans) and automatically (by sensors).
+
+<h2>What is Exposing (Sharing)?</h2>
+Is the action of making Data available to the world to use it. And this goes literally, exposing your data means making it accessible in any format that and device or system understands. One of the most common Data Formats nowadays is JSON REST, My Ring provide tools to expose Data in this format and any other existing one (SOAP, CSV, SPARQ, TOML, etc.)
+
+<h2>What is the difference between Storing Data in the cloud and using a Ring.?</h2>
+It’s very different story, not even in the same category. Dropbox and similar services store and share unrelated static files. While MyRing is more about capturing fresh data and distributing it to different systems that will use it to assemble their own content in the form of an APP or a website.  
+
+Data on a Ring can be used several times by many internet applications in hundred of different ways. 
+
+
+<h2>Can MyRing be used to serve content?</h2>
+
+Yes absolutely , Ring can be used to serve content the same way it’s used to distribute data, A video for example will be treated as a Raw Data Resource, additional Data in the Ring will have information about Author, license, synopsis, credits, etc.
+
+<h2>What about the licenses to use the Data I’m distributing?</h2>
+Every bit of data distributed via a Ring have a license attached to it. This will help any system to understand what is the best way to use it.
+
+            </div>
+
+          </div>
+
+		        
+		    	<div class="row bg-white">
+		    		<div class="spa80"></div>
+		    	</div>
+		    	
+		    	
+
+			  </div>
+
+			</div> <!-- close tab content -->
+
+		</div>
+	</div>	
+</section>
+
+</section>
+
+	<section class="bg-07">
+      <div class="container">
+      	<div class="row">
+      		<div class="col-sm-12 text-center">
+      			<p class="text-2em text-dgray"> Explore the complete Data Suite</p>
+      			<div class="spa30"></div>
+      		</div>
+      	</div>
+      	<div class="row margin-20">
+          <!--Section-->
+          <div class="col-sm-offset-2 col-sm-2 margin-20 text-center">
+            <a href="/solutions/model">
+            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
+            </a>
+          	<div class="rhr4 bg-gray"></div>
+          	<div class="spa10"></div>
+            
+
+            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'50') }}
+          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'50') }}
+
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	
+          	
+          	<a href="/solutions/capture">
+            <h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
+            </a>
+          	<div class="rhr4 bg-gray"></div>
+          	<div class="spa10"></div>
+            
+
+          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'50') }}
+          	{{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'50') }}
+          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'50') }}
+          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'50') }}
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+          	
+          	<a href="/solutions/share">
+            <h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
+            </a>
+          	<div class="rhr4 bg-gray"></div>
+          	<div class="spa10"></div>
+            
+
+          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'50') }}
+          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'50') }}
+          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'50') }}
+
+          </div>
+        </div>  
+
+        <div class="row margin-60">
+          <div class="col-sm-12 text-center">
+
+          <div class="spa30"></div>
+            <a href="/how" class="btn btn-default btn-lg btn-ring2">
+            See in detail how the Data Suite works 
+            <i class="fa fa-cog text-gray"></i>
+            </a>
+            <br/>
+
+			<br/>
+
+          </div>
+        </div>
+      </div>
+    </section> 
+
+
+    
+	
+{% endblock %}
+

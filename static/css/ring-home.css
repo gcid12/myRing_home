@@ -123,6 +123,17 @@ text-decoration: none;
    border-radius: 20px;
  }
 
+ .btn-ring3{
+  font-family: 'Raleway', sans-serif;
+   font-weight: 300; 
+   padding:5px 15px; 
+   font-size:1.2em; 
+   text-transform:none;
+   border-radius: 20px;
+   background-color: #b2b2b2;
+   color: #FFF;
+ }
+
 /*BACKGROUNDS*/
 
 body{  
@@ -221,6 +232,11 @@ body{
 .border-a{border-color:#d40044;}
 .border-b{border-color:#298fff;}
 .border-c{border-color:#ffd033;}
+
+.fatleft-a{border-left: 20px solid #d40044;}
+.fatleft-b{border-left: 20px solid #298fff;}
+.fatleft-c{border-left: 20px solid #ffd033;}
+
 
 /*HR*/
 .rhr{padding:1px 5px; width:30%; margin: 0 0 0 -10px;}
