@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	My Ring - {{ title }}
+{% endblock %}
+
+
+{% macro icontabs(title,icon,slug,size) %}
+<table>
+  <tr>
+    <td>
+	   <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+    </td>
+    <td>
+      <p class="text-s1 hidden-xs text-1em" style="line-height:1em; padding:0 20px 0 10px;">{{ title }}</p> 
+    </td>
+  </tr>
+</table>
+
+{% endmacro %}
+
+
+
+
+
+{% block content %}
+
+
+
+<section class="bg-04">
+	<div class="row tab-margin">
+    
+    <div class="col-xs-7 text-center">
+		  <a class="toblack" href="/how" >
+            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+	          <i class="fa fa-cog fa-1x"></i>
+	          <span class="text-s2 text-1em hidden-xs">How it Works</span>
+            </div>
+		  </a>
+
+	      <a href="/solutions/share" >
+            <div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+                <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Sharing </h3>
+                <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+                <div class="rhr2 bg-c"></div>
+                <div class="spa5"></div>
+            </div>
+          </a> 
+		  <a href="/solutions/capture" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Capture </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+                    
+                    <div class="rhr2 bg-b"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a> 
+              <a href="/solutions/model" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Modeling </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+                    <div class="rhr2 bg-a"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a>
+		  
+	</div>
+	<div class="col-xs-5 text-right hidden-xs">
+		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">Ring Ecosystem </h2>
+  </div>
+		
+
+	<div class="row tab-margin">
+    <div class="col-xs-12 text-center">
+
+      <img src="/static/images/myring_data_ecosystem_0.1.jpg" alt="{{ title }}" class="img-responsive center-block">
+
+		</div>
+	</div>	
+</section>
+
+
+
+    
+	
+{% endblock %}
+

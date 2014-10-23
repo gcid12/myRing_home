@@ -170,16 +170,19 @@ body{
 
 
   .bg-04{  
-  background: -webkit-linear-gradient(60deg, #e8dbaf, #cc949d);
-  background: -o-linear-gradient(60deg, #e8dbaf, #cc949d);
-  background: -moz-linear-gradient(60deg, #e8dbaf, #cc949d);
-  background:linear-gradient(60deg, #e8dbaf, #cc949d);
+  background: -webkit-linear-gradient(60deg, #e8dbaf, #cca48c);
+  background: -o-linear-gradient(60deg, #e8dbaf, #cca48c);
+  background: -moz-linear-gradient(60deg, #e8dbaf, #cca48c);
+  background:linear-gradient(60deg, #e8dbaf, #cca48c);
 }
 
   .bg-grass{  
-  background: url(../images/grass.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+  background: url(../images/grass.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
   .bg-grassback{  
   background: url(../images/grassback.jpg);
@@ -218,6 +221,13 @@ body{
   background: -o-linear-gradient(60deg, #FFF, #eae5df);
   background: -moz-linear-gradient(60deg, #FFF, #eae5df);
   background:linear-gradient(60deg, #FFF, #eae5df);
+}
+
+  .bg-08{  
+  background: -webkit-linear-gradient(0deg, #F2F2F2, #FFF);
+  background: -o-linear-gradient(0deg, #F2F2F2, #FFF);
+  background: -moz-linear-gradient(0deg, #F2F2F2, #FFF);
+  background:linear-gradient(0deg, #F2F2F2, #FFF);
 }
 
 
@@ -444,4 +454,24 @@ filter: gray; /* IE6-9 */
 .valign-out{padding: 5% 0;}
 
 .valign-in{padding: 10% 0;}
+
+
+/*VIDEO*/
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 100px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
