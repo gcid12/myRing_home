@@ -68,7 +68,7 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 .text-3-5em{font-size:3.5em;}
 .text-4em{font-size:4em;}
 
-.text-shadow1{text-shadow: -1px 0px 2px #444;}
+.text-shadow{text-shadow: -1px 0px 2px #444;}
 
 .rotate90 {
 -webkit-transform: rotate(-90deg);
