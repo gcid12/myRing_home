@@ -336,13 +336,6 @@ body{
 
 }
 
-.remove-a{
-    -webkit-appearance: none;
-    border: 0px solid #000;
-    border-width: 0px 0px 1px 1px;
-    background-color: #FFE045;
-
-}
 
 .remove-b{
     -webkit-appearance: none;

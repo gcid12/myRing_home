@@ -56,7 +56,7 @@ def sol():
             'b6': il['cica']['icon'],
             'b7': il['cica']['preview'],
             'b8': il['cica']['slug'],
-            'header': "big",
+            'header': "bigm",
 
                 }
 
