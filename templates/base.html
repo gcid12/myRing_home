@@ -56,18 +56,18 @@
                 </a>
               </div>
               <div class="col-sm-9 text-left">
-                <div class="spa20"></div>
+                
 
-                <span style="float:right;">
+                <span style="float:right; padding-top:20px;">
                   {{ ringtab(x5) }}
                 </span><br/>
-                
+                <hr/>
                 <a class="toblack" href="/tools/{{ x8 }}">
                   
                   <h3 class="text-solut">{{ x1 }} </h3>
 
                   <h4 class="text-lgray">{{ x2 }}</h4>
-                  <hr/>
+                  
                   
                   <div class="spa5 clearboth"></div>
                   <div class="text-solut2">
@@ -80,6 +80,7 @@
             </a>  
               </div>
           </div>
+          <div class="rhr4"></div>
 
 {% endmacro %}
 
@@ -94,6 +95,141 @@
     <a href="/how" class="label label-success bg-{{color}}">How it works <i class="fa fa-arrow-right"></i></a>
 {% endmacro %}
 
+{% macro footer() %}
+<section class="bg-07">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <p class="text-2em text-dgray"> Explore the Data Suite</p>
+            <div class="spa30"></div>
+          </div>
+        </div>
+        <div class="row margin-20">
+          <!--Section-->
+          <div class="col-sm-offset-2 col-sm-2 margin-20 text-center">
+            <a href="/solutions/model">
+            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
+            </a>
+            <div class="rhr4 bg-gray"></div>
+            <div class="spa10"></div>
+            
+
+            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'30') }}
+            {{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'30') }}
+
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+            
+            
+            <a href="/solutions/capture">
+            <h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
+            </a>
+            <div class="rhr4 bg-gray"></div>
+            <div class="spa10"></div>
+            
+
+            {{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'30') }}
+            {{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'30') }}
+            {{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'30') }}
+            {{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'30') }}
+          </div>
+          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
+            
+            <a href="/solutions/share">
+            <h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
+            </a>
+            <div class="rhr4 bg-gray"></div>
+            <div class="spa10"></div>
+            
+
+            {{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'30') }}
+            {{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'30') }}
+            {{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'30') }}
+
+          </div>
+        </div>  
+
+        <div class="row margin-60">
+          <div class="col-sm-12 text-center">
+
+          <div class="spa30"></div>
+            <a href="/how" class="btn btn-default btn-lg btn-ring2">
+            See in detail how the Data Suite works 
+            <i class="fa fa-cog text-gray"></i>
+            </a>
+            <br/>
+            <a href="/faq" class="btn btn-default btn-lg btn-ring3">
+            Frequent Asked Questions
+            <i class="fa fa-arrow-right text-gray"></i>
+            </a>
+
+            <br/>
+            <a  href="/ecosystem" style="position:absolute; right:5%; width:200px; margin:-60px;">
+                <img class="img-responsive" src="/static/images/ring-infographic.png"/>
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+    </section> 
+
+{% endmacro %}
+
+{% macro footer2() %}
+    <section id="header" class="bg-yellow">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-7 text-left">
+            <div class="spa40"></div>
+            <h3 class="text-black " style="font-size:6em; line-height:0.8em;">Sign Up <br/> for our Beta</h3>
+            <div class="spa20"></div>
+
+            
+
+            <h2 class="text-white lh-1" style="font-size:3em;">Name: <br/><span class="text-white">
+            <input type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
+
+            <h2 class="text-white lh-1" style="font-size:3em;">email: <br/><span class="text-white">
+            <input type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
+
+
+
+            <h2 class="text-white lh-1" style="font-size:3.5em; float:right;">
+            <input type="button" value="go" class="remove-b text-black">
+            </h2>
+
+            <div class="spa20 clearboth"></div>
+
+        </div>
+      </div>  
+    </section> 
+{% endmacro %}
+
+{% macro footer3() %}
+    <section id="header" class="bg-yellow">
+
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 text-left">
+            <div class="spa5"></div>
+            <h3 class="text-black " style="font-size:2em; line-height:0.8em;">Sign Up <br/> for our Beta</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-5 text-left">
+            <h2 class="text-white lh-1" style="font-size:2em;">Name: <br/><span class="text-white">
+            <input type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
+        </div>
+        <div class="col-sm-4 text-left">
+            <h2 class="text-white lh-1" style="font-size:2em;">email: <br/><span class="text-white">
+            <input type="search" placeholder="Your email" class="text-gray remove-a"/></span></h2>
+        </div>
+        <div class="col-sm-1 text-left">
+            <h2 class="text-white lh-1" style="font-size:3em; float:right;">
+            <input type="button" value="go" class="remove-b text-black">
+            </h2>
+        </div>  
+    </section> 
+{% endmacro %}
   
   <div class="wrapper">
 
@@ -111,10 +247,28 @@
         <div class="navbar-collapse collapse text-navbar">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">Home</a></li>
-            <li><a href="/solutions">Solutions</a></li>
-            <li><a href="/how">How</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <a href="/templates">
+                    <img class="img-responsive left-block" src="/static/images/blue.png" style="width:70px;"/>
+                      Data Blueprints
+                    </a>
+                 </li>
+                <li>
+                    <a href="/solutions">
+                    <img class="img-responsive left-block" src="/static/images/datasuite_logo.png" style="width:70px;"/>
+                      Data Suite
+                    </a>
+                </li>
+                 
+                
+              </ul>
+            </li>
+
             <li><a href="/faq">FAQ</a></li>
-            <!-- <li><a href="/pricing">Pricing</a></li> -->
+            <li><a href="/pricing">Pricing</a></li>
             <!-- <li><a href="/docs">Docs</a></li> -->
           </ul>
         </div>

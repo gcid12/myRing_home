@@ -335,7 +335,7 @@ a:hover {
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: transparent;
-    color: #2e3b4e;
+    color: yellow;
 }
 
 .navbar-nav > li > .dropdown-menu {

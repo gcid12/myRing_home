@@ -21,15 +21,37 @@
 
 
 <section class="bg-04" style="padding-bottom:3px;">
-	<div class="row tab-margin">
-    <div class="col-sm-12 text-center">
-    	<div class="spa10"></div>
+  
+
+  {% if dic['header']=='big'%}
+  <div class="row tab-margin">
+  	<div class="col-sm-12 text-center">
+    	<div class="spa20"></div>
+    		<img class="img-responsive center-block" src="/static/images/datasuite_logo.png" style="width:300px;"/>
+    		<h1 class="text-dgray text-6em">Data Suite</h1>
+            <h2 class="text-gray">Model + Capture + Share</h2>
+            <h3 class="text-gray ">The complete solution for designing and deploying Data distribution channels.</h3>
     	
-    	<h2 class="text-white" style="font-size:3em;">My Ring <span class="fw500">Data Suite</span></h2>
+
+    	<div class="spa20"></div>
+    </div>
+  </div>
+
+
+    {% else %}
+  <div class="row tab-margin">
+    <div class="col-sm-1 hidden-xs">
+    	<img src="/static/images/datasuite_logo.png" style="width:100px; padding-left:20px;"/>
+    </div>
+    <div class="col-sm-8 text-left">
+    		<h1 class="text-dgray text-3em">Data Suite</h1>
+            
     	<div class="spa10"></div>
     </div>
-  </div> 
-<div class="row tab-margin">
+  </div>   
+    {% endif %}
+  
+  <div class="row tab-margin">
     <div class="col-xs-12 text-center">
     		<div style="width:91%;">
     			  <a class="toblack" href="/how" >
@@ -43,16 +65,17 @@
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-exp.png" class="img-responsive center-block" style="width:100px;">
 				  		
-				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Sharing </h3>
+				  		<h3 class="text-dgray fw900 hidden-xs" >
+				  			<span class="{% if dic['a5']=='sha' %}fc-f {% else %} text-lgray {% endif %}">
+				  			1. Data
+				  			</span> Sharing </h3>
 				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
 				  		<div class="rhr2 bg-c"></div>
 				  		<div class="spa5"></div>
 				  		
-				  		<div class="text-1 tab-box-b hidden-xs text-s2 {% if dic['a5']=='cap' %}text-black{% endif %}">
-
-          					<br/>
-				  		Share your data via REST or any API flavor you prefer.
-				  			<br/>
+				  		<div class="text-1 tab-box-b hidden-xs text-s2 {% if dic['a5']=='cap' %}text-black{% endif %}">	
+					  		<p class="text-gray lw-1-5em text-8"><em>Are you sitting in a Mountain of Data? Start by defining what kind of data you have</em></p>
+					  		<div class="spa10"></div>
 				  		</div>
 				  	</div>
 				  </a> 
@@ -60,15 +83,15 @@
 				  	<div class="tab-box-a {% if dic['a5']=='cap' %}tab-on{% endif %}">
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-cap.png" class="img-responsive center-block" style="width:100px;">
-				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Capture </h3>
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="{% if dic['a5']=='cap' %}fc-d {% else %} text-lgray {% endif %}">2. Data</span> Capture </h3>
 				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
 				  		<div class="rhr2 bg-b"></div>
 				  		<div class="spa5"></div>
 				  		<div class="text-1 tab-box-b hidden-xs text-s2 {% if dic['a5']=='sha' %}text-black{% endif %}">
 
-				          	<br/>
-				  		Capture your data from different sources. 
-				  			<br/>
+				          
+					  		<p class="text-gray lw-1-5em text-8"><em>Capture your data from legacy sources, third party API's, manually or via sensors. </em></p>
+					  			<div class="spa10"></div>
 				  		</div>
 				  	</div>
 				  </a> 
@@ -77,15 +100,15 @@
 				  		<div class="spa5"></div>
 				  		<img src="/static/images/ico-mod.png" class="img-responsive center-block" style="width:100px;">
 				  		<!-- <h2 class="hidden-xs"> 1. Modeling</h2> -->
-				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="text-lgray">Data</span> Modeling </h3>
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="{% if dic['a5']=='mod' %}fc-g {% else %} text-lgray {% endif %}">3. Data</span> Modeling </h3>
 				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
 				  		<div class="rhr2 bg-a"></div>
 				  		<div class="spa5"></div>
 				  		<div class="text-1 tab-box-b text-s2 hidden-xs {% if dic['a5']=='mod' %}text-black{% endif %}">
 
-          					<br/>
-				  		Create your Schema and label your information.
-				  			<br/>
+          			
+					  		<p class="text-gray lw-1-5em text-8"><em>Share your data easily with any mobile, device or platform via REST or any API flavor you prefer.</em></p>
+					  		<div class="spa10"></div>
 				  			
 				  		</div>
 				  	</div>
@@ -109,7 +132,7 @@
 
 		      <!-- B -->
 			{% if dic['b1'] %}	
-		    	{{ soluredux(dic['b1'],dic['b2'],dic['b3'],dic['b4'],dic['b5'],dic['b6'],dic['b7'],dic['b8'],"bg-07") }}
+		    	{{ soluredux(dic['b1'],dic['b2'],dic['b3'],dic['b4'],dic['b5'],dic['b6'],dic['b7'],dic['b8'],"bg-white") }}
 		    {% endif %}
 
 		      <!-- C -->
@@ -119,7 +142,7 @@
 
 		      <!-- D -->
 			{% if dic['d1'] %}	
-		    	{{ soluredux(dic['d1'],dic['d2'],dic['d3'],dic['d4'],dic['d5'],dic['d6'],dic['d7'],dic['d8'],"bg-07") }}
+		    	{{ soluredux(dic['d1'],dic['d2'],dic['d3'],dic['d4'],dic['d5'],dic['d6'],dic['d7'],dic['d8'],"bg-white") }}
 		    {% endif %}
 
 			  </div>
@@ -130,86 +153,7 @@
 
 </section>
 
-	<section class="bg-07">
-      <div class="container">
-      	<div class="row">
-      		<div class="col-sm-12 text-center">
-      			<p class="text-2em text-dgray"> Explore the complete Data Suite</p>
-      			<div class="spa30"></div>
-      		</div>
-      	</div>
-      	<div class="row margin-20">
-          <!--Section-->
-          <div class="col-sm-offset-2 col-sm-2 margin-20 text-center">
-            <a href="/solutions/model">
-            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
-            </a>
-          	<div class="rhr4 bg-gray"></div>
-          	<div class="spa10"></div>
-            
+{{ footer() }}
+{{ footer3() }}
 
-            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'50') }}
-          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'50') }}
-
-          </div>
-          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
-          	
-          	
-          	<a href="/solutions/capture">
-            <h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
-            </a>
-          	<div class="rhr4 bg-gray"></div>
-          	<div class="spa10"></div>
-            
-
-          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'50') }}
-          	{{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'50') }}
-          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'50') }}
-          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'50') }}
-          </div>
-          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
-          	
-          	<a href="/solutions/share">
-            <h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
-            </a>
-          	<div class="rhr4 bg-gray"></div>
-          	<div class="spa10"></div>
-            
-
-          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'50') }}
-          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'50') }}
-          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'50') }}
-
-          </div>
-        </div>  
-
-        <div class="row margin-60">
-          <div class="col-sm-12 text-center">
-
-          <div class="spa30"></div>
-            <a href="/how" class="btn btn-default btn-lg btn-ring2">
-            See in detail how the Data Suite works 
-            <i class="fa fa-cog text-gray"></i>
-            </a>
-            <br/>
-            <a href="/faq" class="btn btn-default btn-lg btn-ring3">
-            Frequent Asked Questions
-            <i class="fa fa-arrow-right text-gray"></i>
-            </a>
-
-            <br/>
-            <a href="/ecosystem" class="btn btn-link btn-lg btn-ring3">
-                <img class="img-responsive" style="max-width:200px;" src="/static/images/ring-infographic.png"/>
-            </a>
-
-
-			<br/>
-
-
-			
-
-          </div>
-        </div>
-      </div>
-    </section> 
 {% endblock %}

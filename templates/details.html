@@ -11,6 +11,16 @@
 
 <section class="bg-04" style="padding-bottom:3px;">
 	<div class="row tab-margin">
+	    <div class="col-sm-1 hidden-xs">
+	    	<img src="/static/images/datasuite_logo.png" style="width:100px; padding-left:20px;"/>
+	    </div>
+	    <div class="col-sm-8 text-left">
+	    		<h1 class="text-dgray text-3em">Data Suite</h1>
+	            
+	    	<div class="spa10"></div>
+	    </div>
+  	</div> 
+	<div class="row tab-margin">
 	    <div class="col-xs-7 text-center">
 			  <a class="toblack" href="/how" >
 	            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
@@ -168,85 +178,9 @@
 	</div>	
 </section>
 
-</section>
+{{ footer() }}
 
-	<section class="bg-07">
-      <div class="container">
-      	<div class="row">
-      		<div class="col-sm-12 text-center">
-      			<p class="text-2em text-dgray"> Explore the complete Data Suite</p>
-      			<div class="spa30"></div>
-      		</div>
-      	</div>
-      	<div class="row margin-20">
-          <!--Section-->
-          <div class="col-sm-offset-2 col-sm-2 margin-20 text-center">
-            <a href="/solutions/model">
-            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
-            </a>
-          	<div class="rhr4 bg-gray"></div>
-          	<div class="spa10"></div>
-            
-
-            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'50') }}
-          	{{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'50') }}
-
-          </div>
-          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
-          	
-          	
-          	<a href="/solutions/capture">
-            <h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
-            </a>
-          	<div class="rhr4 bg-gray"></div>
-          	<div class="spa10"></div>
-            
-
-          	{{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'50') }}
-          	{{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'50') }}
-          	{{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'50') }}
-          	{{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'50') }}
-          </div>
-          <div class="col-sm-offset-1 col-sm-2 margin-20 text-center">
-          	
-          	<a href="/solutions/share">
-            <h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
-            </a>
-          	<div class="rhr4 bg-gray"></div>
-          	<div class="spa10"></div>
-            
-
-          	{{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'50') }}
-          	{{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'50') }}
-          	{{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'50') }}
-
-          </div>
-        </div>  
-
-        <div class="row margin-60">
-          <div class="col-sm-12 text-center">
-
-          <div class="spa30"></div>
-            <a href="/how" class="btn btn-default btn-lg btn-ring2">
-            See in detail how the Data Suite works 
-            <i class="fa fa-cog text-gray"></i>
-            </a>
-            <br/>
-            <a href="/faq" class="btn btn-default btn-lg btn-ring3">
-            Frequent Asked Questions
-            <i class="fa fa-arrow-right text-gray"></i>
-            </a>
-
-			<br/>
-            <a href="/ecosystem" class="btn btn-link btn-lg btn-ring3">
-                <img class="img-responsive" style="max-width:200px;" src="/static/images/ring-infographic.png"/>
-            </a>
-
-          </div>
-        </div>
-      </div>
-    </section> 
-
+	
 
 
     

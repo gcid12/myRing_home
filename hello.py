@@ -56,6 +56,8 @@ def sol():
             'b6': il['cica']['icon'],
             'b7': il['cica']['preview'],
             'b8': il['cica']['slug'],
+            'header': "big",
+
                 }
 
     return render_template('solutions.html', insects=il, dic=dic) 
@@ -76,23 +78,23 @@ def solmod():
     il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
-    dic = { 'a1': il['spid']['title'],
-            'a2': il['spid']['name'], 
-            'a3': il['spid']['subtitle'],
-            'a4': il['spid']['desc'], 
-            'a5': il['spid']['label'], 
-            'a6': il['spid']['icon'],
-            'a7': il['spid']['preview'],
-            'a8': il['spid']['slug'],
-            # ---
-            'b1': il['cica']['title'],
-            'b2': il['cica']['name'], 
-            'b3': il['cica']['subtitle'],
-            'b4': il['cica']['desc'], 
-            'b5': il['cica']['label'], 
-            'b6': il['cica']['icon'],
-            'b7': il['cica']['preview'],
-            'b8': il['cica']['slug'],
+    dic = { 'a1': il['cica']['title'],
+            'a2': il['cica']['name'], 
+            'a3': il['cica']['subtitle'],
+            'a4': il['cica']['desc'], 
+            'a5': il['cica']['label'], 
+            'a6': il['cica']['icon'],
+            'a7': il['cica']['preview'],
+            'a8': il['cica']['slug'],
+
+            'b1': il['spid']['title'],
+            'b2': il['spid']['name'], 
+            'b3': il['spid']['subtitle'],
+            'b4': il['spid']['desc'], 
+            'b5': il['spid']['label'], 
+            'b6': il['spid']['icon'],
+            'b7': il['spid']['preview'],
+            'b8': il['spid']['slug'],
                 }
 
     return render_template('solutions.html', insects=il, dic=dic) 
@@ -701,10 +703,27 @@ def ecosystem():
     return render_template('ecosystem.html', insects=il, dic=dic)     
 
 
-@app.route('/combos')
-def combo():
-    title = 'My Combos'
-    return render_template('combos.html', title=title)                
+@app.route('/templates')
+def templates():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('templates.html', insects=il, dic=dic)    
+
 
 @app.route('/docs')
 def docs():
