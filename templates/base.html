@@ -167,18 +167,19 @@
             <div class="spa20"></div>
 
             
+            <form action='/thankyou' method='post'/>
+                <h2 class="text-white lh-1" style="font-size:3em;">Name: <br/><span class="text-white">
+                <input name="name" type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
 
-            <h2 class="text-white lh-1" style="font-size:3em;">Name: <br/><span class="text-white">
-            <input type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
-
-            <h2 class="text-white lh-1" style="font-size:3em;">email: <br/><span class="text-white">
-            <input type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
+                <h2 class="text-white lh-1" style="font-size:3em;">email: <br/><span class="text-white">
+                <input name="email" type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
 
 
 
-            <h2 class="text-white lh-1" style="font-size:3.5em; float:right;">
-            <input type="button" value="go" class="remove-b text-black">
-            </h2>
+                <h2 class="text-white lh-1" style="font-size:3.5em; float:right;">
+                <input type="submit" value="go" class="remove-b text-black">
+                </h2>
+            </form>
 
             <div class="spa20 clearboth"></div>
 
@@ -202,18 +203,18 @@
       </div>
       <div class="row">
 
-        <form name="form" action="">
+        <form action='/thankyou' method='post'/>
           <div class="col-sm-offset-2 col-sm-4 text-left">
               <h2 class="text-white lh-1" style="font-size:2em;">Name: <br/><span class="text-white">
-              <input type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
+              <input name="name" type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
           </div>
           <div class="col-sm-4 text-left">
-              <h2 class="text-white lh-1" style="font-size:2em;">email: <br/><span class="text-white">
-              <input type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
+              <h2 class="text-white lh-1" style="font-size:2em;">e.mail: <br/><span class="text-white">
+              <input name="email" type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
           </div>
           <div class="col-sm-1 text-left">
               <h2 class="text-white lh-1" style="font-size:3em; float:right;">
-              <input type="button" value="go" class="remove-b text-black">
+              <input type="submit" value="go" class="remove-b text-black">
               </h2>
           </div>  
         </form>
@@ -245,7 +246,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
-                    <a href="/templates">
+                    <a href="/blueprints">
                     <img class="img-responsive left-block" src="/static/images/blue.png" style="width:70px;"/>
                       Data Blueprints
                     </a>
@@ -256,13 +257,19 @@
                       Data Suite
                     </a>
                 </li>
+                <!-- <li>
+                    <a href="/autopitch">
+                    <img class="img-responsive left-block" src="/static/images/ap-icon.png" style="width:70px;"/>
+                      Auto Pitch
+                    </a>
+                </li> -->
                  
                 
               </ul>
             </li>
 
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+            <!-- <li><a href="/pricing">Pricing</a></li> -->
             <!-- <li><a href="/docs">Docs</a></li> -->
           </ul>
         </div>

@@ -6,6 +6,7 @@
 
 {% block content %}
 
+  
 
 
   <section class="bg-hand" style="padding-bottom:10px;">
@@ -13,8 +14,14 @@
       <div class="row margin-50">
           <div class="col-sm-offset-2 col-sm-8 text-center">
             <div class="spa5"></div>
-            <div class="rhr3 bg-white" style="float:left;"></div>
-            <div class="rhr3 bg-white" style="float:right;"></div>
+            {% if dic['mes1']=="1" %}
+
+              <div class="well" style="margin-top:50px;">
+              <i class="fa fa-smile-o fa-2x"></i>
+              <h2>Thanks for subscribing to our Beta Test . </h2> 
+              <h4 class="text-black">Expected Release: January 2015 </h4>
+              </div>
+            {% endif %}
             
             <div class="spa40"></div>
             <h1 style="font-size:5em; font-weight:300;" class=" lh-1 fc-b">
@@ -56,47 +63,86 @@
             </div>
             
         </div>
+      </div>
+    </section>
+    <section class="bg-07 top">
+      <div class="container">  
         <div class="row">
           <div class="col-sm-12 text-center">
-            <div class="rhr4"></div>
-            <div class="spa20"></div>
-            <h2 class="text-lgray fs-2">with our solution your company will:</h2>
-            <div class="spa20"></div>
+           
+            <div class="spa40"></div>
+            <h2 class="text-black fs-3">with AutoPitch your company will:</h2>
+            <div class="spa40"></div>
           </div>  
         </div>
 
-        <div class="row margin-40">
+        <div class="row ">
           <div class="col-sm-offset-1 col-sm-5 margin-20 text-right">
-            <h2 class="text-gray">Have a semantically organized catalog</h2>
+            <h2 class="text-gray">Automatically answer questions about your product</h2>
             <h3 class="text-lgray"></h3>
-            <p class="lh-1-5">When Data and content is annotated and organized semantically, A.I. systems can process it faster avoiding misinterpretations and/or holes in the context. In a world full of noise, make your message clearer and stand out from the crowd.</p>
+            <p class="lh-1-5">Provide an incredible level of detail about your product or service including text, photos, videos and promotions. Have great answers prepared for every group demographic group.</p>
           </div>
           <div class="col-sm-5 margin-20">
-            <img class="img-responsive right-block" src="/static/images/ai_01.png" style="width:200px;"/>
+            <img class="img-responsive right-block" src="/static/images/ai_04.png" style="width:200px;"/>
           </div>
-        </div> 
+        </div>
 
-        <div class="row margin-40">
+        <div class="row ">
           <div class="col-sm-offset-1 col-sm-5 margin-20">
-            <img class="img-responsive right-block" src="/static/images/ai_02.png" style="width:200px; float:right;"/>
+            <img class="img-responsive right-block" src="/static/images/ai_05.png" style="width:200px; float:right;"/>
           </div>
           <div class="col-sm-5 margin-20 text-left">
-            <h2 class="text-gray">Be accessible 24/7</h2>
-            <h3 class="text-lgray">(to any A.I. enabled device worldwide)</h3>
-            <p class="lh-1-5">One of the most important parts of serving dynamic data on demand is the ability to be there whenever you are required and to scale your capacity on demand. My Ring give access to Global Content Distribution Networks (CDNs) without the IT overhead.</p>
+            <h2 class="text-gray">Serve Voice CTA's</h2>
+            <h3 class="text-lgray"></h3>
+            <p class="lh-1-5"> Once you have them informed and engaged, don't send them to a website, close them in the spot with actionable Calls To Action. Let them know about promotions and offers</p>
+            
+
             
           </div>
         </div> 
 
-        <div class="row margin-40">
+        <div class="row ">
           <div class="col-sm-offset-1 col-sm-5 margin-20 text-right">
-            <h2 class="text-gray">Serve data & content via an enterprise API</h2>
-            <p class="lh-1-5">MyRing exposes your Data in JSON and any other popular format (XML, CSV, Sparq). This means that your company will be open for business with any retail or booking system (Mobile and Desktop). </p>
+            <h2 class="text-gray">Close deals with voice commands</h2>
+            <h3 class="text-lgray"></h3>
+            <p class="lh-1-5">Once a lead react to your CTA and accept, close the sale and charge their credit card on the fly, send them receipt, tracking number to their mail or SMS.</p>
           </div>
-          <div class="col-sm-5 margin-20 text-left">
-            <img class="img-responsive left-block" src="/static/images/ai_03.png" style="width:200px;"/>
+          <div class="col-sm-5 margin-20">
+            <img class="img-responsive right-block" src="/static/images/ai_06.png" style="width:200px;"/>
           </div>
         </div> 
+
+        <div class="row ">
+          <div class="col-sm-offset-1 col-sm-5 margin-20">
+            <img class="img-responsive right-block" src="/static/images/ai_07.png" style="width:200px; float:right;"/>
+          </div>
+          <div class="col-sm-5 margin-20 text-left">
+            <h2 class="text-gray">Track your performance</h2>
+            <p class="lh-1-5">Track the most asked questions and best performing CTAs and improve them over time. Increase your AutoPitch performance by performing A/B test on them. </p>
+            
+          </div>
+        </div> 
+
+        <div class="row ">
+          <div class="col-sm-offset-1 col-sm-5 margin-20 text-right">
+            <h2 class="text-gray">Be multilingual</h2>
+            <h3 class="text-lgray"></h3>
+            <p class="lh-1-5">Reach customers all around the world in their own language,  provide a seamless experience and learn about the best way to sell them. </p>
+          </div>
+          <div class="col-sm-5 margin-20">
+            <img class="img-responsive right-block" src="/static/images/ai_08.png" style="width:200px;"/>
+          </div>
+        </div> 
+
+
+<!-- 
+<div class="col-sm-5 margin-20 text-left">
+            <h2 class="text-gray">Be accessible 24/7</h2>
+            <h3 class="text-lgray">(to any A.I. enabled device worldwide)</h3>
+            <p class="lh-1-5">One of the most important parts of serving dynamic data on demand is the ability to be there whenever you are required and to scale your capacity on demand. My Ring give access to Global Content Distribution Networks (CDNs) without the IT overhead.</p>
+            
+          </div> -->
+
 
         <!-- <div class="row margin-40">
           <div class="col-sm-offset-2 col-sm-4 margin-20 text-center">
@@ -120,49 +166,30 @@
           
       </div>  
     </section>  -->
-
-    <section class="bg-07">
+    <section class="bg-white">
       <div class="container">
         <div class="row margin-60">
-          <div class="col-sm-offset-3 col-sm-7 text-center">
-              <h2 class="text-black" style="font-size:4em;">Get ready</h2>
-              <h2 class="text-black" style="font-size:4em;">Today</h2>
-              <div class="spa10"></div>
-              <p class="fs-1 text-gray">Start optimizing your company for Artificial Intelligence. Make your product and services available to millions of potential customers. </p>
-
+          <div class="col-sm-offset-1 col-sm-10 text-center">
+              <h2 class="text-black" style="font-size:3em;">Turn your customer questions</h2>
+              <h2 class="text-black" style="font-size:4em;">into actual transactions</h2>
+              <div class="spa20"></div>
+              <p class="fs-1-5 text-lgray">With Voice CTA's convert leads to customers on the spot</p>
             
           </div>
         </div><!--end Row-->
         <div class="row">
-          <div class="col-sm-offset-1 col-sm-4 text-center">
-            <img class="img-responsive center-block" src="/static/images/blue.png"/>
-            <h2 class="text-2-5em text-black">Ring <br/>Blueprints</h2>
-            
-            <p style="font-size:1.4em;" class="text-gray">Hit the road running with our plug and play Solution. </p>
-            <div class="spa10"></div>
-            <a href="/templates" class="btn btn-default btn-lg btn-ring3">
-            More info
-            <i class="fa fa-arrow-right text-gray"></i>
-            </a>
-          </div>
-          <div class="col-sm-offset-2 col-sm-4 text-center">
-            <img class="img-responsive center-block" src="/static/images/datasuite_logo.png"/>
-            <h2 class="text-2-5em text-black">The Data <br/> Suite</h2>
-            
-            <p style="font-size:1.4em;" class="text-gray">Create sophisticated Data Solutions that fit exactly your needs. </p>
-            <div class="spa10"></div>
-            <a href="/solutions" class="btn btn-default btn-lg btn-ring3">
-            More info
-            <i class="fa fa-arrow-right text-gray"></i>
-            </a>
+          <div class="col-sm-12 text-center">
+            <img class="img-responsive center-block" src="/static/images/autopitch_info.png"/>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-white">
+
+
+    <section class="bg-07">
       <div class="row margin-60">
-        <div class="spa40"></div>
+        
         <div class="col-sm-offset-2 col-sm-8 text-center">
             <h2 class="text-lgray" style="font-size:4em;">Why this</h2>
             <h2 class="text-gray" style="font-size:4em;">is important?</h2>
@@ -189,7 +216,7 @@
           </div>
           <div class="col-sm-4 margin-20 text-left">
             <h2 class="text-gray">2. Having a responsive HTML Design doesn’t make you mobile Friendly</h2>
-            <p class="text-9">Mobile users only spend 14% in their Mobile Device Browsers, even if your company have the best designed responsive website you are missing the 86% of the user available attention.  Having a Mobile Friendly company means that your product and service Data is available to hundreds of geo-localization, retail and booking apps.
+            <p class="text-9">Mobile users only spend 14% in their Mobile Device Browsers, even if your company has the best designed responsive website you are missing the 86% of the user available attention.  Having a Mobile Friendly company means that your product and service Data is available to hundreds of geo-localization, retail and booking apps.
 
 
             </p>
@@ -217,6 +244,49 @@
 
           
       </div>  
+    </section>
+    <section class="bg-white">
+      <div class="container">
+        <div class="row margin-60">
+          <div class="col-sm-offset-2 col-sm-8 text-center">
+              <h2 class="text-black" style="font-size:4em;">Get ready Today!</h2>
+              
+              <div class="spa10"></div>
+              <p class="fs-1 text-gray">Start optimizing your company for Artificial Intelligence. Make your product and services available to millions of potential customers around the world. </p>
+          </div>
+        </div><!--end Row-->
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-4 text-left">
+            <img class="img-responsive left-block" src="/static/images/blue.png"/>
+           
+            <hr/>
+            <img class="img-responsive left-block" src="/static/images/myring02.png" style="width:60px;" alt="My Ring" />
+            <p class="text-2-5em text-black">AutoPitch</p>
+            <br/>
+            
+            <p style="font-size:1.2em;" class="text-gray">Product knowledge Base + Voice CTA's tracking system</p>
+            <div class="spa10"></div>
+            <a href="/templates" class="btn btn-default btn-lg btn-ring3">
+            More info
+            <i class="fa fa-arrow-right text-gray"></i>
+            </a>
+          </div>
+          <div class="col-sm-offset-2 col-sm-4 text-left">
+            <img class="img-responsive center-block" src="/static/images/datasuite_logo.png" alt="My Ring" />
+            <hr/>
+            <img class="img-responsive left-block" src="/static/images/myring02.png" style="width:60px;" />
+            <p class="text-2-5em text-black">DataSuite</p>
+            <br/>
+            
+            <p style="font-size:1.2em;" class="text-gray">Create sophisticated Data Solutions , deploy via CDNs </p>
+            <div class="spa10"></div>
+            <a href="/solutions" class="btn btn-default btn-lg btn-ring3">
+            More info
+            <i class="fa fa-arrow-right text-gray"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
 

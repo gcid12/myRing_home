@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 from InsectData import InsectData
+import smtplib
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -21,7 +22,56 @@ def hello():
     il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
-    return render_template('home.html', insects=il) 
+    dic = { 'mes1': "0",}
+
+
+    return render_template('home.html', insects=il, dic=dic) 
+
+@app.route('/thankyou',methods=['GET', 'POST'])
+def thankyou():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+    dic = { 'mes1': "1",}
+
+    if request.form['name'] and request.form['email']:
+
+        print("Beta tester: "+request.form['name'] +"<"+request.form['email']+"> ")
+
+        
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.ehlo()
+        server.starttls()
+
+        #Next, log in to the server
+        server.login("rcid@myring.io", "$jaMAIcaSKA!66")
+
+        #Send the mail
+        msg = "\r\n".join([
+          "From: rcid@myring.io",
+          "To: ",
+          "Subject: "+request.form['name'] +"<"+request.form['email']+"> Just subscribed to the Beta!",
+          "",
+          "Llame ahora! "+request.form['name'] +"<"+request.form['email']+">"
+          ])
+        #msg = "\nHello!" # The /n separates the message from the headers
+        server.sendmail("rcid@myring.io", "gcid@myring.io", msg)
+        server.quit()
+
+        print("Email to "+request.form['email']+" sent succesfully ")
+
+        return render_template('home.html' , insects=il, dic=dic)
+    else:
+        return render_template('home.html', insects=il, dic=dic) 
 
 
 @app.route('/solutions')
@@ -56,7 +106,7 @@ def sol():
             'b6': il['cica']['icon'],
             'b7': il['cica']['preview'],
             'b8': il['cica']['slug'],
-            'header': "bigm",
+            'header': "big",
 
                 }
 
@@ -725,10 +775,77 @@ def templates():
     return render_template('templates.html', insects=il, dic=dic)    
 
 
+@app.route('/blueprints')
+def blueprints():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('blueprints.html', insects=il, dic=dic) 
+
+
+
+@app.route('/autopitch')
+def autopitch():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('autopitch.html', insects=il, dic=dic) 
+
+# WIZARDS
+
+@app.route('/wiz01')
+def wiz01():
+    return render_template('wiz01.html')
+     
+@app.route('/wiz02')
+def wiz02():
+    return render_template('wiz02.html') 
+
+@app.route('/wiz03')
+def wiz03():
+    return render_template('wiz03.html') 
+
+@app.route('/wiz04')
+def wiz04():
+    return render_template('wiz04.html')         
+
+
+
 @app.route('/docs')
 def docs():
     title = 'Documentation'
     return render_template('docs.html', title=title) 
+
+
+
 
 @app.route('/images')
 def hello_images():

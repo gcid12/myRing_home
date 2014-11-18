@@ -39,6 +39,7 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
       .fs-1{font-size:1em;}
       .fs-1-5{font-size:1.5em;}
       .fs-2{font-size:2em;}
+      .fs-2-5{font-size:2.5em;}
       .fs-3{font-size:3em;}
       .fs-4{font-size:4em;}
       .fs-5{font-size:5em;}
@@ -288,6 +289,14 @@ body{
   background: -moz-linear-gradient(60deg, #FFF, #eae5df);
   background:linear-gradient(60deg, #FFF, #eae5df);
 }
+
+  .bg-07b{  
+  background: -webkit-linear-gradient(180deg, #FFF, #eae5df);
+  background: -o-linear-gradient(180deg, #FFF, #eae5df);
+  background: -moz-linear-gradient(180deg, #FFF, #eae5df);
+  background:linear-gradient(180deg, #FFF, #c9baac);
+}
+
 
   .bg-08{  
   background: -webkit-linear-gradient(0deg, #F2F2F2, #FFF);
