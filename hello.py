@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask import render_template
 from InsectData import InsectData
 import smtplib
+from config FROMEMAIL, FROMPASS, TOEMAIL
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -53,18 +54,18 @@ def thankyou():
         server.starttls()
 
         #Next, log in to the server
-        server.login("rcid@myring.io", "$jaMAIcaSKA!66")
+        server.login(FROMEMAIL, FROMPASS)
 
         #Send the mail
         msg = "\r\n".join([
-          "From: rcid@myring.io",
+          "From:"+FROMEMAIL,
           "To: ",
           "Subject: "+request.form['name'] +"<"+request.form['email']+"> Just subscribed to the Beta!",
           "",
           "Llame ahora! "+request.form['name'] +"<"+request.form['email']+">"
           ])
         #msg = "\nHello!" # The /n separates the message from the headers
-        server.sendmail("rcid@myring.io", "gcid@myring.io", msg)
+        server.sendmail(FROMEMAIL, TOEMAIL, msg)
         server.quit()
 
         print("Email to "+request.form['email']+" sent succesfully ")
