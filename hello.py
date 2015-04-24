@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask import render_template
 from InsectData import InsectData
 import smtplib
-from config FROMEMAIL, FROMPASS, TOEMAIL
+from config import FROMEMAIL, FROMPASS, TOEMAIL
 
 app = Flask(__name__)
 app.config.from_object('config')
