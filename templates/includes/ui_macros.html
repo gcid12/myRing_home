@@ -1,0 +1,248 @@
+{% macro iconbig(title,icon,slug,size) %}
+  <a id="pop" 
+          href="/tools/{{ slug }}" 
+          data-toggle="popover" 
+          data-html="true" 
+          data-content="<span class='text-s2'>{{ title }}</span>"
+      >
+      <img src="/static/images/icons/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+  </a>
+
+{% endmacro %}
+
+{% macro ringtab(tab) %}  <!-- repeated please fix -->
+  {% if tab=='mod' %}
+    <span class="label bg-a">Data Modeling tool</span>
+  {% elif tab=='cap' %}
+    <span class="label bg-b">Data Capture tool</span>
+  {% elif tab=='sha' %}
+    <span class="label bg-c">Data Sharing tool</span>
+  {% else %}
+    <span class="label bg-default">{{ tab }}</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro ringborder(tab) %}  <!-- repeated please fix -->
+  {% if tab=='mod' %}
+    fatleft-a
+  {% elif tab=='cap' %}
+    fatleft-b
+  {% elif tab=='sha' %}
+    fatleft-c
+  {% else %}
+  {% endif %}
+{% endmacro %}
+
+
+
+
+{% macro soluredux(x1,x2,x3,x4,x5,x6,x7,x8,bg) %}
+
+<div class="row {{ bg }} {{ ringborder(x5) }}">
+              <div class="col-sm-offset-1 col-sm-2 text-center">
+                <div class="spa30"></div>
+                <a href="/tools/{{ x8 }}">
+                <img class="img-responsive center-block" src="/static/images/icons/{{ x6 }}" style="width:100px;" />
+                </a>
+              </div>
+              <div class="col-sm-9 text-left">
+                
+
+                <span style="float:right; padding-top:20px;">
+                  {{ ringtab(x5) }}
+                </span><br/>
+                <hr/>
+                <a class="toblack" href="/tools/{{ x8 }}">
+                  
+                  <h3 class="text-solut">{{ x1 }} </h3>
+
+                  <h4 class="text-lgray">{{ x2 }}</h4>
+                  
+                  
+                  <div class="spa5 clearboth"></div>
+                  <div class="text-solut2">
+                    {{ x3 }}
+                      <div class="spa5"></div>
+                  </div>
+                  <div class="text-s2" style="width:70%;">{{ x4|truncate(300, True, '...[read more]') }}</div>
+                    <h3 style="float:right; padding-right:10%;">More Info <i class="fa fa-arrow-right"></i></h3>
+                    <div class="spa30"></div>
+            </a>  
+              </div>
+          </div>
+          <div class="rhr4"></div>
+
+{% endmacro %}
+
+{% macro gotodoc(color) %}  <!-- repeated please fix -->
+   <!-- <a href="/doc" class="label label-mod">Go to Full Documentation <i class="fa fa-book"></i></a> -->
+{% endmacro %}
+
+{% macro gotofaq(color) %}  <!-- repeated please fix -->
+    <a href="/faq" class="label label-warning bg-{{color}}">Frequent Asked Questions <i class="fa fa-arrow-right"></i></a>
+{% endmacro %}
+{% macro gotohiw(color) %}  <!-- repeated please fix -->
+    <a href="/how" class="label label-success bg-{{color}}">How it works <i class="fa fa-arrow-right"></i></a>
+{% endmacro %}
+
+{% macro footer() %}
+<section class="bg-07">
+      <div class="container">
+        
+        <div class="row margin-5">
+          <!--Section-->
+          <div class="col-sm-3 margin-20 text-center">
+            <a href="/solutions/model">
+            <h3 class="text-dgray fw900" >Model <span class="text-lgray">Data</span></h3>
+            </a>
+            <div class="rhr4 bg-gray"></div>
+            <div class="spa10"></div>
+            
+
+            {{ iconbig(insects.spid.title, insects.spid.icon, insects.spid.slug,'15') }}
+            {{ iconbig(insects.cica.title, insects.cica.icon, insects.cica.slug,'15') }}
+
+            <a href="/solutions/capture">
+            <h3 class="text-dgray fw900" >Capture <span class="text-lgray">Data</span></h3>
+            </a>
+            <div class="rhr4 bg-gray"></div>
+            <div class="spa10"></div>
+            
+
+            {{ iconbig(insects.dfly.title, insects.dfly.icon, insects.dfly.slug,'15') }}
+            {{ iconbig(insects.ants.title, insects.ants.icon, insects.ants.slug,'15') }}
+            {{ iconbig(insects.mosq.title, insects.mosq.icon, insects.mosq.slug,'15') }}
+            {{ iconbig(insects.worm.title, insects.worm.icon, insects.worm.slug,'15') }}
+
+            <a href="/solutions/share">
+            <h3 class="text-dgray fw900" >Share <span class="text-lgray">Data</span></h3>
+            </a>
+            <div class="rhr4 bg-gray"></div>
+            <div class="spa10"></div>
+            
+
+            {{ iconbig(insects.bees.title, insects.bees.icon, insects.bees.slug,'15') }}
+            {{ iconbig(insects.lbug.title, insects.lbug.icon, insects.lbug.slug,'15') }}
+            {{ iconbig(insects.bfly.title, insects.bfly.icon, insects.bfly.slug,'15') }}
+
+
+          </div>
+
+      
+          <div class="col-sm-8 text-left">
+
+          <div class="spa5"></div>
+            <h2><a href="/how"><i class="fa fa-arrow-right text-gray"></i> See in detail how the Data Suite works </a></h2>
+
+            <h2><a href="/faq"><i class="fa fa-arrow-right text-gray"></i> Frequent Asked Questions </a></h2>
+
+            <h2><a href="/ecosystem"><i class="fa fa-arrow-right text-gray"></i> Check our infographic that explains Rings </a></h2>
+
+            <br/>
+           
+          </div>
+          
+        </div>
+      </div>
+    </section> 
+
+{% endmacro %}
+
+{% macro cta1() %}
+    <section id="header" class="bg-yellow">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-7 text-left">
+            <div class="spa40"></div>
+            <h3 class="text-black " style="font-size:6em; line-height:0.8em;">Sign Up <br/> for our Beta</h3>
+            <div class="spa20"></div>
+
+            
+            <form action='/thankyou' method='post'/>
+                <h2 class="text-white lh-1" style="font-size:3em;">Name: <br/><span class="text-white">
+                <input name="name" type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
+
+                <h2 class="text-white lh-1" style="font-size:3em;">email: <br/><span class="text-white">
+                <input name="email" type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
+
+
+
+                <h2 class="text-white lh-1" style="font-size:3.5em; float:right;">
+                <input type="submit" value="go" class="remove-b text-black">
+                </h2>
+            </form>
+
+            <div class="spa20 clearboth"></div>
+
+        </div>
+      </div>  
+    </section> 
+{% endmacro %}
+
+{% macro cta2() %}
+    <section id="header" class="bg-yellow">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="spa20"></div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-9 text-left">
+            <div class="spa5"></div>
+            <h3 class="text-black " style="font-size:3em; line-height:0.8em;">Sign Up for our Beta</h3>
+        </div>
+      </div>
+      <div class="row">
+
+        <form action='/thankyou' method='post'/>
+          <div class="col-sm-offset-2 col-sm-4 text-left">
+              <h2 class="text-white lh-1" style="font-size:2em;">Name: <br/><span class="text-white">
+              <input name="name" type="search" placeholder="Your name" class="text-gray remove-s"/></span></h2>
+          </div>
+          <div class="col-sm-4 text-left">
+              <h2 class="text-white lh-1" style="font-size:2em;">e.mail: <br/><span class="text-white">
+              <input name="email" type="search" placeholder="Your email" class="text-gray remove-s"/></span></h2>
+          </div>
+          <div class="col-sm-1 text-left">
+              <h2 class="text-white lh-1" style="font-size:3em; float:right;">
+              <input type="submit" value="go" class="remove-b text-black">
+              </h2>
+          </div>  
+        </form>
+        <div class="row">
+          <div class="col-sm-12">
+              <div class="spa20"></div>
+          </div>
+        </div>
+    </section> 
+{% endmacro %}
+
+
+{% macro labelres(q, text) %}
+    {% if q==1 %}
+      <spa class="label_report label-success" >{{ text }}</spa>
+    {% elif q==2 %}
+      <spa class="label_report label-danger " >{{ text }}</spa>
+    {% elif q==3 %}
+      <spa class="label_report label-warning " >{{ text }}</spa>
+    {% else %}
+      <spa class="label_report label-default " >{{ text }}</spa>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro report_title(text,icon) %}
+
+<h4 class="fw-c fc-g">{{text}}: <i class="fa fa-question-circle"></i></h4>
+{% endmacro %}
+
+
+{% macro lorem() %}
+<p>
+  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius risus sed purus egestas dictum. Integer enim lectus, elementum faucibus odio nec, scelerisque scelerisque sapien. Duis facilisis odio arcu, sed euismod dui accumsan in. Pellentesque a leo in massa rhoncus pretium. Suspendisse a dictum sem, nec malesuada enim. Mauris non nisl quis nulla laoreet lobortis quis nec justo. Mauris dictum mauris erat. Pellentesque vel hendrerit urna. Aliquam sollicitudin non ex quis accumsan. Suspendisse tincidunt quam urna, ut scelerisque lorem malesuada sed.  -->
+</p>
+
+{% endmacro %}
+
+
+
+

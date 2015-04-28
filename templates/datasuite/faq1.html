@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	My Ring - {{ title }}
+{% endblock %}
+
+
+{% macro icontabs(title,icon,slug,size) %}
+<table>
+  <tr>
+    <td>
+	   <img src="/static/images/{{ icon }}" alt="{{ title }}" style="width:{{ size }}px;">
+    </td>
+    <td>
+      <p class="text-s1 hidden-xs text-1em" style="line-height:1em; padding:0 20px 0 10px;">{{ title }}</p> 
+    </td>
+  </tr>
+</table>
+
+{% endmacro %}
+
+
+
+
+
+{% block content %}
+
+
+
+<section class="bg-04" style="padding-bottom:6px;">
+	<div class="row tab-margin">
+    
+    <div class="col-xs-7 text-center">
+		  <a class="toblack" href="/how" >
+            <div class="tab-box-c-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+	          <i class="fa fa-cog fa-1x"></i>
+	          <span class="text-s2 text-1em hidden-xs">How it Works</span>
+            </div>
+		  </a>
+
+	      <a href="/solutions/share" >
+            <div class="tab-box-a tb-mini {% if dic['a5']=='sha' %}tab-on{% endif %}">
+                <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Sharing </h3>
+                <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+                <div class="rhr2 bg-c"></div>
+                <div class="spa5"></div>
+            </div>
+          </a> 
+		  <a href="/solutions/capture" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='cap' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Capture </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+                    
+                    <div class="rhr2 bg-b"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a> 
+              <a href="/solutions/model" >
+                <div class="tab-box-a tb-mini {% if dic['a5']=='mod' %}tab-on{% endif %}">
+                    <h3 class="text-dgray fw900 hidden-xs text-9" ><span class="text-lgray">Data</span> Modeling </h3>
+                    <h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+                    <div class="rhr2 bg-a"></div>
+                    <div class="spa5"></div>
+                </div>
+              </a>
+		  
+	</div>
+	<div class="col-xs-5 text-right hidden-xs">
+		<h2 class="text-white font-r" style="float:right; margin-top:-1px; font-size:1.5em; padding-right:100px;">FAQ </h2>
+    </div>
+		
+ 
+	</div>
+	<div class="row tab-margin">
+    <div class="col-xs-12">	
+			<div class="tab-content">
+			  <div class="tab-pane fade in active tab-section" id="model">
+			  <!-- A -->
+		    	<div class="row bg-white">
+		    		<div class="spa20"></div>
+		    	</div>
+		    	<div class="row bg-white det-box">
+		      
+		        	<div class="col-sm-offset-1 col-sm-8 text-left">
+		        		
+				        	<h3 class="text-2-5em text-gray">
+                  Frequent Asked Questions. </h3>
+				        	
+				        	<hr/>	
+			        	
+		        	</div> 
+		        	<div class="col-sm-2 text-right">
+		        		
+		        		{{ gotodoc() }}<br/>
+		        		{{ gotohiw() }}
+
+		        	</div>
+		      </div> <!-- close row -->
+
+          <div class="row bg-white">
+            <div class="col-xs-2"> <!-- required for floating -->
+                    
+
+            
+            </div> <!-- CLOSE COLUMN -->
+            <div class="col-xs-7">
+                <!-- Tab panes -->
+              <h2>What is MyRing?</h2>
+Serving Data and content to 1.4 Billion smartphones and 7 billion connected devices it’s the biggest opportunity ever imagined. Although the lack of accessible tools to prepare, capture and share data block thousands of content creators to do so. 
+
+MyRing Data Suite facilitates the data funnel in every step of the process, from capturing it all the way to delivering it worldwide via Content Distribution Networks. MyRing allows anyone with Data to make it accessible to the world and to obtain value out of it.
+
+
+<h2>What is Data?</h2>
+Data is any bit of unprocessed information. Normally it becomes processed information or “content” when it's assembled, combined or merged with more Data.
+
+
+<h2>What is the Data Suite?</h2>
+The Data Suite is a solution that helps anyone through each step of the Data cycle: Modeling, Capturing and Exposing (Sharing).
+
+<h2>What is Modeling?</h2>
+Modeling is the action of creating a "Data Schema." With modeling we organize the users data. We generate a blueprint of the information and its structure. This allows us to capture all data schemas, organizing every single detail of the data. For example there may be a data schema for “Birds Species” detailing: color, region, family, etc.. But also there may be another one detailing baseball players Information: Name, position, team, records, etc. MyRing provide tools to model Data Schemas and to tag data semantically.
+
+<h2>What is a Ring schema?</h2>
+A Ring schema is a schema created and maintained by one or more individuals. A Ring schema lives in Github and it’s an open source project.  Its popularity depends on the amount of people capturing and using it.  
+
+<h2>What is Capturing?</h2>
+Capturing is the action of collecting new data as opposed to scrapping, which only reprocess existing Data. Capturing is one of the most important actions of the Data cycle, doing it correctly will define Data usability and relevance. MyRing provides tools for capturing data manually (by humans) and automatically (by sensors). 
+
+<h2>What is Exposing (Sharing)?</h2>
+Exposing is the action of making data available to the world to use. Exposing your data means making it accessible in any format to any system. Currently one of the most common Data Formats is JSON REST. My Ring provides tools to expose data in this and any other existing formats (SOAP, CSV, SPARQ, TOML, etc.) 
+
+<h2>What is the difference between Storing Data in the cloud and using a Ring.?</h2>
+It’s a very different process. Unlike storing (Dropbox and similar) where information is held in one singe location as files, MyRing captures data resources, organize them semantically and distributes them to different systems via an API allowing anyone to use it to assemble their own content in the form of an mobile APP or a website. Data on a Ring can be used several times by many internet applications in hundred of different ways. 
+<br/>
+
+<h2>Can MyRing be used to serve content?</h2>
+
+Yes absolutely, Rings can be used to serve content in the same way it’s used to distribute data. A "video" for example will be treated as a raw data source. However in MyRings the same source will also include information about Author, license, synopsis, credits, etc. 
+
+<h2>What about the licenses to use the Data I’m distributing?</h2>
+Every bit of data distributed via a Ring has a license attached to it. This will help guide a system in the use of it.  
+
+
+            </div>
+
+          </div>
+
+		        
+		    	<div class="row bg-white">
+		    		<div class="spa80"></div>
+		    	</div>
+		    	
+		    	
+
+			  </div>
+
+			</div> <!-- close tab content -->
+
+		</div>
+	</div>	
+</section>
+
+{{ footer() }}
+{{ cta2() }}
+
+
+    
+	
+{% endblock %}
+

@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	My Ring : {{ title }}
+{% endblock %}
+
+{% macro ringtab(tab) %}  <!-- repeated please fix -->
+	{% if tab=='mod' %}
+		<span class="label bg-a">Data Modeling tool</span>
+	{% elif tab=='cap' %}
+		<span class="label bg-b">Data Capture tool</span>
+	{% elif tab=='sha' %}
+		<span class="label bg-c">Data Sharing tool</span>
+	{% else %}
+		<span class="label bg-default">{{ tab }}</span>
+	{% endif %}
+{% endmacro %}
+
+
+{% block content %}
+
+
+<section class="bg-07b" style="padding-bottom:3px;">
+  
+
+  {% if dic['header']=='big'%}
+  <div class="row tab-margin">
+  	<div class="col-sm-12 text-center">
+    	<div class="spa20"></div>
+    		<img class="img-responsive center-block" src="/static/images/logos/datasuite_logo.png" style="width:300px;"/>
+    		<h1 class="text-dgray text-6em">Data Suite</h1>
+            <h2 class="text-gray">Model + Capture + Share</h2>
+            <h3 class="text-gray ">The complete solution for designing and deploying Data distribution channels.</h3>
+    	
+
+    	<div class="spa20"></div>
+    </div>
+  </div>
+
+
+    {% else %}
+  <div class="row tab-margin">
+    <div class="col-sm-1 hidden-xs">
+    	<img src="/static/images/logos/datasuite_logo.png" style="width:100px; padding-left:20px;"/>
+    </div>
+    <div class="col-sm-8 text-left">
+    		<h1 class="text-dgray text-3em">Data Suite</h1>
+            
+    	<div class="spa10"></div>
+    </div>
+  </div>   
+    {% endif %}
+  
+  <div class="row tab-margin">
+    <div class="col-xs-12 text-center">
+    		<div style="width:91%;">
+    			  <a class="toblack" href="/how" >
+				  	<div class="tab-box-a-mini {% if dic['a5']=='hiw' %}tab-on{% endif %}">
+				  		<i class="fa fa-cog fa-2x"></i>
+				  		<div class="text-s2 text-1em hidden-xs">How it Works</div>
+				  	</div>
+				  </a>
+				  <a class="toblack" href="/solutions/share" >
+				  	<div class="tab-box-a {% if dic['a5']=='sha' %}tab-on{% endif %} ">
+				  		<div class="spa5"></div>
+				  		<img src="/static/images/icons/ico-exp.png" class="img-responsive center-block" style="width:100px;">
+				  		
+				  		<h3 class="text-dgray fw900 hidden-xs" >
+				  			<span class="{% if dic['a5']=='sha' %}fc-f {% else %} text-lgray {% endif %}">
+				  			1. Data
+				  			</span> Sharing </h3>
+				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>S</h3>
+				  		<div class="rhr2 bg-c"></div>
+				  		<div class="spa5"></div>
+				  		
+				  		<div class="text-1 tab-box-b hidden-xs text-s2 {% if dic['a5']=='cap' %}text-black{% endif %}">	
+					  		<p class="text-gray lw-1-5em text-8"><em>Are you sitting in a Mountain of Data? Start by defining what kind of data you have</em></p>
+					  		<div class="spa10"></div>
+				  		</div>
+				  	</div>
+				  </a> 
+				  <a class="toblack" href="/solutions/capture" >
+				  	<div class="tab-box-a {% if dic['a5']=='cap' %}tab-on{% endif %}">
+				  		<div class="spa5"></div>
+				  		<img src="/static/images/icons/ico-cap.png" class="img-responsive center-block" style="width:100px;">
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="{% if dic['a5']=='cap' %}fc-d {% else %} text-lgray {% endif %}">2. Data</span> Capture </h3>
+				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>C</h3>
+				  		<div class="rhr2 bg-b"></div>
+				  		<div class="spa5"></div>
+				  		<div class="text-1 tab-box-b hidden-xs text-s2 {% if dic['a5']=='sha' %}text-black{% endif %}">
+
+				          
+					  		<p class="text-gray lw-1-5em text-8"><em>Capture your data from legacy sources, third party API's, manually or via sensors. </em></p>
+					  			<div class="spa10"></div>
+				  		</div>
+				  	</div>
+				  </a> 
+				  <a class="toblack" href="/solutions/model" >
+				  	<div class="tab-box-a {% if dic['a5']=='mod' %}tab-on{% endif %}">
+				  		<div class="spa5"></div>
+				  		<img src="/static/images/icons/ico-mod.png" class="img-responsive center-block" style="width:100px;">
+				  		<!-- <h2 class="hidden-xs"> 1. Modeling</h2> -->
+				  		<h3 class="text-dgray fw900 hidden-xs" ><span class="{% if dic['a5']=='mod' %}fc-g {% else %} text-lgray {% endif %}">3. Data</span> Modeling </h3>
+				  		<h3 class="text-dgray fw900 visible-xs" ><span class="text-lgray">D</span>M</h3>
+				  		<div class="rhr2 bg-a"></div>
+				  		<div class="spa5"></div>
+				  		<div class="text-1 tab-box-b text-s2 hidden-xs {% if dic['a5']=='mod' %}text-black{% endif %}">
+
+          			
+					  		<p class="text-gray lw-1-5em text-8"><em>Share your data easily with any mobile, device or platform via REST or any API flavor you prefer.</em></p>
+					  		<div class="spa10"></div>
+				  			
+				  		</div>
+				  	</div>
+				  </a>
+				  
+				</div>   
+		</div>  
+	</div>
+	<div class="row tab-margin">
+    	<div class="col-xs-12 text-center">	
+
+			<div class="tab-content">
+			  <div class="tab-pane fade in active tab-section" id="model">
+
+			  <!-- A -->
+			{% if dic['a1'] %}
+
+			{{ soluredux(dic['a1'],dic['a2'],dic['a3'],dic['a4'],dic['a5'],dic['a6'],dic['a7'],dic['a8'],"bg-white") }}	
+		    	
+		    {% endif %}
+
+		      <!-- B -->
+			{% if dic['b1'] %}	
+		    	{{ soluredux(dic['b1'],dic['b2'],dic['b3'],dic['b4'],dic['b5'],dic['b6'],dic['b7'],dic['b8'],"bg-white") }}
+		    {% endif %}
+
+		      <!-- C -->
+			{% if dic['c1'] %}	
+		    	{{ soluredux(dic['c1'],dic['c2'],dic['c3'],dic['c4'],dic['c5'],dic['c6'],dic['c7'],dic['c8'],"bg-white") }}
+		    {% endif %}
+
+		      <!-- D -->
+			{% if dic['d1'] %}	
+		    	{{ soluredux(dic['d1'],dic['d2'],dic['d3'],dic['d4'],dic['d5'],dic['d6'],dic['d7'],dic['d8'],"bg-white") }}
+		    {% endif %}
+
+			  </div>
+			</div> <!-- close tab content -->
+		</div>
+	</div>
+
+
+</section>
+
+{{ footer() }}
+{{ cta2() }}
+
+{% endblock %}
