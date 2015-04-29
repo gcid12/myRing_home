@@ -100,23 +100,86 @@ def mbf_developers():
 
 @app.route("/business_facts/parkcentralny", methods=["GET", "POST"])
 #@login_required
-def mbf_report001():
+def r0002():
     data = {}
     data['mask']= "mbf"
-    data['id']= "theplazany"
-    data['title']= "the Plaza NY"
-    return render_template("/report/hotel.html", data=data)  
+
+# HOTEL INFO
+    data['id']= 7824441979
+    data['title']= "Park Central NY" 
+    data['name']= "Park Central NY"
+    data['address']= "870 Seventh Avenue at 56th Street"
+    data['city']= "NewYork"
+    data['state']= "NY"
+    data['zip']= "10018"
+        # Details
+    data['checkin']= "16:00"
+    data['checkout']= "12:00"
+    data['rooms']= "935"
+    data['resAge']= "21"
+    data['founded']= "1924"
+    data['renovation']= "2013"
+        #Contact
+    data['mail']= "info@parkcentralny.com"
+    data['phone']= "212 247 8000"
+    data['website']= "http://www.parkcentralny.com"
+    data['fax']= "+52 998 8489600"
+    data['tollfree']= "1 888 813 2775"
+    data['sales']= "sales@parkcentralny"
+    data['newsletter']= "newsletter@parkcentralny"
+        #Social
+    data['twitter']= "parkcentralny"
+    data['facebook']= "parkcentralny"
+    data['youtube']= "parkcentralny"
+    data['plus']= "parkcentralny"
+    data['instagram']= "parkcentralny"
 
 
 
-@app.route("/affix", methods=["GET", "POST"])
+    return render_template("/report/r0002.html", data=data)  
+
+
+
+
+@app.route("/business_facts/entertainmentcruises", methods=["GET", "POST"])
 #@login_required
-def affix():
+def r0004():
     data = {}
     data['mask']= "mbf"
-    data['id']= "theplazany"
-    data['title']= "the Plaza NY"
-    return render_template("/report/affix.html", data=data)  
+
+# HOTEL INFO
+    data['id']= 7824441979
+    data['title']= "Entertainment Cruises NY" 
+    data['name']= "Entertainment Cruises NY"
+    data['address']= "Pier 62, Chelsea Piers, Suite 200"
+    data['city']= "NewYork"
+    data['state']= "NY"
+    data['zip']= "10011"
+        # Details
+    data['checkin']= "16:00"
+    data['checkout']= "12:00"
+    data['rooms']= "935"
+    data['resAge']= "21"
+    data['founded']= "1924"
+    data['renovation']= "2013"
+        #Contact
+    data['mail']= "Cruise.NewYork@entertainmentcruises.com"
+    data['phone']= "866-433-9283"
+    data['website']= "http://www.entertainmentcruises.com/our-cities/new-york"
+    data['fax']= ""
+    data['tollfree']= ""
+    data['sales']= "Cruise.NewYork@entertainmentcruises.com"
+    data['newsletter']= ""
+        #Social
+    data['twitter']= ""
+    data['facebook']= ""
+    data['youtube']= ""
+    data['plus']= ""
+    data['instagram']= ""
+
+
+
+    return render_template("/report/r0004.html", data=data)  
 
 
 
@@ -125,6 +188,15 @@ def affix():
 
 
 
+
+
+
+
+
+
+
+
+# OLD
 
 
 @app.route('/thankyou',methods=['GET', 'POST'])

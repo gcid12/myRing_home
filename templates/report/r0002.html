@@ -1,0 +1,569 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ data.title }}
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .jumbotron {
+  margin-top: 200px;
+}
+ 
+ul.affix {
+  position: fixed; 
+  top: 90px;
+  right: 10px;
+  width: 230px;
+}
+ul.affix-top {
+  position: static;
+}
+ul.affix-bottom {
+  position: absolute;
+}
+ 
+/* First level of nav */
+.sidenav {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  /*background-color: #f7f5fa;*/
+  /*border-radius: 5px;*/
+}
+ 
+/* All levels of nav */
+.sidebar .nav > li > a {
+  display: block;
+  color: #496175;
+  padding: 5px 20px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #f7f5f0;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #143a60;
+  background-color: transparent;
+}
+ 
+/* Nav: second level */
+.sidebar .nav .nav {
+  display: none;
+}
+.sidebar .nav > li.active .nav {
+  display:block;
+}
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+#content {
+  margin-top:20px;
+}
+</style>
+
+<body data-spy="scroll" data-target="#affix-nav">
+<div class="container-fluid">
+
+<target id="start"></target>
+  <div class="spa40"></div>
+
+ 
+  <div class="row">
+      <div class="col-sm-offset-1 col-sm-7">
+        <h3 class="fc-g"><span class="label label-vader">Business Facts</span></h3>
+          
+        <h1 class="fc-b fw-c fs-3" id="sec0"> {{ data.name }}</h1>
+        
+        <p class="fc-b fs-1-2"> 
+        {{ data.address }}, {{ data.city }} {{ data.state }} {{ data.zip }}
+         </p>
+         
+        <span><strong>Website:</strong> {{ data.website }}</span>
+        <span><strong>FrontDesk Phone:</strong> {{ data.phone }}</span>
+        <span><strong>Mail:</strong> {{ data.mail }}</span>
+        <span> | <i class="fa fa-twitter"></i> {{ data.twitter }}</span>
+        <span> | <i class="fa fa-instagram"></i> {{ data.instagram }}</span>
+        <span> | <i class="fa fa-youtube"></i> {{ data.youtube }}</span>
+        <span> | <i class="fa fa-google-plus"></i> {{ data.plus }}</span>
+        
+      </div>
+  </div><!-- close row -->
+  <div class="row">
+
+
+    <section id="content" class="col-sm-offset-1 col-sm-8 ">
+      <article id="information">
+      
+        <!-- SHORT DESCRIPTION -->
+        <section id="info1" class="">
+          <hr/>
+          
+          <div class="row">
+              <div class=" col-sm-4">
+                {{ ui.report_title('Short Description','') }}
+                <div role="tabpanel" id="short">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#short1" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="label label-success">EN</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#short2" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="label label-success">SP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#short3" aria-controls="messages" role="tab" data-toggle="tab">
+                        <span class="label label-danger">JP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#short4" aria-controls="settings" role="tab" data-toggle="tab">
+                        <span class="label label-danger">RU</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content fs-0-9">
+
+                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="short1">
+                      {{ data.short_en }}
+
+                      Built during The Roaring Twenties, the Park Central Hotel New York once accommodated and entertained some of the most influential figures of the day.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="short2">
+                      {{ data.short_sp }}
+
+                      Construido durante los locos años veinte , el Park Central Hotel Nueva York una vez acomodado y entre.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="short3">
+                      {{ data.short_jp }}
+
+                      彼奴は顔役だ！中に建てられた、パークセントラルホテルニューヨークは一日一回の中で最も影響力のある人物の一部を収容して楽しま
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="short4">
+                      {{ data.short_de }}
+
+                      Während der Roaring Twenties erbaute Park Central Hotel New York einst untergebracht und unterhalten einige der einflussreichsten Persönlichkeiten des Tages.
+                    </div>
+                  </div>
+                </div> <!-- close tabpanel -->
+              </div>
+          
+
+              <div class="col-sm-8 bord-left">
+                {{ ui.report_title('Long Description','') }}
+                <div role="tabpanel" id="long">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#long1" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="label label-success">EN</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#long2" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="label label-success">SP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#long3" aria-controls="messages" role="tab" data-toggle="tab">
+                        <span class="label label-danger">JP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#long4" aria-controls="settings" role="tab" data-toggle="tab">
+                        <span class="label label-danger">DE</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content fs-0-9">
+
+                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="long1">
+                      {{ data.long_en }}
+
+                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities pay homage to our glamorous past, while presenting a modern spin on the hotel’s electrifying environment. Guests will delight in escaping the hectic city life to bask in the stylish Park Central New York.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="long2">
+                      {{ data.long_sp }}
+
+                      Conveniencia Midtown . Hospitalidad Classic. Total comodidad . Un pasado célebre . Todo confluye en el Hotel Parque Central de Nueva York - situado de lleno en medio de vistas y hoteles más populares de Nueva York en el centro de Manhattan . Nuestra mezcla de comodidades sorprendentes rendir homenaje a nuestro pasado glamoroso , al tiempo que presenta un giro moderno en el medio ambiente electrizante del hotel. Los huéspedes se deleitarán con escapar del bullicio de la ciudad para tomar el sol en el elegante Parque Central de Nueva York.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="long3">
+                      {{ data.long_jp }}
+
+                      ミッドタウンの利便性。クラシックおもてなし。完全な快適さ。有名な過去。マンハッタンのミッドタウンにニューヨークで最も人気の観光スポットやホテルの中真正面に位置する - これは、すべてのパークセントラルニューヨークホテルで一緒に来ます。ホテルの帯電環境に近代的なスピンを提示しながら刺激的な設備の当社のミックスは、私たちの華やかな過去に敬意を払います。スタイリッシュなパークセントラルニューヨークに浴するために多忙な都市生活をエスケープに喜ば
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="long4">
+                      {{ data.long_de }}
+
+                      Midtown удобство. Классический гостеприимство . Полный комфорт . Знаменитый в прошлом. Все приходит вместе в отеле Park Central Нью-Йорк - расположен прямо посреди самых популярных достопримечательностей и отелей Нью-Йорка в центре Манхеттена . Наша смесь захватывающих удобствами платить дань нашей гламурной прошлом , представляя современный спина на электризации среды отеля. Гости будут наслаждаться побега суете городской жизни , чтобы погреться в стильном Park Central Нью-Йорке 
+                    </div>
+                  </div>
+
+                </div> <!-- close tab panel -->
+              </div>
+          </div><!-- close row -->
+        </section>
+        <!-- INFO -->
+        <section id="info2">
+          <hr/>
+          {{ ui.report_title('Details','') }}
+            <!-- FACTS -->
+          <div class="row box box-clear p-10">
+            <div class=" col-sm-4">
+
+                <div><strong>Check-in</strong> {{ data.checkin }}  / <strong>Check-Out</strong>  {{ data.checkout }}</div>
+                <div> <strong>Numbers of Rooms: </strong> {{ data.rooms }}</div>
+                <div> <strong>Minimum Check-in age: </strong> {{ data.resAge }}</div>
+                <div> <strong>Founded: </strong> {{ data.founded }}</div>
+                <div> <strong>Last Rennovation: </strong> {{ data.renovation }}</div>
+            </div>
+            <div class="col-sm-8 bord-left">
+                
+                <div><strong>Phone</strong> {{ data.phone }} </div>
+                <div> <strong>Fax: </strong> {{ data.fax }}</div>
+                <div> <strong>Toll-free: </strong> {{ data.tollfree }}</div>
+                <div> <strong>Sales: </strong>   {{ data.sales }} </div>
+                <div> <strong>Sales: </strong>   {{ data.newsletter }} </div>
+                
+                
+                    
+            </div>
+          </div>
+        </section>
+        <!-- PHOTOS -->
+        <section id="info3">
+
+          <!-- PHOTOS -->
+          <div class="row spa10">
+            <div class="col-sm-12">
+              <hr/>
+              
+              <hr/>
+                <h2>Photos</h2>
+              
+                {{ ui.photoset(data.id) }}
+
+              <div id="links">
+                              
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- AMMENITIES -->
+        <section id="info4">
+
+            <hr/>
+            <h2>Hotel Amenities</h2>
+            <hr/>
+
+          <div class="row">
+            <div class="col-sm-offset-1 col-sm-11">
+
+              {{ ui.amenityset(data.id) }}
+
+
+            </div>
+              
+            </div>
+        </section>
+
+      </article>
+
+      <!-- ROOMS /////////////////////////////////////////////// -->
+      <article id="rooms">
+
+        <hr/>
+        <h1>Rooms</h1>
+        <section id="room1">
+              
+
+              {{ ui.report_room() }}
+
+        </section>
+          <br/>
+        <section id="room2">
+          
+          
+              {{ ui.report_room() }}
+          
+            
+         
+        </section>
+
+          
+      </article>
+
+      <!-- ABOUT /////////////////////////////////////////////// -->
+      <article id="stories">
+
+        <hr/>
+        <h1>About </h1>
+        <section id="story1">
+          <hr/>
+
+          <div class="row">
+              <div class="col-sm-6">
+                
+                {{ ui.report_title('Hotel History','') }}
+                <div role="tabpanel" id="t3">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#t3-a" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="label label-success">ENG </span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#t3-b" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="label label-success">SPA</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#t3-c" aria-controls="messages" role="tab" data-toggle="tab">
+                        <span class="label label-danger">JAP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#t3-d" aria-controls="settings" role="tab" data-toggle="tab">
+                        <span class="label label-danger">RUS</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="t3-a">
+                      <p class="fs-0-8">
+                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
+                      </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="t3-b">
+                        123
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="t3-c">
+                      JAP
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="t3-d">
+                      RUS
+                    </div>
+                  </div>
+                </div> <!-- close tabpanel -->
+
+                <!-- IMAGES -->
+                <hr/>
+                <a href="https://avispa.myring.io/_images/teamamerica/o/6896928037_o.jpg" title="teamamerica/˚properties/7824441979" class="text-left" data-gallery>
+                  <img src="https://avispa.myring.io/_images/teamamerica/t150/6896928037_t150.jpg" width="75px">
+                </a>
+                <span style="margin-left:-35px;">{{ ui.labelres(1, 'hi-res') }}</span>
+                
+                <a href="https://avispa.myring.io/_images/teamamerica/o/3498992745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                  <img src="https://avispa.myring.io/_images/teamamerica/t150/3498992745_t150.jpg" width="75px">
+                </a>
+                <span style="margin-left:-35px;">{{ ui.labelres(3, 'lo-res') }}</span>
+
+                <a href="https://avispa.myring.io/_images/teamamerica/o/3579873745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                  <img src="https://avispa.myring.io/_images/teamamerica/t150/3579873745_t150.jpg" width="75px">
+                </a>
+                <span style="margin-left:-35px;">{{ ui.labelres(3, 'lo-res') }}</span>
+
+              </div>
+          
+              <!-- COLUMN 2 -->
+              <div class="col-sm-6 bord-left">
+                
+                {{ ui.report_title('Art & Architecture','') }}
+
+                <div role="tabpanel" id="t3">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#t3-a" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="label label-success">ENG </span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#t3-b" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="label label-success">SPA</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#t3-c" aria-controls="messages" role="tab" data-toggle="tab">
+                        <span class="label label-danger">JAP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#t3-d" aria-controls="settings" role="tab" data-toggle="tab">
+                        <span class="label label-danger">RUS</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="t3-a">
+                      <p class="fs-0-8">
+                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
+                      </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="t3-b">
+                        123
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="t3-c">
+                      JAP
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="t3-d">
+                      RUS
+                    </div>
+                  </div>
+                </div> <!-- close tabpanel -->
+
+                <!-- IMAGES -->
+                <hr/>
+                <a href="https://avispa.myring.io/_images/teamamerica/o/6896928037_o.jpg" title="teamamerica/˚properties/7824441979" class="text-left" data-gallery>
+                  <img src="https://avispa.myring.io/_images/teamamerica/t150/6896928037_t150.jpg" width="75px">
+                </a>
+                <span style="margin-left:-35px;">{{ ui.labelres(1, 'hi-res') }}</span>
+                
+                <a href="https://avispa.myring.io/_images/teamamerica/o/3498992745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                  <img src="https://avispa.myring.io/_images/teamamerica/t150/3498992745_t150.jpg" width="75px">
+                </a>
+                <span style="margin-left:-35px;">{{ ui.labelres(3, 'lo-res') }}</span>
+
+                <a href="https://avispa.myring.io/_images/teamamerica/o/3579873745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                  <img src="https://avispa.myring.io/_images/teamamerica/t150/3579873745_t150.jpg" width="75px">
+                </a>
+                <span style="margin-left:-35px;">{{ ui.labelres(3, 'lo-res') }}</span>
+
+              </div>
+          </div> <!-- close row -->
+        </section>
+
+        <section id="story2">
+          <hr/>
+          
+          
+            <div class="row">
+              <div class="col-sm-6">
+
+              {{ ui.report_title('Curious Facts','') }}
+                <span><strong>Have stayed:</strong> Marylin Monroe, Bill Clinton, Johnny Dep</span> | 
+                <span><strong>Most Popular foreign visitor:</strong> French</span> | 
+                <span><strong>Most Forgotten item:</strong> Laptop charger</span> | 
+                <span><strong>Most popular item on menu:</strong> French Fries</span> | 
+                <span><strong>Cups of cofee a day:</strong> 1200</span> 
+              </div>
+              <div class="col-sm-6">
+
+              {{ ui.report_title('Available Reviews','') }}
+                
+                <div>TripAdvisor: <a href=""><i class="fa fa-arrow-right"></i>http://www.tripadvisor.com/Hotel_Review-g60763-d93520</a></div>
+                <div>YelpId: <a href=""><i class="fa fa-arrow-right"></i>http://www.yelp.com/biz/park-central-new-york-new-york</a></div>
+                <div>FourSquare: <a href=""><i class="fa fa-arrow-right"></i>https://foursquare.com/parkcentralny</a></div>
+                <div>FactualId: <a href=""><i class="fa fa-arrow-right"></i>9eeb572b-fe04-4775-a902-e18348cfa777</a></div>
+              </div>
+
+              
+
+
+            </div>
+        </section>
+
+      </article>
+
+      <div class="spa100"></div>
+
+    </section> <!-- col-7 -->
+
+    <nav id="affix-nav" class="sidebar col-sm-2 hidden-xs ">
+      
+        <ul class="nav sidenav bord-left" data-spy="affix" data-offset-top="330">
+            <li><a href="#start">Contact Info</a></li>
+            <li class="active"><a href="#start">Hotel Facts</a>
+              <ul class="nav">
+                <li><a href="#info1">Description</a></li>
+                <li><a href="#info2">Details</a></li>
+                <li><a href="#info3">Photos</a></li>
+                <li><a href="#info4">Ammenities</a></li>
+              </ul>
+            </li>
+            <li><a href="#rooms">Rooms</a>
+              <ul class="nav">   
+                <li><a href="#room1">Single</a></li>
+                <li><a href="#room2">Double</a></li>
+                <li><a href="#room3">Triple</a></li>
+                <li><a href="#room4">Quad</a></li>        
+              </ul>
+            </li>
+            <li><a href="#stories">About</a>
+              <ul class="nav">   
+                <li><a href="#story1">History</a></li>
+                <li><a href="#story1">Art & Architecture</a></li> 
+                <li><a href="#story2">Curious Facts</a></li>
+                <!-- <li><a href="#story2">On the Media</a></li> -->
+                <!-- <li><a href="#story5">Staff</a></li>
+                <li><a href="#story6">Culture</a></li> -->    
+              </ul>
+            </li>
+
+            <!-- <li><a href="#services">Services</a>
+            <ul class="nav">   
+            <li><a href="#service1">Beauty & SPA</a></li>
+            <li><a href="#service2">Food</a></li>
+            <li><a href="#service3">Fitness</a></li>
+            <li><a href="#service4">Kids</a></li> 
+            <li><a href="#service5">Leisure</a></li> 
+            <li><a href="#service6">Pets</a></li> 
+            <li><a href="#service7">Transportation</a></li>        
+            </ul>
+            </li> -->
+
+            <!-- </li>
+            <li><a href="#promos">Promotions</a>
+            <ul class="nav">   
+            <li><a href="#promo1">Permanent</a></li>
+            <li><a href="#promo2">Seasonal</a></li>
+            <li><a href="#promo3">Limited</a></li>   
+            </ul>
+            </li> -->
+        </ul>
+      
+    </nav>
+  </div><!-- end of row -->
+
+  <footer>
+  </footer>
+</div><!-- end of container -->
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+{% endblock %}
+
+

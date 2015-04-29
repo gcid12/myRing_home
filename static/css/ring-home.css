@@ -125,14 +125,7 @@ body{
 
 
 
-/*HR*/
-.rhr{padding:1px 5px; width:30%; margin: 0 0 0 -10px;}
-.rhr2{padding:1px 5px; width:30%; margin: 0 0 0 -6px;}
-.rhr3{height:0.5px; width:20%;}
-.rhr4{height:0.5px; width:100%;}
-.rhr4{height:0.5px; width:100%; background-color:#CCC;}
 
-.rvr{padding:5px 5px; height:30%; margin: 0 0 0 -10px;}
 
 /*BUTTONS*/
 
@@ -260,7 +253,7 @@ body{
 
 /*RIBBON*/
 
-.box {
+/*.box {
   width:150px;
   height:150px;
   background:#bcc;
@@ -285,7 +278,7 @@ body{
   right:0;
   border-top:75px solid #bcc;
   border-left:75px solid #fff;
-}
+}*/
 
 /*BOX*/
 .square{
