@@ -26,7 +26,178 @@ def hello():
     dic = { 'mes1': "0",}
 
 
-    return render_template('home.html', insects=il, dic=dic) 
+    return render_template('landing.html', insects=il, dic=dic) 
+
+
+
+
+@app.route("/business_facts", methods=["GET", "POST"])
+#@login_required
+def mbf_start():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Business Facts about your company"
+    return render_template("/myring_biz/start.html", data=data)
+
+
+
+
+@app.route("/business_profile", methods=["GET", "POST"])
+#@login_required
+def mbf_profile():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Business Profile with product and Services descriptions"
+    return render_template("/myring_biz/profile.html", data=data)
+
+
+
+
+@app.route("/faq", methods=["GET", "POST"])
+#@login_required
+def mbf_faq():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Frequent Asked Questions"
+    return render_template("/myring_biz/faq.html", data=data)  
+
+
+
+@app.route("/pricing", methods=["GET", "POST"])
+#@login_required
+def mbf_pricing():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Pricing"
+    return render_template("/myring_biz/pricing.html", data=data)  
+
+
+
+@app.route("/experts", methods=["GET", "POST"])
+#@login_required
+def mbf_experts():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Experts for hire"
+    return render_template("/myring_biz/experts.html", data=data)  
+
+
+
+@app.route("/developers", methods=["GET", "POST"])
+#@login_required
+def mbf_developers():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Integrate Business Facts"
+    return render_template("/myring_biz/developers.html", data=data)  
+
+
+
+
+
+
+# REPORTS    
+
+@app.route("/business_facts/parkcentralny", methods=["GET", "POST"])
+#@login_required
+def r0002():
+    data = {}
+    data['mask']= "mbf"
+
+# HOTEL INFO
+    data['id']= 7824441979
+    data['title']= "Park Central NY" 
+    data['name']= "Park Central NY"
+    data['address']= "870 Seventh Avenue at 56th Street"
+    data['city']= "NewYork"
+    data['state']= "NY"
+    data['zip']= "10018"
+        # Details
+    data['checkin']= "16:00"
+    data['checkout']= "12:00"
+    data['rooms']= "935"
+    data['resAge']= "21"
+    data['founded']= "1924"
+    data['renovation']= "2013"
+        #Contact
+    data['mail']= "info@parkcentralny.com"
+    data['phone']= "212 247 8000"
+    data['website']= "http://www.parkcentralny.com"
+    data['fax']= "+52 998 8489600"
+    data['tollfree']= "1 888 813 2775"
+    data['sales']= "sales@parkcentralny"
+    data['newsletter']= "newsletter@parkcentralny"
+        #Social
+    data['twitter']= "parkcentralny"
+    data['facebook']= "parkcentralny"
+    data['youtube']= "parkcentralny"
+    data['plus']= "parkcentralny"
+    data['instagram']= "parkcentralny"
+
+
+
+    return render_template("/report/r0002.html", data=data)  
+
+
+
+
+@app.route("/business_facts/entertainmentcruises", methods=["GET", "POST"])
+#@login_required
+def r0004():
+    data = {}
+    data['mask']= "mbf"
+
+# HOTEL INFO
+    data['id']= 7824441979
+    data['title']= "Entertainment Cruises NY" 
+    data['name']= "Entertainment Cruises NY"
+    data['address']= "Pier 62, Chelsea Piers, Suite 200"
+    data['city']= "NewYork"
+    data['state']= "NY"
+    data['zip']= "10011"
+        # Details
+    data['checkin']= "16:00"
+    data['checkout']= "12:00"
+    data['rooms']= "935"
+    data['resAge']= "21"
+    data['founded']= "1924"
+    data['renovation']= "2013"
+        #Contact
+    data['mail']= "Cruise.NewYork@entertainmentcruises.com"
+    data['phone']= "866-433-9283"
+    data['website']= "http://www.entertainmentcruises.com/our-cities/new-york"
+    data['fax']= ""
+    data['tollfree']= ""
+    data['sales']= "Cruise.NewYork@entertainmentcruises.com"
+    data['newsletter']= ""
+        #Social
+    data['twitter']= "ecnewyork "
+    data['facebook']= ""
+    data['youtube']= ""
+    data['plus']= ""
+    data['instagram']= "ecnewyork"
+
+
+
+    return render_template("/report/r0004.html", data=data)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# OLD
+
 
 @app.route('/thankyou',methods=['GET', 'POST'])
 def thankyou():
@@ -70,9 +241,9 @@ def thankyou():
 
         print("Email to "+request.form['email']+" sent succesfully ")
 
-        return render_template('home.html' , insects=il, dic=dic)
+        return render_template('datasuite/home.html' , insects=il, dic=dic)
     else:
-        return render_template('home.html', insects=il, dic=dic) 
+        return render_template('datasuite/home.html', insects=il, dic=dic) 
 
 
 @app.route('/solutions')
@@ -111,7 +282,7 @@ def sol():
 
                 }
 
-    return render_template('solutions.html', insects=il, dic=dic) 
+    return render_template('datasuite/solutions.html', insects=il, dic=dic) 
 
 @app.route('/solutions/model')
 def solmod():
@@ -148,7 +319,7 @@ def solmod():
             'b8': il['spid']['slug'],
                 }
 
-    return render_template('solutions.html', insects=il, dic=dic) 
+    return render_template('datasuite/solutions.html', insects=il, dic=dic) 
     
 
 @app.route('/solutions/capture')
@@ -204,7 +375,7 @@ def solcap():
             'd8': il['worm']['slug'],
                 }
 
-    return render_template('solutions.html', insects=il, dic=dic) 
+    return render_template('datasuite/solutions.html', insects=il, dic=dic) 
 
 
 @app.route('/solutions/share')
@@ -250,7 +421,7 @@ def solsha():
             'c8': il['bfly']['slug'],
                 }
 
-    return render_template('solutions.html', insects=il, dic=dic)        
+    return render_template('datasuite/solutions.html', insects=il, dic=dic)        
 
 # TOOOOOOLLLLLLSSSSSSSSTOOOOOOLLLLLLSSSSSSSS 
 
@@ -292,7 +463,7 @@ def spid():
             'b3': il['cica']['slug'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic)  
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
 
 #m-cicada  /  CHIQ
 @app.route('/tools/semantic_labeler')
@@ -331,7 +502,7 @@ def cica():
             'b3': il['spid']['slug'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic) 
+    return render_template('datasuite/details.html', insects=il, dic=dic) 
 
 #c-avispa  /  ETZA
 @app.route('/tools/manual_capture')
@@ -382,7 +553,7 @@ def dfly():
 
                 }
 
-    return render_template('details.html', insects=il, dic=dic)  
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
 
 #c-mosquitoe   /  APIP
 @app.route('/tools/automatic_capture')
@@ -432,7 +603,7 @@ def mosq():
             'd1': il['ants']['title'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic)  
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
 
 
 #c-worm   /  TEMO
@@ -483,7 +654,7 @@ def worm():
             'd1': il['ants']['title'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic) 
+    return render_template('datasuite/details.html', insects=il, dic=dic) 
 
 #c-ant   /  TEMO
 @app.route('/tools/data_scrapper')
@@ -533,7 +704,7 @@ def ants():
             'd1': il['worm']['title'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic) 
+    return render_template('datasuite/details.html', insects=il, dic=dic) 
 
 
 #e-bee  /  TLAL
@@ -579,7 +750,7 @@ def bees():
             'c1': il['bfly']['title'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic)  
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
 
 #e-ladybug  /  MICA
 @app.route('/tools/data_website')
@@ -622,7 +793,7 @@ def lbug():
             'c3': il['bfly']['slug'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic)    
+    return render_template('datasuite/details.html', insects=il, dic=dic)    
 
 #e-Butterfly   /   PAPA
 @app.route('/tools/data_combinator')
@@ -665,7 +836,7 @@ def bfly():
             'c3': il['bees']['slug'],
                 }
 
-    return render_template('details.html', insects=il, dic=dic)       
+    return render_template('datasuite/details.html', insects=il, dic=dic)       
 
 
 
@@ -684,7 +855,7 @@ def prici():
     il['bfly'] = insect.bfly()
     il['ants'] = insect.ants()
 
-    return render_template('pricing.html', insects=il) 
+    return render_template('datasuite/pricing.html', insects=il) 
 
 
 @app.route('/faq')
@@ -707,7 +878,7 @@ def faq():
             
           }
 
-    return render_template('faq1.html', insects=il, dic=dic) 
+    return render_template('datasuite/faq1.html', insects=il, dic=dic) 
 
 
 @app.route('/how')
@@ -729,7 +900,7 @@ def how():
             
           }
 
-    return render_template('hiw.html', insects=il, dic=dic) 
+    return render_template('datasuite/hiw.html', insects=il, dic=dic) 
 
 
 @app.route('/ecosystem')
@@ -751,7 +922,7 @@ def ecosystem():
             
           }
 
-    return render_template('ecosystem.html', insects=il, dic=dic)     
+    return render_template('datasuite/ecosystem.html', insects=il, dic=dic)     
 
 
 @app.route('/templates')
@@ -773,7 +944,7 @@ def templates():
             
           }
 
-    return render_template('templates.html', insects=il, dic=dic)    
+    return render_template('sandbox/templates.html', insects=il, dic=dic)    
 
 
 @app.route('/blueprints')
@@ -795,7 +966,7 @@ def blueprints():
             
           }
 
-    return render_template('blueprints.html', insects=il, dic=dic) 
+    return render_template('datasuite/blueprints.html', insects=il, dic=dic) 
 
 
 
@@ -818,32 +989,32 @@ def autopitch():
             
           }
 
-    return render_template('autopitch.html', insects=il, dic=dic) 
+    return render_template('sandbox/autopitch.html', insects=il, dic=dic) 
 
 # WIZARDS
 
 @app.route('/wiz01')
 def wiz01():
-    return render_template('wiz01.html')
+    return render_template('sandbox/wiz01.html')
      
 @app.route('/wiz02')
 def wiz02():
-    return render_template('wiz02.html') 
+    return render_template('sandbox/wiz02.html') 
 
 @app.route('/wiz03')
 def wiz03():
-    return render_template('wiz03.html') 
+    return render_template('sandbox/wiz03.html') 
 
 @app.route('/wiz04')
 def wiz04():
-    return render_template('wiz04.html')         
+    return render_template('sandbox/wiz04.html')         
 
 
 
 @app.route('/docs')
 def docs():
     title = 'Documentation'
-    return render_template('docs.html', title=title) 
+    return render_template('datasuite/docs.html', title=title) 
 
 
 
@@ -859,7 +1030,7 @@ def hello_image_id(id):
     apellido = 'Cid'
     print('huevos')
     #return 'hola2'+id
-    return render_template('avispa.html', name=name)
+    return render_template('sandbox/avispa.html', name=name)
 
 if __name__ == '__main__':
     app.run()
