@@ -106,8 +106,8 @@ def r0002():
 
 # HOTEL INFO
     data['id']= 7824441979
-    data['title']= "Park Central NY" 
-    data['name']= "Park Central NY"
+    data['title']= "Business Facts" 
+    data['name']= "Business Facts"
     data['address']= "870 Seventh Avenue at 56th Street"
     data['city']= "NewYork"
     data['state']= "NY"
