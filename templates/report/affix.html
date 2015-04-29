@@ -1,0 +1,988 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ data.title }}
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .jumbotron {
+  margin-top: 200px;
+}
+ 
+ul.affix {
+  position: fixed; 
+  top: 90px;
+  right: 10px;
+  width: 230px;
+}
+ul.affix-top {
+  position: static;
+}
+ul.affix-bottom {
+  position: absolute;
+}
+ 
+/* First level of nav */
+.sidenav {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  /*background-color: #f7f5fa;*/
+  /*border-radius: 5px;*/
+}
+ 
+/* All levels of nav */
+.sidebar .nav > li > a {
+  display: block;
+  color: #496175;
+  padding: 5px 20px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #f7f5f0;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #143a60;
+  background-color: transparent;
+}
+ 
+/* Nav: second level */
+.sidebar .nav .nav {
+  display: none;
+}
+.sidebar .nav > li.active .nav {
+  display:block;
+}
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+#content {
+  margin-top:20px;
+}
+</style>
+
+<body data-spy="scroll" data-target="#affix-nav">
+<div class="container-fluid">
+
+  <div class="spa40"></div>
+
+ 
+  <div class="row" id="a1-0">
+      <div class="col-sm-offset-1 col-sm-7">
+        <h3 class="fc-g"><span class="label label-vader">Business Facts</span></h3>
+          
+        <h1 class="fc-b fw-c fs-3" id="sec0">Park Central NY</h1>
+        
+        <p class="fc-b fs-1-2"> 
+        870 Seventh Avenue at 56th Street, NewYork NY 10018
+         </p>
+         
+        <span><strong>Website:</strong> http://www.parkcentralny.com/</span>
+        <span><strong>FrontDesk Phone:</strong> 212.247.8000</span>
+        <span><strong>ReservationURL:</strong> https://parkcentralny.reztrip.com/en</span>
+        <span><strong>ContactMail:</strong> info@parkcentralny.com</span>
+        <span><strong>Newsletter:</strong> https://parkcentralny.com/newsletter</span>
+        <span> | <i class="fa fa-twitter"></i> parkcentralny</span>
+        <span> | <i class="fa fa-instagram"></i> parkcentralny</span>
+        <span> | <i class="fa fa-youtube"></i> parkcentralny</span>
+        <span> | <i class="fa fa-google-plus"></i> parkcentralny</span>
+        
+      </div>
+  </div><!-- close row -->
+  <div class="row">
+
+
+    <section id="content" class="col-sm-offset-1 col-sm-7 ">
+      <article id="contact">
+      
+        <!-- SHORT DESCRIPTION -->
+        <section id="short">
+          <hr/>
+          {{ ui.report_title('Short Description','') }}
+          <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                
+                <div role="tabpanel" id="short">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="label label-success">ENG </span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="label label-success">SPA</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                        <span class="label label-danger">JAP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+                        <span class="label label-danger">RUS</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="home">
+                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">GER</div>
+                    <div role="tabpanel" class="tab-pane" id="settings">FRA</div>
+                  </div>
+                </div> <!-- close tabpanel -->
+              </div>
+          </div><!-- close row -->
+        </section>
+        <!-- LONG DESCRIPTIONS  --> 
+        <section id="long">
+          <!-- LONG DESCRIPTION -->
+           <hr/>
+          {{ ui.report_title('Long Description','') }}
+          <div class="row">
+
+              <div class="col-sm-offset-1 col-sm-11">
+                
+                <div role="tabpanel" id="long">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#long1" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="label label-success">ENG</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#long2" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="label label-success">SPA</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#long3" aria-controls="messages" role="tab" data-toggle="tab">
+                        <span class="label label-danger">JAP</span>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#long4" aria-controls="settings" role="tab" data-toggle="tab">
+                        <span class="label label-danger">RUS</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="long1">
+                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities pay homage to our glamorous past, while presenting a modern spin on the hotel’s electrifying environment. Guests will delight in escaping the hectic city life to bask in the stylish Park Central New York.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="long2">
+                      Conveniencia Midtown . Hospitalidad Classic. Total comodidad . Un pasado célebre . Todo confluye en el Hotel Parque Central de Nueva York - situado de lleno en medio de vistas y hoteles más populares de Nueva York en el centro de Manhattan . Nuestra mezcla de comodidades sorprendentes rendir homenaje a nuestro pasado glamoroso , al tiempo que presenta un giro moderno en el medio ambiente electrizante del hotel. Los huéspedes se deleitarán con escapar del bullicio de la ciudad para tomar el sol en el elegante Parque Central de Nueva York.
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="long3">
+                      
+                      ミッドタウンの利便性。クラシックおもてなし。完全な快適さ。有名な過去。マンハッタンのミッドタウンにニューヨークで最も人気の観光スポットやホテルの中真正面に位置する - これは、すべてのパークセントラルニューヨークホテルで一緒に来ます。ホテルの帯電環境に近代的なスピンを提示しながら刺激的な設備の当社のミックスは、私たちの華やかな過去に敬意を払います。スタイリッシュなパークセントラルニューヨークに浴するために多忙な都市生活をエスケープに喜ば
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="long4">
+                      Midtown удобство. Классический гостеприимство . Полный комфорт . Знаменитый в прошлом. Все приходит вместе в отеле Park Central Нью-Йорк - расположен прямо посреди самых популярных достопримечательностей и отелей Нью-Йорка в центре Манхеттена . Наша смесь захватывающих удобствами платить дань нашей гламурной прошлом , представляя современный спина на электризации среды отеля. Гости будут наслаждаться побега суете городской жизни , чтобы погреться в стильном Park Central Нью-Йорке 
+                    </div>
+                  </div>
+
+                </div> <!-- close tab panel -->
+              </div>
+          </div><!-- close row -->
+        </section>
+        <!-- INFO -->
+        <section id="info">
+          <hr/>
+          {{ ui.report_title('Important Info','') }}
+            <!-- FACTS -->
+          <div class="row bg-07">
+            <div class="col-sm-offset-1 col-sm-5">
+
+                <div><strong>Check-in</strong> 16:00   / <strong>Check-Out</strong>  12:00</div>
+                    <div> <strong>Numbers of Rooms: </strong> 935</div>
+                    <div> <strong>Minimum Check-in age: </strong> 21</div>
+                    <div> <strong>Founded: </strong> 1924</div>
+                    <div> <strong>Last Rennovation: </strong> 2013</div>
+            </div>
+            <div class="col-sm-5 bord-left">
+                
+                <div>TripAdvisor: <a href=""><i class="fa fa-arrow-right"></i></a></div>
+                    <div>YelpId: <a href=""><i class="fa fa-arrow-right"></i></a></div>
+                    <div>FourSquare: <a href=""><i class="fa fa-arrow-right"></i></a></div>
+                    <div>FactualId: <a href=""><i class="fa fa-arrow-right"></i></a></div>
+                    
+            </div>
+          </div>
+        </section>
+        <!-- PHOTOS -->
+        <section id="photos">
+
+          <!-- PHOTOS -->
+          <div class="row spa10">
+            <div class="col-sm-12">
+              <hr/>
+              {{ ui.report_title('Photos','') }}
+
+              <div id="links">
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/6896928037_o.jpg" title="teamamerica/˚properties/7824441979" class="text-left" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/6896928037_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                                {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                              
+                              
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/3498992745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3498992745_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(3, 'lo-res') }}
+                              </span>
+
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/3579873745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3579873745_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(3, 'lo-res') }}
+                              </span>
+
+                            
+                              
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/1905405911_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1905405911_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+
+
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/3706470910_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3706470910_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(2, 'ok-res') }}
+                              </span>
+                            
+
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/9914904259_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/9914904259_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(2, 'ok-res') }}
+                              </span>
+                            
+
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/5426503313_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5426503313_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/3156372728_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3156372728_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/5587035086_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5587035086_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                              
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/3192923583_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3192923583_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(3, 'lo-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/4201146490_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/4201146490_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/7736340368_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/7736340368_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(3, 'lo-res') }}
+                              </span>
+                              
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/8473987178_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/8473987178_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                              
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/1833997539_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1833997539_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+                             
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/9051750777_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/9051750777_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/9053620547_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/9053620547_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/1625137403_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1625137403_t150.jpg" width="100px"
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/1323452596_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1323452596_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/5178478619_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5178478619_t150.jpg"width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/2301109578_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/2301109578_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/2051156062_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/2051156062_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/3836044439_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3836044439_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+                            
+
+                              <a href="https://avispa.myring.io/_images/teamamerica/o/5871936148_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
+                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5871936148_t150.jpg" width="100px">
+                              </a>
+                              <span style="margin-left:-35px;">
+                              {{ ui.labelres(1, 'hi-res') }}
+                              </span>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- AMMENITIES -->
+        <section id="ammen">
+
+            {{ ui.report_title('Ammenities','') }}
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-9">
+                  <table class="table table-condensed table-striped">
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Business</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Business Center') }}
+                    {{ ui.labelres(1, 'Meeting Rooms') }}
+                    {{ ui.labelres(1, 'Convention Space') }}
+                    {{ ui.labelres(1, 'Convention Space Surface: 1200sqft') }}
+                    {{ ui.labelres(1, 'High Speed Internet') }}
+                    {{ ui.labelres(1, 'Fax') }}
+                    {{ ui.labelres(1, 'Printer Available') }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Beauty Spa</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Hair Salon') }}
+                    {{ ui.labelres(1, 'Nails Salon') }}
+                    {{ ui.labelres(1, 'Barber Shop') }}
+
+                  
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Concierge</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, '24h Concierge') }}
+                    {{ ui.labelres(1, 'Elevators') }}
+                    {{ ui.labelres(1, 'Luggage Storage') }}
+                    {{ ui.labelres(1, 'Multilingual Staff') }}
+                    {{ ui.labelres(1, 'Laundry') }}
+                    {{ ui.labelres(1, 'DryCleaning') }}
+                  
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Dining</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Menu Restaurant') }}
+                    {{ ui.labelres(1, 'Bar/Lounge') }}
+                    {{ ui.labelres(1, 'Wine Bar') }}
+                    {{ ui.labelres(1, 'Buffet') }}
+                    {{ ui.labelres(1, 'Gluten Free Options') }}
+                    {{ ui.labelres(1, 'Vegan Options') }}
+                    {{ ui.labelres(1, 'Raw Vegan Options') }}
+                    {{ ui.labelres(1, 'Snack Bar Deli') }}
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Events</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(2, 'Not defined') }}
+                    <!-- {{ ui.labelres(1, 'Weddings') }}
+                    {{ ui.labelres(1, 'Social Events') }}
+                    {{ ui.labelres(1, 'Event Planning') }} -->
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Fitness</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Cardio') }}
+                    {{ ui.labelres(1, 'Weights') }}
+                    {{ ui.labelres(1, 'Classes') }}
+                    {{ ui.labelres(1, 'Spinning') }}
+                    {{ ui.labelres(1, 'Personal Trainer') }}
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Kids</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Kids Club') }}
+                    {{ ui.labelres(1, 'Kids Activities') }}
+                    {{ ui.labelres(1, 'In room childcare') }}
+                    {{ ui.labelres(1, 'Cribs') }}
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Leisure</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(2, 'Not defined') }}
+
+                    <!-- {{ ui.labelres(1, 'Golf Course') }}
+                    {{ ui.labelres(1, 'Casino') }}
+                    {{ ui.labelres(1, 'Pool') }}
+                    {{ ui.labelres(1, 'Live Show') }} -->
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Medical</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'In House doctor') }}
+                    {{ ui.labelres(1, 'In House Nurse') }}
+                    {{ ui.labelres(1, 'Ambulance accesible') }}
+                    {{ ui.labelres(1, 'Fibrillator') }}
+                    {{ ui.labelres(1, 'First Aid Kit') }}
+                    {{ ui.labelres(1, 'X Ray') }}
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Pets</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Allowed') }}
+                    {{ ui.labelres(1, 'Pet Menu') }}
+                    {{ ui.labelres(1, 'Dog Walker') }}
+                    {{ ui.labelres(1, 'Dog Care') }}
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Pool</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Temperature Controlled') }}
+                    {{ ui.labelres(1, 'Towels') }}
+                    {{ ui.labelres(1, 'Bar Service') }}
+                    {{ ui.labelres(1, 'Family Friendly') }}
+                    {{ ui.labelres(1, 'Adult Only') }}
+                    {{ ui.labelres(1, 'Topless') }}
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Shopping</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Gift Shop') }}
+                    {{ ui.labelres(1, 'Pharmacy') }}
+                    {{ ui.labelres(1, 'Newstand') }}
+                    {{ ui.labelres(1, 'Books') }}
+                    {{ ui.labelres(1, 'Sport') }}
+                    {{ ui.labelres(1, 'Tobacco') }}
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Smoking</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Interior smoking Area') }}
+                    {{ ui.labelres(1, 'Exterior smoking Area') }}
+                    {{ ui.labelres(1, 'Smoking Rooms available') }}
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <h5 class="fw-c">Transportation</h5>
+                  </td>
+                  <td>
+                    {{ ui.labelres(1, 'Airport - Hotel') }}
+                    {{ ui.labelres(1, 'Hotel - Airport') }}
+                    {{ ui.labelres(1, 'Car Rental') }}
+                    {{ ui.labelres(1, 'Parking') }}
+                    {{ ui.labelres(1, 'Valet Parking') }}
+
+                  </td>
+                </tr>
+
+
+
+               </table>
+
+
+              </div>
+              
+            </div>
+        </section>
+
+      </article>
+
+      <!-- ROOMS /////////////////////////////////////////////// -->
+      <article id="rooms">
+      <h1>Rooms</h1>
+        <section id="room1">
+          <hr/>
+          {{ ui.report_title('Single','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+
+        </section>
+        <section id="room2">
+          <hr/>
+          {{ ui.report_title('Double','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="room3">
+          <hr/>
+          {{ ui.report_title('Triple','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="room4">
+          <hr/>
+          {{ ui.report_title('Quad','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+          
+      </article>
+
+      <!-- SERVICES /////////////////////////////////////////////// -->
+      <article id="services">
+
+        <h1>Services</h1>
+        <section id="service1">
+          <hr/>
+          {{ ui.report_title('Beauty & SPA','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+
+        </section>
+        <section id="service2">
+          <hr/>
+          {{ ui.report_title('Food','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="service3">
+          <hr/>
+          {{ ui.report_title('Fitness','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="service4">
+          <hr/>
+          {{ ui.report_title('kids','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="service5">
+          <hr/>
+          {{ ui.report_title('Leisure','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="service6">
+          <hr/>
+          {{ ui.report_title('Pets','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="service7">
+          <hr/>
+          {{ ui.report_title('Transportation','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+          
+      </article>
+
+      
+
+      <!-- STORIES /////////////////////////////////////////////// -->
+      <article id="stories">
+
+      <h1>Story Telling</h1>
+        <section id="story1">
+          <hr/>
+          {{ ui.report_title('Hotel History','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+
+        </section>
+        <section id="story2">
+          <hr/>
+          {{ ui.report_title('Art & Architecture','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="story3">
+          <hr/>
+          {{ ui.report_title('Curious Facts','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="story4">
+          <hr/>
+          {{ ui.report_title('On The Media','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="story5">
+          <hr/>
+          {{ ui.report_title('Staff','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="story6">
+          <hr/>
+          {{ ui.report_title('Culture','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+          
+      </article>
+
+
+      <!-- PROMOTIONS /////////////////////////////////////////////// -->
+      <article id="promotions">
+
+      <h1>Promotions</h1>
+        <section id="promo1">
+          <hr/>
+          {{ ui.report_title('Permanent promotions','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+
+        </section>
+        <section id="promo2">
+          <hr/>
+          {{ ui.report_title('Seasonal promotions','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="promo3">
+          <hr/>
+          {{ ui.report_title('Limited promotions','') }}
+          
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                {{ ui.lorem() }}
+              </div>
+            </div>
+            
+        </section>
+        <section id="Finale">
+          <hr/>
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-11">
+                <div class="spa100"></div>
+                <div class="spa100"></div>
+                <div class="spa100"></div>
+              </div>
+            </div>
+            
+        </section>
+        
+          
+      </article>
+
+
+
+
+
+    </section> <!-- col-7 -->
+
+
+    <nav id="affix-nav" class="sidebar col-sm-3 hidden-xs ">
+      
+        <ul class="nav sidenav bord-left" data-spy="affix" data-offset-top="330">
+            <li><a href="#contact">Contact Info</a></li>
+            <li class="active"><a href="#facts">Hotel Facts</a>
+            <ul class="nav">
+            <li><a href="#short">Short Description</a></li>
+            <li><a href="#long">Long Description</a></li>
+            <li><a href="#info">Relevant Info</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#ammen">Ammenities</a></li>
+            
+            </ul>
+            </li>
+            <li><a href="#rooms">Rooms</a>
+            <ul class="nav">   
+            <li><a href="#room1">Double</a></li>
+            <li><a href="#room2">Triple</a></li>
+            <li><a href="#room3">Quad</a></li>
+            <li><a href="#room4">Luxury</a></li>        
+            </ul>
+            </li>
+            <li><a href="#services">Services</a>
+            <ul class="nav">   
+            <li><a href="#service1">Beauty & SPA</a></li>
+            <li><a href="#service2">Food</a></li>
+            <li><a href="#service3">Fitness</a></li>
+            <li><a href="#service4">Kids</a></li> 
+            <li><a href="#service5">Leisure</a></li> 
+            <li><a href="#service6">Pets</a></li> 
+            <li><a href="#service7">Transportation</a></li>        
+            </ul>
+            </li>
+            <li><a href="#stories">Storytelling</a>
+            <ul class="nav">   
+            <li><a href="#story1">History</a></li>
+            <li><a href="#story2">Art & Architecture</a></li> 
+            <li><a href="#story3">Curious Facts</a></li>
+            <li><a href="#story4">On the Media</a></li>
+            <li><a href="#story5">Staff</a></li>
+            <li><a href="#story6">Culture</a></li>
+                   
+            </ul>
+            </li>
+            <li><a href="#promos">Promotions</a>
+            <ul class="nav">   
+            <li><a href="#promo1">Permanent</a></li>
+            <li><a href="#promo2">Seasonal</a></li>
+            <li><a href="#promo3">Limited</a></li>   
+            </ul>
+            </li>
+        </ul>
+      
+    </nav>
+  </div><!-- end of row -->
+
+  <footer>
+  </footer>
+</div><!-- end of container -->
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+{% endblock %}
+
+
