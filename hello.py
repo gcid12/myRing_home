@@ -171,11 +171,11 @@ def r0004():
     data['sales']= "Cruise.NewYork@entertainmentcruises.com"
     data['newsletter']= ""
         #Social
-    data['twitter']= ""
+    data['twitter']= "ecnewyork "
     data['facebook']= ""
     data['youtube']= ""
     data['plus']= ""
-    data['instagram']= ""
+    data['instagram']= "ecnewyork"
 
 
 
