@@ -1,6 +1,3 @@
-ringhome
-========
-
 
 
 ####Troubleshooting

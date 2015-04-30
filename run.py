@@ -1,0 +1,1036 @@
+from flask import Flask, request
+from flask import render_template
+from InsectData import InsectData
+import smtplib
+from config import FROMEMAIL, FROMPASS, TOEMAIL
+
+app = Flask(__name__)
+app.config.from_object('config')
+
+
+@app.route('/')
+def hello():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'mes1': "0",}
+
+
+    return render_template('landing.html', insects=il, dic=dic) 
+
+
+
+
+@app.route("/business_facts", methods=["GET", "POST"])
+#@login_required
+def mbf_start():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Business Facts about your company"
+    return render_template("/myring_biz/start.html", data=data)
+
+
+
+
+@app.route("/business_profile", methods=["GET", "POST"])
+#@login_required
+def mbf_profile():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Business Profile with product and Services descriptions"
+    return render_template("/myring_biz/profile.html", data=data)
+
+
+
+
+@app.route("/faq", methods=["GET", "POST"])
+#@login_required
+def mbf_faq():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Frequent Asked Questions"
+    return render_template("/myring_biz/faq.html", data=data)  
+
+
+
+@app.route("/pricing", methods=["GET", "POST"])
+#@login_required
+def mbf_pricing():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Pricing"
+    return render_template("/myring_biz/pricing.html", data=data)  
+
+
+
+@app.route("/experts", methods=["GET", "POST"])
+#@login_required
+def mbf_experts():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Experts for hire"
+    return render_template("/myring_biz/experts.html", data=data)  
+
+
+
+@app.route("/developers", methods=["GET", "POST"])
+#@login_required
+def mbf_developers():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Integrate Business Facts"
+    return render_template("/myring_biz/developers.html", data=data)  
+
+
+
+
+
+
+# REPORTS    
+
+@app.route("/business_facts/parkcentralny", methods=["GET", "POST"])
+#@login_required
+def r0002():
+    data = {}
+    data['mask']= "mbf"
+
+# HOTEL INFO
+    data['id']= 7824441979
+    data['title']= "Business Facts" 
+    data['name']= "Business Facts"
+    data['address']= "870 Seventh Avenue at 56th Street"
+    data['city']= "NewYork"
+    data['state']= "NY"
+    data['zip']= "10018"
+        # Details
+    data['checkin']= "16:00"
+    data['checkout']= "12:00"
+    data['rooms']= "935"
+    data['resAge']= "21"
+    data['founded']= "1924"
+    data['renovation']= "2013"
+        #Contact
+    data['mail']= "info@parkcentralny.com"
+    data['phone']= "212 247 8000"
+    data['website']= "http://www.parkcentralny.com"
+    data['fax']= "+52 998 8489600"
+    data['tollfree']= "1 888 813 2775"
+    data['sales']= "sales@parkcentralny"
+    data['newsletter']= "newsletter@parkcentralny"
+        #Social
+    data['twitter']= "parkcentralny"
+    data['facebook']= "parkcentralny"
+    data['youtube']= "parkcentralny"
+    data['plus']= "parkcentralny"
+    data['instagram']= "parkcentralny"
+
+
+
+    return render_template("/report/r0002.html", data=data)  
+
+
+
+
+@app.route("/business_facts/entertainmentcruises", methods=["GET", "POST"])
+#@login_required
+def r0004():
+    data = {}
+    data['mask']= "mbf"
+
+# HOTEL INFO
+    data['id']= 7824441979
+    data['title']= "Entertainment Cruises NY" 
+    data['name']= "Entertainment Cruises NY"
+    data['address']= "Pier 62, Chelsea Piers, Suite 200"
+    data['city']= "NewYork"
+    data['state']= "NY"
+    data['zip']= "10011"
+        # Details
+    data['checkin']= "16:00"
+    data['checkout']= "12:00"
+    data['rooms']= "935"
+    data['resAge']= "21"
+    data['founded']= "1924"
+    data['renovation']= "2013"
+        #Contact
+    data['mail']= "Cruise.NewYork@entertainmentcruises.com"
+    data['phone']= "866-433-9283"
+    data['website']= "http://www.entertainmentcruises.com/our-cities/new-york"
+    data['fax']= ""
+    data['tollfree']= ""
+    data['sales']= "Cruise.NewYork@entertainmentcruises.com"
+    data['newsletter']= ""
+        #Social
+    data['twitter']= "ecnewyork "
+    data['facebook']= ""
+    data['youtube']= ""
+    data['plus']= ""
+    data['instagram']= "ecnewyork"
+
+
+
+    return render_template("/report/r0004.html", data=data)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# OLD
+
+
+@app.route('/thankyou',methods=['GET', 'POST'])
+def thankyou():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+    dic = { 'mes1': "1",}
+
+    if request.form['name'] and request.form['email']:
+
+        print("Beta tester: "+request.form['name'] +"<"+request.form['email']+"> ")
+
+        
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.ehlo()
+        server.starttls()
+
+        #Next, log in to the server
+        server.login(FROMEMAIL, FROMPASS)
+
+        #Send the mail
+        msg = "\r\n".join([
+          "From:"+FROMEMAIL,
+          "To: ",
+          "Subject: "+request.form['name'] +"<"+request.form['email']+"> Just subscribed to the Beta!",
+          "",
+          "Llame ahora! "+request.form['name'] +"<"+request.form['email']+">"
+          ])
+        #msg = "\nHello!" # The /n separates the message from the headers
+        server.sendmail(FROMEMAIL, TOEMAIL, msg)
+        server.quit()
+
+        print("Email to "+request.form['email']+" sent succesfully ")
+
+        return render_template('datasuite/home.html' , insects=il, dic=dic)
+    else:
+        return render_template('datasuite/home.html', insects=il, dic=dic) 
+
+
+@app.route('/solutions')
+def sol():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['spid']['title'],
+            'a2': il['spid']['name'], 
+            'a3': il['spid']['subtitle'],
+            'a4': il['spid']['desc'], 
+            'a5': il['spid']['label'], 
+            'a6': il['spid']['icon'],
+            'a7': il['spid']['preview'],
+            'a8': il['spid']['slug'],
+            # ---
+            'b1': il['cica']['title'],
+            'b2': il['cica']['name'], 
+            'b3': il['cica']['subtitle'],
+            'b4': il['cica']['desc'], 
+            'b5': il['cica']['label'], 
+            'b6': il['cica']['icon'],
+            'b7': il['cica']['preview'],
+            'b8': il['cica']['slug'],
+            'header': "big",
+
+                }
+
+    return render_template('datasuite/solutions.html', insects=il, dic=dic) 
+
+@app.route('/solutions/model')
+def solmod():
+
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['cica']['title'],
+            'a2': il['cica']['name'], 
+            'a3': il['cica']['subtitle'],
+            'a4': il['cica']['desc'], 
+            'a5': il['cica']['label'], 
+            'a6': il['cica']['icon'],
+            'a7': il['cica']['preview'],
+            'a8': il['cica']['slug'],
+
+            'b1': il['spid']['title'],
+            'b2': il['spid']['name'], 
+            'b3': il['spid']['subtitle'],
+            'b4': il['spid']['desc'], 
+            'b5': il['spid']['label'], 
+            'b6': il['spid']['icon'],
+            'b7': il['spid']['preview'],
+            'b8': il['spid']['slug'],
+                }
+
+    return render_template('datasuite/solutions.html', insects=il, dic=dic) 
+    
+
+@app.route('/solutions/capture')
+def solcap():
+
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['dfly']['title'],
+            'a2': il['dfly']['name'], 
+            'a3': il['dfly']['subtitle'],
+            'a4': il['dfly']['desc'], 
+            'a5': il['dfly']['label'], 
+            'a6': il['dfly']['icon'],
+            'a7': il['dfly']['preview'],
+            'a8': il['dfly']['slug'],
+            # ---
+            'b1': il['mosq']['title'],
+            'b2': il['mosq']['name'], 
+            'b3': il['mosq']['subtitle'],
+            'b4': il['mosq']['desc'], 
+            'b5': il['mosq']['label'], 
+            'b6': il['mosq']['icon'],
+            'b7': il['mosq']['preview'],
+            'b8': il['mosq']['slug'],
+            # ---
+            'c1': il['ants']['title'],
+            'c2': il['ants']['name'], 
+            'c3': il['ants']['subtitle'],
+            'c4': il['ants']['desc'], 
+            'c5': il['ants']['label'], 
+            'c6': il['ants']['icon'],
+            'c7': il['ants']['preview'],
+            'c8': il['ants']['slug'],
+            # ---
+            'd1': il['worm']['title'],
+            'd2': il['worm']['name'], 
+            'd3': il['worm']['subtitle'],
+            'd4': il['worm']['desc'], 
+            'd5': il['worm']['label'], 
+            'd6': il['worm']['icon'],
+            'd7': il['worm']['preview'],
+            'd8': il['worm']['slug'],
+                }
+
+    return render_template('datasuite/solutions.html', insects=il, dic=dic) 
+
+
+@app.route('/solutions/share')
+def solsha():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['bees']['title'],
+            'a2': il['bees']['name'], 
+            'a3': il['bees']['subtitle'],
+            'a4': il['bees']['desc'], 
+            'a5': il['bees']['label'], 
+            'a6': il['bees']['icon'],
+            'a7': il['bees']['preview'],
+            'a8': il['bees']['slug'],
+            # ---
+            'b1': il['lbug']['title'],
+            'b2': il['lbug']['name'], 
+            'b3': il['lbug']['subtitle'],
+            'b4': il['lbug']['desc'], 
+            'b5': il['lbug']['label'], 
+            'b6': il['lbug']['icon'],
+            'b7': il['lbug']['preview'],
+            'b8': il['lbug']['slug'],
+            # ---
+            'c1': il['bfly']['title'],
+            'c2': il['bfly']['name'], 
+            'c3': il['bfly']['subtitle'],
+            'c4': il['bfly']['desc'], 
+            'c5': il['bfly']['label'], 
+            'c6': il['bfly']['icon'],
+            'c7': il['bfly']['preview'],
+            'c8': il['bfly']['slug'],
+                }
+
+    return render_template('datasuite/solutions.html', insects=il, dic=dic)        
+
+# TOOOOOOLLLLLLSSSSSSSSTOOOOOOLLLLLLSSSSSSSS 
+
+#m-arana / TOCA
+@app.route('/tools/schema_modeler') 
+def spid():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+
+    dic = { 'a1': il['spid']['title'],
+            'a2': il['spid']['name'], 
+            'a3': il['spid']['subtitle'],
+            'a4': il['spid']['desc'], 
+            'a5': il['spid']['label'], 
+            'a6': il['spid']['icon'],
+            'a7': il['spid']['preview'],
+            'a8': il['spid']['slug'],
+            'a9': il['spid']['step1'],
+            'a10': il['spid']['diag1'], 
+            'a11': il['spid']['step2'],
+            'a12': il['spid']['diag2'], 
+            'a13': il['spid']['step3'], 
+            'a14': il['spid']['diag3'],
+            'a15': il['spid']['details'],
+            #
+            'b1': il['cica']['title'], 
+            'b2': il['cica']['icon'],
+            'b3': il['cica']['slug'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
+
+#m-cicada  /  CHIQ
+@app.route('/tools/semantic_labeler')
+def cica():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['cica']['title'],
+            'a2': il['cica']['name'], 
+            'a3': il['cica']['subtitle'],
+            'a4': il['cica']['desc'], 
+            'a5': il['cica']['label'], 
+            'a6': il['cica']['icon'],
+            'a7': il['cica']['preview'],
+            'a8': il['cica']['slug'],
+            'a9': il['cica']['step1'],
+            'a10': il['cica']['diag1'], 
+            'a11': il['cica']['step2'],
+            'a12': il['cica']['diag2'], 
+            'a13': il['cica']['step3'], 
+            'a14': il['cica']['diag3'],
+            'a15': il['cica']['details'],
+            #
+            'b1': il['spid']['title'], 
+            'b2': il['spid']['icon'],
+            'b3': il['spid']['slug'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic) 
+
+#c-avispa  /  ETZA
+@app.route('/tools/manual_capture')
+def dfly():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['dfly']['title'],
+            'a2': il['dfly']['name'], 
+            'a3': il['dfly']['subtitle'],
+            'a4': il['dfly']['desc'], 
+            'a5': il['dfly']['label'], 
+            'a6': il['dfly']['icon'],
+            'a7': il['dfly']['preview'],
+            'a8': il['dfly']['slug'],
+            'a9': il['dfly']['step1'],
+            'a10': il['dfly']['diag1'], 
+            'a11': il['dfly']['step2'],
+            'a12': il['dfly']['diag2'], 
+            'a13': il['dfly']['step3'], 
+            'a14': il['dfly']['diag3'],
+            'a15': il['dfly']['details'],
+            #
+            'b1': il['mosq']['title'], 
+            'b2': il['mosq']['icon'],
+            'b3': il['mosq']['slug'],
+            'b1': il['mosq']['title'],
+            # 
+            'c1': il['worm']['title'], 
+            'c2': il['worm']['icon'],
+            'c3': il['worm']['slug'],
+            'c1': il['worm']['title'],
+            #
+            'd1': il['ants']['title'], 
+            'd2': il['ants']['icon'],
+            'd3': il['ants']['slug'],
+            'd1': il['ants']['title'],
+
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
+
+#c-mosquitoe   /  APIP
+@app.route('/tools/automatic_capture')
+def mosq():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['mosq']['title'],
+            'a2': il['mosq']['name'], 
+            'a3': il['mosq']['subtitle'],
+            'a4': il['mosq']['desc'], 
+            'a5': il['mosq']['label'], 
+            'a6': il['mosq']['icon'],
+            'a7': il['mosq']['preview'],
+            'a8': il['mosq']['slug'],
+            'a9': il['mosq']['step1'],
+            'a10': il['mosq']['diag1'], 
+            'a11': il['mosq']['step2'],
+            'a12': il['mosq']['diag2'], 
+            'a13': il['mosq']['step3'], 
+            'a14': il['mosq']['diag3'],
+            'a15': il['mosq']['details'],
+            #
+            'b1': il['dfly']['title'], 
+            'b2': il['dfly']['icon'],
+            'b3': il['dfly']['slug'],
+            'b1': il['dfly']['title'],
+            # 
+            'c1': il['worm']['title'], 
+            'c2': il['worm']['icon'],
+            'c3': il['worm']['slug'],
+            'c1': il['worm']['title'],
+            #
+            'd1': il['ants']['title'], 
+            'd2': il['ants']['icon'],
+            'd3': il['ants']['slug'],
+            'd1': il['ants']['title'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
+
+
+#c-worm   /  TEMO
+@app.route('/tools/legacy_data')
+def worm():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['worm']['title'],
+            'a2': il['worm']['name'], 
+            'a3': il['worm']['subtitle'],
+            'a4': il['worm']['desc'], 
+            'a5': il['worm']['label'], 
+            'a6': il['worm']['icon'],
+            'a7': il['worm']['preview'],
+            'a8': il['worm']['slug'],
+            'a9': il['worm']['step1'],
+            'a10': il['worm']['diag1'], 
+            'a11': il['worm']['step2'],
+            'a12': il['worm']['diag2'], 
+            'a13': il['worm']['step3'], 
+            'a14': il['worm']['diag3'],
+            'a15': il['worm']['details'],
+            #
+            'b1': il['mosq']['title'], 
+            'b2': il['mosq']['icon'],
+            'b3': il['mosq']['slug'],
+            'b1': il['mosq']['title'],
+            # 
+            'c1': il['dfly']['title'], 
+            'c2': il['dfly']['icon'],
+            'c3': il['dfly']['slug'],
+            'c1': il['dfly']['title'],
+            #
+            'd1': il['ants']['title'], 
+            'd2': il['ants']['icon'],
+            'd3': il['ants']['slug'],
+            'd1': il['ants']['title'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic) 
+
+#c-ant   /  TEMO
+@app.route('/tools/data_scrapper')
+def ants():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['ants']['title'],
+            'a2': il['ants']['name'], 
+            'a3': il['ants']['subtitle'],
+            'a4': il['ants']['desc'], 
+            'a5': il['ants']['label'], 
+            'a6': il['ants']['icon'],
+            'a7': il['ants']['preview'],
+            'a8': il['ants']['slug'],
+            'a9': il['ants']['step1'],
+            'a10': il['ants']['diag1'], 
+            'a11': il['ants']['step2'],
+            'a12': il['ants']['diag2'], 
+            'a13': il['ants']['step3'], 
+            'a14': il['ants']['diag3'],
+            'a15': il['ants']['details'],
+            #
+            'b1': il['mosq']['title'], 
+            'b2': il['mosq']['icon'],
+            'b3': il['mosq']['slug'],
+            'b1': il['mosq']['title'],
+            # 
+            'c1': il['dfly']['title'], 
+            'c2': il['dfly']['icon'],
+            'c3': il['dfly']['slug'],
+            'c1': il['dfly']['title'],
+            # 
+            'd1': il['worm']['title'], 
+            'd2': il['worm']['icon'],
+            'd3': il['worm']['slug'],
+            'd1': il['worm']['title'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic) 
+
+
+#e-bee  /  TLAL
+@app.route('/tools/data_share')
+def bees():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['bees']['title'],
+            'a2': il['bees']['name'], 
+            'a3': il['bees']['subtitle'],
+            'a4': il['bees']['desc'], 
+            'a5': il['bees']['label'], 
+            'a6': il['bees']['icon'],
+            'a7': il['bees']['preview'],
+            'a8': il['bees']['slug'],
+            'a9': il['bees']['step1'],
+            'a10': il['bees']['diag1'], 
+            'a11': il['bees']['step2'],
+            'a12': il['bees']['diag2'], 
+            'a13': il['bees']['step3'], 
+            'a14': il['bees']['diag3'],
+            'a15': il['bees']['details'],
+            #
+            'b1': il['lbug']['title'], 
+            'b2': il['lbug']['icon'],
+            'b3': il['lbug']['slug'],
+            'b1': il['lbug']['title'],
+            # 
+            'c1': il['bfly']['title'], 
+            'c2': il['bfly']['icon'],
+            'c3': il['bfly']['slug'],
+            'c1': il['bfly']['title'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic)  
+
+#e-ladybug  /  MICA
+@app.route('/tools/data_website')
+def lbug():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['lbug']['title'],
+            'a2': il['lbug']['name'], 
+            'a3': il['lbug']['subtitle'],
+            'a4': il['lbug']['desc'], 
+            'a5': il['lbug']['label'], 
+            'a6': il['lbug']['icon'],
+            'a7': il['lbug']['preview'],
+            'a8': il['lbug']['slug'],
+            'a9': il['lbug']['step1'],
+            'a10': il['lbug']['diag1'], 
+            'a11': il['lbug']['step2'],
+            'a12': il['lbug']['diag2'], 
+            'a13': il['lbug']['step3'], 
+            'a14': il['lbug']['diag3'],
+            'a15': il['lbug']['details'],
+            #
+            'b1': il['bees']['title'], 
+            'b2': il['bees']['icon'],
+            'b3': il['bees']['slug'],
+            # 
+            'c1': il['bfly']['title'], 
+            'c2': il['bfly']['icon'],
+            'c3': il['bfly']['slug'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic)    
+
+#e-Butterfly   /   PAPA
+@app.route('/tools/data_combinator')
+def bfly():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': il['bfly']['title'],
+            'a2': il['bfly']['name'], 
+            'a3': il['bfly']['subtitle'],
+            'a4': il['bfly']['desc'], 
+            'a5': il['bfly']['label'], 
+            'a6': il['bfly']['icon'],
+            'a7': il['bfly']['preview'],
+            'a8': il['bfly']['slug'],
+            'a9': il['bfly']['step1'],
+            'a10': il['bfly']['diag1'], 
+            'a11': il['bfly']['step2'],
+            'a12': il['bfly']['diag2'], 
+            'a13': il['bfly']['step3'], 
+            'a14': il['bfly']['diag3'],
+            'a15': il['bfly']['details'],
+            #
+            'b1': il['lbug']['title'], 
+            'b2': il['lbug']['icon'],
+            'b3': il['lbug']['slug'],
+            # 
+            'c1': il['bees']['title'], 
+            'c2': il['bees']['icon'],
+            'c3': il['bees']['slug'],
+                }
+
+    return render_template('datasuite/details.html', insects=il, dic=dic)       
+
+
+
+@app.route('/pricing')
+def prici():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    return render_template('datasuite/pricing.html', insects=il) 
+
+
+@app.route('/faq')
+def faq():
+
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('datasuite/faq1.html', insects=il, dic=dic) 
+
+
+@app.route('/how')
+def how():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('datasuite/hiw.html', insects=il, dic=dic) 
+
+
+@app.route('/ecosystem')
+def ecosystem():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('datasuite/ecosystem.html', insects=il, dic=dic)     
+
+
+@app.route('/templates')
+def templates():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('sandbox/templates.html', insects=il, dic=dic)    
+
+
+@app.route('/blueprints')
+def blueprints():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('datasuite/blueprints.html', insects=il, dic=dic) 
+
+
+
+@app.route('/autopitch')
+def autopitch():
+    insect = InsectData()
+    il = {}
+
+    il['spid'] = insect.spid()
+    il['cica'] = insect.cica()
+    il['dfly'] = insect.dfly()
+    il['mosq'] = insect.mosq()
+    il['worm'] = insect.worm()
+    il['bees'] = insect.bees()
+    il['lbug'] = insect.lbug()
+    il['bfly'] = insect.bfly()
+    il['ants'] = insect.ants()
+
+    dic = { 'a1': "",
+            
+          }
+
+    return render_template('sandbox/autopitch.html', insects=il, dic=dic) 
+
+# WIZARDS
+
+@app.route('/wiz01')
+def wiz01():
+    return render_template('sandbox/wiz01.html')
+     
+@app.route('/wiz02')
+def wiz02():
+    return render_template('sandbox/wiz02.html') 
+
+@app.route('/wiz03')
+def wiz03():
+    return render_template('sandbox/wiz03.html') 
+
+@app.route('/wiz04')
+def wiz04():
+    return render_template('sandbox/wiz04.html')         
+
+
+
+@app.route('/docs')
+def docs():
+    title = 'Documentation'
+    return render_template('datasuite/docs.html', title=title) 
+
+
+
+
+@app.route('/images')
+def hello_images():
+    title = 'My Ring Solutions'
+    return 'Showing Images!'
+
+@app.route('/vespa/<id>')
+def hello_image_id(id):
+    name = 'Ricardo'
+    apellido = 'Cid'
+    print('huevos')
+    #return 'hola2'+id
+    return render_template('sandbox/avispa.html', name=name)
+
+if __name__ == '__main__':
+    app.run()
