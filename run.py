@@ -70,7 +70,7 @@ def mbf_pricing():
     data['mask']= "mbf"
     data['title']= "Pricing"
     return render_template("/myring_biz/pricing.html", data=data)  
-
+     
 
 
 @app.route("/experts", methods=["GET", "POST"])
@@ -98,41 +98,358 @@ def mbf_developers():
 
 # REPORTS    
 
-@app.route("/business_facts/parkcentralny", methods=["GET", "POST"])
+@app.route("/facts/parkcentralny", methods=["GET", "POST"])
 #@login_required
 def r0002():
     data = {}
     data['mask']= "mbf"
 
+    data['entity'] = [{'name': 'Short Description', 
+                        'help': 'this is help right there', 
+                        'descriptions': {
+                            'en': 'ingles short', 
+                            'sp': 'espanol short', 
+                            'fr': 'frances short'
+                            }
+                        },
+                        {'name': 'Long Description', 
+                        'help': 'this is help right there', 
+                        'descriptions': {
+                            'en': 'ingles long', 
+                            'sp': 'espanol long', 
+                            'fr': 'frances long'
+                            }
+                        },
+
+                        ]
+
+    data['shortDescription'] = [{
+                'title':'',
+                'subTitle':'short description',
+                'descriptions': {
+                    'en': 'ingles del product 1', 
+                    'sp': 'espanol del product 1', 
+                    'fr': 'frances del product 1'
+                    },
+
+                }]
+
+    data['longDescription'] = [{
+                'title':'',
+                'subTitle':'Long description',
+                'descriptions': {
+                    'en': 'ingles del product 1', 
+                    'sp': 'espanol del product 1', 
+                    'fr': 'frances del product 1'
+                    },
+
+                }]
+
+
+    data['productRoom'] = [{'name': 'Single Room', 
+                            'category': 'SGL Room / Luxury', 
+                            'avgsize':'300', 
+                            'smoking': 'No', 
+                            'ammen': ['d_001', 'a_001', 'b_002'],
+                            'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+                            'descriptions': {
+                                'en': 'ingles del product 1', 
+                                'sp': 'espanol del product 1', 
+                                'fr': 'frances del product 1'
+                                }
+                            },
+                            {'name': 'Double Room', 
+                            'category': 'SGL Room / Luxury', 
+                            'avgsize':'300', 
+                            'smoking': 'No', 
+                            'ammen': ['d_001', 'a_001', 'b_002'],
+                            'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+                            'descriptions': {
+                                'en': 'ingles del product 2', 
+                                'sp': 'espanol del product 2', 
+                                'fr': 'frances del product 2'
+                                }
+                            }
+
+                        ]
+
+    data['productService'] = [{'name': 'El Tropicaloso', 
+                            'category': 'Dinning Cruise', 
+                            'duration':'120', 
+                            'minAge': '18', 
+                            'attire': 'Casual', 
+                            'accesibility': ['Wheelchair'],
+                            'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+                            'descriptions': {
+                                'en': 'ingles del product 1', 
+                                'sp': 'espanol del product 1', 
+                                'fr': 'frances del product 1'
+                                },
+                            'schedule': {
+                                'd1': ['Monday','14:00','21:00'], 
+                                'd2': ['Tuesday','10:00','21:00'],  
+                                'd3': ['Wednesday','10:00','21:00'], 
+                                'd4': ['Thursday','10:00','21:00'], 
+                                'd5': ['Friday','10:00','21:00'], 
+                                'd6': ['Saturday','11:00','19:00'], 
+                                'd7': ['Sunday','11:00','19:00'], 
+                                },
+                            'notes':'notes about the service'    
+                            },
+                            {'name': 'El Otro', 
+                            'category': 'Dinning Cruise', 
+                            'duration':'129', 
+                            'minAge': '18', 
+                            'attire': 'Casual', 
+                            'accesibility': ['Wheelchair'],
+                            'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+                            'descriptions': {
+                                'en': 'ingles del product 1', 
+                                'sp': 'espanol del product 1', 
+                                'fr': 'frances del product 1'
+                                },
+                            'schedule': {
+                                'd1': ['Monday','14:00','21:00'], 
+                                'd2': ['Tuesday','10:00','21:00'],  
+                                'd3': ['Wednesday','10:00','21:00'], 
+                                'd4': ['Thursday','10:00','21:00'], 
+                                'd5': ['Friday','10:00','21:00'], 
+                                'd6': ['Saturday','11:00','19:00'], 
+                                'd7': ['Sunday','11:00','19:00'], 
+                                },
+                            'notes':'notes about the service'    
+                            }
+                        ]
+
+
+    data['amItems'] = [{
+
+                    'subTitle':'Ammenities',
+                    'tags':[{'name': 'Business', 
+                                'list': ['a_001','a_002','a_003']
+                                },
+                                {'name': 'Beauty', 
+                                'list': ['b_001','b_002','b_003']
+                                },
+                                {'name': 'Concierge', 
+                                'list': ['c_001','c_002','c_003','c_004','c_005','c_006']
+                                },
+                                {'name': 'Food', 
+                                'list': ['d_001','d_002','d_003','d_004','d_005','d_006','d_007','d_008']
+                                },
+                                {'name': 'Events', 
+                                'list': ['e_001','e_002','e_003']
+                                },
+                                {'name': 'Fitness', 
+                                'list': ['f_001','f_002','f_003','f_004','f_005']
+                                },
+                                {'name': 'Kids', 
+                                'list': ['g_001','g_002','g_003','g_004']
+                                },
+                                {'name': 'Leisure', 
+                                'list': ['h_001','h_002','h_003','h_004']
+                                },
+                                {'name': 'Medical', 
+                                'list': ['i_001','i_002','i_003','i_004','i_005']
+                                },
+                                {'name': 'pets', 
+                                'list': ['j_001','j_002','j_003','j_004']
+                                },
+                                {'name': 'Pool', 
+                                'list': ['k_001','k_002','k_003','k_004','k_005']
+                                },
+                                {'name': 'Shopping', 
+                                'list': ['l_001','l_002','l_003','l_004','l_005']
+                                },
+                                {'name': 'Smoking', 
+                                'list': ['m_001','m_002','m_003']
+                                },
+                                {'name': 'Transportation', 
+                                'list': ['n_001','n_002','n_003','n_004','n_005']
+                                },
+                            ], 
+
+                    }]
+                    # CLOSE
+
+
+
+    data['history'] = [{
+                    'title':'Art & Architecture in the moment of the revolution of 1800 and the new century.',
+                    'subTitle':'An historic monument in New York',
+                    'specs': {
+                            'd1': ['juan','Carpintero'], 
+                            'd2': ['petro','Soldado'],  
+                            'd3': ['Luis','Musico'], 
+                        },
+                    'descriptions': {
+                        'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra tortor sit amet justo volutpat, et varius libero lobortis. Nullam mattis turpis quis nunc efficitur suscipit. Sed eu vestibulum nisl, quis finibus leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam hendrerit malesuada lacus. Nam nibh quam, convallis a neque at, commodo cursus tortor. Morbi mollis purus sem, vel dapibus augue ornare malesuada. Donec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestas', 
+                        'sp': '', 
+                        'fr': 'frances del product 1'
+                        },
+                    'photosowner':'teamamerica',
+                    'photos': ['6896928037','3498992745','3579873745','3836044439'],
+                    'references': {
+                            'r1': '', 
+                            'r2': '',  
+                            'r3': ''
+                        },
+                    'tags':[{'name': 'Business', 
+                                'list': ['a_001','a_002','a_003']
+                                },
+                                {'name': 'Beauty', 
+                                'list': ['b_001','b_002','b_003']
+                                },
+                                {'name': 'Concierge', 
+                                'list': ['c_001','c_002','c_003','c_004','c_005','c_006']
+                                },
+                                {'name': 'Food', 
+                                'list': ['d_001','d_002','d_003','d_004','d_005','d_006','d_007','d_008']
+                                },
+                                {'name': 'Events', 
+                                'list': ['e_001','e_002','e_003']
+                                },
+                                {'name': 'Fitness', 
+                                'list': ['f_001','f_002','f_003','f_004','f_005']
+                                },
+                                {'name': 'Kids', 
+                                'list': ['g_001','g_002','g_003','g_004']
+                                },
+                                {'name': 'Leisure', 
+                                'list': ['h_001','h_002','h_003','h_004']
+                                },
+                                {'name': 'Medical', 
+                                'list': ['i_001','i_002','i_003','i_004','i_005']
+                                },
+                                {'name': 'pets', 
+                                'list': ['j_001','j_002','j_003','j_004']
+                                },
+                                {'name': 'Pool', 
+                                'list': ['k_001','k_002','k_003','k_004','k_005']
+                                },
+                                {'name': 'Shopping', 
+                                'list': ['l_001','l_002','l_003','l_004','l_005']
+                                },
+                                {'name': 'Smoking', 
+                                'list': ['m_001','m_002','m_003']
+                                },
+                                {'name': 'Transportation', 
+                                'list': ['n_001','n_002','n_003','n_004','n_005']
+                                },
+                            ],
+
+                    'schedule': {
+                            'd1': ['Monday','14:00','21:00'], 
+                            'd2': ['Tuesday','10:00','21:00'],  
+                            'd3': ['Wednesday','10:00','21:00'], 
+                            'd4': ['Thursday','10:00','21:00'], 
+                            'd5': ['Friday','10:00','21:00'], 
+                            'd6': ['Saturday','11:00','19:00'], 
+                            'd7': ['Sunday','11:00','19:00'], 
+                            },  
+                    'lista': {
+                            'd1': ['Phone','444'], 
+                            'd2': ['Fax','555'],  
+                            'd3': ['Toll-free','333'], 
+                            'd4': ['Sales','333'], 
+                        }
+
+                    }]# CLOSE
+
+    data['staff'] = [{
+                    'title':'Our Staff',
+                    'descriptions': {
+                        'en': 'ingles del product 1', 
+                        'sp': 'espanol del product 1', 
+                        'fr': 'frances del product 1'
+                        },
+                    'photosowner':'teamamerica',
+                    'photos': ['6896928037','3498992745','3579873745','3836044439'],
+                    'references': {
+                            'r1': '', 
+                            'r2': '',  
+                            'r3': ''
+                        }  
+                    }]# CLOSE
+
+    data['details'] = [{
+                    'subTitle':'Details',
+                    'lista': {
+                            'd1': ['Check in','444'], 
+                            'd2': ['Check out','555'],  
+                            'd3': ['numberRooms','333'], 
+                            'd4': ['Reservation Age','333'], 
+                        }
+
+                    }]# CLOSE
+
+    data['contact'] = [{
+                    'subTitle':'Contact',
+                    'lista': {
+                            'd1': ['Phone','444'], 
+                            'd2': ['Fax','555'],  
+                            'd3': ['Toll-free','333'], 
+                            'd4': ['Sales','333'], 
+                        }
+
+                    }]# CLOSE
+
+
+    data['curious'] = [{
+                    'subTitle':'Curious Facts',
+                    'specs': {
+                            'd1': ['fact 1','Carpintero'], 
+                            'd2': ['fact 2','Soldado'],  
+                            'd3': ['fact 3','Musico'], 
+                        },
+
+                    }]# CLOSE
+
+
 # HOTEL INFO
     data['id']= 7824441979
-    data['title']= "Business Facts" 
-    data['name']= "Business Facts"
-    data['address']= "870 Seventh Avenue at 56th Street"
-    data['city']= "NewYork"
-    data['state']= "NY"
-    data['zip']= "10018"
+    data['title']= "x01" 
+    data['name']= "x02"
+    data['address']= "x03"
+    data['city']= "x04"
+    data['state']= "x05"
+    data['zip']= "x05"
         # Details
-    data['checkin']= "16:00"
-    data['checkout']= "12:00"
-    data['rooms']= "935"
-    data['resAge']= "21"
-    data['founded']= "1924"
-    data['renovation']= "2013"
+    data['checkin']= "x06"
+    data['checkout']= "x07"
+    data['numberRooms']= "x08"
+    data['resAge']= "x09"
+    data['founded']= "x10"
+    data['renovation']= "x11"
         #Contact
-    data['mail']= "info@parkcentralny.com"
-    data['phone']= "212 247 8000"
-    data['website']= "http://www.parkcentralny.com"
-    data['fax']= "+52 998 8489600"
-    data['tollfree']= "1 888 813 2775"
-    data['sales']= "sales@parkcentralny"
-    data['newsletter']= "newsletter@parkcentralny"
+    data['mail']= "x12"
+    data['phone']= "x13"
+    data['website']= "x14"
+    data['fax']= "x15"
+    data['tollfree']= "x16"
+    data['sales']= "x17"
+    data['newsletter']= "x18"
         #Social
-    data['twitter']= "parkcentralny"
-    data['facebook']= "parkcentralny"
-    data['youtube']= "parkcentralny"
-    data['plus']= "parkcentralny"
-    data['instagram']= "parkcentralny"
+    data['twitter']= "x19"
+    data['facebook']= "x20"
+    data['youtube']= "x21"
+    data['gplus']= "x22"
+    data['instagram']= "x23"
+
+    data['photosowner']="teamamerica" 
+
+
+
+    data['photos'] = [{
+                    'subTitle':'Photos',
+                    'photosowner':'teamamerica',
+                    'photos': ['6896928037','3498992745','3579873745','1905405911','3706470910','9914904259','5426503313','3156372728','5587035086','3192923583','4201146490','7736340368','8473987178','1833997539','9051750777','9053620547','1625137403','1323452596','5178478619','2301109578','2051156062','3836044439','5871936148'],
+                    }]
+                    # CLOSE
+
+
+ 
+
 
 
 
@@ -141,7 +458,7 @@ def r0002():
 
 
 
-@app.route("/business_facts/entertainmentcruises", methods=["GET", "POST"])
+@app.route("/facts/ecruises", methods=["GET", "POST"])
 #@login_required
 def r0004():
     data = {}
@@ -149,6 +466,8 @@ def r0004():
 
 # HOTEL INFO
     data['id']= 7824441979
+    data['org']='teamamerica'
+
     data['title']= "Entertainment Cruises NY" 
     data['name']= "Entertainment Cruises NY"
     data['address']= "Pier 62, Chelsea Piers, Suite 200"
@@ -178,15 +497,13 @@ def r0004():
     data['instagram']= "ecnewyork"
 
 
+    
+
+
+
+
 
     return render_template("/report/r0004.html", data=data)  
-
-
-
-
-
-
-
 
 
 

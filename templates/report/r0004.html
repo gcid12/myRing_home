@@ -7,102 +7,15 @@
 
 {% block content %}
 
-<style type="text/css">
-  .jumbotron {
-  margin-top: 200px;
-}
- 
-ul.affix {
-  position: fixed; 
-  top: 90px;
-  right: 10px;
-  width: 230px;
-}
-ul.affix-top {
-  position: static;
-}
-ul.affix-bottom {
-  position: absolute;
-}
- 
-/* First level of nav */
-.sidenav {
-  margin-top: 0px;
-  margin-bottom: 30px;
-  padding-top:    10px;
-  padding-bottom: 10px;
-  /*background-color: #f7f5fa;*/
-  /*border-radius: 5px;*/
-}
- 
-/* All levels of nav */
-.sidebar .nav > li > a {
-  display: block;
-  color: #496175;
-  padding: 5px 20px;
-}
-.sidebar .nav > li > a:hover,
-.sidebar .nav > li > a:focus {
-  text-decoration: none;
-  background-color: #f7f5f0;
-}
-.sidebar .nav > .active > a,
-.sidebar .nav > .active:hover > a,
-.sidebar .nav > .active:focus > a {
-  font-weight: bold;
-  color: #143a60;
-  background-color: transparent;
-}
- 
-/* Nav: second level */
-.sidebar .nav .nav {
-  display: none;
-}
-.sidebar .nav > li.active .nav {
-  display:block;
-}
-.sidebar .nav .nav {
-  margin-bottom: 8px;
-}
-.sidebar .nav .nav > li > a {
-  padding-top:    3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  font-size: 90%;
-}
-#content {
-  margin-top:20px;
-}
-</style>
 
 <body data-spy="scroll" data-target="#affix-nav">
-<div class="container-fluid">
+<div class="container-fluid bg-07">
 
 <target id="start"></target>
   <div class="spa40"></div>
 
  
-  <div class="row">
-      <div class="col-sm-offset-1 col-sm-7">
-        <h5 class="fc-g"><span class="label label-vader">Business Facts <span class="text-lgray">| Travel Services</span></span></h5>
-          
-        <h1 class="fc-b fw-c fs-3" id="sec0"> {{ data.name }}</h1>
-        
-        <p class="fc-b fs-1-2"> 
-        {{ data.address }}, {{ data.city }} {{ data.state }} {{ data.zip }}
-         </p>
-         
-        <span><strong>Website:</strong> {{ data.website }}</span>
-        <span><strong>Phone:</strong> {{ data.phone }}</span>
-        <span><strong>Mail:</strong> {{ data.mail }}</span>
-        <span> | <i class="fa fa-twitter"></i> {{ data.twitter }}</span>
-        <span> | <i class="fa fa-instagram"></i> {{ data.instagram }}</span>
-        <span> | <i class="fa fa-youtube"></i> {{ data.youtube }}</span>
-        <span> | <i class="fa fa-google-plus"></i> {{ data.plus }}</span>
-        
-      </div>
-  </div><!-- close row -->
-  <div class="row">
+  {{ ui.report_head(data) }}
 
 
     <section id="content" class="col-sm-offset-1 col-sm-8 ">
@@ -143,6 +56,8 @@ ul.affix-bottom {
                   <!-- Tab panes -->
                   <div class="tab-content fs-0-9">
 
+
+
                     <div role="tabpanel" class="tab-pane active spa10 pl-30" id="short1">
                       {{ data.short_en }}
 
@@ -171,7 +86,7 @@ ul.affix-bottom {
               <div class="col-sm-8 bord-left">
                 {{ ui.report_title('Long Description','') }}
                 <div role="tabpanel" id="long">
-                  <!-- Nav tabs -->
+                  <!-- SE ARMAN LOS TABS CON LAS INICIALES -->
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active">
                       <a href="#long1" aria-controls="home" role="tab" data-toggle="tab">
@@ -195,26 +110,26 @@ ul.affix-bottom {
                     </li>
                   </ul>
 
-                  <!-- Tab panes -->
+                  <!-- SE ARMAN LOS CONTENIDOS -->
                   <div class="tab-content fs-0-9">
 
                     <div role="tabpanel" class="tab-pane active spa10 pl-30" id="long1">
-                      {{ data.long_en }}
+                      
 
                       Entertainment Cruises is the nation’s largest dining cruise company with day and evening cruises, excursions and private charters in many of America’s most exciting cities. Come cruise in a unique space with views other venues can’t offer. Planning’s a cinch. We have customizable packages and someone to do the work for you.
                     </div>
                     <div role="tabpanel" class="tab-pane" id="long2">
-                      {{ data.long_sp }}
+                      
 
                       Conveniencia Midtown . Hospitalidad Classic. Total comodidad . Un pasado célebre . Todo confluye en el Hotel Parque Central de Nueva York - situado de lleno en medio de vistas y hoteles más populares de Nueva York en el centro de Manhattan . Nuestra mezcla de comodidades sorprendentes rendir homenaje a nuestro pasado glamoroso , al tiempo que presenta un giro moderno en el medio ambiente electrizante del hotel. Los huéspedes se deleitarán con escapar del bullicio de la ciudad para tomar el sol en el elegante Parque Central de Nueva York.
                     </div>
                     <div role="tabpanel" class="tab-pane" id="long3">
-                      {{ data.long_jp }}
+                      
 
                       ミッドタウンの利便性。クラシックおもてなし。完全な快適さ。有名な過去。マンハッタンのミッドタウンにニューヨークで最も人気の観光スポットやホテルの中真正面に位置する - これは、すべてのパークセントラルニューヨークホテルで一緒に来ます。ホテルの帯電環境に近代的なスピンを提示しながら刺激的な設備の当社のミックスは、私たちの華やかな過去に敬意を払います。スタイリッシュなパークセントラルニューヨークに浴するために多忙な都市生活をエスケープに喜ば
                     </div>
                     <div role="tabpanel" class="tab-pane" id="long4">
-                      {{ data.long_de }}
+                      
 
                       Midtown удобство. Классический гостеприимство . Полный комфорт . Знаменитый в прошлом. Все приходит вместе в отеле Park Central Нью-Йорк - расположен прямо посреди самых популярных достопримечательностей и отелей Нью-Йорка в центре Манхеттена . Наша смесь захватывающих удобствами платить дань нашей гламурной прошлом , представляя современный спина на электризации среды отеля. Гости будут наслаждаться побега суете городской жизни , чтобы погреться в стильном Park Central Нью-Йорке 
                     </div>
@@ -230,12 +145,14 @@ ul.affix-bottom {
 
       </article>
 
-      <!-- ROOMS /////////////////////////////////////////////// -->
+      <!-- SERVICES /////////////////////////////////////////////// -->
       <article id="rooms">
 
 
         <hr/>
-        <h2>Product</h2>
+        
+        <h3 class="fc-g">{{ data.name }} <span class="fc-b">Product</span> </h3>
+        <br/>
         </hr>
 
         <section id="room1">
@@ -265,7 +182,8 @@ ul.affix-bottom {
       <article id="stories">
 
         <hr/>
-        <h2>About </h2>
+        <br/>
+        <h3 class="fc-b"> About <span class="fc-g">{{ data.name }}</span> </h3>
         <section id="story1">
           <hr/>
 

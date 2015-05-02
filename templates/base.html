@@ -2,55 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Ring : {% block title %}{% endblock%}</title>
 {% include 'includes/headscripts.html' %}
 {% import 'includes/ui_macros.html' as ui %}
+
+<style type="text/css"> body{font-size:1.4em;} </style>
+
+
  </head>
 <body id="top">
 
 
 
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-      <div class="container-fluid">
+    <nav class="navbarx navbar-default navbar-fixed-top navbar-inverse bg-k bc-16">
+      <div class="container-fluid ">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img style="float:right;" src="/static/images/logos/myring03.png" class="logomenu" /></a>
+          <a class="navbar-brand" href="/"><img style="float:right; width:250px;" src="/static/images/logos/myring_businessfacts.png" class="logomenu" /></a>
+          <div class="spa30 visible-xs">&nbsp;</div>
+
         </div>
         <div class="navbar-collapse collapse text-navbar spa20">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/business_facts" class="clearlink">Business Facts</a></li>
-            <li><a href="/business_profile" class="clearlink">Profile</a></li>
-            <li><a href="/faq" class="clearlink">FAQ</a></li>
-            <li><a href="/pricing" class="clearlink">Pricing</a></li>
-            <li><a href="/experts" class="clearlink">Experts</a></li>
-            <li><a href="/developers" class="whitelink" style="">Developers</a></li>
 
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                    <a href="/blueprints">
-                      Data Blueprints
-                    </a>
-                 </li>
-                <li>
-                    <a href="/solutions">
-                      Data Suite
-                    </a>
-                </li>
-              </ul>
-            </li> -->
+            
+
+            <div class="pull-right hidden-xs spa15"> 
+              <a href="https://avispa.myring.io/_login" class="btn btn-default btn-sm">LOG IN</a> 
+              <a href="https://avispa.myring.io/_widget/mbf_signup" class="btn btn-info btn-sm">SIGN UP</a>
+            </div>
+
+
+
+          <ul class="nav navbar-nav navbar-right visible-xs">
+            <li><a href="https://avispa.myring.io/_login" class="whitelink fc-b">LOG IN</a></li>
+            <li><a href="https://avispa.myring.io/_widget/mbf_signup" class="whitelink fc-b">SIGN UP</a></li>
+
+            <li><a href="/business_facts" class="whitelink fc-b">Business Facts</a></li>
+            <li><a href="/business_profile" class="clearlink">Profile</a></li>
+            <li><a href="/faq" class="clearlink ">FAQ</a></li>
+            <!-- <li><a href="/pricing" class="clearlink ">Pricing</a></li> -->
+            <li><a href="/experts" class="clearlink">Experts</a></li>
+            <li><a href="/developers" class="clearlink" style="">Developers</a></li>
           </ul>
         </div>
       </div>
+            <section class="bg-black hidden-xs">
+              
+                <div class="container-fluid ">
+
+                  <div class="row">
+                    <div class="col-sm-12 alpha omega">   
+
+                      <div class="spa10 pull-right" style="padding-right:20px;">
+                        <a class="clearlink hidden-xs fs-1 fc-a" href="/business_facts">Business Facts</a> 
+                        <span class="pad-x-10">|</span>
+                        <a class="clearlink hidden-xs fs-1 fc-a" href="/business_profile">Profile</a> 
+                        <span class="pad-x-10">|</span>
+                        <a class="clearlink hidden-xs fs-1 fc-a" href="/faq">FAQ</a> 
+                        <span class="pad-x-10">|</span>
+                        <!-- <a class="clearlink hidden-xs fs-1 fc-a" href="/pricing">Pricing</a> 
+                        <span class="pad-x-10">|</span> -->
+                        
+                        <a class="clearlink hidden-xs fs-1 fc-a " href="/experts">Experts</a> 
+                        <span class="pad-x-10">|</span>
+
+                        <a class="clearlink hidden-xs fs-1 fc-a" href="/developers">Developers</a>
+                        
+                        
+
+                      </div>
+                      
+
+                    </div> <!-- close 9 -->
+                  </div>
+                </div>
+              </section> 
     </nav> 
 
-    <div class="spa20"></div>
+    <div class="spa50 hidden-xs"></div>
+    <!-- NAV BAR -->
+
+
+
 
   
         {% block content %}
