@@ -136,22 +136,19 @@ def r0002():
                 }
             }]# CLOSE
 
-    #CONTACT
+
+
+    #Contact
     data['Website']= "x14"
     data['Mail']= "x12"
     data['Phone']= "x13"
     data['Fax']= "x15"
+    data['tollfree']= "x16"
     data['Newsletter']= "x18"
-
-    #DETAILS
     data['Founded']= "x18"
     data['Closed']= "x18"
-    data['ResAge']= "x09"
-    data['Founded']= "x10"
-    data['payments']="x12"
 
-
-    #SOCIALMEDIA
+    #SocialMedia
         # twitter
     data['SM1']= "x19"
         # facebook
@@ -160,18 +157,38 @@ def r0002():
     data['SM3']= "x21"
         # instagram
     data['SM4']= "x22"
-        #Other Links
+     #External Links
     data['LINK1']= "x23"
     data['LINK2']= "x23"
     data['LINK3']= "x23"
     data['LINK4']= "x23"
 
+    # DETAILS
+    data['checkin']= "x06"
+    data['checkout']= "x07"
+    data['numberRooms']= "x08"
+    data['resAge']= "x09"
+    data['founded']= "x10"
+    data['renovation']= "x11"
+    data['payments']="x12"
+    data['accesibility']="x12"
+    data['rank']= "x06"
+    data['closeby']= "x06"
+    data['founded']= "x06"
+    data['lastRenovation']= "x06"
+    data['exited']= "x06"
 
-    #HISTORY
+    #StoryTelling
+    data['History']= "x14"
+    data['HistoryPhotos']= "x14"
     data['Facts']= "x14"
+    data['OurStaff']= "x14"
     data['Awards']= "x14"
     data['FAQ']= "x14"
     data['FactualID']= "x14"
+
+
+
     data['history'] = [{
                     #This USES THE FACTCARD MACRO
                     #Title of the card
@@ -182,29 +199,39 @@ def r0002():
                         'sp': '', 
                         'fr': 'frances del product 1'
                         },
-                    # HISTORY PHOTOS
+                    # This is the organization owner of the images
                     'fc_Owner':'teamamerica',
-                    # PHOTOS
+                    # photos ids
                     'fc_Photos': ['6896928037','3498992745','3579873745','3836044439'],
                     
 
                     }]# CLOSE
-    data['OurStaff'] = [{
+
+    data['staff'] = [{
                     'fc_Title':'Our Staff',
                     'fc_Descriptions': {
                         'en': 'ingles del product 1', 
                         'sp': 'espanol del product 1', 
                         'fr': 'frances del product 1'
-                        }
+                        },
+                    'fc_Owner':'teamamerica',
+                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439'],
+                    'fc_Links': {
+                            'r1': '', 
+                            'r2': '',  
+                            'r3': ''
+                        }  
                     }]# CLOSE
 
-    data['curious'] = [{
-                    'fc_SubTitle':'Curious Facts',
-                    'fc_Specs': {
-                            'd1': ['fact 1','Carpintero'], 
-                            'd2': ['fact 2','Soldado'],  
-                            'd3': ['fact 3','Musico'], 
-                        },
+    data['details'] = [{
+                    'fc_SubTitle':'Details',
+                    'fc_List': {
+                            'd1': ['Check in','444'], 
+                            'd2': ['Check out','555'],  
+                            'd3': ['numberRooms','333'], 
+                            'd4': ['Reservation Age','333'], 
+                        }
+
                     }]# CLOSE
 
     data['contact'] = [{
@@ -217,6 +244,354 @@ def r0002():
                         }
 
                     }]# CLOSE
+
+
+    data['curious'] = [{
+                    'fc_SubTitle':'Curious Facts',
+                    'fc_Specs': {
+                            'd1': ['fact 1','Carpintero'], 
+                            'd2': ['fact 2','Soldado'],  
+                            'd3': ['fact 3','Musico'], 
+                        },
+                    }]# CLOSE
+
+
+
+
+
+
+
+    data['Includes'] = [{
+                    'fc_SubTitle':'Ammenities',
+
+                    'fc_Tags':[{'name': 'Business', 
+                                'list': ['a_001','a_002','a_003']
+                                },
+                                {'name': 'Beauty', 
+                                'list': ['b_001','b_002','b_003']
+                                },
+                                {'name': 'Concierge', 
+                                'list': ['c_001','c_002','c_003','c_004','c_005','c_006']
+                                },
+                                {'name': 'Food', 
+                                'list': ['d_001','d_002','d_003','d_004','d_005','d_006','d_007','d_008']
+                                },
+                                {'name': 'Events', 
+                                'list': ['e_001','e_002','e_003']
+                                },
+                                {'name': 'Fitness', 
+                                'list': ['f_001','f_002','f_003','f_004','f_005']
+                                },
+                                {'name': 'Kids', 
+                                'list': ['g_001','g_002','g_003','g_004']
+                                },
+                                {'name': 'Leisure', 
+                                'list': ['h_001','h_002','h_003','h_004']
+                                },
+                                {'name': 'Medical', 
+                                'list': ['i_001','i_002','i_003','i_004','i_005']
+                                },
+                                {'name': 'pets', 
+                                'list': ['j_001','j_002','j_003','j_004']
+                                },
+                                {'name': 'Pool', 
+                                'list': ['k_001','k_002','k_003','k_004','k_005']
+                                },
+                                {'name': 'Shopping', 
+                                'list': ['l_001','l_002','l_003','l_004','l_005']
+                                },
+                                {'name': 'Smoking', 
+                                'list': ['m_001','m_002','m_003']
+                                },
+                                {'name': 'Transportation', 
+                                'list': ['n_001','n_002','n_003','n_004','n_005']
+                                },
+                            ]
+
+                    }]# CLOSE
+
+
+
+    # HOTEL SPECIFICATIONS
+
+    # data['productRoom'] = [{'name': 'Single Room', 
+    #                         'category': 'SGL Room / Luxury', 
+    #                         'avgsize':'300', 
+    #                         'smoking': 'No', 
+    #                         'ammen': ['d_001', 'a_001', 'b_002'],
+    #                         'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+    #                         'descriptions': {
+    #                             'en': 'ingles del product 1', 
+    #                             'sp': 'espanol del product 1', 
+    #                             'fr': 'frances del product 1'
+    #                             }
+    #                         },
+    #                         {'name': 'Double Room', 
+    #                         'category': 'SGL Room / Luxury', 
+    #                         'avgsize':'300', 
+    #                         'smoking': 'No', 
+    #                         'ammen': ['d_001', 'a_001', 'b_002'],
+    #                         'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+    #                         'descriptions': {
+    #                             'en': 'ingles del product 2', 
+    #                             'sp': 'espanol del product 2', 
+    #                             'fr': 'frances del product 2'
+    #                             }
+    #                         }
+
+    #                     ]
+
+    # data['productService'] = [{'name': 'El Tropicaloso', 
+    #                         'type': 'Dinning Cruise', 
+    #                         'sameAddress':'',
+    #                         'alt_address':'',
+    #                         'alt_city':'',
+    #                         'alt_state':'',
+    #                         'alt_zip':'', 
+    #                         'duration':'',
+    #                         'minAge': '18', 
+    #                         'minPax': '18', 
+    #                         'attire': 'Casual', 
+    #                         'accesibility': ['Wheelchair'],
+    #                         'languages':['6896928037','3498992745','3579873745','3836044439','5871936148'], 
+    #                         'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+    #                         'lineDescription': {
+    #                             'en': 'ingles del product 1', 
+    #                             'sp': 'espanol del product 1', 
+    #                             'fr': 'frances del product 1'
+    #                             },
+    #                         'Description': {
+    #                             'en': 'ingles del product 1', 
+    #                             'sp': 'espanol del product 1', 
+    #                             'fr': 'frances del product 1'
+    #                             },
+    #                         'facts': {
+    #                         'd1': ['fact1','444'], 
+    #                         'd2': ['fact2','555'],  
+    #                         'd3': ['fact3','333'], 
+    #                         'd4': ['fact4','333'], 
+    #                         }, 
+    #                         'notes':'notes about the service', 
+    #                         'carParking':'',
+    #                         'busParking':'',
+    #                         'privateParty':'',
+    #                         'freeSell':'',
+    #                         'blackOutDates':'',
+    #                         'cancellationPolicy':'',
+    #                         'schedule': {
+    #                             'd1': ['Monday','14:00','21:00'], 
+    #                             'd2': ['Tuesday','10:00','21:00'],  
+    #                             'd3': ['Wednesday','10:00','21:00'], 
+    #                             'd4': ['Thursday','10:00','21:00'], 
+    #                             'd5': ['Friday','10:00','21:00'], 
+    #                             'd6': ['Saturday','11:00','19:00'], 
+    #                             'd7': ['Sunday','11:00','19:00'], 
+    #                             },
+    #                         'alt_Twitter':'',
+    #                         'alt_facebook':'',
+    #                         'alt_Instagram':'',
+    #                         'alt_YouTube':'',
+    #                         },
+    #                         {'name': 'El Otelo', 
+    #                         'type': 'Dinning Cruise', 
+    #                         'sameAddress':'',
+    #                         'alt_address':'',
+    #                         'alt_city':'',
+    #                         'alt_state':'',
+    #                         'alt_zip':'', 
+    #                         'duration':'',
+    #                         'minAge': '18', 
+    #                         'minPax': '18', 
+    #                         'attire': 'Casual', 
+    #                         'accesibility': ['Wheelchair'],
+    #                         'languages':['6896928037','3498992745','3579873745','3836044439','5871936148'], 
+    #                         'photos': ['6896928037','3498992745','3579873745','3836044439','5871936148'],
+    #                         'lineDescription': {
+    #                             'en': 'ingles del product 1', 
+    #                             'sp': 'espanol del product 1', 
+    #                             'fr': 'frances del product 1'
+    #                             },
+    #                         'Description': {
+    #                             'en': 'ingles del product 1', 
+    #                             'sp': 'espanol del product 1', 
+    #                             'fr': 'frances del product 1'
+    #                             },
+    #                         'facts': {
+    #                         'd1': ['fact1','444'], 
+    #                         'd2': ['fact2','555'],  
+    #                         'd3': ['fact3','333'], 
+    #                         'd4': ['fact4','333'], 
+    #                         }, 
+    #                         'notes':'notes about the service', 
+    #                         'carParking':'',
+    #                         'busParking':'',
+    #                         'privateParty':'',
+    #                         'freeSell':'',
+    #                         'blackOutDates':'',
+    #                         'cancellationPolicy':'',
+    #                         'schedule': {
+    #                             'd1': ['Monday','14:00','21:00'], 
+    #                             'd2': ['Tuesday','10:00','21:00'],  
+    #                             'd3': ['Wednesday','10:00','21:00'], 
+    #                             'd4': ['Thursday','10:00','21:00'], 
+    #                             'd5': ['Friday','10:00','21:00'], 
+    #                             'd6': ['Saturday','11:00','19:00'], 
+    #                             'd7': ['Sunday','11:00','19:00'], 
+    #                             },
+    #                         'alt_Twitter':'',
+    #                         'alt_facebook':'',
+    #                         'alt_Instagram':'',
+    #                         'alt_YouTube':'',
+    #                         },
+    #                     ]
+
+
+    
+
+
+
+    
+    data['staff'] = [{
+                    'fc_SubTitle':'Our Staff',
+                    'fc_Descriptions': {
+                        'en': 'ingles del product 1', 
+                        'sp': 'espanol del product 1', 
+                        'fr': 'frances del product 1'
+                        },
+                    'fc_Owner':'teamamerica',
+                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439'],
+
+                    }]# CLOSE
+
+    data['details'] = [{
+                    'subTitle':'Details',
+                    'lista': {
+                            'd1': ['Check in','444'], 
+                            'd2': ['Check out','555'],  
+                            'd3': ['numberRooms','333'], 
+                            'd4': ['Reservation Age','333'], 
+                        }
+
+                    }]# CLOSE
+
+    data['contact'] = [{
+                    'fc_SubTitle':'Contact',
+                    'fc_List': {
+                            'd1': ['Phone','444'], 
+                            'd2': ['Fax','555'],  
+                            'd3': ['Toll-free','333'], 
+                            'd4': ['Sales','333'], 
+                        }
+
+                    }]# CLOSE
+
+
+    data['curious'] = [{
+                    'fc_SubTitle':'Curious Facts',
+                    'fc_Specs': {
+                            'd1': ['fact 1','Carpintero'], 
+                            'd2': ['fact 2','Soldado'],  
+                            'd3': ['fact 3','Musico'], 
+                        },
+                    }]# CLOSE
+
+
+    data['photos'] = [{
+                    
+                    'fc_Owner':'teamamerica',
+                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439'],
+
+                    }]# CLOSE
+
+
+
+ 
+    data['fc_template'] = [{
+                    'fc_Title':'This is the Title',
+                    'fc_SubTitle':'And this is the subtitle',
+                    'fc_Specs': {
+                            'd1': ['spec1','10 of this'], 
+                            'd2': ['spec2','50 of that'],  
+                            'd3': ['spec3','40 of this ot ipsum lorem and the otherher'], 
+                        },
+                    'fc_Descriptions': {
+                        'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra tortor sit amet justo volutpat, et varius libero lobortis. Nullam mattis turpis quis nunc efficitur suscipit. Sed eu vestibulum nisl, quis finibus leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam hendrerit malesuada lacus. Nam nibh quam, convallis a neque at, commodo cursus tortor. Morbi mollis purus sem, vel dapibus augue ornare malesuada. Donec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestas', 
+                        'sp': '', 
+                        'fr': 'frances del product 1'
+                        },
+                    'fc_Owner':'teamamerica',
+                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439'],
+                    'fc_Links': {
+                            'd1': ['Link1 Name','http://www.myring.io'], 
+                            'd2': ['Link2 Name','http://www.myring.io'],  
+                            'd3': ['Link3 Name','http://www.myring.io'], 
+                        },
+                    'fc_Tags':[{'name': 'Business', 
+                                'list': ['a_001','a_002','a_003']
+                                },
+                                {'name': 'Beauty', 
+                                'list': ['b_001','b_002','b_003']
+                                },
+                                {'name': 'Concierge', 
+                                'list': ['c_001','c_002','c_003','c_004','c_005','c_006']
+                                },
+                                {'name': 'Food', 
+                                'list': ['d_001','d_002','d_003','d_004','d_005','d_006','d_007','d_008']
+                                },
+                                {'name': 'Events', 
+                                'list': ['e_001','e_002','e_003']
+                                },
+                                {'name': 'Fitness', 
+                                'list': ['f_001','f_002','f_003','f_004','f_005']
+                                },
+                                {'name': 'Kids', 
+                                'list': ['g_001','g_002','g_003','g_004']
+                                },
+                                {'name': 'Leisure', 
+                                'list': ['h_001','h_002','h_003','h_004']
+                                },
+                                {'name': 'Medical', 
+                                'list': ['i_001','i_002','i_003','i_004','i_005']
+                                },
+                                {'name': 'pets', 
+                                'list': ['j_001','j_002','j_003','j_004']
+                                },
+                                {'name': 'Pool', 
+                                'list': ['k_001','k_002','k_003','k_004','k_005']
+                                },
+                                {'name': 'Shopping', 
+                                'list': ['l_001','l_002','l_003','l_004','l_005']
+                                },
+                                {'name': 'Smoking', 
+                                'list': ['m_001','m_002','m_003']
+                                },
+                                {'name': 'Transportation', 
+                                'list': ['n_001','n_002','n_003','n_004','n_005']
+                                },
+                            ],
+
+                    'fc_Schedule': {
+                            'd1': ['Monday','14:00','21:00'], 
+                            'd2': ['Tuesday','10:00','21:00'],  
+                            'd3': ['Wednesday','10:00','21:00'], 
+                            'd4': ['Thursday','10:00','21:00'], 
+                            'd5': ['Friday','10:00','21:00'], 
+                            'd6': ['Saturday','11:00','19:00'], 
+                            'd7': ['Sunday','11:00','19:00'], 
+                            },  
+                    'fc_List': {
+                            'd1': ['Phone','444'], 
+                            'd2': ['Fax','555'],  
+                            'd3': ['Toll-free','333'], 
+                            'd4': ['Sales','333'], 
+                        },
+                    'fc_SmallNotes': {
+                            'd1': ['Notes','Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam hendrerit malesuada lacus.'], 
+                            'd2': ['Cancellation Policy','Donec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestas']
+                        },
+
+                    }]# CLOSE
+
 
     data['Services'] = [{
                     'fc_Title':'Bateaux New York',
@@ -322,37 +697,6 @@ def r0002():
                     }] # CLOSE
 
 
-    data['photos'] = [{
-                    
-                    'fc_Owner':'teamamerica',
-                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439'],
-
-                    }]# CLOSE
-                    
-    data['staff'] = [{
-                    'fc_SubTitle':'Our Staff',
-                    'fc_Descriptions': {
-                        'en': 'ingles del product 1', 
-                        'sp': 'espanol del product 1', 
-                        'fr': 'frances del product 1'
-                        },
-                    'fc_Owner':'teamamerica',
-                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439'],
-
-                    }]# CLOSE
-
-    # HOTEL////HOTEL////HOTEL////HOTEL////HOTEL////HOTEL////HOTEL////
-    # HOTEL////HOTEL////HOTEL////HOTEL////HOTEL////HOTEL////HOTEL////
-
-
-    # DETAILS ONLY HOTEL
-    data['Checkin']= "x06" 
-    data['Checkout']= "x07"
-    data['NumberRooms']= "x08"
-    data['Parking']= "x08"
-    data['Accesibility']="x12"
-    data['Rank']= "x06"
-    data['LastRenovation']= "x06"
 
     data['Rooms'] = [{
                     'fc_Title':'Single Room Presidential',
@@ -398,179 +742,11 @@ def r0002():
                     ]# CLOSE
 
 
-    # HOTEL AMMENITIES
-    data['Includes'] = [{   
-                    'fc_SubTitle':'Ammenities',
-
-                    'fc_Tags':[{'name': 'Business', 
-                                'list': ['a_001','a_002','a_003']
-                                },
-                                {'name': 'Beauty', 
-                                'list': ['b_001','b_002','b_003']
-                                },
-                                {'name': 'Concierge', 
-                                'list': ['c_001','c_002','c_003','c_004','c_005','c_006']
-                                },
-                                {'name': 'Food', 
-                                'list': ['d_001','d_002','d_003','d_004','d_005','d_006','d_007','d_008']
-                                },
-                                {'name': 'Events', 
-                                'list': ['e_001','e_002','e_003']
-                                },
-                                {'name': 'Fitness', 
-                                'list': ['f_001','f_002','f_003','f_004','f_005']
-                                },
-                                {'name': 'Kids', 
-                                'list': ['g_001','g_002','g_003','g_004']
-                                },
-                                {'name': 'Leisure', 
-                                'list': ['h_001','h_002','h_003','h_004']
-                                },
-                                {'name': 'Medical', 
-                                'list': ['i_001','i_002','i_003','i_004','i_005']
-                                },
-                                {'name': 'pets', 
-                                'list': ['j_001','j_002','j_003','j_004']
-                                },
-                                {'name': 'Pool', 
-                                'list': ['k_001','k_002','k_003','k_004','k_005']
-                                },
-                                {'name': 'Shopping', 
-                                'list': ['l_001','l_002','l_003','l_004','l_005']
-                                },
-                                {'name': 'Smoking', 
-                                'list': ['m_001','m_002','m_003']
-                                },
-                                {'name': 'Transportation', 
-                                'list': ['n_001','n_002','n_003','n_004','n_005']
-                                },
-                            ],
-                            }]
 
 
 
 
     return render_template("/report/r0002.html", data=data)  
-
-
-
-@app.route("/facts/example", methods=["GET", "POST"])
-#@login_required
-
-def example():
-    data = {}
-    data['mask']= "mbf"
-
-
-    
-    data['Example'] = [{
-                    'fc_Title':'Bateaux New York',
-                    'fc_SubTitle':'The best way to see the city , unique Brunch',
-                    'fc_Category':'Cruise Waterfront',
-                    'fc_Specs': {
-                            'd1': ['Category','Dinning Cruise'], 
-                            'd2': ['Minimum Booking Age','18'],  
-                            'd3': ['Attire','Casual'], 
-                        },
-                    'fc_Descriptions': {
-                        'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra tortor sit amet justo volutpat, et varius libero lobortis. Nullam mattis turpis quis nunc efficitur suscipit. Sed eu vestibulum nisl, quis finibus leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam hendrerit malesuada lacus. Nam nibh quam, convallis a neque at, commodo cursus tortor. Morbi mollis purus sem, vel dapibus augue ornare malesuada. Donec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestas', 
-                        'sp': '', 
-                        'fr': 'frances del product 1'
-                        },
-                    'fc_Owner':'teamamerica',
-                    'fc_Photos': ['6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439','6896928037','3498992745','3579873745','3836044439'],
-                    'fc_Links': {
-                            'd1': ['Website','http://www.myring.io'], 
-                            'd2': ['NewYork TImes','http://www.myring.io'],  
-                            'd3': ['TimeOut','http://www.myring.io'], 
-                        },
-                    'fc_Tags':[{'name': 'Business', 
-                                'list': ['a_001','a_002','a_003']
-                                },
-                                {'name': 'Beauty', 
-                                'list': ['b_001','b_002','b_003']
-                                }
-                                
-                            ],
-
-                    'fc_Schedule': {
-                            'd1': ['Monday','14:00','21:00'], 
-                            'd2': ['Tuesday','10:00','21:00'],  
-                            'd3': ['Wednesday','10:00','21:00'], 
-                            'd4': ['Thursday','10:00','21:00'], 
-                            'd5': ['Friday','10:00','21:00'], 
-                            'd6': ['Saturday','11:00','19:00'], 
-                            'd7': ['Sunday','11:00','19:00'], 
-                            },  
-                    'fc_List': {
-                            'd1': ['Phone','444'], 
-                            'd2': ['Fax','555'],  
-                            'd3': ['Toll-free','333'], 
-                            'd4': ['Sales','333'], 
-                        },
-                        'fc_SmallNotes': {
-                            'd1': ['Notes','Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam hendrerit malesuada lacus.'], 
-                            'd2': ['Cancellation Policy','Donec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestas']
-                        },
-                    'fc_Tags':[{'name': 'Business', 
-                                'list': ['a_001','a_002','a_003']
-                                },
-                                {'name': 'Beauty', 
-                                'list': ['b_001','b_002','b_003']
-                                },
-                                {'name': 'Concierge', 
-                                'list': ['c_001','c_002','c_003','c_004','c_005','c_006']
-                                },
-                                {'name': 'Food', 
-                                'list': ['d_001','d_002','d_003','d_004','d_005','d_006','d_007','d_008']
-                                },
-                                {'name': 'Events', 
-                                'list': ['e_001','e_002','e_003']
-                                },
-                                {'name': 'Fitness', 
-                                'list': ['f_001','f_002','f_003','f_004','f_005']
-                                },
-                                {'name': 'Kids', 
-                                'list': ['g_001','g_002','g_003','g_004']
-                                },
-                                {'name': 'Leisure', 
-                                'list': ['h_001','h_002','h_003','h_004']
-                                },
-                                {'name': 'Medical', 
-                                'list': ['i_001','i_002','i_003','i_004','i_005']
-                                },
-                                {'name': 'pets', 
-                                'list': ['j_001','j_002','j_003','j_004']
-                                },
-                                {'name': 'Pool', 
-                                'list': ['k_001','k_002','k_003','k_004','k_005']
-                                },
-                                {'name': 'Shopping', 
-                                'list': ['l_001','l_002','l_003','l_004','l_005']
-                                },
-                                {'name': 'Smoking', 
-                                'list': ['m_001','m_002','m_003']
-                                },
-                                {'name': 'Transportation', 
-                                'list': ['n_001','n_002','n_003','n_004','n_005']
-                                },
-                            ],
-                        'fc_SmallNotes': {
-                            'd1': ['Cancellation Policy','Donec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestasDonec id pulvinar enim. Praesent finibus nibh ac sapien ultrices egestas'], 
-                            'd2': ['Notes','Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam hendrerit malesuada lacus.']
-                        }
-
-                  
-
-
-
-                    }]# CLOSE
-
-
-
-    return render_template("/report/r0002.html", data=data)  
-
-
 
 
 

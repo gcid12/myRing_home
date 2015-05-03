@@ -9,80 +9,62 @@
 
 
 
-<body data-spy="scroll" data-target="#affix-nav">
+<body data-spy="scroll" data-target="#affix-nav" data-offset="180">
 <div class="container-fluid bg-07">
 
+<div class="spa30"></div>
+
 <target id="start"></target>
-  <div class="spa40"></div>
-
- 
  {{ ui.BizHead(data) }}
-
-
 
   <div class="row">
 
     <section id="content" class="col-sm-offset-1 col-sm-8 ">
+    
       <article id="information">
-      
+     
         <!-- DESCRIPTION -->
         
-        <section id="info1" class="">
-          <div class="row box box-widget p-10">
+      {% if data.OneLine %}
+        <section id="info1">
+          <div class="row box box-widget">
             <div class="col-sm-6 box-columns">
-             {{ ui.FactCard(data.shortDescription) }}
+             {{ ui.FactCard(data.OneLine) }}
             </div>
             <div class="col-sm-6">
-             {{ ui.FactCard(data.longDescription) }}
+             {{ ui.FactCard(data.Description) }}
             </div>
 
           </div>
         </section>
-
+      {% endif %}
 
 
         {% if data.photos %}
           <section id="info2">
-            <div class="row ">
-              <div class="col-sm-12 box box-widget  box-columns">
-
-                 
-                 {{ ui.FactCard(data.details) }}
-              </div>
-              
-            </div>
-          </section>
-        {% endif %}
-        
-
-        {% if data.photos %}
-          <section id="info3">
             <div class="row box box-widget p-10">
               <div class="col-sm-12">
-             
               {{ ui.FactCard(data.photos) }}
               </div>
             </div>
           </section>
         {% endif %}
 
-        {% if data.amItems %}
-          <section id="info4">
+        {% if data.Includes %}
+          <section id="info3">
             <div class="row box box-widget p-10">
               <div class="col-sm-12">
-              {{ ui.FactCard(data.amItems) }}
+              {{ ui.FactCard(data.Includes) }}
               </div>
             </div>
           </section>
         {% endif %}
 
 
-
       </article>
-
-      <!-- ROOMS /////////////////////////////////////////////// -->
      
-      {% if data.productRoom %}
+      {% if data.Rooms %}
+      <!-- ROOMS /////////////////////////////////////////////// -->
       <article id="rooms">
 
         <div class="row box box-widget p-10 bg-08">
@@ -92,9 +74,9 @@
         </div>
 
 
-        <section id="room1">
-              {{ ui.BizRoom(data) }}
-        </section>
+        
+        {{ ui.FactCard_Rooms(data.Rooms) }}
+        
           
 
 
@@ -102,32 +84,22 @@
       {% endif %}
 
 
+      {% if data.Services %}
       <!-- SERVICES /////////////////////////////////////////////// -->
       <article id="product">
-
-
         <div class="row box box-widget p-10 bg-08">
           <div class="col-sm-12">
-            <h3 class="fc-g">{{ data.name }} <span class="fc-b">Product</span> </h3>
+            <h3 class="fc-g">{{ data.name }} <span class="fc-b">Services</span> </h3>
           </div>
         </div>
-
-
-
-        <section id="room1">
-              {{ ui.BizService(data) }}
-        </section>
-         
-
-
+        
+        {{ ui.FactCard_Services(data.Services) }}
+        
       </article>
-
-
-
-
+      {% endif %}
 
       <!-- ABOUT /////////////////////////////////////////////// -->
-      <article id="stories">
+      <article id="about">
 
         <div class="row box box-widget p-10 bg-08">
           <div class="col-sm-12">
@@ -135,14 +107,13 @@
           </div>
         </div>
 
-
         <section id="story1">
 
           <div class="row box box-widget p-10">
-            <div class="col-sm-6 box-columns">
+            <div class="col-sm-6 box-columns" id="story1">
               {{ ui.FactCard(data.history) }}
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6" id="story2">
               {{ ui.FactCard(data.staff) }}
             </div>
           </div>
@@ -152,16 +123,32 @@
         <section id="story2">
 
           <div class="row box box-widget p-10">
-            <div class="col-sm-3 box-columns">
+            <div class="col-sm-3 box-columns" id="story3">
               {{ ui.FactCard(data.contact) }}
             </div>
-            <div class="col-sm-9 box-columns">
+            <div class="col-sm-9 box-columns" id="story4">
               {{ ui.FactCard(data.curious) }}
             </div>
             
           </div>
           
         </section>
+
+
+        {% if data.Example %}
+        <section >
+
+          <div class="row box box-widget p-10">
+            <div class="col-sm-6 box-columns" id="story3">
+            
+              {{ ui.FactCard(data.Example) }}
+            </div>
+            
+          </div>
+          
+        </section>
+        {% endif %}
+
 
 
 
@@ -172,34 +159,58 @@
 
     </section> <!-- col-7 -->
 
-    <nav id="affix-nav" class="sidebar col-sm-2 hidden-xs ">
+    <nav id="affix-nav" class="sidebar col-sm-3 hidden-xs ">
       
         <ul class="nav sidenav bord-left" data-spy="affix" data-offset-top="330">
-            <li><a href="#start">Contact Info</a></li>
-            <li class="active"><a href="#start">Hotel Facts</a>
+            
+            <li class="active"><a href="#start">Facts</a>
               <ul class="nav">
-                <li><a href="#info1">Description</a></li>
-                <li><a href="#info2">Details</a></li>
-                <li><a href="#info3">Photos</a></li>
-                <li><a href="#info4">Ammenities</a></li>
+                <li><a href="#info1">Description</a>
+
+                </li>
+
+                <li><a href="#info2">Photos</a></li>
+                <li><a href="#info3">Ammenities</a></li>
               </ul>
             </li>
             <li><a href="#rooms">Rooms</a>
               <ul class="nav">   
-                <li><a href="#room1">Single</a></li>
+
+                {% set count = 1 %}
+
+                {% for x in data.Rooms %}  
+                <li><a href="#room{{count}}">{{x.fc_Title}}</a></li>
+                  {% set count = count + 1 %}
+                {% endfor %}
+
+        <!--                 <li><a href="#room1">Single</a></li>
                 <li><a href="#room2">Double</a></li>
                 <li><a href="#room3">Triple</a></li>
-                <li><a href="#room4">Quad</a></li>        
+                <li><a href="#room4">Quad</a></li>    -->     
               </ul>
             </li>
-            <li><a href="#stories">About</a>
+            <li><a href="#product">Services</a>
+              <ul class="nav">   
+
+                {% set count = 1 %}
+
+              {% for x in data.Services %}  
+                <li><a href="#service{{count}}">{{x.fc_Title}}</a></li>
+                {% set count = count + 1 %}
+              {% endfor %}
+
+              <!--                 <li><a href="#room1">Single</a></li>
+                <li><a href="#room2">Double</a></li>
+                <li><a href="#room3">Triple</a></li>
+                <li><a href="#room4">Quad</a></li>    -->     
+              </ul>
+            </li>
+
+            <li><a href="#about">About</a>
               <ul class="nav">   
                 <li><a href="#story1">History</a></li>
-                <li><a href="#story1">Art & Architecture</a></li> 
                 <li><a href="#story2">Curious Facts</a></li>
-                <!-- <li><a href="#story2">On the Media</a></li> -->
-                <!-- <li><a href="#story5">Staff</a></li>
-                <li><a href="#story6">Culture</a></li> -->    
+                  
               </ul>
             </li>
 
@@ -230,6 +241,7 @@
 
   <footer>
   </footer>
+
 </div><!-- end of container -->
  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

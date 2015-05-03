@@ -219,36 +219,277 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 {% endmacro %}
 
 
+
+
+<!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
+<!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
+<!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
+
+
+
+<!-- GENERATES THE HEADER WITH COMPANY INFO -->
  {% macro BizHead(data) %}
   <div class="row">
       <div class="col-sm-offset-1 col-sm-7">
         <h4 class="fc-g"><span class="label label-vader">Business Facts</span></h4>
           
-        <h1 class="fc-b fw-c fs-3" id="sec0"> {{ data.name }}</h1>
+        <h1 class="fc-b fw-c fs-3" id="sec0"> {{ data.Name }}</h1>
         
         <p class="fc-b fs-1-2"> 
-        {{ data.address }}, {{ data.city }} {{ data.state }} {{ data.zip }}
+        {% if data.Address %}
+            {{ data.Address }}, 
+        {% endif %}
+        {{ data.City }} {{ data.State }} {{ data.Zip }}
          </p>
          
-        <span><strong>Website:</strong> {{ data.website }}</span>
-        <span><strong>FrontDesk Phone:</strong> {{ data.phone }}</span>
-        <span><strong>Mail:</strong> {{ data.mail }}</span>
+        {% if data.Website %}<span><strong>Web:</strong> {{ data.Website }}</span>{% endif %}
+        {% if data.Phone %}<span><strong>Phone:</strong> {{ data.Phone }}</span>{% endif %}
+        {% if data.Mail %}<span><strong>Mail:</strong> {{ data.Mail }}</span>{% endif %}
 
-        {% if data.twitter %}<span> | <i class="fa fa-twitter"></i> {{ data.twitter }}</span> {% endif %}
-        {% if data.instagram %}<span> | <i class="fa fa-instagram"></i> {{ data.instagram }}</span>{% endif %}
-        {% if data.youtube %}<span> | <i class="fa fa-youtube"></i> {{ data.youtube }}</span>{% endif %}
-        {% if data.gplus %}<span> | <i class="fa fa-google-plus"></i> {{ data.gplus }}</span>{% endif %}
+        {% if data.SM1 %}<span> | <i class="fa fa-twitter"></i> {{ data.SM1 }}</span> {% endif %}
+        {% if data.SM2 %}<span> | <i class="fa fa-instagram"></i> {{ data.SM2 }}</span>{% endif %}
+        {% if data.SM3 %}<span> | <i class="fa fa-youtube"></i> {{ data.SM3 }}</span>{% endif %}
+        {% if data.SM4 %}<span> | <i class="fa fa-google-plus"></i> {{ data.SM4 }}</span>{% endif %}
         
       </div>
   </div><!-- close row -->
 {% endmacro %}
 
 
-{% macro langVersions(langData) %}
-<div class="row">
+
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+
+
+
+{% macro FactCard(thisData) %}
+
+  {% for x in thisData %}      
+    
+    <div class="row">
+      <div class="col-sm-12">
+
+
+        {% if x.fc_Title %}
+         {{ fm_Title(x.fc_Title,'') }}
+        {% endif %}
+
+        {% if x.fc_SubTitle %}
+          {{ fm_SubTitle(x.fc_SubTitle,'') }}
+        {% endif %}
+        
+        {% if x.fc_Specs %}
+          {{ fm_Specs(x.fc_Specs, '') }}           
+        {% endif %}
+
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions, '') }}
+        {% endif %}
+        
+        {% if x.fc_Photos %}
+            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '' ) }}
+            <br/>
+         {% endif %}
+         
+        {% if x.fc_Tags %}
+          {{ fm_Tags(x.fc_Tags, '') }}
+          <hr/>
+        {% endif %}
+        
+        {% if x.fc_Links %}
+          {{ fm_Links(x.fc_Links, '') }}  
+          <hr/>         
+        {% endif %}
+        
+        {% if x.fc_Schedule %}
+          {{ fm_Schedule(x.fc_Schedule, 'Schedule') }}
+        {% endif %}
+
+        {% if x.fc_List %}
+          {{ fm_List(x.fc_List, '') }}
+        {% endif %}
+          
+        {% if x.fc_SmallNotes %}
+          {{ fm_SmallNotes(x.fc_SmallNotes, '') }}           
+        {% endif %}
+          
+
+
+
+      </div>
+    </div> <!-- close row -->
+    {% endfor %}
+
+{% endmacro %}
+
+
+{% macro FactCard_Services(thisData) %}
+
+  {% set count = 1 %}
+
+  {% for x in thisData %}      
+  <section id="service{{ count }}">  
+    <div class="row box box-widget bw-9 bord-left bc-8" style="padding:10px 20px 20px 20px" >
+          
+     <div class="col-sm-12">
+          
+      </div>
+      <div class="col-sm-12">
+          <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> {{x.fc_Category}} </div>
+
+          {% if x.fc_Title %}
+         {{ fm_Title(x.fc_Title,'') }}
+        {% endif %}
+
+        {% if x.fc_SubTitle %}
+          {{ fm_SubTitle(x.fc_SubTitle,'') }}
+        {% endif %}
+
+      </div>
+          
+      <div class="col-sm-7">
+        
+        {% if x.fc_Specs %}
+          {{ fm_Specs(x.fc_Specs, '') }}           
+        {% endif %}
+
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions, '') }}
+        {% endif %}
+
+        <div class="row">
+          <div class="col-sm-12">
+            <hr/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            {% if x.fc_Schedule %}
+              {{ fm_Schedule(x.fc_Schedule, 'Schedule') }}
+            {% endif %}
+          </div>
+          <div class="col-sm-6">
+          
+              {% if x.fc_SmallNotes %}
+                {{ fm_SmallNotes(x.fc_SmallNotes, '') }}           
+              {% endif %}
+          </div>
+        </div>
+ 
+      </div>
+      <div class="col-sm-5">
+        {% if x.fc_Photos %}
+            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '' ) }}
+         {% endif %}
+      </div>
+
+      <div class="col-sm-12">
+          <div class="spa20"></div>
+      </div>
+    </div> <!-- close row -->
+  </section>
+
+      {% set count = count + 1 %}
+    {% endfor %}
+
+{% endmacro %}
+
+
+
+
+{% macro FactCard_Rooms(thisData) %}
+
+  {% set count = 1 %}
+
+  {% for x in thisData %}      
+  <section id="room{{ count }}"> 
+
+    <div class="row box box-widget bw-9 bord-left bc-8" style="padding:10px 20px 20px 20px" >
+          
+      <div class="col-sm-12">
+          <div class="spa10"></div>
+      </div>
+      <div class="col-sm-12">
+          <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> {{x.fc_Category}} </div>
+
+          {% if x.fc_Title %}
+         {{ fm_Title(x.fc_Title,'') }}
+        {% endif %}
+
+      </div>
+          
+      <div class="col-sm-7">
+        
+        {% if x.fc_Specs %}
+          {{ fm_Specs(x.fc_Specs, '') }}           
+        {% endif %}
+
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions, '') }}
+        {% endif %}
+
+        <div class="row">
+          <div class="col-sm-12">
+            <hr/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            {% if x.fc_Tags %}
+              {{ fm_Tags(x.fc_Tags, '') }}
+            {% endif %}
+          </div>
+
+        </div>
+ 
+      </div>
+      <div class="col-sm-5">
+        {% if x.fc_Photos %}
+            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '' ) }}
+         {% endif %}
+      </div>
+
+      <div class="col-sm-12">
+          <div class="spa20"></div>
+      </div>
+    </div> <!-- close row -->
+
+    </section>
+
+      {% set count = count + 1 %}
+    {% endfor %}
+
+{% endmacro %}
+
+
+
+
+
+<!-- ::::::::::::::::FACT MODULES:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT MODULES:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT MODULES:::::::::::::::::: --> 
+
+
+
+{% macro fm_Title(text,icon) %}
+
+  <h3 class="fw-c lh-1">{{text}}</h3>
+{% endmacro %}
+
+{% macro fm_SubTitle(text,icon) %}
+  <!-- <span class="pull-right"><i class="fa fa-question-circle fc-l"></i></span> -->
+  <h4 class="fw-c fc-l fs-1-2">{{text}}</h4>
+  <br/>
+{% endmacro %}
+
+{% macro fm_LangVersions(langData, name) %}
+  <div class="row">
 
     <div class=" col-sm-12">
       
+      {% if name %}<p>{{name}}</p>{% endif %}
       <div role="tabpanel" id="{{ tabid }}">
         <!-- Nav tabs -->
 
@@ -256,7 +497,13 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
         <ul class="nav nav-tabs" role="tablist">
 
-          {% set setid ='qwertyuiopasdfghjklzxcvbnm1234567890'|random  %}
+
+          {% set n1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
+          {% set n2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
+          {% set n3 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
+
+          {% set setid = n1 * n2 * n3  %}
+
 
           {% set count = 1 %}
 
@@ -264,7 +511,7 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
             
           <li role="presentation" class="{% if count==1 %} active {% endif %} {% set count = count + 1 %} ">
             <a href="#{{ setid }}_{{count}}" role="tab" data-toggle="tab">
-              <span class="label label-success "> {{setid}} - {{key}} </span>
+              <span class="label label-success "> {{key}} </span>
             </a>
           </li>
 
@@ -287,68 +534,146 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
       </div> <!-- close tab panel --> 
     </div>
-</div>
 
+  </div>
 {% endmacro %}
 
 
+{% macro fm_Specs(specsData, name)%}
+    {% if name %}<p>{{name}}</p>{% endif %}
 
-{% macro BizDetails(data) %}
-
-        <div class="row">
-            <div class=" col-sm-12">
-                {{ ReportTitle('Details','') }}
-                
-            </div>
-            <div class=" col-sm-12 fs-0-9">
-                <div><strong>Check-in</strong> {{ data.checkin }}  / <strong>Check-Out</strong>  {{ data.checkout }}</div>
-                <div> <strong>Numbers of Rooms: </strong> {{ data.rooms }}</div>
-                <div> <strong>Minimum Check-in age: </strong> {{ data.resAge }}</div>
-                <div> <strong>Founded: </strong> {{ data.founded }}</div>
-                <div> <strong>Last Rennovation: </strong> {{ data.renovation }}</div>
-            </div>
-            <div class=" col-sm-12 spa10">
-            </div>
-
-          </div>
-
+    {% for key in specsData|sort %}
+      {% for y in key[1] %}
+        
+          <span class="fw-c"> {{ specsData[key][0]}}: </span>
+          <span class=""> {{ specsData[key][1]}} | </span>
+        
+      {% endfor %}
+    {%endfor%} 
+    <hr/>            
 {% endmacro %}
 
+{% macro fm_Photos(photoData, owner, name)%}
+  <div class="row">
 
+    <div class="col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+      {% for y in photoData %}
+                    {{  PhotoMosaic(owner, y ,100,'left') }}
+      {% endfor %} 
+      
+    </div>
+    <div class="col-sm-12">
 
-{% macro BizSchedule(scheduleData) %}
+    </div>
+  </div>
+{% endmacro %}
 
-  <!-- PHOTOS -->
+{% macro fm_Tags(tagsData, name) %}
 
+  {% if name %}<p>{{name}}</p>{% endif %}
+  <table class="table table-condensed table-striped">
+    {% for y in tagsData %} 
+      <tr>
+        <td align="right">
+          <div class="fw-c fs-0-8">{{ y.name }}</div>
+        </td>
+        <td>
+            {% for item in y.list %}
+            {{ label_ammenity(1, item) }} 
+            {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endmacro %}
 
-        <div class="row">
-            <div class=" col-sm-12">
-              <table>
-                
-                
-                {% for key in scheduleData|sort %}
-                <tr>  
+{% macro fm_Links(linksData, name)%}
 
-                  {% for hours in key[1] %}
-                    <td>
-                      <span class="label label-info "> {{scheduleData[key][0]}} </span>
-                    </td>
-                    <td>
-                         &nbsp; {{scheduleData[key][1]}} |  {{scheduleData[key][2]}}
-                    </td>
-                  {% endfor %}
+    {% if name %}<p>{{name}}</p>{% endif %}
+
+    {% for key in linksData|sort %}
+      {% for y in key[1] %}
+        
+        | <a href="{{ linksData[key][1]}}">
+          {{ linksData[key][0]}}
+        </a>
+
+      {% endfor %}
+    {%endfor%} 
+            
+{% endmacro %}
+
+{% macro fm_Schedule(scheduleData, name) %}
+  <div class="row">
+    <div class="col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+    </div>
+    <div class=" col-sm-offset-1 col-sm-11">
+      <table>
+        {% for key in scheduleData|sort %}
+        <tr>  
+
+          {% for hours in key[1] %}
+            <td>
+              <span class="label label-info "> {{ scheduleData[key][0]}} </span>
+            </td>
+            <td>
+                 &nbsp; {{ scheduleData[key][1]}} |  {{ scheduleData[key][2]}}
+            </td>
+          {% endfor %}
+
+        </tr>
+        {%endfor%} 
+      </table> 
+      <hr/>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro fm_List(ListData, name) %}
+  <div class="col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+      {% for key in ListData %}
+        {% for z in key[1] %}
           
-                </tr>
-                {%endfor%} 
-              </table> 
-            </div>
-        </div>
+            <span class="fw-c"> {{ ListData[key][0]}}: </span>
+            <span class=""> {{ ListData[key][1]}} </span>
+            <br/>
+          
+        {% endfor %}
+      {%endfor%}   
+      <hr/>       
+              
+  </div>
+{% endmacro %}
 
+{% macro fm_SmallNotes(smallData, name) %}
+  <div class="col-sm-12">
+
+      {% if name %}<p>{{name}}</p>{% endif %}
+
+      {% for key in smallData %}
+        {% for z in key[1] %}
+          <div class="fs-0-7">
+            <span class="fw-c"> {{ smallData[key][0]}}: </span>
+            <span class=""> {{ smallData[key][1]}} </span>
+            <br/>
+          </div>
+          
+        {% endfor %}
+      {%endfor%}   
+      <hr/>       
+              
+  </div>
 {% endmacro %}
 
 
+<!-- ::::::::::::::::FACT MODULE HELPERS:::::::::::::::::: --> 
 
-{% macro PhotoPic(owner,item,size,float) %}
+
+<!-- Generates the PhotoMosaic -->
+{% macro PhotoMosaic(owner,item,size,float) %}
 
 
         <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
@@ -364,302 +689,6 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 {% endmacro %}
 
-
-
-
-
-{% macro BizRoom(data) %}
-
-    {% for x in data.productRoom %}      
-      <div class="row box box-widget bw-9 bord-left bc-8" style="padding:10px 50px 40px 50px" >
-          <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> Room </div>
-
-          <h3 class="fw-c">{{x.name}}</h3>
-        
-          <div class="row">
-              <div class="col-sm-7">
-
-                <div class="fs-0-9">
-                  <span><strong>Category:</strong> {{x.category}}</span> | 
-                  <span><strong>AvgSize:</strong> {{x.avgsize}}</span> | 
-                  <span><strong>Smoking:</strong> {{x.smoking}}</span> 
-                  
-                </div>
-                <hr/>
-                <p class="fc-g">Description</p>
-
-                {{ langVersions(x.descriptions) }}
-              </div>
-          
-              <div class="col-sm-5 bord-left">
-                  <!-- UPDATE OWNER !!!!-->
-                  {% for y in x.photos %}
-                      
-                      {{  PhotoPic(data.photosowner, y ,100,'left') }}
-
-                      
-                  {% endfor %}
-              </div>
-              <div class="col-sm-12">
-
-                 <p class="fc-g">Ammenities</p>
-
-                <!--  ROOM AMMENITIES -->
-                  {% for z in x.ammen %}
-                      
-                      {{ label_ammenity(1, z) }} 
-                      
-                  {% endfor %}
-              </div>
-
-          </div> <!-- close row -->
-        </div>
-    {% endfor %}
-
-{% endmacro %}
-
-
-{% macro BizService(data) %}
-
-    {% for x in data.productService %}      
-      <div class="row box box-widget bw-9 bord-left bc-8" style="padding:10px 50px 40px 50px" >
-          
-
-          
-          <div class="row">
-            <div class="col-sm-12">
-                <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> {{x.product123}} </div>
-
-                <h3 class="fw-c">{{x.name}}</h3>
-
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-sm-7">
-
-                <div class="fs-0-9">
-                  <span><strong>Category:</strong> {{x.category}}</span> | 
-                  <span><strong>Duration:</strong> {{x.duration}}</span> | 
-                  <span><strong>Minimum Age:</strong> {{x.minAge}}</span> |
-                  <span><strong>Attire:</strong> {{x.attire}}</span> |
-                  <span><strong>Accesibility:</strong> {{x.accesibility}}</span>
-                </div>
-                
-                <br/>
-
-                {{ langVersions(x.descriptions) }}
-
-                <hr/>
-                <p class="fc-g">Schedule </p>
-              
-
-                {{ BizSchedule(x.schedule) }}
-
-              </div>
-          
-              <div class="col-sm-5 bord-left">
-                  <!-- UPDATE OWNER !!!!-->
-                  {% for y in x.photos %}
-                      
-                      {{  PhotoPic(data.photosowner, y ,100,'left') }}
-
-                  {% endfor %}
-              </div>
-              <div class="col-sm-12">
-
-                 <p class="fc-g"></p>
-
-                <!--  ROOM AMMENITIES -->
-                  {% for z in x.ammen %}
-                      
-                      {{ label_ammenity(1, z) }} 
-                      
-                  {% endfor %}
-              </div>
-
-          </div> <!-- close row -->
-        </div>
-    {% endfor %}
-
-{% endmacro %}
-
-
-{% macro FactCard(thisData) %}
-
-  {% for x in thisData %}      
-    
-    <div class="row">
-      <div class="col-sm-12">
-
-
-        {% if x.title %}
-         <h3 class="fw-c lh-1">{{x.title}}</h3>
-        {% endif %}
-
-        {% if x.subTitle %}
-          {{ ReportTitle(x.subTitle,'') }}
-        {% endif %}
-
-
-        {% if x.specs %}
-              {% for key in x.specs|sort %}
-                {% for hours in key[1] %}
-                  
-                    <span class="fw-c"> {{ x.specs[key][0]}}: </span>
-                    <span class=""> {{ x.specs[key][1]}} | </span>
-                  
-                {% endfor %}
-              {%endfor%} 
-            
-              <hr/>             
-        {% endif %}
-
-        {% if x.descriptions %}
-          {{ langVersions(x.descriptions) }}
-        {% endif %}
-
-      </div>
-
-        
-
-      {% if x.photos %}
-        <!-- PHOTOS -->
-        <div class="col-sm-12">
-            {% for y in x.photos %}
-                  {{  PhotoPic(x.photosowner, y ,100,'left') }}
-            {% endfor %}
-            
-        </div>
-        <div class="col-sm-12">
-            <div class="spa20"></div>
-        </div>
-      {% endif %}
-
-      {% if x.tags %}
-        <!-- AMMENITIES -->
-        <div class="col-sm-12">
-          <table class="table table-condensed table-striped">
-            {% for y in x.tags %} 
-              <tr>
-                <td align="right">
-                  <div class="fw-c fs-0-8">{{ y.name }}</div>
-                </td>
-                <td>
-                    {% for item in y.list %}
-                    {{ label_ammenity(1, item) }} 
-                    {% endfor %}
-                </td>
-              </tr>
-            {% endfor %}
-          </table>
-          <hr/>
-        </div>
-      {% endif %}
-      
-      {% if x.references %}
-        <!-- REFERENCES -->
-        <div class="col-sm-12">
-
-          {% if x.references[1] %} 
-            <p class="fc-g">
-              <hr/>
-             References: 
-              {% for z in x.references %}
-                  
-                  {{ z }} , 
-                  
-              {% endfor %}
-            </p>
-          {% endif %}
-        </div>
-      {% endif %}
-     
-      
-      {% if x.schedule %}
-        <!-- SCHEDULES -->
-        <div class=" col-sm-12">  
-          <p>Schedule:</p>  
-          <table>
-            {% for key in x.schedule|sort %}
-            <tr>  
-
-              {% for hours in key[1] %}
-                <td>
-                  <span class="label label-info "> {{ x.schedule[key][0]}} </span>
-                </td>
-                <td>
-                     &nbsp; {{ x.schedule[key][1]}} |  {{ x.schedule[key][2]}}
-                </td>
-              {% endfor %}
-      
-            </tr>
-            {%endfor%} 
-          </table> 
-          <hr/>
-        </div>
-      {% endif %}
-
-      
-      {% if x.lista %}
-        <!-- LISTAS -->
-        <div class="col-sm-12">
-
-              {% for key in x.lista %}
-                {% for z in key[1] %}
-                  
-                    <span class="fw-c"> {{ x.lista[key][0]}}: </span>
-                    <span class=""> {{ x.lista[key][1]}} </span>
-                    <br/>
-                  
-                {% endfor %}
-              {%endfor%}   
-              <hr/>       
-              
-        </div>
-      {% endif %}
-
-        
-        
-
-        
-        <div class="col-sm-12">
-            <div class="spa20"></div>
-        </div>
-    </div> <!-- close row -->
-    {% endfor %}
-
-{% endmacro %}
-
-
-
-
-{% macro BizReviews(data) %}
-  
-  <div class="row">
-    <div class="col-sm-12">
-
-      {{ ReportTitle('Reviews','') }}
-
-      <div class="fs-0-8">
-        <div >TripAdvisor: <br/><a href=""><i class="fa fa-arrow-right"></i>http://www.tripadvisor.com/Hotel_Review-g60763-d93520</a></div>
-        <div>Yelp: <br/><a href=""><i class="fa fa-arrow-right"></i>http://www.yelp.com/biz/park-central-new-york-new-york</a></div>
-        <div>FourSquare:<br/> <a href=""><i class="fa fa-arrow-right"></i>https://foursquare.com/parkcentralny</a></div>
-        <div>FactualId:<br/> <a href=""><i class="fa fa-arrow-right"></i>9eeb572b-fe04-4775-a902-e18348cfa777</a></div>
-      </div>
-    </div>
-  </div>
-
-{% endmacro %}
-
-
-
-
-{% macro ReportTitle(text,icon) %}
-<span class="pull-right"><i class="fa fa-question-circle fc-l"></i></span>
-<h4 class="fw-c fc-l fs-1-2">{{text}}</h4>
-<hr/>
-
-{% endmacro %}
 
 
 {% macro lorem() %}
