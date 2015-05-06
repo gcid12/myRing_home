@@ -91,13 +91,6 @@ text-decoration: none;
 /* HOME SPECIFIC BACKGROUNDS*/
 
 
-body{  
-  background: -webkit-linear-gradient(60deg, #FFF, #eae5df);
-  background: -o-linear-gradient(60deg, #FFF, #eae5df);
-  background: -moz-linear-gradient(60deg, #FFF, #eae5df);
-  background:linear-gradient(60deg, #FFF, #eae5df);
-}
-
 
 
 /* BACKGROUNDS*/
@@ -175,6 +168,11 @@ body{
 .label-mod{background-color: #CCC;}
 .label-cap{background-color: #CCC;}
 .label-exp{background-color: #CCC;}
+
+
+
+
+
 
 /*.nav-tabs > li > a {
     border-color: red yellow orange;
@@ -329,4 +327,10 @@ body{
     width: 100%;
     height: 100%;
 }
+
+
+
+
+
+
 
