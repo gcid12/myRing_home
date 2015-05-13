@@ -92,10 +92,6 @@ def mbf_developers():
     return render_template("/myring_biz/developers.html", data=data)  
 
 
-return render_template("/sandbox/factcard.html", data=data)
-
-
-
 # REPORTS    
 
 @app.route("/travelservice", methods=["GET", "POST"])
