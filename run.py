@@ -1080,8 +1080,8 @@ def facts_004(showme):
             'fc_DescriptionsSize':'1',
             'fc_Descriptions': {
                             'd1': ['en',1 ,'For over fourteen years, we have been providing the absolute best and safest way of bringing visitors and residents alike far off the beaten path to see, feel, and experience the real New York. You will find that on our tours, you will surely see the sights the typical tourist seldom sees!. Whether you want to maximize the amount of New York that you experience, want to learn a whole lot about what is behind our city, or just want to have an utter blast, come tour with us.'], 
-                            'd2': ['sp',4,'(not spanish translation)'],  
-                            'd3': ['it',4,'(not italian translation)'],
+                            'd2': ['sp',4,'(Not spanish translation.)'],  
+                            'd3': ['it',4,'(Not italian translation.)'],
                         }
 
             }]# CLOSE
