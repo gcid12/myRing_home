@@ -98,7 +98,7 @@ def mbf_developers():
 
 # REPORTS    
 
-@app.route("/facts/travelservice", methods=["GET", "POST"])
+@app.route("/travelservice", methods=["GET", "POST"])
 #@login_required
 def travelservice():
 
