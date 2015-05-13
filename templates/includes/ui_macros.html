@@ -221,6 +221,8 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 
 
+
+
 <!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
 <!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
 <!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
@@ -230,29 +232,86 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 <!-- GENERATES THE HEADER WITH COMPANY INFO -->
  {% macro BizHead(data) %}
   <div class="row">
-      <div class="col-sm-offset-1 col-sm-7">
+      <div class="col-sm-offset-1 col-sm-12">
         <h4 class="fc-g"><span class="label label-vader">Business Facts</span></h4>
           
-        <h1 class="fc-b fw-c fs-3" id="sec0"> {{ data.Name }}</h1>
+        <h1 class="fc-b fw-c fs-3 {{ status_text(data.S_Name) }} " id="sec0">{{ data.Name }}</h1>
         
         <p class="fc-b fs-1-2"> 
-        {% if data.Address %}
-            {{ data.Address }}, 
-        {% endif %}
-        {{ data.City }} {{ data.State }} {{ data.Zip }}
-         </p>
-         
-        {% if data.Website %}<span><strong>Web:</strong> {{ data.Website }}</span>{% endif %}
-        {% if data.Phone %}<span><strong>Phone:</strong> {{ data.Phone }}</span>{% endif %}
-        {% if data.Mail %}<span><strong>Mail:</strong> {{ data.Mail }}</span>{% endif %}
+          {% if data.Address %}
+          <span class="{{ status_text(data.S_Address) }}">{{ data.Address }},</span>
+          {% else %}
+          {% endif %}
 
-        {% if data.SM1 %}<span> | <i class="fa fa-twitter"></i> {{ data.SM1 }}</span> {% endif %}
-        {% if data.SM2 %}<span> | <i class="fa fa-instagram"></i> {{ data.SM2 }}</span>{% endif %}
-        {% if data.SM3 %}<span> | <i class="fa fa-youtube"></i> {{ data.SM3 }}</span>{% endif %}
-        {% if data.SM4 %}<span> | <i class="fa fa-google-plus"></i> {{ data.SM4 }}</span>{% endif %}
+          {% if data.City %}
+          <span class="{{ status_text(data.S_City) }}">{{ data.City }},</span>
+          {% endif %}
+
+          {% if data.State %}
+          <span class="{{ status_text(data.S_State) }}">{{ data.State }},</span>
+          {% endif %}
+
+          {% if data.Zip %}
+          <span class="{{ status_text(data.S_Zip) }}">{{ data.Zip }},</span>
+          {% endif %}
+
+        </p>
+        {% if data.Website %}
+          <span class="{{ status_text(data.S_Website) }}"><strong><i class="fa fa-globe pad-x-4"></i></strong> {{ data.Website }}</span>
+        {% endif %}
+
+        {% if data.Phone %}
+          |<span class="{{ status_text(data.S_Phone) }}" ><strong><i class="fa fa-phone pad-x-4"></i></strong> {{ data.Phone }}</span>
+        {% endif %}
+
+        {% if data.Mail %}
+          |<span class="{{ status_text(data.S_Mail) }}"><strong><i class="fa fa-envelope pad-x-4"></i></strong> {{ data.Mail }}</span>
+        {% endif %}
+
+        {% if data.SM1 %} 
+        | <a class="{{ status_text(data.S_SM1) }}" href="{{ data.SM1 }}"> <i class="fa fa-twitter pad-x-4"></i> </a> 
+        {% endif %}
+
+        {% if data.SM2 %} 
+        | <a class="{{ status_text(data.S_SM2) }}" href="{{ data.SM2 }}"> <i class="fa fa-facebook pad-x-4"></i> </a>
+        {% endif %}
+
+        {% if data.SM3 %} 
+        | <a class="{{ status_text(data.S_SM3) }}" href="{{ data.SM3 }}"> <i class="fa fa-youtube pad-x-4"></i></a>
+        {% endif %}
+
+        {% if data.SM4 %} 
+        | <a class="{{ status_text(data.S_SM4) }}" href="{{ data.SM4 }}"> <i class="fa fa-instagram pad-x-4"></i></a>
+        {% endif %}
         
       </div>
   </div><!-- close row -->
+{% endmacro %}
+
+{% macro status_text(code) %}
+
+    {% if code==1 %} tst-1 
+    {% elif code==2 %} tst-2
+    {% elif code==3 %} tst-3
+    {% elif code==4 %} tst-4
+    {% elif code==5 %} tst-5
+    {% elif code==6 %} tst-6
+    {% else %} {% endif %}
+    
+      
+{% endmacro %}
+
+{% macro status_label(code) %}
+
+    {% if code==1 %} lst-1 
+    {% elif code==2 %} lst-2
+    {% elif code==3 %} lst-3
+    {% elif code==4 %} lst-4
+    {% elif code==5 %} lst-5
+    {% elif code==6 %} lst-6
+    {% else %} {% endif %}
+    }
+      
 {% endmacro %}
 
 
@@ -264,13 +323,15 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 
 
+<!-- ///////// FC  GENERIC //////////////////////// --> 
+
+
 {% macro FactCard(thisData) %}
 
   {% for x in thisData %}      
     
     <div class="row">
       <div class="col-sm-12">
-
 
         {% if x.fc_Title %}
          {{ fm_Title(x.fc_Title,'') }}
@@ -284,17 +345,20 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
           {{ fm_Specs(x.fc_Specs, '') }}           
         {% endif %}
 
-        {% if x.fc_Descriptions %}
-          {{ fm_LangVersions(x.fc_Descriptions, '') }}
-        {% endif %}
         
-        {% if x.fc_Photos %}
-            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '' ) }}
-            <br/>
-         {% endif %}
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions, '', x.fc_DescriptionsSize) }}
+        {% endif %}
+
+
+        {% if x.fc_SmartPhotos %}
+            {{ fm_SmartPhotos(x.fc_SmartPhotos, x.fc_Owner, '','100','left' ) }}
+         
+        {% endif %}
+            
          
         {% if x.fc_Tags %}
-          {{ fm_Tags(x.fc_Tags, '') }}
+          {{ fm_ammenities(x.fc_Tags, name, '') }}
           <hr/>
         {% endif %}
         
@@ -325,6 +389,9 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 {% endmacro %}
 
 
+<!-- ///////// FC  SERVICE //////////////////////// --> 
+
+
 {% macro FactCard_Services(thisData) %}
 
   {% set count = 1 %}
@@ -339,12 +406,16 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
       <div class="col-sm-12">
           <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> {{x.fc_Category}} </div>
 
-          {% if x.fc_Title %}
-         {{ fm_Title(x.fc_Title,'') }}
+        {% if x.fc_Title %}
+          <span>
+            {{ fm_Title(x.fc_Title,'','', status_text(x.S_fc_Title)) }} 
+          </span>
         {% endif %}
 
         {% if x.fc_SubTitle %}
-          {{ fm_SubTitle(x.fc_SubTitle,'') }}
+          <span>
+            {{ fm_SubTitle(x.fc_SubTitle,'','',status_text(x.S_fc_Title)) }}
+          </span>
         {% endif %}
 
       </div>
@@ -352,7 +423,9 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
       <div class="col-sm-7">
         
         {% if x.fc_Specs %}
-          {{ fm_Specs(x.fc_Specs, '') }}           
+            <span class="{{ status_text(x.S_fc_Specs) }}" >
+            {{ fm_Specs(x.fc_Specs, '') }} 
+            </span>          
         {% endif %}
 
         {% if x.fc_Descriptions %}
@@ -369,19 +442,33 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
             {% if x.fc_Schedule %}
               {{ fm_Schedule(x.fc_Schedule, 'Schedule') }}
             {% endif %}
+            <hr/>
+            {% if x.fc_Tags %}
+              {{ fm_Tags(x.fc_Tags, '') }}
+            {% endif %}
+
           </div>
-          <div class="col-sm-6">
           
-              {% if x.fc_SmallNotes %}
-                {{ fm_SmallNotes(x.fc_SmallNotes, '') }}           
-              {% endif %}
+          
+          <div class="col-sm-6">
+            {% if x.fc_SmallNotes %}
+              <span class="{{ status_text(x.S_fc_SmallNotes) }}" >
+              {{ fm_SmallNotes(x.fc_SmallNotes, '') }}    
+              </span>       
+            {% endif %}
           </div>
         </div>
  
       </div>
       <div class="col-sm-5">
-        {% if x.fc_Photos %}
-            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '' ) }}
+        {% if x.fc_SmartPhotos %}
+            {{ fm_SmartPhotos(x.fc_SmartPhotos, x.fc_Owner, '','100','left' ) }}
+        {% else %}
+          <spa class="label lst-4">No photos</spa>
+        {% endif %}
+
+         {% if x.fc_Photos %}
+            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '','100','left' ) }}
          {% endif %}
       </div>
 
@@ -397,6 +484,7 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 {% endmacro %}
 
 
+<!-- ///////// FC  ROOMS //////////////////////// --> 
 
 
 {% macro FactCard_Rooms(thisData) %}
@@ -427,7 +515,7 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
         {% endif %}
 
         {% if x.fc_Descriptions %}
-          {{ fm_LangVersions(x.fc_Descriptions, '') }}
+          {{ fm_LangVersions(x.fc_Descriptions,'') }}
         {% endif %}
 
         <div class="row">
@@ -446,8 +534,8 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
  
       </div>
       <div class="col-sm-5">
-        {% if x.fc_Photos %}
-            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '' ) }}
+         {% if x.fc_Photos %}
+            {{ fm_SmartPhotos(x.fc_SmartPhotos, x.fc_Owner, '','100','left' ) }}
          {% endif %}
       </div>
 
@@ -473,30 +561,28 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 
 
-{% macro fm_Title(text,icon) %}
+{% macro fm_Title(text,icon,size,color) %}
 
-  <h3 class="fw-c lh-1">{{text}}</h3>
+  <h3 class="fw-c lh-1 {{color}}">{{text}}</h3>
 {% endmacro %}
 
-{% macro fm_SubTitle(text,icon) %}
+{% macro fm_SubTitle(text,icon,size,color) %}
   <!-- <span class="pull-right"><i class="fa fa-question-circle fc-l"></i></span> -->
-  <h4 class="fw-c fc-l fs-1-2">{{text}}</h4>
+  <h4 class="fw-c fc-l fs-1-2 {{color}}">{{text}}</h4>
   <br/>
 {% endmacro %}
 
-{% macro fm_LangVersions(langData, name) %}
-  <div class="row">
 
+<!-- langData behaves like fm.list -->
+{% macro fm_LangVersions(langData, name, fsize) %}
+
+  <div class="row">
     <div class=" col-sm-12">
-      
       {% if name %}<p>{{name}}</p>{% endif %}
       <div role="tabpanel" id="{{ tabid }}">
         <!-- Nav tabs -->
-
         <!-- SE ARMAN LOS TABS CON LAS INICIALES -->
-
         <ul class="nav nav-tabs" role="tablist">
-
 
           {% set n1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
           {% set n2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
@@ -504,38 +590,46 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
           {% set setid = n1 * n2 * n3  %}
 
-
-          {% set count = 1 %}
-
+          {% set cuenta = 1 %}
           {% for key in langData|sort %}
-            
-          <li role="presentation" class="{% if count==1 %} active {% endif %} {% set count = count + 1 %} ">
-            <a href="#{{ setid }}_{{count}}" role="tab" data-toggle="tab">
-              <span class="label label-success "> {{key}} </span>
-            </a>
-          </li>
+            {% for z in key[1] %}
+              
+                <li role="presentation" class="{% if cuenta==1 %} active {% endif %}">
+                  <a href="#{{ setid }}_{{cuenta}}" role="tab" data-toggle="tab">
+                    <span class="fc-b label {{ status_label(langData[key][1]) }} "> 
+                    {{ langData[key][0]|upper }} </span>
+                  </a>
+                </li>
 
-          {% endfor %}
-          
+              
+            {% endfor %}
+            {% set cuenta = cuenta + 1 %}
+          {%endfor%}  
+
+
         </ul>
 
         <!-- SE ARMAN LOS CONTENIDOS -->
         <div class="tab-content fs-0-9">
           
-          {% set count2 = 1 %}
+          {% set cuenta = 1 %}
           {% for key in langData|sort %}
             
-            <div role="tabpanel" class="tab-pane spa10 pl-30 {% if count2==1 %} active {% endif %} {% set count2 = count2 + 1 %}" id="{{ setid }}_{{count2}}">
-                {{langData[key]}}
+            <div role="tabpanel" class="tab-pane spa10 pl-30 {% if cuenta==1 %} active {% endif %} " id="{{ setid }}_{{cuenta}}">
+                <span class="text-gray {% if fsize =='2' %} fs-2 {% endif %} {{ status_text(langData[key][1]) }}">  
+                  {{ langData[key][2]}}
+                </span>
+                
             </div>
+            {% set cuenta = cuenta + 1 %}
           {%endfor%} 
   
         </div>
-
       </div> <!-- close tab panel --> 
     </div>
-
   </div>
+
+
 {% endmacro %}
 
 
@@ -545,21 +639,91 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
     {% for key in specsData|sort %}
       {% for y in key[1] %}
         
-          <span class="fw-c"> {{ specsData[key][0]}}: </span>
-          <span class=""> {{ specsData[key][1]}} | </span>
+          | <span class="fw-c"> {{ specsData[key][0]}}: </span>
+          <span class=""> {{ specsData[key][1]}}  </span>
         
       {% endfor %}
     {%endfor%} 
     <hr/>            
 {% endmacro %}
 
-{% macro fm_Photos(photoData, owner, name)%}
+
+
+{% macro fm_List(ListData) %}
+  <div class="col-sm-12">
+      
+      {% for key in ListData %}
+        {% for z in key[1] %}
+          
+
+            <span class="fw-c"> {{ ListData[key][0]}}: </span>
+            <span class=""> {{ ListData[key][1]}} </span>
+            <br/>
+          
+        {% endfor %}
+      {%endfor%}   
+      <hr/>       
+              
+  </div>
+{% endmacro %}
+
+{% macro fm_SmartPhotos(photoData, owner, name,size,float)%}
+  <div class="row">
+
+    <div class="col-sm-12">
+
+
+
+      {% if name %}<p>{{name}}</p>{% endif %}
+
+      {% for key in photoData %}
+        {% for z in key[1] %}
+          
+            <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
+              <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{ photoData[key][1]}}_o.jpg" class="text-left" target="_blank">
+                <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{ photoData[key][1]}}_t150.jpg" class="img-responsive">
+              </a>
+              {% if mode =='showstatus' %}
+              
+                <div style="margin-top:-25px; margin-bottom:10px;">
+                  {{ labelPhoto(photoData[key][0], photoData[key][2]) }}
+                </div>
+              
+              {% endif %}
+            </div>
+          
+        {% endfor %}
+      {%endfor%} 
+
+
+      
+      
+    </div>
+    <div class="col-sm-12">
+
+    </div>
+  </div>
+{% endmacro %}
+
+
+{% macro fm_Photos(photoData, owner, name,size,float)%}
   <div class="row">
 
     <div class="col-sm-12">
       {% if name %}<p>{{name}}</p>{% endif %}
-      {% for y in photoData %}
-                    {{  PhotoMosaic(owner, y ,100,'left') }}
+
+      {% for item in photoData %}
+
+          <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
+            <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{item}}_o.jpg" class="text-left" target="_blank">
+              <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{item}}_t150.jpg" class="img-responsive">
+            </a>
+            <div style="margin-top:-25px; margin-bottom:10px;">
+              {{ labelRes(1, 'ok-res') }}
+            </div>
+            
+          </div>
+                    
       {% endfor %} 
       
     </div>
@@ -580,13 +744,34 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
         </td>
         <td>
             {% for item in y.list %}
-            {{ label_ammenity(1, item) }} 
+            {{ labelRes(4, item , y.status) }} 
             {% endfor %}
         </td>
       </tr>
     {% endfor %}
   </table>
 {% endmacro %}
+
+{% macro fm_ammenities(tagsData, name, color) %}
+
+  {% if name %}<p>{{name}}</p>{% endif %}
+  <table class="table table-condensed table-striped">
+    {% for y in tagsData %} 
+      <tr>
+        <td align="right">
+          <div class="fw-c fs-0-8">{{ y.name }}</div>
+        </td>
+        <td>
+            {% for item in y.list %}
+            {{ labelAmmenity(1, item, y.color) }} 
+            {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endmacro %}
+
+
 
 {% macro fm_Links(linksData, name)%}
 
@@ -616,17 +801,19 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
           {% for hours in key[1] %}
             <td>
-              <span class="label label-info "> {{ scheduleData[key][0]}} </span>
+              <span class="label label-info {{ status_label(scheduleData[key][3]) }}"> {{ scheduleData[key][0]}} </span>
             </td>
             <td>
+                <span class="{{ status_text(scheduleData[key][3]) }}"> 
                  &nbsp; {{ scheduleData[key][1]}} |  {{ scheduleData[key][2]}}
+                </span>
             </td>
           {% endfor %}
 
         </tr>
         {%endfor%} 
       </table> 
-      <hr/>
+     
     </div>
   </div>
 {% endmacro %}
@@ -677,12 +864,12 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 
         <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
-          <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{item}}_o.jpg" class="text-left" data-gallery>
+          <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{item}}_o.jpg" class="text-left" target="_blank">
                <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{item}}_t150.jpg" class="img-responsive">
 
           </a>
           <div style="margin-top:-25px; margin-bottom:10px;">
-            {{ labelres(1, 'ok-res') }}
+            {{ labelRes(1, 'ok-res') }}
           </div>
           
         </div>
@@ -703,116 +890,142 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 
 
-{% macro labelres(q, text) %}
-  <spa class="label_report
+{% macro labelRes(q, text, s) %}
+  <span class="label label_report
     {% if q==1 %} label-success
     {% elif q==2 %} label-warning
     {% elif q==3 %} label-danger
     {% else %} label-default
-    {% endif %}
-    ">{{ text }}</spa>
+    {% endif %} 
+
+    {{ status_label(s) }}
+    inline-block
+    " >{{ text }}</span>
 {% endmacro %}
 
 
-{% macro label_ammenity(q, id) %}
+{% macro labelPhoto(q, text) %}
 
-  <spa class="label_report
+{% if q==1 %}
+  <spa class="label lst-1">hi res</spa>
+{% elif q==2 %}
+  <spa class="label lst-2">ok res</spa>
+{% elif q==3 %}
+  <spa class="label lst-3">review</spa>
+{% elif q==4 %}
+  <spa class="label lst-4">low res</spa>
+{% elif q==5 %}
+  <spa class="label lst-5">outdated</spa>
+{% elif q==6 %}
+  <spa class="label lst-6">No Photos</spa>
+{% endif %}
+
+{% endmacro %}
+
+
+
+{% macro labelAmmenity(q, id, status) %}
+
+  <span class="label_report
     {% if q==1 %} label-success
     {% elif q==2 %} label-warning
     {% elif q==3 %} label-danger
     {% else %} label-default
-    {% endif %}
+    {% endif %} 
+    
+    {{ status_label(status) }}
+
+    inline-block
     ">
   
-    {% if id=='a_001' %}  Business Center
-    {% elif id=='a_002' %} Meeting Rooms
-    {% elif id=='a_003' %} Convention Space
+    {% if id=='a_001' %}Business Center
+    {% elif id=='a_002' %}Meeting Rooms
+    {% elif id=='a_003' %}Convention Space
 
-    {% elif id=='b_001' %} Hair Salon
-    {% elif id=='b_002' %} Nails Salon
-    {% elif id=='b_003' %} Barber Shop
+    {% elif id=='b_001' %}Hair Salon
+    {% elif id=='b_002' %}Nails Salon
+    {% elif id=='b_003' %}Barber Shop
 
-    {% elif id=='c_001' %} 24 hrs Concierge  
-    {% elif id=='c_002' %} Elevators 
-    {% elif id=='c_003' %} Luggage Storage 
-    {% elif id=='c_004' %} Multilingual Staff 
-    {% elif id=='c_005' %} Laundry 
-    {% elif id=='c_006' %} Dry Cleaning 
+    {% elif id=='c_001' %}24 hrs Concierge  
+    {% elif id=='c_002' %}Elevators 
+    {% elif id=='c_003' %}Luggage Storage 
+    {% elif id=='c_004' %}Multilingual Staff 
+    {% elif id=='c_005' %}Laundry 
+    {% elif id=='c_006' %}Dry Cleaning 
 
-    {% elif id=='d_001' %} Menu Restaurant 
-    {% elif id=='d_002' %} Bar/Lounge 
-    {% elif id=='d_003' %} Wine Bar 
-    {% elif id=='d_004' %} Buffet 
-    {% elif id=='d_005' %} Gluten Free Options
-    {% elif id=='d_006' %} Vegan Options
-    {% elif id=='d_007' %} Raw Vegan Options 
-    {% elif id=='d_008' %} Snacl Bar / Deli 
+    {% elif id=='d_001' %}Menu Restaurant 
+    {% elif id=='d_002' %}Bar/Lounge 
+    {% elif id=='d_003' %}Wine Bar 
+    {% elif id=='d_004' %}Buffet 
+    {% elif id=='d_005' %}Gluten Free Options
+    {% elif id=='d_006' %}Vegan Options
+    {% elif id=='d_007' %}Raw Vegan Options 
+    {% elif id=='d_008' %}Snacl Bar / Deli 
 
-    {% elif id=='e_001' %} Weddings 
-    {% elif id=='e_002' %} Social Events  
-    {% elif id=='e_003' %} Event Planning 
+    {% elif id=='e_001' %}Weddings 
+    {% elif id=='e_002' %}Social Events  
+    {% elif id=='e_003' %}Event Planning 
 
-    {% elif id=='f_001' %} Cardio 
-    {% elif id=='f_002' %} Weights 
-    {% elif id=='f_003' %} Classes 
-    {% elif id=='f_004' %} Spinning 
-    {% elif id=='f_005' %} Personal Trainer 
+    {% elif id=='f_001' %}Cardio 
+    {% elif id=='f_002' %}Weights 
+    {% elif id=='f_003' %}Classes 
+    {% elif id=='f_004' %}Spinning 
+    {% elif id=='f_005' %}Personal Trainer 
 
-    {% elif id=='g_001' %} Kids Club 
-    {% elif id=='g_002' %} Kids Activities
-    {% elif id=='g_003' %} In Room Childcare
-    {% elif id=='g_004' %} Cribs
+    {% elif id=='g_001' %}Kids Club 
+    {% elif id=='g_002' %}Kids Activities
+    {% elif id=='g_003' %}In Room Childcare
+    {% elif id=='g_004' %}Cribs
 
-    {% elif id=='h_001' %} Golf Course
-    {% elif id=='h_002' %} Casino
-    {% elif id=='h_003' %} Pool
-    {% elif id=='h_004' %} Live Show
+    {% elif id=='h_001' %}Golf Course
+    {% elif id=='h_002' %}Casino
+    {% elif id=='h_003' %}Pool
+    {% elif id=='h_004' %}Live Show
 
-    {% elif id=='i_001' %} In House Doctor
-    {% elif id=='i_002' %} In House Nurse
-    {% elif id=='i_003' %} Ambulance accesible
-    {% elif id=='i_004' %} Fibrillator
-    {% elif id=='i_005' %} First Aid Kit
-    {% elif id=='i_006' %} X Ray
+    {% elif id=='i_001' %}In House Doctor
+    {% elif id=='i_002' %}In House Nurse
+    {% elif id=='i_003' %}Ambulance accesible
+    {% elif id=='i_004' %}Fibrillator
+    {% elif id=='i_005' %}First Aid Kit
+    {% elif id=='i_006' %}X Ray
 
-    {% elif id=='j_001' %} Pets Allowed
-    {% elif id=='j_002' %} Pet Menu
-    {% elif id=='j_003' %} Dog Walker
-    {% elif id=='j_004' %} Dog Care
+    {% elif id=='j_001' %}Pets Allowed
+    {% elif id=='j_002' %}Pet Menu
+    {% elif id=='j_003' %}Dog Walker
+    {% elif id=='j_004' %}Dog Care
 
-    {% elif id=='k_001' %} Temperature controlled
-    {% elif id=='k_002' %} Towels
-    {% elif id=='k_003' %} Bar Service
-    {% elif id=='k_004' %} Family Friendly
-    {% elif id=='k_005' %} Adult Only
+    {% elif id=='k_001' %}Temperature controlled
+    {% elif id=='k_002' %}Towels
+    {% elif id=='k_003' %}Bar Service
+    {% elif id=='k_004' %}Family Friendly
+    {% elif id=='k_005' %}Adult Only
 
-    {% elif id=='l_001' %} Gift Shop
-    {% elif id=='l_002' %} Pharmacy
-    {% elif id=='l_003' %} Newstand
-    {% elif id=='l_004' %} Books
-    {% elif id=='l_005' %} Sport
-    {% elif id=='l_006' %} Tobacco
+    {% elif id=='l_001' %}Gift Shop
+    {% elif id=='l_002' %}Pharmacy
+    {% elif id=='l_003' %}Newstand
+    {% elif id=='l_004' %}Books
+    {% elif id=='l_005' %}Sport
+    {% elif id=='l_006' %}Tobacco
 
-    {% elif id=='m_001' %} Interior smoking Area
-    {% elif id=='m_002' %} Exterior smoking Area
-    {% elif id=='m_003' %} Smoking Rooms Available
+    {% elif id=='m_001' %}Interior smoking Area
+    {% elif id=='m_002' %}Exterior smoking Area
+    {% elif id=='m_003' %}Smoking Rooms Available
 
-    {% elif id=='n_001' %} Airport - Hotel
-    {% elif id=='n_002' %} Hotel - Airport
-    {% elif id=='n_003' %} Car Rental
-    {% elif id=='n_004' %} Parking
-    {% elif id=='n_005' %} Valet Parking
+    {% elif id=='n_001' %}Airport - Hotel
+    {% elif id=='n_002' %}Hotel - Airport
+    {% elif id=='n_003' %}Car Rental
+    {% elif id=='n_004' %}Parking
+    {% elif id=='n_005' %}Valet Parking
 
+    {% else %}
+      {{ id }}
 
     {% endif %}
 
-  </spa>
+  </span>
   
 
 {% endmacro %}
-
-
-
 
 
 
