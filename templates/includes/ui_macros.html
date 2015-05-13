@@ -671,6 +671,9 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
   <div class="row">
 
     <div class="col-sm-12">
+
+
+
       {% if name %}<p>{{name}}</p>{% endif %}
 
       {% for key in photoData %}
@@ -680,10 +683,12 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
               <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{ photoData[key][1]}}_o.jpg" class="text-left" target="_blank">
                 <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{ photoData[key][1]}}_t150.jpg" class="img-responsive">
               </a>
-              {% if mask =='mbf' %} 
+              {% if mode =='showstatus' %}
+              
                 <div style="margin-top:-25px; margin-bottom:10px;">
                   {{ labelPhoto(photoData[key][0], photoData[key][2]) }}
                 </div>
+              
               {% endif %}
             </div>
           

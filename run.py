@@ -1050,13 +1050,14 @@ def facts_002():
 
 
 
-@app.route("/facts/bike", methods=["GET", "POST"])
+@app.route('/facts/bikethebigapple/<showme>')
 #@login_required
-def facts_004():
+def facts_004(showme):
 
     data = {}
     data['mask']= "mbf"
-    data['mode']= "edit"
+    data['mode']= showme
+    data['slug']= "bikethebigapple"
 
     # HOTEL INFO
     
