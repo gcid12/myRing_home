@@ -32,6 +32,8 @@ p{ font-family: Helvetica,Arial,sans-serif; font-weight: 300;}
 
 
 
+
+
 /* GLOBAL */
 iframe{ border:0; margin-top:0 !important;}
 p, ul{font-weight: 500;}
@@ -213,6 +215,7 @@ filter: grayscale(100%);
 .pt-10{padding-top:10px;}
 .pt-20{padding-top:20px;}
 .pl-5{padding-left:5px;}
+.pl-10{padding-left:10px;}
 .pl-20{padding-left:20px;}
 .pl-30{padding-left:30px;}
 .pl-40{padding-left:40px;}
@@ -276,6 +279,37 @@ filter: grayscale(100%);
 
 /*BACKGROUNDS*/
 
+.bg-home2{  
+  background: -webkit-linear-gradient(90deg, #00bfe9, #92dea3);
+  background: -o-linear-gradient(90deg, #00bfe9, #92dea3);
+  background: -moz-linear-gradient(90deg, #00bfe9, #92dea3);
+  background:linear-gradient(90deg, #00bfe9, #92dea3);
+}
+
+  .bg-hr1{  
+  background: url(../images/graphics/ho_hr1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:210px;
+    margin-top:-90px;
+    margin-bottom:-90px;
+}
+
+  .bg-hr2{  
+  background: url(../images/graphics/ho_hr2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:170px;
+    margin-top:-90px;
+    margin-bottom:-90px;
+}
+
+
+
+
+
   .bg-ring01{  
   background: -webkit-linear-gradient(60deg, #2891cc, #184f89);
   background: -o-linear-gradient(60deg, #2891cc, #184f89);
@@ -300,17 +334,33 @@ filter: grayscale(100%);
 }
 
 
-/*  .bg-pedro{  
-  background: url(/static/images/mbf/pedro02.gif), -webkit-linear-gradient(60deg, #8fcb1e, #8fcb1e);
-  background: url(/static/images/mbf/pedro02.gif), -o-linear-gradient(60deg, #8fcb1e, #8fcb1e);
-  background: url(/static/images/mbf/pedro02.gif), -moz-linear-gradient(60deg, #8fcb1e, #8fcb1e);
-  background: url(/static/images/mbf/pedro02.gif), linear-gradient(60deg, #8fcb1e, #8fcb1e);
-    
-    background-position: 0px 0px; 
+  .bg-pedro{  
+  background: url(/static/images/graphics/mbf/pedro03.png);
+    background-color:#ffe045;
+    background-position: 0px 0px;
+    background-size:40%; 
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-}*/
+}
+@media (max-width: 768px) {
+      .bg-pedro{  
+      background: url(none);
+      background-color:#ffe045;
+    }
+  }
+
+
+  .bg-profile{  
+  background: url(/static/images/graphics/mbf/pedro03.png);
+    background-color:#ffe045;
+    background-position: 100% 100%;
+    background-size:40%; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
 
 
 

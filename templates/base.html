@@ -26,21 +26,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img style="float:right; width:250px;" src="/static/images/logos/myring_businessfacts.png" class="logomenu" /></a>
-          <div class="spa30 visible-xs">&nbsp;</div>
+
+          
+            <a class="navbar-brand" href="/"><img style="float:right; width:100px;" src="/static/images/logos/myring03.png" class="logomenu" /></a>
+            <div class="spa30 visible-xs">&nbsp;</div>
+
+         
 
         </div>
-        <div class="navbar-collapse collapse text-navbar spa20">
+        <div class="navbar-collapse collapse text-navbar spa15">
 
-            
-
-            <div class="pull-right hidden-xs spa15"> 
+          <div class="pull-right hidden-xs"> 
               <a href="https://avispa.myring.io/_login" class="btn btn-default btn-sm">LOG IN</a> 
               <!-- <a href="https://avispa.myring.io/_widget/mbf_signup" class="btn btn-info btn-sm">SIGN UP</a> -->
-            </div>
-
-
-
+          </div>
           <ul class="nav navbar-nav navbar-right visible-xs">
             <li><a href="https://avispa.myring.io/_login" class="whitelink fc-b">LOG IN</a></li>
             <!-- <li><a href="https://avispa.myring.io/_widget/mbf_signup" class="whitelink fc-b">SIGN UP</a></li> -->
@@ -59,26 +58,29 @@
                 <div class="container-fluid ">
 
                   <div class="row">
-                    <div class="col-sm-12 alpha omega">   
+                    <div class="col-sm-12 alpha omega text-s2">   
+
+                      {% if data.mask!='mbf' %}
 
                       <div class="spa10 pull-right" style="padding-right:20px;">
-                        <a class="clearlink hidden-xs fs-1 fc-a" href="/business_facts">Business Facts</a> 
-                        <span class="pad-x-10">|</span>
-                        <a class="clearlink hidden-xs fs-1 fc-a" href="/business_profile">Profile</a> 
-                        <span class="pad-x-10">|</span>
-                        <a class="clearlink hidden-xs fs-1 fc-a" href="/faq">FAQ</a> 
-                        <span class="pad-x-10">|</span>
-                        <!-- <a class="clearlink hidden-xs fs-1 fc-a" href="/pricing">Pricing</a> 
-                        <span class="pad-x-10">|</span> -->
-                        
-                        <a class="clearlink hidden-xs fs-1 fc-a " href="/experts">Experts</a> 
-                        <span class="pad-x-10">|</span>
-
-                        <a class="clearlink hidden-xs fs-1 fc-a" href="/developers">Developers</a>
-                        
-                        
-
+                        <a class="clearlink hidden-xs fs-0-9 fc-a" href="/business_facts">Go to Rings for Business <i class="fa fa-arrow-right"></i></a> 
+                        <span class="pad-x-10">
                       </div>
+
+                      {% else %}
+                      <div class="spa10 pull-right" style="padding-right:20px;">
+                        <a class="clearlink hidden-xs fs-1 fc-a" href="/business_facts">Rings for Business</a> 
+                        <span class="pad-x-10">|</span>
+                        <a class="clearlink hidden-xs fs-0-9 fc-a" href="/business_profile">Profile</a> 
+                        <span class="pad-x-10">|</span>
+                        <a class="clearlink hidden-xs fs-0-9 fc-a" href="/faq">FAQ</a> 
+                        <span class="pad-x-10">|</span>
+                        <a class="clearlink hidden-xs fs-0-9 fc-a " href="/experts">Experts</a> 
+                        <span class="pad-x-10">|</span>
+
+                        <a class="clearlink hidden-xs fs-0-9 fc-a" href="/developers">Developers</a>
+                      </div>
+                      {% endif %}
                       
 
                     </div> <!-- close 9 -->
@@ -87,7 +89,7 @@
               </section> 
     </nav> 
 
-    <div class="spa50 hidden-xs"></div>
+    <div class="spa40 hidden-xs"></div>
     <!-- NAV BAR -->
 
 

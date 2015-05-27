@@ -231,8 +231,17 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 <!-- GENERATES THE HEADER WITH COMPANY INFO -->
  {% macro BizHead(data) %}
+
   <div class="row">
-      <div class="col-sm-offset-1 col-sm-12">
+      <div class="col-sm-offset-1 col-sm-10">
+
+      <div class="alert  alert-info alert-dismissible alert-top bg-j" role="alert">
+                        <span class="fs-1-2"><i class="fa fa-eye pad-x-10"></i>Viewing example: <strong> Business Profile</strong> </span>
+
+                        &nbsp; &nbsp; &nbsp;<a href="/business_profile">[Go Back]</a>
+           </div>
+
+
         <h4 class="fc-g"><span class="label label-vader">Business Facts</span></h4>
           
         <h1 class="fc-b fw-c fs-3 {{ status_text(data.S_Name) }} " id="sec0">{{ data.Name }}</h1>
@@ -628,8 +637,6 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
       </div> <!-- close tab panel --> 
     </div>
   </div>
-
-
 {% endmacro %}
 
 
@@ -785,8 +792,7 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
         </a>
 
       {% endfor %}
-    {%endfor%} 
-            
+    {%endfor%}         
 {% endmacro %}
 
 {% macro fm_Schedule(scheduleData, name) %}
@@ -877,15 +883,14 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 {% endmacro %}
 
 
-
 {% macro lorem() %}
-<p>
+  <p>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius risus sed purus egestas dictum. Integer enim lectus, elementum faucibus odio nec, scelerisque scelerisque sapien. Duis facilisis odio arcu, sed euismod dui accumsan in. Pellentesque a leo in massa rhoncus pretium. Suspendisse a dictum sem, nec malesuada enim. Mauris non nisl quis nulla laoreet lobortis quis nec justo. Mauris dictum mauris erat. Pellentesque vel hendrerit urna. Aliquam sollicitudin non ex quis accumsan. Suspendisse tincidunt quam urna, ut scelerisque lorem malesuada sed. 
-</p>
+  </p>
 {% endmacro %}
 
 {% macro flag01(text) %}
-  <span style="background-color:yellow;">{{ text }}</span>
+   <span style="background-color:yellow;">{{ text }}</span>
 {% endmacro %}
 
 
@@ -906,19 +911,19 @@ data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
 
 {% macro labelPhoto(q, text) %}
 
-{% if q==1 %}
-  <spa class="label lst-1">hi res</spa>
-{% elif q==2 %}
-  <spa class="label lst-2">ok res</spa>
-{% elif q==3 %}
-  <spa class="label lst-3">review</spa>
-{% elif q==4 %}
-  <spa class="label lst-4">low res</spa>
-{% elif q==5 %}
-  <spa class="label lst-5">outdated</spa>
-{% elif q==6 %}
-  <spa class="label lst-6">No Photos</spa>
-{% endif %}
+  {% if q==1 %}
+    <spa class="label lst-1">hi res</spa>
+  {% elif q==2 %}
+    <spa class="label lst-2">ok res</spa>
+  {% elif q==3 %}
+    <spa class="label lst-3">review</spa>
+  {% elif q==4 %}
+    <spa class="label lst-4">low res</spa>
+  {% elif q==5 %}
+    <spa class="label lst-5">outdated</spa>
+  {% elif q==6 %}
+    <spa class="label lst-6">No Photos</spa>
+  {% endif %}
 
 {% endmacro %}
 

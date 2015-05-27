@@ -132,7 +132,16 @@
       <article id="product">
         <div class="row box box-widget p-10 bg-08">
           <div class="col-sm-12">
-            <h3 class="fc-g"><span class="fc-b">Services</span> </h3>
+            <h3 class="fc-g"><span class="fc-b">
+            {% if data.ServiceName %}
+
+              {{ data.ServiceName }}
+
+            {% else %}
+              Services
+            {% endif %}
+
+            </span> </h3>
           </div>
         </div>
         
@@ -217,6 +226,8 @@
                 <li><a href="#info3">Ammenities</a></li>
               </ul>
             </li>
+
+          {% if data.Rooms %}
             <li><a href="#rooms">Rooms</a>
               <ul class="nav">   
 
@@ -227,13 +238,24 @@
                   {% set count = count + 1 %}
                 {% endfor %}
 
-        <!--                 <li><a href="#room1">Single</a></li>
+                <!-- <li><a href="#room1">Single</a></li>
                 <li><a href="#room2">Double</a></li>
                 <li><a href="#room3">Triple</a></li>
                 <li><a href="#room4">Quad</a></li>    -->     
               </ul>
             </li>
-            <li><a href="#product">Services</a>
+          {% endif %}
+            <li>
+              <a href="#product">
+
+                    {% if data.ServiceName %}
+                      {{ data.ServiceName }}
+                    {% else %}
+                      Services
+                    {% endif %}
+
+
+              </a>
               <ul class="nav">   
 
                 {% set count = 1 %}
