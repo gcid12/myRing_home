@@ -30,7 +30,8 @@ p{ font-family: Helvetica,Arial,sans-serif; font-weight: 300;}
 .text-s1{ font-family: sans-serif; font-weight: 300;}
 .text-s2{ font-family: sans-serif; font-weight: 300;}
 
-
+.ts-1{ font-family: sans-serif; font-weight: 300;}
+.ts-2{ font-family: sans-serif; font-weight: 300;}
 
 
 
@@ -338,16 +339,30 @@ filter: grayscale(100%);
   background: url(/static/images/graphics/mbf/pedro03.png);
     background-color:#ffe045;
     background-position: 0px 0px;
-    background-size:40%; 
+    background-size:30%; 
     background-repeat: no-repeat;
     background-attachment: fixed;
-
 }
+  .bg-maria{  
+  background: url(/static/images/graphics/mbf/maria01.png);
+    background-color:#8fcb1e;
+    background-position: 0px 0px;
+    background-size:30%; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
 @media (max-width: 768px) {
       .bg-pedro{  
       background: url(none);
       background-color:#ffe045;
     }
+    .bg-maria{  
+      background: url(none);
+      background-color:#8fcb1e;
+    }
+
   }
 
 
