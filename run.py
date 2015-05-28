@@ -11,11 +11,11 @@ app.config.from_object('config')
 @app.route('/')
 def hello():
     data = {}
-    data['mask']= ""
+    data['mask']= "mbf"
     data['title']= "Data Communities"
 
 
-    return render_template('landing.html', data=data) 
+    return render_template('/myring_biz/start.html', data=data) 
 
 
 
@@ -27,6 +27,16 @@ def mbf_start():
     data['mask']= "mbf"
     data['title']= "Business Facts about your company"
     return render_template("/myring_biz/start.html", data=data)
+
+
+@app.route("/why", methods=["GET", "POST"])
+#@login_required
+def mbf_why():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Why Now"
+    return render_template("/myring_biz/why.html", data=data)
+
 
 
 
