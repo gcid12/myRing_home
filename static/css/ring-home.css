@@ -1,11 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 @import url(http://fonts.googleapis.com/css?family=Raleway:300,400,700);
 
 /*TEXT */
 
-h1{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
-h2{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
-h3{ font-family: 'Raleway', sans-serif; font-weight: 300; line-height:0.7em; text-transform: none;}
+h1{ font-family: 'Roboto Slab', sans-serif; font-weight: 300; text-transform: none;}
+h2{ font-family: 'Roboto Slab', sans-serif; font-weight: 300; text-transform: none;}
+h3{ font-family: 'Roboto Slab', sans-serif; font-weight: 300; line-height:0.7em; text-transform: none;}
 h4{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 h5{ font-family: 'Raleway', sans-serif; font-weight: 300; text-transform: none;}
 
@@ -16,8 +16,9 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 
 
 .r-font{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
-.text-s1{ font-family: 'Raleway', sans-serif; font-weight: 300;}
-.text-s2{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
+.text-s1{ font-family: 'Raleway';}
+.text-s2{ font-family: 'Roboto Slab';}
+
 
 
 .text-shadow1{text-shadow: -1px 0px 2px #444;}
@@ -91,13 +92,6 @@ text-decoration: none;
 /* HOME SPECIFIC BACKGROUNDS*/
 
 
-body{  
-  background: -webkit-linear-gradient(60deg, #FFF, #eae5df);
-  background: -o-linear-gradient(60deg, #FFF, #eae5df);
-  background: -moz-linear-gradient(60deg, #FFF, #eae5df);
-  background:linear-gradient(60deg, #FFF, #eae5df);
-}
-
 
 
 /* BACKGROUNDS*/
@@ -109,7 +103,7 @@ body{
   background: url(/static/images/bg/handphone.jpg); 
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-color: #ffe045; 
+    background-color:#f7931e;
 }
 
 
@@ -175,6 +169,11 @@ body{
 .label-mod{background-color: #CCC;}
 .label-cap{background-color: #CCC;}
 .label-exp{background-color: #CCC;}
+
+
+
+
+
 
 /*.nav-tabs > li > a {
     border-color: red yellow orange;
@@ -329,4 +328,10 @@ body{
     width: 100%;
     height: 100%;
 }
+
+
+
+
+
+
 

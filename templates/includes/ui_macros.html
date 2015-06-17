@@ -34,6 +34,8 @@
 {% endmacro %}
 
 
+data['dict1'] = {'en': 'Hello', 'sp': 'Hola', 'fr': 'Salut’}
+
 
 
 {% macro soluredux(x1,x2,x3,x4,x5,x6,x7,x8,bg) %}
@@ -216,668 +218,816 @@
     </section> 
 {% endmacro %}
 
-{% macro report_room() %}
 
-          <div class="box box-clear p-50">
+
+
+
+
+<!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
+<!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
+<!-- ::::::BUSINESS FACTS REPORT:::::::::::::::::: --> 
+
+
+
+<!-- GENERATES THE HEADER WITH COMPANY INFO -->
+ {% macro BizHead(data) %}
+
+  <div class="row">
+      <div class="col-sm-offset-1 col-sm-10">
+
+      
+
+
+        <h4 class="fc-g"><span class="label label-vader">Business Facts</span></h4>
           
-          
-          <h4 class="fw-c">Single Room</h4>
-          
+
+        <h1 class="text-s2 fc-b fw-c fs-3 {{ status_text(data.S_Name) }} " id="sec0">{{ data.Name }}</h1>
+        
+        <p class="fc-b fs-1-2"> 
+          {% if data.Address %}
+          <span class="{{ status_text(data.S_Address) }}">{{ data.Address }},</span>
+          {% else %}
+          {% endif %}
+
+          {% if data.City %}
+          <span class="{{ status_text(data.S_City) }}">{{ data.City }},</span>
+          {% endif %}
+
+          {% if data.State %}
+          <span class="{{ status_text(data.S_State) }}">{{ data.State }},</span>
+          {% endif %}
+
+          {% if data.Zip %}
+          <span class="{{ status_text(data.S_Zip) }}">{{ data.Zip }},</span>
+          {% endif %}
+
+        </p>
+        {% if data.Website %}
+          <span class="{{ status_text(data.S_Website) }}"><strong><i class="fa fa-globe pad-x-4"></i></strong> {{ data.Website }}</span>
+        {% endif %}
+
+        {% if data.Phone %}
+          |<span class="{{ status_text(data.S_Phone) }}" ><strong><i class="fa fa-phone pad-x-4"></i></strong> {{ data.Phone }}</span>
+        {% endif %}
+
+        {% if data.Mail %}
+          |<span class="{{ status_text(data.S_Mail) }}"><strong><i class="fa fa-envelope pad-x-4"></i></strong> {{ data.Mail }}</span>
+        {% endif %}
+
+        {% if data.SM1 %} 
+        | <a class="{{ status_text(data.S_SM1) }}" href="{{ data.SM1 }}"> <i class="fa fa-twitter pad-x-4"></i> </a> 
+        {% endif %}
+
+        {% if data.SM2 %} 
+        | <a class="{{ status_text(data.S_SM2) }}" href="{{ data.SM2 }}"> <i class="fa fa-facebook pad-x-4"></i> </a>
+        {% endif %}
+
+        {% if data.SM3 %} 
+        | <a class="{{ status_text(data.S_SM3) }}" href="{{ data.SM3 }}"> <i class="fa fa-youtube pad-x-4"></i></a>
+        {% endif %}
+
+        {% if data.SM4 %} 
+        | <a class="{{ status_text(data.S_SM4) }}" href="{{ data.SM4 }}"> <i class="fa fa-instagram pad-x-4"></i></a>
+        {% endif %}
+        
+      </div>
+  </div><!-- close row -->
+{% endmacro %}
+
+{% macro status_text(code) %}
+
+    {% if code==1 %} tst-1 
+    {% elif code==2 %} tst-2
+    {% elif code==3 %} tst-3
+    {% elif code==4 %} tst-4
+    {% elif code==5 %} tst-5
+    {% elif code==6 %} tst-6
+    {% else %} {% endif %}
+    
+      
+{% endmacro %}
+
+{% macro status_label(code) %}
+
+    {% if code==1 %} lst-1 
+    {% elif code==2 %} lst-2
+    {% elif code==3 %} lst-3
+    {% elif code==4 %} lst-4
+    {% elif code==5 %} lst-5
+    {% elif code==6 %} lst-6
+    {% else %} {% endif %}
+    }
+      
+{% endmacro %}
+
+
+
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT CARDS:::::::::::::::::: --> 
+
+
+
+<!-- ///////// FC  GENERIC //////////////////////// --> 
+
+
+{% macro FactCard(thisData) %}
+
+  {% for x in thisData %}      
+    
+    <div class="row">
+      <div class="col-sm-12">
+
+        {% if x.fc_Title %}
+         {{ fm_Title(x.fc_Title,'') }}
+        {% endif %}
+
+        {% if x.fc_SubTitle %}
+          {{ fm_SubTitle(x.fc_SubTitle,'') }}
+        {% endif %}
+        
+        {% if x.fc_Specs %}
+          {{ fm_Specs(x.fc_Specs, '') }}           
+        {% endif %}
+
+        
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions, '', x.fc_DescriptionsSize) }}
+        {% endif %}
+
+
+        {% if x.fc_SmartPhotos %}
+            {{ fm_SmartPhotos(x.fc_SmartPhotos, x.fc_Owner, '','100','left' ) }}
+         
+        {% endif %}
             
-          <div class="row">
-              <div class="col-sm-7">
+         
+        {% if x.fc_Tags %}
+          {{ fm_ammenities(x.fc_Tags, name, '') }}
+          <hr/>
+        {% endif %}
+        
+        {% if x.fc_Links %}
+          {{ fm_Links(x.fc_Links, '') }}  
+          <hr/>         
+        {% endif %}
+        
+        {% if x.fc_Schedule %}
+          {{ fm_Schedule(x.fc_Schedule, 'Schedule') }}
+        {% endif %}
 
-                <div class="fs-0-9">
-                  <span><strong>Category:</strong> Double / Luxury</span> | 
-                  <span><strong>AvgSize:</strong> 150sq ft.</span> | 
-                  <span><strong>Smoking:</strong> No</span> 
-                  
-                </div>
-                <hr/>
-                <p class="fc-g">Room description</p>
-
-                <div role="tabpanel" id="t3">
-                  <!-- Nav tabs -->
-                  <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                      <a href="#t3-a" aria-controls="home" role="tab" data-toggle="tab">
-                        <span class="label label-success">ENG </span>
-                      </a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#t3-b" aria-controls="profile" role="tab" data-toggle="tab">
-                        <span class="label label-success">SPA</span>
-                      </a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#t3-c" aria-controls="messages" role="tab" data-toggle="tab">
-                        <span class="label label-danger">JAP</span>
-                      </a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#t3-d" aria-controls="settings" role="tab" data-toggle="tab">
-                        <span class="label label-danger">RUS</span>
-                      </a>
-                    </li>
-                  </ul>
-
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="t3-a">
-                      <p class="fs-0-8">
-                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                      </p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="t3-b">
-                        Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="t3-c">
-                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="t3-d">
-                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                    </div>
-                  </div>
-                </div> <!-- close tabpanel -->
-
-              </div>
+        {% if x.fc_List %}
+          {{ fm_List(x.fc_List, '') }}
+        {% endif %}
           
-              <div class="col-sm-5 bord-left">
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/6896928037_o.jpg" title="teamamerica/˚properties/7824441979" class="text-left" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/6896928037_t150.jpg" width="75px">
-                              </a>
-                              <span style="margin-left:-35px;">{{ labelres(1, 'hi-res') }}</span>
-                              
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3498992745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3498992745_t150.jpg" width="75px">
-                              </a>
-                              <span style="margin-left:-35px;">{{ labelres(3, 'lo-res') }}</span>
+        {% if x.fc_SmallNotes %}
+          {{ fm_SmallNotes(x.fc_SmallNotes, '') }}           
+        {% endif %}
+          
 
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3579873745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3579873745_t150.jpg" width="75px">
-                              </a>
-                              <span style="margin-left:-35px;">{{ labelres(3, 'lo-res') }}</span>
-              </div>
-              <div class="col-sm-12">
 
-                 <p class="fc-g">Room Ammenities</p>
 
-                <!--  ROOM AMMENITIES -->
+      </div>
+    </div> <!-- close row -->
+    {% endfor %}
 
-                  {{ labelres(1, 'Air Conditioned') }}
-                  {{ labelres(1, 'Balcony') }}
-                  {{ labelres(1, 'TV') }}
-                  {{ labelres(1, 'Kitchen') }}
-                  {{ labelres(1, 'MiniBar') }}
-                  {{ labelres(1, 'Internet') }}
-                  {{ labelres(1, 'Safe Deposit') }}
-
-              </div>
-
-          </div> <!-- close row -->
-        </div>
 {% endmacro %}
 
 
-{% macro report_service(name) %}
+<!-- ///////// FC  SERVICE //////////////////////// --> 
 
-          <div class="box box-clear p-50">
+
+{% macro FactCard_Services(thisData) %}
+
+  {% set count = 1 %}
+
+  {% for x in thisData %}      
+  <section id="service{{ count }}">  
+    <div class="row box box-widget bw-9 bord-left bc-8" style="padding:10px 20px 20px 20px" >
+          
+     <div class="col-sm-12">
+          
+      </div>
+      <div class="col-sm-12">
+          <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> {{x.fc_Category}} </div>
+
+        {% if x.fc_Title %}
+          <span>
+            {{ fm_Title(x.fc_Title,'','', status_text(x.S_fc_Title)) }} 
+          </span>
+        {% endif %}
+
+        {% if x.fc_SubTitle %}
+          <span>
+            {{ fm_SubTitle(x.fc_SubTitle,'','',status_text(x.S_fc_Title)) }}
+          </span>
+        {% endif %}
+
+      </div>
+          
+      <div class="col-sm-7">
+        
+        {% if x.fc_Specs %}
+            <span class="{{ status_text(x.S_fc_Specs) }}" >
+            {{ fm_Specs(x.fc_Specs, '') }} 
+            </span>          
+        {% endif %}
+
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions, '') }}
+        {% endif %}
+
+        <div class="row">
+          <div class="col-sm-12">
+            <hr/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            {% if x.fc_Schedule %}
+              {{ fm_Schedule(x.fc_Schedule, 'Schedule') }}
+            {% endif %}
+            <hr/>
+            {% if x.fc_Tags %}
+              {{ fm_Tags(x.fc_Tags, '') }}
+            {% endif %}
+
+          </div>
           
           
-          <h4 class="fw-c">{{ name }}</h4>
+          <div class="col-sm-6">
+            {% if x.fc_SmallNotes %}
+              <span class="{{ status_text(x.S_fc_SmallNotes) }}" >
+              {{ fm_SmallNotes(x.fc_SmallNotes, '') }}    
+              </span>       
+            {% endif %}
+          </div>
+        </div>
+ 
+      </div>
+      <div class="col-sm-5">
+        {% if x.fc_SmartPhotos %}
+            {{ fm_SmartPhotos(x.fc_SmartPhotos, x.fc_Owner, '','100','left' ) }}
+        {% else %}
+          <spa class="label lst-4">No photos</spa>
+        {% endif %}
+
+         {% if x.fc_Photos %}
+            {{ fm_Photos(x.fc_Photos, x.fc_Owner, '','100','left' ) }}
+         {% endif %}
+      </div>
+
+      <div class="col-sm-12">
+          <div class="spa20"></div>
+      </div>
+    </div> <!-- close row -->
+  </section>
+
+      {% set count = count + 1 %}
+    {% endfor %}
+
+{% endmacro %}
+
+
+<!-- ///////// FC  ROOMS //////////////////////// --> 
+
+
+{% macro FactCard_Rooms(thisData) %}
+
+  {% set count = 1 %}
+
+  {% for x in thisData %}      
+  <section id="room{{ count }}"> 
+
+    <div class="row box box-widget bw-9 bord-left bc-8" style="padding:10px 20px 20px 20px" >
           
+      <div class="col-sm-12">
+          <div class="spa10"></div>
+      </div>
+      <div class="col-sm-12">
+          <div class="label label-vader" style="margin-left:-55px;"><i class="fa fa-arrow-right"></i> {{x.fc_Category}} </div>
+
+          {% if x.fc_Title %}
+         {{ fm_Title(x.fc_Title,'') }}
+        {% endif %}
+
+      </div>
+          
+      <div class="col-sm-7">
+        
+        {% if x.fc_Specs %}
+          {{ fm_Specs(x.fc_Specs, '') }}           
+        {% endif %}
+
+        {% if x.fc_Descriptions %}
+          {{ fm_LangVersions(x.fc_Descriptions,'') }}
+        {% endif %}
+
+        <div class="row">
+          <div class="col-sm-12">
+            <hr/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            {% if x.fc_Tags %}
+              {{ fm_Tags(x.fc_Tags, '') }}
+            {% endif %}
+          </div>
+
+        </div>
+ 
+      </div>
+      <div class="col-sm-5">
+         {% if x.fc_Photos %}
+            {{ fm_SmartPhotos(x.fc_SmartPhotos, x.fc_Owner, '','100','left' ) }}
+         {% endif %}
+      </div>
+
+      <div class="col-sm-12">
+          <div class="spa20"></div>
+      </div>
+    </div> <!-- close row -->
+
+    </section>
+
+      {% set count = count + 1 %}
+    {% endfor %}
+
+{% endmacro %}
+
+
+
+
+
+<!-- ::::::::::::::::FACT MODULES:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT MODULES:::::::::::::::::: --> 
+<!-- ::::::::::::::::FACT MODULES:::::::::::::::::: --> 
+
+
+
+{% macro fm_Title(text,icon,size,color) %}
+
+  <h3 class="fw-c lh-1 {{color}}">{{text}}</h3>
+{% endmacro %}
+
+{% macro fm_SubTitle(text,icon,size,color) %}
+  <!-- <span class="pull-right"><i class="fa fa-question-circle fc-l"></i></span> -->
+  <h4 class="fw-c fc-l fs-1-2 {{color}}">{{text}}</h4>
+  <br/>
+{% endmacro %}
+
+
+<!-- langData behaves like fm.list -->
+{% macro fm_LangVersions(langData, name, fsize) %}
+
+  <div class="row">
+    <div class=" col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+      <div role="tabpanel" id="{{ tabid }}">
+        <!-- Nav tabs -->
+        <!-- SE ARMAN LOS TABS CON LAS INICIALES -->
+        <ul class="nav nav-tabs" role="tablist">
+
+          {% set n1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
+          {% set n2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
+          {% set n3 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]|random %}
+
+          {% set setid = n1 * n2 * n3  %}
+
+          {% set cuenta = 1 %}
+          {% for key in langData|sort %}
+            {% for z in key[1] %}
+              
+                <li role="presentation" class="{% if cuenta==1 %} active {% endif %}">
+                  <a href="#{{ setid }}_{{cuenta}}" role="tab" data-toggle="tab">
+                    <span class="fc-b label {{ status_label(langData[key][1]) }} "> 
+                    {{ langData[key][0]|upper }} </span>
+                  </a>
+                </li>
+
+              
+            {% endfor %}
+            {% set cuenta = cuenta + 1 %}
+          {%endfor%}  
+
+
+        </ul>
+
+        <!-- SE ARMAN LOS CONTENIDOS -->
+        <div class="tab-content fs-0-9">
+          
+          {% set cuenta = 1 %}
+          {% for key in langData|sort %}
             
-          <div class="row">
-              <div class="col-sm-7">
-
-                <div class="fs-0-9">
-                  <span><strong>Category:</strong> Dinning Cruise</span> | 
-                  <span><strong>Duration:</strong> 90min</span> | 
-                  <span><strong>Minimum Age:</strong> 10</span> | 
-                  <span><strong>Accesibility:</strong> Wheelchair</span> |
-                  <span><strong>Attire:</strong> Casual - Formal</span> 
-                  
-                </div>
-                <hr/>
-                <p class="fc-g">Description</p>
-
-                <div role="tabpanel" id="t3">
-                  <!-- Nav tabs -->
-                  <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                      <a href="#t3-a" aria-controls="home" role="tab" data-toggle="tab">
-                        <span class="label label-success">ENG </span>
-                      </a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#t3-b" aria-controls="profile" role="tab" data-toggle="tab">
-                        <span class="label label-success">SPA</span>
-                      </a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#t3-c" aria-controls="messages" role="tab" data-toggle="tab">
-                        <span class="label label-danger">JAP</span>
-                      </a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#t3-d" aria-controls="settings" role="tab" data-toggle="tab">
-                        <span class="label label-danger">RUS</span>
-                      </a>
-                    </li>
-                  </ul>
-
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active spa10 pl-30" id="t3-a">
-                      <p class="fs-0-8">
-                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                      </p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="t3-b">
-                        Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="t3-c">
-                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="t3-d">
-                      Midtown convenience. Classic hospitality. Complete comfort. A celebrated past. It all comes together at the Park Central New York Hotel – located squarely amidst New York’s most popular sights and hotels in Midtown Manhattan. Our mix of exciting amenities
-                    </div>
-                  </div>
-                </div> <!-- close tabpanel -->
-
-              </div>
-          
-              <div class="col-sm-5 bord-left">
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/6896928037_o.jpg" title="teamamerica/˚properties/7824441979" class="text-left" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/6896928037_t150.jpg" width="75px">
-                              </a>
-                              <span style="margin-left:-35px;">{{ labelres(1, 'hi-res') }}</span>
-                              
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3498992745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3498992745_t150.jpg" width="75px">
-                              </a>
-                              <span style="margin-left:-35px;">{{ labelres(3, 'lo-res') }}</span>
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3579873745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3579873745_t150.jpg" width="75px">
-                              </a>
-                              <span style="margin-left:-35px;">{{ labelres(3, 'lo-res') }}</span>
-              </div>
-              <div class="col-sm-12">
-
-                 <p class="fc-g">Schedule</p>
-
-                <!--  ROOM AMMENITIES -->
-
-                  <span><strong>Monday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Friday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Tuesday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Wednesday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Thursday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Friday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Saturday:</strong> 10:00 - 21:00</span> <br/>
-                  <span><strong>Sunday:</strong> 10:00 - 21:00</span> <br/>
-
-              </div>
-
-          </div> <!-- close row -->
+            <div role="tabpanel" class="tab-pane spa10 pl-30 {% if cuenta==1 %} active {% endif %} " id="{{ setid }}_{{cuenta}}">
+                <span class="text-gray {% if fsize =='2' %} fs-2 {% endif %} {{ status_text(langData[key][1]) }}">  
+                  {{ langData[key][2]}}
+                </span>
+                
+            </div>
+            {% set cuenta = cuenta + 1 %}
+          {%endfor%} 
+  
         </div>
+      </div> <!-- close tab panel --> 
+    </div>
+  </div>
+{% endmacro %}
+
+
+{% macro fm_Specs(specsData, name)%}
+    {% if name %}<p>{{name}}</p>{% endif %}
+
+    {% for key in specsData|sort %}
+      {% for y in key[1] %}
+        
+          | <span class="fw-c"> {{ specsData[key][0]}}: </span>
+          <span class=""> {{ specsData[key][1]}}  </span>
+        
+      {% endfor %}
+    {%endfor%} 
+    <hr/>            
 {% endmacro %}
 
 
 
+{% macro fm_List(ListData) %}
+  <div class="col-sm-12">
+      
+      {% for key in ListData %}
+        {% for z in key[1] %}
+          
 
-{% macro labelres(q, text) %}
-    {% if q==1 %}
-      <spa class="label_report label-success">{{ text }}</spa>
-    {% elif q==2 %}
-      <spa class="label_report label-danger " >{{ text }}</spa>
-    {% elif q==3 %}
-      <spa class="label_report label-warning " >{{ text }}</spa>
-    {% else %}
-      <spa class="label_report label-default " >{{ text }}</spa>
-    {% endif %}
-
+            <span class="fw-c"> {{ ListData[key][0]}}: </span>
+            <span class=""> {{ ListData[key][1]}} </span>
+            <br/>
+          
+        {% endfor %}
+      {%endfor%}   
+      <hr/>       
+              
+  </div>
 {% endmacro %}
 
-{% macro report_title(text,icon) %}
+{% macro fm_SmartPhotos(photoData, owner, name,size,float)%}
+  <div class="row">
 
-<h4 class="fw-c fc-g">{{text}}: <i class="fa fa-question-circle"></i></h4>
+    <div class="col-sm-12">
+
+
+
+      {% if name %}<p>{{name}}</p>{% endif %}
+
+      {% for key in photoData %}
+        {% for z in key[1] %}
+          
+            <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
+              <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{ photoData[key][1]}}_o.jpg" class="text-left" target="_blank">
+                <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{ photoData[key][1]}}_t150.jpg" class="img-responsive">
+              </a>
+              {% if mode =='showstatus' %}
+              
+                <div style="margin-top:-25px; margin-bottom:10px;">
+                  {{ labelPhoto(photoData[key][0], photoData[key][2]) }}
+                </div>
+              
+              {% endif %}
+            </div>
+          
+        {% endfor %}
+      {%endfor%} 
+
+
+      
+      
+    </div>
+    <div class="col-sm-12">
+
+    </div>
+  </div>
+{% endmacro %}
+
+
+{% macro fm_Photos(photoData, owner, name,size,float)%}
+  <div class="row">
+
+    <div class="col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+
+      {% for item in photoData %}
+
+          <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
+            <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{item}}_o.jpg" class="text-left" target="_blank">
+              <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{item}}_t150.jpg" class="img-responsive">
+            </a>
+            <div style="margin-top:-25px; margin-bottom:10px;">
+              {{ labelRes(1, 'ok-res') }}
+            </div>
+            
+          </div>
+                    
+      {% endfor %} 
+      
+    </div>
+    <div class="col-sm-12">
+
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro fm_Tags(tagsData, name) %}
+
+  {% if name %}<p>{{name}}</p>{% endif %}
+  <table class="table table-condensed table-striped">
+    {% for y in tagsData %} 
+      <tr>
+        <td align="right">
+          <div class="fw-c fs-0-8">{{ y.name }}</div>
+        </td>
+        <td>
+            {% for item in y.list %}
+            {{ labelRes(4, item , y.status) }} 
+            {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endmacro %}
+
+{% macro fm_ammenities(tagsData, name, color) %}
+
+  {% if name %}<p>{{name}}</p>{% endif %}
+  <table class="table table-condensed table-striped">
+    {% for y in tagsData %} 
+      <tr>
+        <td align="right">
+          <div class="fw-c fs-0-8">{{ y.name }}</div>
+        </td>
+        <td>
+            {% for item in y.list %}
+            {{ labelAmmenity(1, item, y.color) }} 
+            {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endmacro %}
+
+
+
+{% macro fm_Links(linksData, name)%}
+
+    {% if name %}<p>{{name}}</p>{% endif %}
+
+    {% for key in linksData|sort %}
+      {% for y in key[1] %}
+        
+        | <a href="{{ linksData[key][1]}}">
+          {{ linksData[key][0]}}
+        </a>
+
+      {% endfor %}
+    {%endfor%}         
+{% endmacro %}
+
+{% macro fm_Schedule(scheduleData, name) %}
+  <div class="row">
+    <div class="col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+    </div>
+    <div class=" col-sm-offset-1 col-sm-11">
+      <table>
+        {% for key in scheduleData|sort %}
+        <tr>  
+
+          {% for hours in key[1] %}
+            <td>
+              <span class="label label-info {{ status_label(scheduleData[key][3]) }}"> {{ scheduleData[key][0]}} </span>
+            </td>
+            <td>
+                <span class="{{ status_text(scheduleData[key][3]) }}"> 
+                 &nbsp; {{ scheduleData[key][1]}} |  {{ scheduleData[key][2]}}
+                </span>
+            </td>
+          {% endfor %}
+
+        </tr>
+        {%endfor%} 
+      </table> 
+     
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro fm_List(ListData, name) %}
+  <div class="col-sm-12">
+      {% if name %}<p>{{name}}</p>{% endif %}
+      {% for key in ListData %}
+        {% for z in key[1] %}
+          
+            <span class="fw-c"> {{ ListData[key][0]}}: </span>
+            <span class=""> {{ ListData[key][1]}} </span>
+            <br/>
+          
+        {% endfor %}
+      {%endfor%}   
+      <hr/>       
+              
+  </div>
+{% endmacro %}
+
+{% macro fm_SmallNotes(smallData, name) %}
+  <div class="col-sm-12">
+
+      {% if name %}<p>{{name}}</p>{% endif %}
+
+      {% for key in smallData %}
+        {% for z in key[1] %}
+          <div class="fs-0-7">
+            <span class="fw-c"> {{ smallData[key][0]}}: </span>
+            <span class=""> {{ smallData[key][1]}} </span>
+            <br/>
+          </div>
+          
+        {% endfor %}
+      {%endfor%}   
+      <hr/>       
+              
+  </div>
+{% endmacro %}
+
+
+<!-- ::::::::::::::::FACT MODULE HELPERS:::::::::::::::::: --> 
+
+
+<!-- Generates the PhotoMosaic -->
+{% macro PhotoMosaic(owner,item,size,float) %}
+
+
+        <div style="width:{{size}}px; float:{{float}}; padding:0 2px;">
+          <a href="https://avispa.myring.io/_images/{{ owner }}/o/{{item}}_o.jpg" class="text-left" target="_blank">
+               <img src="https://avispa.myring.io/_images/{{ owner }}/t150/{{item}}_t150.jpg" class="img-responsive">
+
+          </a>
+          <div style="margin-top:-25px; margin-bottom:10px;">
+            {{ labelRes(1, 'ok-res') }}
+          </div>
+          
+        </div>
+
 {% endmacro %}
 
 
 {% macro lorem() %}
-<p>
+  <p>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius risus sed purus egestas dictum. Integer enim lectus, elementum faucibus odio nec, scelerisque scelerisque sapien. Duis facilisis odio arcu, sed euismod dui accumsan in. Pellentesque a leo in massa rhoncus pretium. Suspendisse a dictum sem, nec malesuada enim. Mauris non nisl quis nulla laoreet lobortis quis nec justo. Mauris dictum mauris erat. Pellentesque vel hendrerit urna. Aliquam sollicitudin non ex quis accumsan. Suspendisse tincidunt quam urna, ut scelerisque lorem malesuada sed. 
-</p>
-
+  </p>
 {% endmacro %}
 
 {% macro flag01(text) %}
-  <span style="background-color:yellow;">{{ text }}</span>
+   <span style="background-color:yellow;">{{ text }}</span>
 {% endmacro %}
 
 
 
+{% macro labelRes(q, text, s) %}
+  <span class="label label_report
+    {% if q==1 %} label-success
+    {% elif q==2 %} label-warning
+    {% elif q==3 %} label-danger
+    {% else %} label-default
+    {% endif %} 
+
+    {{ status_label(s) }}
+    inline-block
+    " >{{ text }}</span>
+{% endmacro %}
 
 
+{% macro labelPhoto(q, text) %}
 
-
-
-
-
-
-<!-- TEMPORARY PHOTO SETS PLEASE REPLACE FOR REAL ITERATIONS-->
-
-
-{% macro photoset(id) %}
-
-
-  {% if id==7824441979 %}  <!-- PARKCENTRAL -->
-
-  <span>
-    <a href="https://avispa.myring.io/_images/teamamerica/o/6896928037_o.jpg" title="teamamerica/˚properties/7824441979" class="text-left" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/6896928037_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                                {{ labelres(1, 'hi-res') }}
-                              </span>
-                              
-                              
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3498992745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3498992745_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(3, 'lo-res') }}
-                              </span>
-
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3579873745_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3579873745_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(3, 'lo-res') }}
-                              </span>
-
-                            
-                              
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/1905405911_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1905405911_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-
-
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3706470910_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3706470910_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(2, 'ok-res') }}
-                              </span>
-                            
-
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/9914904259_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/9914904259_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(2, 'ok-res') }}
-                              </span>
-                            
-
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/5426503313_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5426503313_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3156372728_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3156372728_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/5587035086_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5587035086_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                              
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3192923583_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3192923583_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(3, 'lo-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/4201146490_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/4201146490_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/7736340368_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/7736340368_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(3, 'lo-res') }}
-                              </span>
-                              
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/8473987178_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/8473987178_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                              
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/1833997539_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1833997539_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-                             
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/9051750777_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/9051750777_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/9053620547_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/9053620547_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/1625137403_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1625137403_t150.jpg" width="100px"
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/1323452596_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/1323452596_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/5178478619_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5178478619_t150.jpg"width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/2301109578_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/2301109578_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/2051156062_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/2051156062_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/3836044439_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/3836044439_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-                            
-
-                              <a href="https://avispa.myring.io/_images/teamamerica/o/5871936148_o.jpg" title="teamamerica/˚properties/7824441979" class="thumbnailXX" data-gallery>
-                                <img src="https://avispa.myring.io/_images/teamamerica/t150/5871936148_t150.jpg" width="100px">
-                              </a>
-                              <span style="margin-left:-35px;">
-                              {{ labelres(1, 'hi-res') }}
-                              </span>
-  </span>
-
-  {% elif id==0 %}
-
+  {% if q==1 %}
+    <spa class="label lst-1">hi res</spa>
+  {% elif q==2 %}
+    <spa class="label lst-2">ok res</spa>
+  {% elif q==3 %}
+    <spa class="label lst-3">review</spa>
+  {% elif q==4 %}
+    <spa class="label lst-4">low res</spa>
+  {% elif q==5 %}
+    <spa class="label lst-5">outdated</spa>
+  {% elif q==6 %}
+    <spa class="label lst-6">No Photos</spa>
   {% endif %}
 
 {% endmacro %}
 
 
 
+{% macro labelAmmenity(q, id, status) %}
 
+  <span class="label_report
+    {% if q==1 %} label-success
+    {% elif q==2 %} label-warning
+    {% elif q==3 %} label-danger
+    {% else %} label-default
+    {% endif %} 
+    
+    {{ status_label(status) }}
 
-{% macro amenityset(id) %}
+    inline-block
+    ">
+  
+    {% if id=='a_001' %}Business Center
+    {% elif id=='a_002' %}Meeting Rooms
+    {% elif id=='a_003' %}Convention Space
 
-      {% if id==7824441979 %} <!-- PARKCENTRAL -->
-            <table class="table table-condensed table-striped">
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Business</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Business Center') }}
-                    {{ labelres(1, 'Meeting Rooms') }}
-                    {{ labelres(1, 'Convention Space') }}
-                    {{ labelres(1, 'Convention Space Surface: 1200sqft') }}
-                    {{ labelres(1, 'High Speed Internet') }}
-                    {{ labelres(1, 'Fax') }}
-                    {{ labelres(1, 'Printer Available') }}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Beauty Spa</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Hair Salon') }}
-                    {{ labelres(1, 'Nails Salon') }}
-                    {{ labelres(1, 'Barber Shop') }}
+    {% elif id=='b_001' %}Hair Salon
+    {% elif id=='b_002' %}Nails Salon
+    {% elif id=='b_003' %}Barber Shop
 
-                  
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Concierge</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, '24h Concierge') }}
-                    {{ labelres(1, 'Elevators') }}
-                    {{ labelres(1, 'Luggage Storage') }}
-                    {{ labelres(1, 'Multilingual Staff') }}
-                    {{ labelres(1, 'Laundry') }}
-                    {{ labelres(1, 'DryCleaning') }}
-                  
-                    
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Dining</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Menu Restaurant') }}
-                    {{ labelres(1, 'Bar/Lounge') }}
-                    {{ labelres(1, 'Wine Bar') }}
-                    {{ labelres(1, 'Buffet') }}
-                    {{ labelres(1, 'Gluten Free Options') }}
-                    {{ labelres(1, 'Vegan Options') }}
-                    {{ labelres(1, 'Raw Vegan Options') }}
-                    {{ labelres(1, 'Snack Bar Deli') }}
+    {% elif id=='c_001' %}24 hrs Concierge  
+    {% elif id=='c_002' %}Elevators 
+    {% elif id=='c_003' %}Luggage Storage 
+    {% elif id=='c_004' %}Multilingual Staff 
+    {% elif id=='c_005' %}Laundry 
+    {% elif id=='c_006' %}Dry Cleaning 
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Events</h5>
-                  </td>
-                  <td>
-                    {{ labelres(2, 'Not defined') }}
-                    <!-- {{ labelres(1, 'Weddings') }}
-                    {{ labelres(1, 'Social Events') }}
-                    {{ labelres(1, 'Event Planning') }} -->
+    {% elif id=='d_001' %}Menu Restaurant 
+    {% elif id=='d_002' %}Bar/Lounge 
+    {% elif id=='d_003' %}Wine Bar 
+    {% elif id=='d_004' %}Buffet 
+    {% elif id=='d_005' %}Gluten Free Options
+    {% elif id=='d_006' %}Vegan Options
+    {% elif id=='d_007' %}Raw Vegan Options 
+    {% elif id=='d_008' %}Snacl Bar / Deli 
 
-                  </td>
-                </tr>
+    {% elif id=='e_001' %}Weddings 
+    {% elif id=='e_002' %}Social Events  
+    {% elif id=='e_003' %}Event Planning 
 
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Fitness</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Cardio') }}
-                    {{ labelres(1, 'Weights') }}
-                    {{ labelres(1, 'Classes') }}
-                    {{ labelres(1, 'Spinning') }}
-                    {{ labelres(1, 'Personal Trainer') }}
+    {% elif id=='f_001' %}Cardio 
+    {% elif id=='f_002' %}Weights 
+    {% elif id=='f_003' %}Classes 
+    {% elif id=='f_004' %}Spinning 
+    {% elif id=='f_005' %}Personal Trainer 
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Kids</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Kids Club') }}
-                    {{ labelres(1, 'Kids Activities') }}
-                    {{ labelres(1, 'In room childcare') }}
-                    {{ labelres(1, 'Cribs') }}
+    {% elif id=='g_001' %}Kids Club 
+    {% elif id=='g_002' %}Kids Activities
+    {% elif id=='g_003' %}In Room Childcare
+    {% elif id=='g_004' %}Cribs
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Leisure</h5>
-                  </td>
-                  <td>
-                    {{ labelres(2, 'Not defined') }}
+    {% elif id=='h_001' %}Golf Course
+    {% elif id=='h_002' %}Casino
+    {% elif id=='h_003' %}Pool
+    {% elif id=='h_004' %}Live Show
 
-                    <!-- {{ labelres(1, 'Golf Course') }}
-                    {{ labelres(1, 'Casino') }}
-                    {{ labelres(1, 'Pool') }}
-                    {{ labelres(1, 'Live Show') }} -->
+    {% elif id=='i_001' %}In House Doctor
+    {% elif id=='i_002' %}In House Nurse
+    {% elif id=='i_003' %}Ambulance accesible
+    {% elif id=='i_004' %}Fibrillator
+    {% elif id=='i_005' %}First Aid Kit
+    {% elif id=='i_006' %}X Ray
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Medical</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'In House doctor') }}
-                    {{ labelres(1, 'In House Nurse') }}
-                    {{ labelres(1, 'Ambulance accesible') }}
-                    {{ labelres(1, 'Fibrillator') }}
-                    {{ labelres(1, 'First Aid Kit') }}
-                    {{ labelres(1, 'X Ray') }}
+    {% elif id=='j_001' %}Pets Allowed
+    {% elif id=='j_002' %}Pet Menu
+    {% elif id=='j_003' %}Dog Walker
+    {% elif id=='j_004' %}Dog Care
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Pets</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Allowed') }}
-                    {{ labelres(1, 'Pet Menu') }}
-                    {{ labelres(1, 'Dog Walker') }}
-                    {{ labelres(1, 'Dog Care') }}
+    {% elif id=='k_001' %}Temperature controlled
+    {% elif id=='k_002' %}Towels
+    {% elif id=='k_003' %}Bar Service
+    {% elif id=='k_004' %}Family Friendly
+    {% elif id=='k_005' %}Adult Only
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Pool</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Temperature Controlled') }}
-                    {{ labelres(1, 'Towels') }}
-                    {{ labelres(1, 'Bar Service') }}
-                    {{ labelres(1, 'Family Friendly') }}
-                    {{ labelres(1, 'Adult Only') }}
-                    {{ labelres(1, 'Topless') }}
+    {% elif id=='l_001' %}Gift Shop
+    {% elif id=='l_002' %}Pharmacy
+    {% elif id=='l_003' %}Newstand
+    {% elif id=='l_004' %}Books
+    {% elif id=='l_005' %}Sport
+    {% elif id=='l_006' %}Tobacco
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Shopping</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Gift Shop') }}
-                    {{ labelres(1, 'Pharmacy') }}
-                    {{ labelres(1, 'Newstand') }}
-                    {{ labelres(1, 'Books') }}
-                    {{ labelres(1, 'Sport') }}
-                    {{ labelres(1, 'Tobacco') }}
+    {% elif id=='m_001' %}Interior smoking Area
+    {% elif id=='m_002' %}Exterior smoking Area
+    {% elif id=='m_003' %}Smoking Rooms Available
 
-                  </td>
-                </tr>
+    {% elif id=='n_001' %}Airport - Hotel
+    {% elif id=='n_002' %}Hotel - Airport
+    {% elif id=='n_003' %}Car Rental
+    {% elif id=='n_004' %}Parking
+    {% elif id=='n_005' %}Valet Parking
 
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Smoking</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Interior smoking Area') }}
-                    {{ labelres(1, 'Exterior smoking Area') }}
-                    {{ labelres(1, 'Smoking Rooms available') }}
+    {% else %}
+      {{ id }}
 
-                  </td>
-                </tr>
+    {% endif %}
 
-                <tr>
-                  <td>
-                    <h5 class="fw-c">Transportation</h5>
-                  </td>
-                  <td>
-                    {{ labelres(1, 'Airport - Hotel') }}
-                    {{ labelres(1, 'Hotel - Airport') }}
-                    {{ labelres(1, 'Car Rental') }}
-                    {{ labelres(1, 'Parking') }}
-                    {{ labelres(1, 'Valet Parking') }}
-
-                  </td>
-                </tr>
-            </table>
-
-      {% elif id==0 %}
-
-      {% endif %}
-
+  </span>
+  
 
 {% endmacro %}
-
-
 
 
 
