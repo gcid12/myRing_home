@@ -91,6 +91,18 @@ def mbf_developers():
     return render_template("/myring_biz/developers.html", data=data)  
 
 
+
+@app.route("/ecosystem", methods=["GET", "POST"])
+#@login_required
+def mbf_ecosystem():
+    data = {}
+    data['mask']= "mbf"
+    data['title']= "Why Now"
+    return render_template("/myring_biz/why.html", data=data)
+
+
+
+
 # REPORTS    
 
 @app.route("/facts/travelservice", methods=["GET", "POST"])
@@ -2684,8 +2696,8 @@ def how():
     return render_template('datasuite/hiw.html', insects=il, dic=dic) 
 
 
-@app.route('/ecosystem')
-def ecosystem():
+@app.route('/ecosystemb')
+def ecosystemb():
     insect = InsectData()
     il = {}
 
