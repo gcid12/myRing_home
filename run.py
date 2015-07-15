@@ -39,14 +39,12 @@ def mbf_why():
 
 
 
-
-
 @app.route("/business_profile", methods=["GET", "POST"])
 #@login_required
 def mbf_profile():
     data = {}
     data['mask']= "mbf"
-    data['title']= "Business Profile with product and Services descriptions"
+    data['title']= "Business Facts"
     return render_template("/myring_biz/profile.html", data=data)
 
 
@@ -87,7 +85,7 @@ def mbf_experts():
 def mbf_developers():
     data = {}
     data['mask']= "mbf"
-    data['title']= "Integrate Business Facts"
+    data['title']= "Developers"
     return render_template("/myring_biz/developers.html", data=data)  
 
 
@@ -97,7 +95,7 @@ def mbf_developers():
 def mbf_ecosystem():
     data = {}
     data['mask']= "mbf"
-    data['title']= "Why Now"
+    data['title']= "ecosystem"
     return render_template("/myring_biz/why.html", data=data)
 
 
