@@ -24,23 +24,6 @@ p{ font-family: 'Roboto Slab', sans-serif; font-weight: 300;}
 .text-shadow1{text-shadow: -1px 0px 2px #444;}
 
 
-
-.rotate90 {
--webkit-transform: rotate(-90deg);
--moz-transform: rotate(-90deg);
--ms-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-
-.rotate45 {
--webkit-transform: rotate(-45deg);
--moz-transform: rotate(-45deg);
--ms-transform: rotate(-45deg);
--o-transform: rotate(-45deg);
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-}
-
 a.nostroke{
   text-decoration: none;
   outline: none;}
@@ -96,7 +79,7 @@ text-decoration: none;
 
 /* BACKGROUNDS*/
 
-.bg-search{  
+/*.bg-search{  
   background: url(/static/images/bg/handphone.jpg);
   background: url(/static/images/bg/handphone.jpg);
   background: url(/static/images/bg/handphone.jpg);
@@ -104,7 +87,7 @@ text-decoration: none;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color:#f7931e;
-}
+}*/
 
 
 
@@ -250,34 +233,6 @@ text-decoration: none;
 .tb-mini{padding:0 5px 5px 5px;}
 
 
-/*RIBBON*/
-
-/*.box {
-  width:150px;
-  height:150px;
-  background:#bcc;
-  position: absolute;
-  text-align: center;
-  padding: 12px 0;
-  left: 50px;
-  -webkit-transition: all 0.5s ease;
-}
-.box:after {
-  content:'';
-  position: absolute;
-  bottom:0;
-  left:0;
-  border-top:75px solid #bcc;
-  border-right:75px solid #fff;
-}
-.box:before {
-  content:'';
-  position: absolute;
-  bottom:0;
-  right:0;
-  border-top:75px solid #bcc;
-  border-left:75px solid #fff;
-}*/
 
 /*BOX*/
 .square{
