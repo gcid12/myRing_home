@@ -466,12 +466,15 @@ filter: grayscale(100%);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+
+/*
   .bg-05b{  
   background: url(../images/phantom.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-size:cover;
 }
+*/
 
   .bg-07{  
   background: -webkit-linear-gradient(60deg, #FFF, #eae5df);

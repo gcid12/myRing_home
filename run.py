@@ -15,7 +15,7 @@ def hello():
     data['title']= "Data Communities"
 
 
-    return render_template('/myring_biz/start.html', data=data) 
+    return render_template('/landing.html', data=data) 
 
 
 
